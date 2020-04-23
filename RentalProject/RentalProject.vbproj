@@ -11,9 +11,10 @@
     <AssemblyName>RentalProject</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -107,6 +108,13 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppBundle\Model\ModelEquipement.vb" />
+    <Compile Include="AppBundle\UserControls\IEmprunt.Designer.vb">
+      <DependentUpon>IEmprunt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEmprunt.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IHome.Designer.vb">
       <DependentUpon>IHome.vb</DependentUpon>
     </Compile>
@@ -138,6 +146,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IEmprunt.resx">
+      <DependentUpon>IEmprunt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IHome.resx">
       <DependentUpon>IHome.vb</DependentUpon>
@@ -174,8 +185,6 @@
   <ItemGroup>
     <None Include="Resources\baseline_minimize_black_18dp.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppBundle\Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
