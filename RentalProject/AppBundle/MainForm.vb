@@ -56,4 +56,11 @@
     Private Sub InventoryButton_Click(sender As Object, e As EventArgs) Handles InventoryButton.Click
 
     End Sub
+
+    Private Sub RentalsButton_Click(sender As Object, e As EventArgs) Handles RentalsButton.Click
+        InterfacePanel.Controls.Clear()
+        Dim rentals As New IRentals(Me)
+        InterfacePanel.Controls.Add(rentals)
+        rentals.BringToFront()
+    End Sub
 End Class

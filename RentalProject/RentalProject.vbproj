@@ -119,6 +119,18 @@
     <Compile Include="AppBundle\UserControls\IInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IRent.Designer.vb">
+      <DependentUpon>IRent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentals.Designer.vb">
+      <DependentUpon>IRentals.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentals.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -144,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IInventory.resx">
       <DependentUpon>IInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRent.resx">
+      <DependentUpon>IRent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
+      <DependentUpon>IRentals.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
