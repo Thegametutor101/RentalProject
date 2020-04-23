@@ -131,6 +131,12 @@
     <Compile Include="AppBundle\UserControls\IRentals.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.Designer.vb">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
       <DependentUpon>IRentals.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

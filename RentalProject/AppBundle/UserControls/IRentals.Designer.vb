@@ -32,6 +32,9 @@ Partial Class IRentals
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ViewPanel = New System.Windows.Forms.Panel()
+        Me.RentedBy = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Authorisation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuPanel.SuspendLayout()
         Me.ViewPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -72,7 +75,7 @@ Partial Class IRentals
         Me.ShowButton.ForeColor = System.Drawing.Color.White
         Me.ShowButton.Location = New System.Drawing.Point(0, 481)
         Me.ShowButton.Name = "ShowButton"
-        Me.ShowButton.Size = New System.Drawing.Size(229, 61)
+        Me.ShowButton.Size = New System.Drawing.Size(276, 61)
         Me.ShowButton.TabIndex = 5
         Me.ShowButton.Text = "Afficher un Emprunt"
         Me.ShowButton.UseVisualStyleBackColor = False
@@ -86,9 +89,9 @@ Partial Class IRentals
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(0, 183)
+        Me.SearchButton.Location = New System.Drawing.Point(0, 132)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(229, 61)
+        Me.SearchButton.Size = New System.Drawing.Size(276, 61)
         Me.SearchButton.TabIndex = 4
         Me.SearchButton.Text = "Rechercher un Emprunt"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -102,9 +105,9 @@ Partial Class IRentals
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(0, 122)
+        Me.ReturnButton.Location = New System.Drawing.Point(0, 71)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(229, 61)
+        Me.ReturnButton.Size = New System.Drawing.Size(276, 61)
         Me.ReturnButton.TabIndex = 3
         Me.ReturnButton.Text = "Retourner un Équipement"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -118,9 +121,9 @@ Partial Class IRentals
         Me.RentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentButton.ForeColor = System.Drawing.Color.White
-        Me.RentButton.Location = New System.Drawing.Point(0, 61)
+        Me.RentButton.Location = New System.Drawing.Point(0, 10)
         Me.RentButton.Name = "RentButton"
-        Me.RentButton.Size = New System.Drawing.Size(229, 61)
+        Me.RentButton.Size = New System.Drawing.Size(276, 61)
         Me.RentButton.TabIndex = 2
         Me.RentButton.Text = "Ajouter un Emprunt"
         Me.RentButton.UseVisualStyleBackColor = False
@@ -128,9 +131,9 @@ Partial Class IRentals
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(229, 61)
+        Me.Panel3.Location = New System.Drawing.Point(276, 10)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(86, 481)
+        Me.Panel3.Size = New System.Drawing.Size(39, 532)
         Me.Panel3.TabIndex = 1
         '
         'Panel2
@@ -138,11 +141,12 @@ Partial Class IRentals
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(315, 61)
+        Me.Panel2.Size = New System.Drawing.Size(315, 10)
         Me.Panel2.TabIndex = 0
         '
         'ListView1
         '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RentedBy, Me.EquipmentName, Me.Authorisation})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
@@ -160,6 +164,18 @@ Partial Class IRentals
         Me.ViewPanel.Name = "ViewPanel"
         Me.ViewPanel.Size = New System.Drawing.Size(467, 542)
         Me.ViewPanel.TabIndex = 1
+        '
+        'RentedBy
+        '
+        Me.RentedBy.Text = "Emprunté par"
+        '
+        'EquipmentName
+        '
+        Me.EquipmentName.Text = "Nom Équipement"
+        '
+        'Authorisation
+        '
+        Me.Authorisation.Text = "Authorisation"
         '
         'IRentals
         '
@@ -190,4 +206,7 @@ Partial Class IRentals
     Friend WithEvents ReturnButton As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ViewPanel As Panel
+    Friend WithEvents RentedBy As ColumnHeader
+    Friend WithEvents EquipmentName As ColumnHeader
+    Friend WithEvents Authorisation As ColumnHeader
 End Class
