@@ -30,8 +30,8 @@ Partial Class IRentals
         Me.RentButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ViewPanel = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ViewPanel = New System.Windows.Forms.Panel()
         Me.MenuPanel.SuspendLayout()
         Me.ViewPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -54,7 +54,8 @@ Partial Class IRentals
         'WarningLabel
         '
         Me.WarningLabel.AutoSize = True
-        Me.WarningLabel.Location = New System.Drawing.Point(0, 458)
+        Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.WarningLabel.Location = New System.Drawing.Point(0, 464)
         Me.WarningLabel.Name = "WarningLabel"
         Me.WarningLabel.Size = New System.Drawing.Size(194, 17)
         Me.WarningLabel.TabIndex = 6
@@ -140,15 +141,6 @@ Partial Class IRentals
         Me.Panel2.Size = New System.Drawing.Size(315, 61)
         Me.Panel2.TabIndex = 0
         '
-        'ViewPanel
-        '
-        Me.ViewPanel.Controls.Add(Me.ListView1)
-        Me.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ViewPanel.Location = New System.Drawing.Point(315, 0)
-        Me.ViewPanel.Name = "ViewPanel"
-        Me.ViewPanel.Size = New System.Drawing.Size(467, 542)
-        Me.ViewPanel.TabIndex = 1
-        '
         'ListView1
         '
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -159,13 +151,26 @@ Partial Class IRentals
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
+        'ViewPanel
+        '
+        Me.ViewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ViewPanel.Controls.Add(Me.ListView1)
+        Me.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ViewPanel.Location = New System.Drawing.Point(315, 0)
+        Me.ViewPanel.Name = "ViewPanel"
+        Me.ViewPanel.Size = New System.Drawing.Size(467, 542)
+        Me.ViewPanel.TabIndex = 1
+        '
         'IRentals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.ViewPanel)
         Me.Controls.Add(Me.MenuPanel)
+        Me.MinimumSize = New System.Drawing.Size(782, 542)
         Me.Name = "IRentals"
         Me.Size = New System.Drawing.Size(782, 542)
         Me.MenuPanel.ResumeLayout(False)
@@ -183,6 +188,6 @@ Partial Class IRentals
     Friend WithEvents ShowButton As Button
     Friend WithEvents SearchButton As Button
     Friend WithEvents ReturnButton As Button
-    Friend WithEvents ViewPanel As Panel
     Friend WithEvents ListView1 As ListView
+    Friend WithEvents ViewPanel As Panel
 End Class

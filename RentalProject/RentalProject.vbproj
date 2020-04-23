@@ -195,5 +195,8 @@
   <ItemGroup>
     <Folder Include="AppBundle\Model\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline-backward-black-18dp-4x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

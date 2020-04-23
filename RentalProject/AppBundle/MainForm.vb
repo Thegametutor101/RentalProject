@@ -60,6 +60,7 @@
     Private Sub RentalsButton_Click(sender As Object, e As EventArgs) Handles RentalsButton.Click
         InterfacePanel.Controls.Clear()
         Dim rentals As New IRentals(Me)
+        rentals.Dock = DockStyle.Fill
         InterfacePanel.Controls.Add(rentals)
         rentals.BringToFront()
     End Sub
