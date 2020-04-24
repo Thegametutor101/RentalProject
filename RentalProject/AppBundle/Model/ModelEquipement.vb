@@ -12,6 +12,7 @@ Public Class ModelRental
     Public Function addRental(ByVal noPersonne As Integer,
                                    ByVal noEquipement As String,
                                    ByVal autorisation As String,
+                                   ByVal dateEmprunt As String,
                                    ByVal duree As String,
                                    ByVal dateRetour As String,
                                    ByVal responsabilite As String)
@@ -21,7 +22,7 @@ Public Class ModelRental
             connection.Open()
             command.CommandText = $"insert into emprunt
  
-                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{duree}', '{dateRetour}', '{responsabilite}')"
+                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{dateEmprunt}','{duree}', '{dateRetour}', '{responsabilite}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
