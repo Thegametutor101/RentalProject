@@ -54,13 +54,18 @@
     End Sub
 
     Private Sub InventoryButton_Click(sender As Object, e As EventArgs) Handles InventoryButton.Click
-
+        Dim inventory As New IInventory(Me)
+        InterfacePanel.Controls.Clear()
+        inventory.Dock = DockStyle.Fill
+        InterfacePanel.Controls.Add(inventory)
+        inventory.BringToFront()
     End Sub
 
     Private Sub RentalsButton_Click(sender As Object, e As EventArgs) Handles RentalsButton.Click
-        Dim ucRental As New IEmprunt
-
-        MainForm.ActiveForm.Controls.Add(ucRental)
-        ucRental.BringToFront()
+        InterfacePanel.Controls.Clear()
+        Dim rentals As New IRentals(Me)
+        rentals.Dock = DockStyle.Fill
+        InterfacePanel.Controls.Add(rentals)
+        rentals.BringToFront()
     End Sub
 End Class

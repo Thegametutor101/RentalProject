@@ -108,7 +108,8 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppBundle\Model\ModelEquipement.vb" />
+    <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelRental.vb" />
     <Compile Include="AppBundle\UserControls\IEmprunt.Designer.vb">
       <DependentUpon>IEmprunt.vb</DependentUpon>
     </Compile>
@@ -125,6 +126,42 @@
       <DependentUpon>IInventory.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\IInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRent.Designer.vb">
+      <DependentUpon>IRent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentals.Designer.vb">
+      <DependentUpon>IRentals.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentals.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.Designer.vb">
+      <DependentUpon>IReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.Designer.vb">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddInventory.Designer.vb">
+      <DependentUpon>IAddInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyInventory.Designer.vb">
+      <DependentUpon>IModifyInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -156,6 +193,24 @@
     <EmbeddedResource Include="AppBundle\UserControls\IInventory.resx">
       <DependentUpon>IInventory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRent.resx">
+      <DependentUpon>IRent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
+      <DependentUpon>IRentals.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IReturn.resx">
+      <DependentUpon>IReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IAddInventory.resx">
+      <DependentUpon>IAddInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyInventory.resx">
+      <DependentUpon>IModifyInventory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -186,5 +241,8 @@
     <None Include="Resources\baseline_minimize_black_18dp.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\baseline-backward-black-18dp-4x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

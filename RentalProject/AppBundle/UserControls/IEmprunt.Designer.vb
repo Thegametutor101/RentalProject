@@ -30,12 +30,19 @@ Partial Class IEmprunt
         Me.CbPersonne = New System.Windows.Forms.ComboBox()
         Me.CbCategorie = New System.Windows.Forms.ComboBox()
         Me.CbEquipement = New System.Windows.Forms.ComboBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDownJour = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.NumericUpDownHeure = New System.Windows.Forms.NumericUpDown()
+        Me.LbEmprunt = New System.Windows.Forms.ListBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,7 +57,7 @@ Partial Class IEmprunt
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 100)
+        Me.Label2.Location = New System.Drawing.Point(3, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 13)
         Me.Label2.TabIndex = 4
@@ -67,7 +74,8 @@ Partial Class IEmprunt
         '
         'TbAutorise
         '
-        Me.TbAutorise.Location = New System.Drawing.Point(156, 192)
+        Me.TbAutorise.Location = New System.Drawing.Point(120, 192)
+        Me.TbAutorise.MaxLength = 30
         Me.TbAutorise.Name = "TbAutorise"
         Me.TbAutorise.Size = New System.Drawing.Size(200, 20)
         Me.TbAutorise.TabIndex = 6
@@ -75,42 +83,46 @@ Partial Class IEmprunt
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(156, 341)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(120, 297)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 7
         '
         'CbPersonne
         '
+        Me.CbPersonne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbPersonne.FormattingEnabled = True
-        Me.CbPersonne.Location = New System.Drawing.Point(156, 44)
+        Me.CbPersonne.Location = New System.Drawing.Point(120, 44)
         Me.CbPersonne.Name = "CbPersonne"
         Me.CbPersonne.Size = New System.Drawing.Size(200, 21)
         Me.CbPersonne.TabIndex = 8
         '
         'CbCategorie
         '
+        Me.CbCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbCategorie.FormattingEnabled = True
-        Me.CbCategorie.Location = New System.Drawing.Point(156, 97)
+        Me.CbCategorie.Location = New System.Drawing.Point(120, 97)
         Me.CbCategorie.Name = "CbCategorie"
         Me.CbCategorie.Size = New System.Drawing.Size(200, 21)
         Me.CbCategorie.TabIndex = 9
         '
         'CbEquipement
         '
+        Me.CbEquipement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CbEquipement.Enabled = False
         Me.CbEquipement.FormattingEnabled = True
-        Me.CbEquipement.Location = New System.Drawing.Point(156, 140)
+        Me.CbEquipement.Location = New System.Drawing.Point(120, 143)
         Me.CbEquipement.Name = "CbEquipement"
         Me.CbEquipement.Size = New System.Drawing.Size(200, 21)
         Me.CbEquipement.TabIndex = 10
         '
-        'NumericUpDown1
+        'NumericUpDownJour
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(156, 287)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(102, 20)
-        Me.NumericUpDown1.TabIndex = 11
+        Me.NumericUpDownJour.Location = New System.Drawing.Point(120, 255)
+        Me.NumericUpDownJour.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
+        Me.NumericUpDownJour.Name = "NumericUpDownJour"
+        Me.NumericUpDownJour.Size = New System.Drawing.Size(102, 20)
+        Me.NumericUpDownJour.TabIndex = 11
         '
         'Label4
         '
@@ -124,16 +136,16 @@ Partial Class IEmprunt
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(33, 289)
+        Me.Label5.Location = New System.Drawing.Point(117, 237)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(110, 13)
+        Me.Label5.Size = New System.Drawing.Size(107, 13)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Durer de l'emprunt (H)"
+        Me.Label5.Text = "Durer de l'emprunt (J)"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(33, 341)
+        Me.Label6.Location = New System.Drawing.Point(7, 304)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(107, 13)
         Me.Label6.TabIndex = 14
@@ -141,22 +153,81 @@ Partial Class IEmprunt
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(179, 387)
+        Me.Button1.Location = New System.Drawing.Point(141, 351)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(159, 23)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "Sauvegarder l'emprunt"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(337, 297)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(88, 17)
+        Me.CheckBox1.TabIndex = 16
+        Me.CheckBox1.Text = "Par date Fixe"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(237, 237)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(110, 13)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Durer de l'emprunt (H)"
+        '
+        'NumericUpDownHeure
+        '
+        Me.NumericUpDownHeure.Location = New System.Drawing.Point(240, 253)
+        Me.NumericUpDownHeure.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
+        Me.NumericUpDownHeure.Name = "NumericUpDownHeure"
+        Me.NumericUpDownHeure.Size = New System.Drawing.Size(102, 20)
+        Me.NumericUpDownHeure.TabIndex = 17
+        '
+        'LbEmprunt
+        '
+        Me.LbEmprunt.FormattingEnabled = True
+        Me.LbEmprunt.Location = New System.Drawing.Point(337, 39)
+        Me.LbEmprunt.Name = "LbEmprunt"
+        Me.LbEmprunt.Size = New System.Drawing.Size(246, 173)
+        Me.LbEmprunt.TabIndex = 19
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(421, 215)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(90, 13)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "Emprunt en cours"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(350, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(161, 13)
+        Me.Label9.TabIndex = 21
+        Me.Label9.Text = "Equipement     -    Date de retour"
+        '
         'IEmprunt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.LbEmprunt)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.NumericUpDownHeure)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.NumericUpDownJour)
         Me.Controls.Add(Me.CbEquipement)
         Me.Controls.Add(Me.CbCategorie)
         Me.Controls.Add(Me.CbPersonne)
@@ -167,7 +238,8 @@ Partial Class IEmprunt
         Me.Controls.Add(Me.Label1)
         Me.Name = "IEmprunt"
         Me.Size = New System.Drawing.Size(586, 440)
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -181,9 +253,15 @@ Partial Class IEmprunt
     Friend WithEvents CbPersonne As ComboBox
     Friend WithEvents CbCategorie As ComboBox
     Friend WithEvents CbEquipement As ComboBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NumericUpDownJour As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents NumericUpDownHeure As NumericUpDown
+    Friend WithEvents LbEmprunt As ListBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class
