@@ -43,15 +43,19 @@
     End Sub
 
     Private Sub RentButton_Click(sender As Object, e As EventArgs) Handles RentButton.Click
-        Dim rent As New IRent(Me)
+        Dim rent As New IEmprunt()
         rent.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(rent)
         rent.BringToFront()
     End Sub
 
     Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
-
+        Dim ret As New IReturn(Me)
+        ret.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(ret)
+        ret.BringToFront()
     End Sub
+
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         Dim search As New IRentalsSearch(mainForm, Me)

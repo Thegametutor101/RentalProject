@@ -17,7 +17,7 @@ Public Class EntityRental
     Public Function getRentals() As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne"
+        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)) as Emprunté_par, E2.nom as Nom_Équipement, initcap(E.autorisation) as autorisation from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("emprunt")
@@ -26,7 +26,7 @@ Public Class EntityRental
         Return table
     End Function
 
-    Public Function getRentalsById(id As Integer) As DataTable
+    Public Function getRentalsByIdFormat(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where ID = {id}"
@@ -145,4 +145,17 @@ Public Class EntityRental
         connection.Close()
         Return table
     End Function
+
+    Public Function getRentalByID(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        connection.Open()
+        command.CommandText = $"Select * from emprunt where ID = {id}"
+        Dim reader = command.ExecuteReader()
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
+        connection.Close()
+        Return rentalTable
+    End Function
+
 End Class
