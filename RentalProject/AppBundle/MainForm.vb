@@ -68,4 +68,11 @@
         InterfacePanel.Controls.Add(rentals)
         rentals.BringToFront()
     End Sub
+
+    Private Sub RentalsButton_Click(sender As Object, e As EventArgs) Handles RentalsButton.Click
+        Dim ucRental As New IEmprunt
+
+        MainForm.ActiveForm.Controls.Add(ucRental)
+        ucRental.BringToFront()
+    End Sub
 End Class
