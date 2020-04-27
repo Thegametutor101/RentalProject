@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ModelRental
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
+    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
     Shared instance As ModelRental = Nothing
     Public Shared Function getInstance() As ModelRental
@@ -33,16 +33,16 @@ Public Class ModelRental
     Public Function addRental(ByVal noPersonne As Integer,
                               ByVal noEquipement As String,
                               ByVal autorisation As String,
-                              ByVal dateEmprunt As String,
+                              ByVal dateEmprunt As Date,
                               ByVal duree As String,
-                              ByVal dateRetour As String)
+                              ByVal dateRetour As Date)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
             command.CommandText = $"insert into emprunt
  
-                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{dateEmprunt}','{duree}', '{dateRetour}')"
+                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()

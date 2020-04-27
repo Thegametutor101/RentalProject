@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class IEmprunt
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
+    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
 
     Dim reader As MySqlDataReader
@@ -40,7 +40,7 @@ Public Class IEmprunt
             MessageBox.Show("La date donné est en dehors des heures du cégep")
             DateTimePicker1.Value = DateTimePicker1.Value.AddDays(2)
         End If
-
+        '''TODO date validations during weekends and college closed.
         If (DateTimePicker1.Value.DayOfWeek = 0) Then
             MessageBox.Show("La date donné est en dehors des heures du cégep")
             DateTimePicker1.Value = DateTimePicker1.Value.AddDays(1)
@@ -67,9 +67,6 @@ Public Class IEmprunt
 
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
@@ -118,7 +115,7 @@ Public Class IEmprunt
         Dim no_equipement As String
         Dim autorisation As String
         Dim duree As String
-        Dim dateRetour As String
+        Dim dateRetour As Date
         Try
             no_personne = CInt(ListPersonne(CbPersonne.SelectedIndex, 0))
             no_equipement = ListEquipement(CbEquipement.SelectedIndex, 0)
@@ -144,6 +141,7 @@ Public Class IEmprunt
             ListCategorie(ctr1, 1) = reader.GetString(1)
             ctr1 += 1
         End While
+        CbEquipement.Items.Clear()
         connection.Close()
     End Function
 
@@ -162,6 +160,7 @@ Public Class IEmprunt
             ListPersonne(ctr, 2) = reader.GetString(2)
             ctr += 1
         End While
+        CbCategorie.Items.Clear()
         connection.Close()
     End Function
 
@@ -178,7 +177,7 @@ Public Class IEmprunt
 inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" + noPersonne + ";"
         reader = com.ExecuteReader
         While (reader.Read)
-            LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetString(2))
+            LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetDateTime(2).ToString())
 
             ctrEmprunt += 1
         End While
