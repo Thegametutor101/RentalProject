@@ -145,4 +145,35 @@ Public Class EntityRental
         connection.Close()
         Return table
     End Function
+    Public Sub deleteRental(id As String)
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Delete from emprunt where upper(ID) = upper('{id}')"
+        updateStateEquipment(id)
+        connection.Open()
+        command.ExecuteNonQuery()
+        connection.Close()
+    End Sub
+
+    Public Sub updateStateEquipment(id As String)
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Update equipement set disponibilite = 'oui' where noEquipement = (Select noEquipement from emprunt where upper(ID) = upper('{id}'))"
+        connection.Open()
+        command.ExecuteNonQuery()
+        connection.Close()
+    End Sub
+
+        command.CommandText = $"Select * from emprunt where upper(ID) = upper('{id}')"
+    Public Function getRentalByID(id As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
+        connection.Close()
+        Return rentalTable
+    End Function
+
 End Class

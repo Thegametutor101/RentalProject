@@ -131,6 +131,12 @@
     <Compile Include="AppBundle\UserControls\IRentals.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.Designer.vb">
+      <DependentUpon>IReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IRentalsSearch.Designer.vb">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
       <DependentUpon>IRentals.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IReturn.resx">
+      <DependentUpon>IReturn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
