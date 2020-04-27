@@ -137,6 +137,18 @@
     <Compile Include="AppBundle\UserControls\IRentalsSearch.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IAddInventory.Designer.vb">
+      <DependentUpon>IAddInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyInventory.Designer.vb">
+      <DependentUpon>IModifyInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -171,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IAddInventory.resx">
+      <DependentUpon>IAddInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyInventory.resx">
+      <DependentUpon>IModifyInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
