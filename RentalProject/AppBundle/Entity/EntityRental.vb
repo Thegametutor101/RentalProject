@@ -17,7 +17,7 @@ Public Class EntityRental
     Public Function getRentals() As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne"
+        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)) as Emprunté_par, E2.nom as Nom_Équipement, initcap(E.autorisation) as autorisation from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("emprunt")
@@ -26,7 +26,7 @@ Public Class EntityRental
         Return table
     End Function
 
-    Public Function getRentalsById(id As Integer) As DataTable
+    Public Function getRentalsByIdFormat(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where ID = {id}"
@@ -145,30 +145,12 @@ Public Class EntityRental
         connection.Close()
         Return table
     End Function
-    Public Sub deleteRental(id As String)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Delete from emprunt where upper(ID) = upper('{id}')"
-        updateStateEquipment(id)
-        connection.Open()
-        command.ExecuteNonQuery()
-        connection.Close()
-    End Sub
 
-    Public Sub updateStateEquipment(id As String)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Update equipement set disponibilite = 'oui' where noEquipement = (Select noEquipement from emprunt where upper(ID) = upper('{id}'))"
-        connection.Open()
-        command.ExecuteNonQuery()
-        connection.Close()
-    End Sub
-
-        command.CommandText = $"Select * from emprunt where upper(ID) = upper('{id}')"
-    Public Function getRentalByID(id As String) As DataTable
+    Public Function getRentalByID(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
+        command.CommandText = $"Select * from emprunt where ID = {id}"
         Dim reader = command.ExecuteReader()
         Dim rentalTable As New DataTable("emprunt")
         rentalTable.Load(reader)

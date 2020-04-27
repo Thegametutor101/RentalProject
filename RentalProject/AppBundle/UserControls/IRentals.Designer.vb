@@ -30,17 +30,17 @@ Partial Class IRentals
         Me.RentButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.RentedBy = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Authorisation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ViewPanel = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuPanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.ViewPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.ViewPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuPanel
@@ -54,19 +54,18 @@ Partial Class IRentals
         Me.MenuPanel.Controls.Add(Me.Panel2)
         Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuPanel.Location = New System.Drawing.Point(0, 0)
-        Me.MenuPanel.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuPanel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MenuPanel.Name = "MenuPanel"
-        Me.MenuPanel.Size = New System.Drawing.Size(236, 440)
+        Me.MenuPanel.Size = New System.Drawing.Size(315, 542)
         Me.MenuPanel.TabIndex = 0
         '
         'WarningLabel
         '
         Me.WarningLabel.AutoSize = True
         Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.WarningLabel.Location = New System.Drawing.Point(0, 377)
-        Me.WarningLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.WarningLabel.Location = New System.Drawing.Point(0, 450)
         Me.WarningLabel.Name = "WarningLabel"
-        Me.WarningLabel.Size = New System.Drawing.Size(146, 13)
+        Me.WarningLabel.Size = New System.Drawing.Size(194, 17)
         Me.WarningLabel.TabIndex = 6
         Me.WarningLabel.Text = "* Veuillez en choisir un avant."
         '
@@ -79,9 +78,10 @@ Partial Class IRentals
         Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
-        Me.DetailsButton.Location = New System.Drawing.Point(0, 481)
+        Me.DetailsButton.Location = New System.Drawing.Point(0, 467)
+        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DetailsButton.Name = "DetailsButton"
-        Me.DetailsButton.Size = New System.Drawing.Size(276, 61)
+        Me.DetailsButton.Size = New System.Drawing.Size(263, 75)
         Me.DetailsButton.TabIndex = 5
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
@@ -95,9 +95,10 @@ Partial Class IRentals
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(0, 132)
+        Me.SearchButton.Location = New System.Drawing.Point(0, 162)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(276, 61)
+        Me.SearchButton.Size = New System.Drawing.Size(263, 75)
         Me.SearchButton.TabIndex = 4
         Me.SearchButton.Text = "Rechercher un Emprunt"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -111,9 +112,10 @@ Partial Class IRentals
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(0, 71)
+        Me.ReturnButton.Location = New System.Drawing.Point(0, 87)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(276, 61)
+        Me.ReturnButton.Size = New System.Drawing.Size(263, 75)
         Me.ReturnButton.TabIndex = 3
         Me.ReturnButton.Text = "Retourner un Équipement"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -127,9 +129,10 @@ Partial Class IRentals
         Me.RentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentButton.ForeColor = System.Drawing.Color.White
-        Me.RentButton.Location = New System.Drawing.Point(0, 10)
+        Me.RentButton.Location = New System.Drawing.Point(0, 12)
+        Me.RentButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RentButton.Name = "RentButton"
-        Me.RentButton.Size = New System.Drawing.Size(276, 61)
+        Me.RentButton.Size = New System.Drawing.Size(263, 75)
         Me.RentButton.TabIndex = 2
         Me.RentButton.Text = "Ajouter un Emprunt"
         Me.RentButton.UseVisualStyleBackColor = False
@@ -137,9 +140,10 @@ Partial Class IRentals
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(276, 10)
+        Me.Panel3.Location = New System.Drawing.Point(263, 12)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(39, 532)
+        Me.Panel3.Size = New System.Drawing.Size(52, 530)
         Me.Panel3.TabIndex = 1
         '
         'Panel2
@@ -147,10 +151,29 @@ Partial Class IRentals
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(315, 10)
+        Me.Panel2.Size = New System.Drawing.Size(315, 12)
         Me.Panel2.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(315, 62)
+        Me.Panel1.TabIndex = 1
+        '
+        'Panel4
+        '
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(315, 62)
+        Me.Panel4.TabIndex = 1
         '
         'ListView1
         '
@@ -159,9 +182,10 @@ Partial Class IRentals
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(350, 440)
+        Me.ListView1.Size = New System.Drawing.Size(466, 542)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -186,49 +210,30 @@ Partial Class IRentals
         Me.ViewPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ViewPanel.Controls.Add(Me.ListView1)
         Me.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ViewPanel.Location = New System.Drawing.Point(236, 0)
-        Me.ViewPanel.Margin = New System.Windows.Forms.Padding(2)
+        Me.ViewPanel.Location = New System.Drawing.Point(315, 0)
+        Me.ViewPanel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ViewPanel.Name = "ViewPanel"
-        Me.ViewPanel.Size = New System.Drawing.Size(350, 440)
+        Me.ViewPanel.Size = New System.Drawing.Size(466, 542)
         Me.ViewPanel.TabIndex = 1
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(236, 50)
-        Me.Panel1.TabIndex = 1
-        '
-        'Panel4
-        '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(236, 50)
-        Me.Panel4.TabIndex = 1
         '
         'IRentals
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.ViewPanel)
         Me.Controls.Add(Me.MenuPanel)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(586, 440)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IRentals"
-        Me.Size = New System.Drawing.Size(586, 440)
+        Me.Size = New System.Drawing.Size(781, 542)
         Me.MenuPanel.ResumeLayout(False)
         Me.MenuPanel.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.ViewPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
+        Me.ViewPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -237,6 +242,8 @@ Partial Class IRentals
     Friend WithEvents RentButton As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel4 As Panel
     Friend WithEvents WarningLabel As Label
     Friend WithEvents DetailsButton As Button
     Friend WithEvents SearchButton As Button

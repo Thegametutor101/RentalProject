@@ -24,7 +24,7 @@ Public Class IModifyInventory
 
     Private Sub IModifyInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sélection des données de la BD
-        Dim con As New MySqlConnection("Server='localhost';Database='BD';Uid='root';Pwd='';Port=3306")
+        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
         com.Connection = con
         Dim equip As Integer
@@ -82,7 +82,7 @@ Public Class IModifyInventory
     End Sub
 
     Private Sub ButtonModif_Click(sender As Object, e As EventArgs) Handles ButtonModif.Click
-        Dim con As New MySqlConnection("Server='localhost';Database='BD';Uid='root';Pwd='';Port=3306")
+        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
         Dim read As MySqlDataReader
         'Confirmation que tous les champs sont remplis

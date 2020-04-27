@@ -124,8 +124,8 @@ Public Class IEmprunt
             no_equipement = ListEquipement(CbEquipement.SelectedIndex, 0)
             autorisation = TbAutorise.Text
             duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
-            dateRetour = DateTimePicker1.Text
-            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, DateTimePicker1.Text, nomComplet)
+            dateRetour = DateTimePicker1.Value
+            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour)
             empruntEntity.updateEquipementStatus(no_equipement)
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
@@ -164,6 +164,7 @@ Public Class IEmprunt
         End While
         connection.Close()
     End Function
+
     Public Function refreshEmpruntEnCours()
         Dim noPersonne As String
         Dim ctrEmprunt As Integer
@@ -182,7 +183,6 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
             ctrEmprunt += 1
         End While
         connection.Close()
-
     End Function
 End Class
 
