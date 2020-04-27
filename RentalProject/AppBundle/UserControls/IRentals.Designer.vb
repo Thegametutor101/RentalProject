@@ -24,17 +24,17 @@ Partial Class IRentals
     Private Sub InitializeComponent()
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.WarningLabel = New System.Windows.Forms.Label()
-        Me.ShowButton = New System.Windows.Forms.Button()
+        Me.DetailsButton = New System.Windows.Forms.Button()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.ReturnButton = New System.Windows.Forms.Button()
         Me.RentButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ViewPanel = New System.Windows.Forms.Panel()
         Me.RentedBy = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Authorisation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ViewPanel = New System.Windows.Forms.Panel()
         Me.MenuPanel.SuspendLayout()
         Me.ViewPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -42,7 +42,7 @@ Partial Class IRentals
         'MenuPanel
         '
         Me.MenuPanel.Controls.Add(Me.WarningLabel)
-        Me.MenuPanel.Controls.Add(Me.ShowButton)
+        Me.MenuPanel.Controls.Add(Me.DetailsButton)
         Me.MenuPanel.Controls.Add(Me.SearchButton)
         Me.MenuPanel.Controls.Add(Me.ReturnButton)
         Me.MenuPanel.Controls.Add(Me.RentButton)
@@ -64,21 +64,21 @@ Partial Class IRentals
         Me.WarningLabel.TabIndex = 6
         Me.WarningLabel.Text = "* Veuillez en choisir un avant."
         '
-        'ShowButton
+        'DetailsButton
         '
-        Me.ShowButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.ShowButton.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ShowButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ShowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.ShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ShowButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ShowButton.ForeColor = System.Drawing.Color.White
-        Me.ShowButton.Location = New System.Drawing.Point(0, 481)
-        Me.ShowButton.Name = "ShowButton"
-        Me.ShowButton.Size = New System.Drawing.Size(276, 61)
-        Me.ShowButton.TabIndex = 5
-        Me.ShowButton.Text = "Afficher un Emprunt"
-        Me.ShowButton.UseVisualStyleBackColor = False
+        Me.DetailsButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DetailsButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DetailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DetailsButton.ForeColor = System.Drawing.Color.White
+        Me.DetailsButton.Location = New System.Drawing.Point(0, 481)
+        Me.DetailsButton.Name = "DetailsButton"
+        Me.DetailsButton.Size = New System.Drawing.Size(276, 61)
+        Me.DetailsButton.TabIndex = 5
+        Me.DetailsButton.Text = "Afficher les Détails"
+        Me.DetailsButton.UseVisualStyleBackColor = False
         '
         'SearchButton
         '
@@ -148,12 +148,30 @@ Partial Class IRentals
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RentedBy, Me.EquipmentName, Me.Authorisation})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(467, 542)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'RentedBy
+        '
+        Me.RentedBy.Text = "Emprunté par"
+        Me.RentedBy.Width = 113
+        '
+        'EquipmentName
+        '
+        Me.EquipmentName.Text = "Nom Équipement"
+        Me.EquipmentName.Width = 132
+        '
+        'Authorisation
+        '
+        Me.Authorisation.Text = "Autorisation"
+        Me.Authorisation.Width = 104
         '
         'ViewPanel
         '
@@ -164,18 +182,6 @@ Partial Class IRentals
         Me.ViewPanel.Name = "ViewPanel"
         Me.ViewPanel.Size = New System.Drawing.Size(467, 542)
         Me.ViewPanel.TabIndex = 1
-        '
-        'RentedBy
-        '
-        Me.RentedBy.Text = "Emprunté par"
-        '
-        'EquipmentName
-        '
-        Me.EquipmentName.Text = "Nom Équipement"
-        '
-        'Authorisation
-        '
-        Me.Authorisation.Text = "Authorisation"
         '
         'IRentals
         '
@@ -201,7 +207,7 @@ Partial Class IRentals
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents WarningLabel As Label
-    Friend WithEvents ShowButton As Button
+    Friend WithEvents DetailsButton As Button
     Friend WithEvents SearchButton As Button
     Friend WithEvents ReturnButton As Button
     Friend WithEvents ListView1 As ListView
