@@ -11,9 +11,10 @@
     <AssemblyName>RentalProject</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -107,6 +108,14 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\UserControls\IEmprunt.Designer.vb">
+      <DependentUpon>IEmprunt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEmprunt.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IHome.Designer.vb">
       <DependentUpon>IHome.vb</DependentUpon>
     </Compile>
@@ -129,6 +138,18 @@
       <DependentUpon>IRentals.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\IRentals.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.Designer.vb">
+      <DependentUpon>IReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.Designer.vb">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsSearch.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\IAddInventory.Designer.vb">
@@ -163,6 +184,9 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IEmprunt.resx">
+      <DependentUpon>IEmprunt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IHome.resx">
       <DependentUpon>IHome.vb</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
       <DependentUpon>IRentals.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IReturn.resx">
+      <DependentUpon>IReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
+      <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IAddInventory.resx">
       <DependentUpon>IAddInventory.vb</DependentUpon>
@@ -210,9 +240,7 @@
   <ItemGroup>
     <None Include="Resources\baseline_minimize_black_18dp.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppBundle\Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\baseline-backward-black-18dp-4x.png" />
   </ItemGroup>

@@ -31,9 +31,10 @@ Partial Class IHome
         Me.Title.AutoSize = True
         Me.Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Title.Location = New System.Drawing.Point(188, 179)
+        Me.Title.Location = New System.Drawing.Point(141, 145)
+        Me.Title.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(403, 58)
+        Me.Title.Size = New System.Drawing.Size(324, 50)
         Me.Title.TabIndex = 0
         Me.Title.Text = "Bienvenue!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "__________________________" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -43,22 +44,24 @@ Partial Class IHome
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(344, 263)
+        Me.Label1.Location = New System.Drawing.Point(258, 214)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 20)
+        Me.Label1.Size = New System.Drawing.Size(85, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "bla bla bla..."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Home
+        'IHome
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Title)
-        Me.Name = "Home"
-        Me.Size = New System.Drawing.Size(782, 542)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Name = "IHome"
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

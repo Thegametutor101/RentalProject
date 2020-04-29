@@ -12,7 +12,7 @@ Public Class IAddInventory
 
     Private Sub IAddInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Connection à la BD
-        Dim con As New MySqlConnection("Server='localhost';Database='BD';Uid='root';Pwd='';Port=3306")
+        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         'Aller chercher les catégories
         Dim com As New MySqlCommand
         com.Connection = con
@@ -60,7 +60,7 @@ Public Class IAddInventory
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
         'Confirmation que tous les champs sont remplis
-        Dim con As New MySqlConnection("Server='localhost';Database='BD';Uid='root';Pwd='';Port=3306")
+        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
         If TBName.Text = "" Or CBCat.Text = "" Or TBEtat.Text = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
