@@ -21,24 +21,27 @@
     Public Function loadData(data As DataTable)
         ListView1.Items.Clear()
         Dim rentalTable As DataTable = data
-        For Each it As DataRow In rentalTable.Rows
-            If Not IsNothing(it) Then
-                ListView1.Items.Add(New ListViewItem({it.Item(1), it.Item(2), it.Item(3)}))
-            End If
-        Next
+        If Not rentalTable.Rows.Count > 0 Then
+            MessageBox.Show("Aucun Emprunt dans la base de donnée.")
+            Me.SendToBack()
+        Else
+            For Each it As DataRow In rentalTable.Rows
+                If Not IsNothing(it) Then
+                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2), it.Item(3)}))
+                End If
+            Next
+        End If
     End Function
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        If ListView1.Items.Count > 0 Then
-            If Not IsNothing(ListView1.FocusedItem) AndAlso ListView1.FocusedItem.Index >= 0 Then
-                DetailsButton.Enabled = True
-            Else
-                DetailsButton.Enabled = False
-            End If
+        If Not IsNothing(ListView1.FocusedItem) AndAlso ListView1.FocusedItem.Index >= 0 Then
+            DetailsButton.Enabled = True
+        Else
+            DetailsButton.Enabled = False
         End If
     End Sub
 
-    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByRenterName.CheckedChanged, ByCategoryName.CheckedChanged, ByAuthorisationName.CheckedChanged
+    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByRenterName.CheckedChanged, ByAuthorisationName.CheckedChanged, ByCategoryName.CheckedChanged
         RenterFirstName.Text = ""
         RenterLastName.Text = ""
         CategoryName.Text = ""
@@ -62,6 +65,10 @@
     End Sub
 
     Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles RenterFirstName.TextChanged, RenterLastName.TextChanged, CategoryName.TextChanged, AuthorisationName.TextChanged
+        RenterFirstName.Text = Trim(RenterFirstName.Text)
+        RenterLastName.Text = Trim(RenterLastName.Text)
+        CategoryName.Text = Trim(CategoryName.Text)
+        AuthorisationName.Text = Trim(AuthorisationName.Text)
         If (RenterFirstName.Text.Length > 0 Or RenterLastName.Text.Length > 0) Or CategoryName.Text.Length > 0 Or AuthorisationName.Text.Length > 0 Then
             SearchButton.Enabled = True
         Else
@@ -70,16 +77,38 @@
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-        If (RenterFirstName.Text.Length > 0 Or RenterLastName.Text.Length > 0) Then
-            MessageBox.Show("ok renter name")
+        Dim firstName = Trim(RenterFirstName.Text)
+        Dim lastName = Trim(RenterLastName.Text)
+        Dim category = Trim(CategoryName.Text)
+        Dim authorisor = Trim(AuthorisationName.Text)
+        Dim data As DataTable
+        If (firstName.Length > 0 Or lastName.Length > 0) Then
+            If (firstName.Length > 0 And lastName.Length > 0) Then
+                data = EntityRental.getInstance().getRentalsByRenterFirstAndLastName(firstName, lastName)
+            ElseIf (Not (firstName.Length > 0) And lastName.Length > 0) Then
+                data = EntityRental.getInstance().getRentalsByRenterLastName(lastName)
+            ElseIf (firstName.Length > 0 And Not (lastName.Length > 0)) Then
+                data = EntityRental.getInstance().getRentalsByRenterFirstName(firstName)
+            End If
+            loadData(data)
         ElseIf CategoryName.Text.Length > 0 Then
-            MessageBox.Show("ok category name")
+            data = EntityRental.getInstance().getRentalsByCategoryName(category)
+            loadData(data)
         ElseIf AuthorisationName.Text.Length > 0 Then
-            MessageBox.Show("ok rentee name")
+            data = EntityRental.getInstance().getRentalsByRenteeName(authorisor)
+            loadData(data)
         End If
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         Me.SendToBack()
+    End Sub
+
+    Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
+        If Not IsNothing(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
+            Dim detail As New IRentalsDetails(mainForm, CInt(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text))
+            mainForm.InterfacePanel.Controls.Add(detail)
+            detail.BringToFront()
+        End If
     End Sub
 End Class

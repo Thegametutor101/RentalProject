@@ -158,4 +158,15 @@ Public Class EntityRental
         Return rentalTable
     End Function
 
+    Public Function getRentalDetailed(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        connection.Open()
+        command.CommandText = $"Select E.ID, P.prenom, P.nom, P.statut, P.noBureau, E2.nom, C2.nom, E2.etat, E.autorisation, E.DateEmprunt, E.duree, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id}"
+        Dim reader = command.ExecuteReader()
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
+        connection.Close()
+        Return rentalTable
+    End Function
 End Class

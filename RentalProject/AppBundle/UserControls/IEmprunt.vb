@@ -14,6 +14,14 @@ Public Class IEmprunt
     Dim slCategorie As String = "select noCategorie,nom from categorie;"
     Dim slEquipement As String = "select noEquipement,nom,Etat from Equipement where noCategorie="
     Dim nomComplet As String
+    Dim rentals As IRentals
+
+    Sub New(rental As IRentals)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        rentals = rental
+    End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
     End Sub
@@ -183,6 +191,11 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
         End While
         connection.Close()
     End Function
+
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+        Me.SendToBack()
+        rentals.loadData(EntityRental.getInstance().getRentals())
+    End Sub
 End Class
 
 

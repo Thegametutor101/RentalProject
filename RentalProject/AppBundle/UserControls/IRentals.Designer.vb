@@ -33,8 +33,9 @@ Partial Class IRentals
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.RentedBy = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Equipment = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Authorisation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ViewPanel = New System.Windows.Forms.Panel()
         Me.MenuPanel.SuspendLayout()
@@ -79,7 +80,7 @@ Partial Class IRentals
         Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
         Me.DetailsButton.Location = New System.Drawing.Point(0, 467)
-        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(4)
         Me.DetailsButton.Name = "DetailsButton"
         Me.DetailsButton.Size = New System.Drawing.Size(263, 75)
         Me.DetailsButton.TabIndex = 5
@@ -96,7 +97,7 @@ Partial Class IRentals
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Location = New System.Drawing.Point(0, 162)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(263, 75)
         Me.SearchButton.TabIndex = 4
@@ -113,7 +114,7 @@ Partial Class IRentals
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
         Me.ReturnButton.Location = New System.Drawing.Point(0, 87)
-        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(263, 75)
         Me.ReturnButton.TabIndex = 3
@@ -130,7 +131,7 @@ Partial Class IRentals
         Me.RentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentButton.ForeColor = System.Drawing.Color.White
         Me.RentButton.Location = New System.Drawing.Point(0, 12)
-        Me.RentButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RentButton.Margin = New System.Windows.Forms.Padding(4)
         Me.RentButton.Name = "RentButton"
         Me.RentButton.Size = New System.Drawing.Size(263, 75)
         Me.RentButton.TabIndex = 2
@@ -141,7 +142,7 @@ Partial Class IRentals
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel3.Location = New System.Drawing.Point(263, 12)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(52, 530)
         Me.Panel3.TabIndex = 1
@@ -177,12 +178,12 @@ Partial Class IRentals
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RentedBy, Me.EquipmentName, Me.Authorisation})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.RentedBy, Me.Equipment, Me.Authorisation})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(466, 542)
@@ -190,20 +191,22 @@ Partial Class IRentals
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
+        'ID
+        '
+        Me.ID.Text = "ID"
+        '
         'RentedBy
         '
         Me.RentedBy.Text = "Emprunté par"
-        Me.RentedBy.Width = 113
         '
-        'EquipmentName
+        'Equipment
         '
-        Me.EquipmentName.Text = "Nom Équipement"
-        Me.EquipmentName.Width = 132
+        Me.Equipment.Text = "Équipement"
         '
         'Authorisation
         '
-        Me.Authorisation.Text = "Autorisation"
-        Me.Authorisation.Width = 104
+        Me.Authorisation.Text = "Autorisé par"
+        Me.Authorisation.Width = 131
         '
         'ViewPanel
         '
@@ -250,7 +253,8 @@ Partial Class IRentals
     Friend WithEvents ReturnButton As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ViewPanel As Panel
+    Friend WithEvents ID As ColumnHeader
     Friend WithEvents RentedBy As ColumnHeader
-    Friend WithEvents EquipmentName As ColumnHeader
+    Friend WithEvents Equipment As ColumnHeader
     Friend WithEvents Authorisation As ColumnHeader
 End Class

@@ -11,6 +11,7 @@
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         Me.SendToBack()
+        rentals.loadData(EntityRental.getInstance().getRentals())
     End Sub
 
     Private Sub IReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
