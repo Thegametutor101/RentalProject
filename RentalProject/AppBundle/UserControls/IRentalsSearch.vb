@@ -15,15 +15,24 @@
     End Sub
 
     Private Sub IRentalsSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadData(EntityRental.getInstance().getRentals())
+        loadData(EntityRental.getInstance().getRentals(), True)
     End Sub
 
-    Public Function loadData(data As DataTable)
+    Public Function loadData(data As DataTable, type As Boolean)
         ListView1.Items.Clear()
         Dim rentalTable As DataTable = data
         If Not rentalTable.Rows.Count > 0 Then
-            MessageBox.Show("Aucun Emprunt dans la base de donnée.")
-            Me.SendToBack()
+            If type Then
+                MessageBox.Show("Aucun Emprunt dans la base de donnée.")
+                Me.SendToBack()
+            Else
+                RenterFirstName.Text = ""
+                RenterLastName.Text = ""
+                CategoryName.Text = ""
+                AuthorisationName.Text = ""
+                MessageBox.Show($"Aucun Emprunt correspondant à vos critères{Environment.NewLine}dans la base de donnée.")
+                loadData(EntityRental.getInstance().getRentals(), True)
+            End If
         Else
             For Each it As DataRow In rentalTable.Rows
                 If Not IsNothing(it) Then
@@ -90,13 +99,13 @@
             ElseIf (firstName.Length > 0 And Not (lastName.Length > 0)) Then
                 data = EntityRental.getInstance().getRentalsByRenterFirstName(firstName)
             End If
-            loadData(data)
+            loadData(data, False)
         ElseIf CategoryName.Text.Length > 0 Then
             data = EntityRental.getInstance().getRentalsByCategoryName(category)
-            loadData(data)
+            loadData(data, False)
         ElseIf AuthorisationName.Text.Length > 0 Then
             data = EntityRental.getInstance().getRentalsByRenteeName(authorisor)
-            loadData(data)
+            loadData(data, False)
         End If
     End Sub
 

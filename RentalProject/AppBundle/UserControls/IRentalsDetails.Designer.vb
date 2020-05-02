@@ -24,6 +24,7 @@ Partial Class IRentalsDetails
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +50,16 @@ Partial Class IRentalsDetails
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(125, 98)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(26, 20)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "ID"
+        '
         'IRentalsDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -56,15 +67,18 @@ Partial Class IRentalsDetails
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IRentalsDetails"
         Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BackButton As Button
+    Friend WithEvents Label1 As Label
 End Class
