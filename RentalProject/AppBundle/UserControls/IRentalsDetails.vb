@@ -34,5 +34,9 @@
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         Dim data As DataTable = EntityRental.getInstance().getRentalDatesbyID(RentalID.Text)
+        Dim modifyRental As New IModifyRental(mainForm, data)
+        modifyRental.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(modifyRental)
+        modifyRental.BringToFront()
     End Sub
 End Class

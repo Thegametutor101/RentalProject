@@ -11,17 +11,6 @@ Public Class IModifyInventory
         Inventory = IInventory
     End Sub
 
-    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
-        'Confirmation d'annulation
-        Dim result As DialogResult = MessageBox.Show("Êtes vous sûr de vouloir annuler la modification de cet équipement?", "Confirmation", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            TBName.Text = ""
-            CBCat.SelectedText = ""
-            TBEtat.Text = ""
-            Me.SendToBack()
-        End If
-    End Sub
-
     Private Sub IModifyInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sélection des données de la BD
         Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
@@ -76,9 +65,11 @@ Public Class IModifyInventory
         End Try
     End Sub
 
-    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, ButtonCancel.Click
         'Retour au UC inventaire
-        Me.SendToBack()
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.SendToBack()
+        End If
     End Sub
 
     Private Sub ButtonModif_Click(sender As Object, e As EventArgs) Handles ButtonModif.Click
@@ -102,9 +93,9 @@ Public Class IModifyInventory
                 'Try
                 con.Open()
                 read = com.ExecuteReader
-                    read.Read()
-                    No = read(0)
-                    con.Close()
+                read.Read()
+                No = read(0)
+                con.Close()
                 'Catch ex As Exception
                 'MessageBox.Show(ex.Message, "Erreur")
                 'Finally

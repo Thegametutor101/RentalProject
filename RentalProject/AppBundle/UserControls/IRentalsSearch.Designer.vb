@@ -61,6 +61,7 @@ Partial Class IRentalsSearch
         '
         'BackButton
         '
+        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
         Me.BackButton.FlatAppearance.BorderSize = 0
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
@@ -247,6 +248,7 @@ Partial Class IRentalsSearch
         'SearchButton
         '
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
@@ -263,6 +265,7 @@ Partial Class IRentalsSearch
         'DetailsButton
         '
         Me.DetailsButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DetailsButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DetailsButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.DetailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))

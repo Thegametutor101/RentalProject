@@ -66,6 +66,7 @@ Partial Class IRentalsDetails
         'ModifyButton
         '
         Me.ModifyButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ModifyButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ModifyButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.ModifyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ModifyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
@@ -81,6 +82,7 @@ Partial Class IRentalsDetails
         '
         'BackButton
         '
+        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
         Me.BackButton.FlatAppearance.BorderSize = 0
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
@@ -125,6 +127,7 @@ Partial Class IRentalsDetails
         '
         'RentalID
         '
+        Me.RentalID.Enabled = False
         Me.RentalID.Location = New System.Drawing.Point(86, 26)
         Me.RentalID.Multiline = True
         Me.RentalID.Name = "RentalID"
@@ -135,7 +138,7 @@ Partial Class IRentalsDetails
         'ReturnDate
         '
         Me.ReturnDate.Enabled = False
-        Me.ReturnDate.Location = New System.Drawing.Point(461, 433)
+        Me.ReturnDate.Location = New System.Drawing.Point(461, 412)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(251, 22)
         Me.ReturnDate.TabIndex = 56
@@ -143,49 +146,54 @@ Partial Class IRentalsDetails
         'RentalDate
         '
         Me.RentalDate.Enabled = False
-        Me.RentalDate.Location = New System.Drawing.Point(105, 433)
+        Me.RentalDate.Location = New System.Drawing.Point(105, 412)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(251, 22)
         Me.RentalDate.TabIndex = 55
         '
         'Authorisation
         '
-        Me.Authorisation.Location = New System.Drawing.Point(207, 320)
+        Me.Authorisation.Enabled = False
+        Me.Authorisation.Location = New System.Drawing.Point(218, 320)
         Me.Authorisation.Multiline = True
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
-        Me.Authorisation.Size = New System.Drawing.Size(294, 22)
+        Me.Authorisation.Size = New System.Drawing.Size(283, 22)
         Me.Authorisation.TabIndex = 54
         '
         'EquipmentState
         '
+        Me.EquipmentState.Enabled = False
         Me.EquipmentState.Location = New System.Drawing.Point(507, 249)
         Me.EquipmentState.Multiline = True
         Me.EquipmentState.Name = "EquipmentState"
         Me.EquipmentState.ReadOnly = True
-        Me.EquipmentState.Size = New System.Drawing.Size(220, 22)
+        Me.EquipmentState.Size = New System.Drawing.Size(215, 22)
         Me.EquipmentState.TabIndex = 53
         '
         'CategoryName
         '
-        Me.CategoryName.Location = New System.Drawing.Point(188, 247)
+        Me.CategoryName.Enabled = False
+        Me.CategoryName.Location = New System.Drawing.Point(218, 247)
         Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
         Me.CategoryName.ReadOnly = True
-        Me.CategoryName.Size = New System.Drawing.Size(245, 22)
+        Me.CategoryName.Size = New System.Drawing.Size(215, 22)
         Me.CategoryName.TabIndex = 52
         '
         'EquipmentName
         '
-        Me.EquipmentName.Location = New System.Drawing.Point(204, 202)
+        Me.EquipmentName.Enabled = False
+        Me.EquipmentName.Location = New System.Drawing.Point(218, 200)
         Me.EquipmentName.Multiline = True
         Me.EquipmentName.Name = "EquipmentName"
         Me.EquipmentName.ReadOnly = True
-        Me.EquipmentName.Size = New System.Drawing.Size(297, 22)
+        Me.EquipmentName.Size = New System.Drawing.Size(283, 22)
         Me.EquipmentName.TabIndex = 51
         '
         'RenterOffice
         '
+        Me.RenterOffice.Enabled = False
         Me.RenterOffice.Location = New System.Drawing.Point(626, 140)
         Me.RenterOffice.Multiline = True
         Me.RenterOffice.Name = "RenterOffice"
@@ -195,6 +203,7 @@ Partial Class IRentalsDetails
         '
         'RenterFirstName
         '
+        Me.RenterFirstName.Enabled = False
         Me.RenterFirstName.Location = New System.Drawing.Point(218, 93)
         Me.RenterFirstName.Multiline = True
         Me.RenterFirstName.Name = "RenterFirstName"
@@ -204,6 +213,7 @@ Partial Class IRentalsDetails
         '
         'RenterLastName
         '
+        Me.RenterLastName.Enabled = False
         Me.RenterLastName.Location = New System.Drawing.Point(507, 91)
         Me.RenterLastName.Multiline = True
         Me.RenterLastName.Name = "RenterLastName"
@@ -213,18 +223,19 @@ Partial Class IRentalsDetails
         '
         'RenterStatus
         '
+        Me.RenterStatus.Enabled = False
         Me.RenterStatus.Location = New System.Drawing.Point(218, 142)
         Me.RenterStatus.Multiline = True
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
-        Me.RenterStatus.Size = New System.Drawing.Size(184, 22)
+        Me.RenterStatus.Size = New System.Drawing.Size(215, 22)
         Me.RenterStatus.TabIndex = 47
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(457, 395)
+        Me.Label12.Location = New System.Drawing.Point(457, 374)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(117, 20)
         Me.Label12.TabIndex = 46
@@ -234,7 +245,7 @@ Partial Class IRentalsDetails
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(101, 395)
+        Me.Label11.Location = New System.Drawing.Point(101, 374)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(124, 20)
         Me.Label11.TabIndex = 45
@@ -264,7 +275,7 @@ Partial Class IRentalsDetails
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(101, 249)
+        Me.Label8.Location = New System.Drawing.Point(101, 251)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 20)
         Me.Label8.TabIndex = 42
@@ -274,7 +285,7 @@ Partial Class IRentalsDetails
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(101, 202)
+        Me.Label7.Location = New System.Drawing.Point(101, 200)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(97, 20)
         Me.Label7.TabIndex = 41

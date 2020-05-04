@@ -97,6 +97,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBundle\Controllers\ControllerDates.vb" />
     <Compile Include="AppBundle\Entity\EntityCategory.vb" />
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityPerson.vb" />
@@ -114,7 +115,7 @@
       <DependentUpon>IModifyRental.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\IModifyRental.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\IRentalsDetails.Designer.vb">
       <DependentUpon>IRentalsDetails.vb</DependentUpon>
@@ -190,6 +191,9 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyRental.resx">
+      <DependentUpon>IModifyRental.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentalsDetails.resx">
       <DependentUpon>IRentalsDetails.vb</DependentUpon>
     </EmbeddedResource>
@@ -252,5 +256,6 @@
   <ItemGroup>
     <None Include="Resources\baseline-backward-black-18dp-4x.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -17,7 +17,7 @@
         End If
     End Sub
 
-    Private Sub MaximizeButton_Click(sender As Object, e As EventArgs) Handles MaximizeButton.Click
+    Private Sub MaximizeButton_Click(sender As Object, e As EventArgs) Handles MaximizeButton.Click, HeaderBar.DoubleClick
         If Me.WindowState = FormWindowState.Normal Then
             Me.WindowState = FormWindowState.Maximized
         Else
