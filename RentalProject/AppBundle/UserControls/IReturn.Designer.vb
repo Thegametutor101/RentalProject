@@ -40,9 +40,9 @@ Partial Class IReturn
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(586, 50)
+        Me.Panel1.Size = New System.Drawing.Size(781, 62)
         Me.Panel1.TabIndex = 1
         '
         'Label2
@@ -50,9 +50,10 @@ Partial Class IReturn
         Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label2.Location = New System.Drawing.Point(189, 6)
+        Me.Label2.Location = New System.Drawing.Point(252, 7)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(224, 34)
+        Me.Label2.Size = New System.Drawing.Size(299, 42)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Menu Retour"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -65,9 +66,9 @@ Partial Class IReturn
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
+        Me.BackButton.Size = New System.Drawing.Size(93, 62)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -76,18 +77,20 @@ Partial Class IReturn
         Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(77, 65)
+        Me.Label1.Location = New System.Drawing.Point(103, 80)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 20)
+        Me.Label1.Size = New System.Drawing.Size(109, 25)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "ID Emprunt"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(196, 66)
+        Me.SearchTextBox.Location = New System.Drawing.Point(261, 81)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(154, 20)
+        Me.SearchTextBox.Size = New System.Drawing.Size(204, 22)
         Me.SearchTextBox.TabIndex = 1
         '
         'RentTableDGV
@@ -95,23 +98,28 @@ Partial Class IReturn
         Me.RentTableDGV.AllowUserToAddRows = False
         Me.RentTableDGV.AllowUserToDeleteRows = False
         Me.RentTableDGV.BackgroundColor = System.Drawing.SystemColors.Window
-        Me.RentTableDGV.Location = New System.Drawing.Point(10, 103)
+        Me.RentTableDGV.ColumnHeadersHeight = 29
+        Me.RentTableDGV.Location = New System.Drawing.Point(13, 127)
+        Me.RentTableDGV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RentTableDGV.MultiSelect = False
         Me.RentTableDGV.Name = "RentTableDGV"
         Me.RentTableDGV.ReadOnly = True
-        Me.RentTableDGV.Size = New System.Drawing.Size(564, 255)
+        Me.RentTableDGV.RowHeadersWidth = 51
+        Me.RentTableDGV.Size = New System.Drawing.Size(752, 314)
         Me.RentTableDGV.TabIndex = 3
         '
         'ReturnButton
         '
         Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ReturnButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.ReturnButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(196, 375)
-        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReturnButton.Location = New System.Drawing.Point(261, 462)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(172, 50)
+        Me.ReturnButton.Size = New System.Drawing.Size(229, 62)
         Me.ReturnButton.TabIndex = 4
         Me.ReturnButton.Text = "Retourner"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -119,20 +127,22 @@ Partial Class IReturn
         'SearchButton
         '
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(402, 53)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SearchButton.Location = New System.Drawing.Point(536, 65)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(172, 45)
+        Me.SearchButton.Size = New System.Drawing.Size(229, 55)
         Me.SearchButton.TabIndex = 2
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'IReturn
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -143,10 +153,10 @@ Partial Class IReturn
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(586, 440)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IReturn"
-        Me.Size = New System.Drawing.Size(586, 440)
+        Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
         CType(Me.RentTableDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

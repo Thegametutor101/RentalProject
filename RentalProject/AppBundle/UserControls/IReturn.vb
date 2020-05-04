@@ -11,11 +11,12 @@
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         Me.SendToBack()
+        rentals.loadData(EntityRental.getInstance().getRentals())
     End Sub
 
     Private Sub IReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim rentalTable As New EntityRental
-        RentTableDGV.DataSource = rentalTable.getRental()
+
+        RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
         RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
@@ -38,10 +39,10 @@
             Dim selectRow As DataGridViewRow = RentTableDGV.Rows(selectIndex)
             Dim id As Integer = selectRow.Cells("ID").Value
 
-            Dim rental As New EntityRental
-            rental.deleteRental(id)
 
-            RentTableDGV.DataSource = rental.getRental()
+            ModelRental.getInstance().deleteRental(id)
+
+            RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
             RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         Else
             SearchTextBox.Select()

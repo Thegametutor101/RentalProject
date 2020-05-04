@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class IRent
+Partial Class IRentalsDetails
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -33,8 +33,8 @@ Partial Class IRent
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(782, 61)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.Size = New System.Drawing.Size(781, 61)
+        Me.Panel1.TabIndex = 2
         '
         'BackButton
         '
@@ -49,7 +49,7 @@ Partial Class IRent
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
-        'IRent
+        'IRentalsDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -57,9 +57,9 @@ Partial Class IRent
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.Panel1)
-        Me.MinimumSize = New System.Drawing.Size(782, 542)
-        Me.Name = "IRent"
-        Me.Size = New System.Drawing.Size(782, 542)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.Name = "IRentalsDetails"
+        Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
