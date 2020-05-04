@@ -6,6 +6,7 @@
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         Dim home As New IHome()
+        home.Dock = DockStyle.Fill
         InterfacePanel.Controls.Add(home)
         home.BringToFront()
     End Sub

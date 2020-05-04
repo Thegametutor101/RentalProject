@@ -110,6 +110,12 @@
     </Compile>
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\UserControls\IModifyRental.Designer.vb">
+      <DependentUpon>IModifyRental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyRental.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IRentalsDetails.Designer.vb">
       <DependentUpon>IRentalsDetails.vb</DependentUpon>
     </Compile>
@@ -240,7 +246,9 @@
   <ItemGroup>
     <None Include="Resources\baseline_minimize_black_18dp.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Small_logo_departement_informatique.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline-backward-black-18dp-4x.png" />
   </ItemGroup>
