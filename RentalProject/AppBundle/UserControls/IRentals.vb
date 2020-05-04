@@ -72,6 +72,7 @@
     Private Sub ShowButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
         If Not IsNothing(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
             Dim detail As New IRentalsDetails(mainForm, CInt(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text))
+            detail.Dock = DockStyle.Fill
             mainForm.InterfacePanel.Controls.Add(detail)
             detail.BringToFront()
         End If

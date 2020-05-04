@@ -169,4 +169,16 @@ Public Class EntityRental
         connection.Close()
         Return rentalTable
     End Function
+
+    Public Function getRentalDatesbyID(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        connection.Open()
+        command.CommandText = $"Select E.ID, E.DateEmprunt, E.duree, E.dateRetour, E.commentaires from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement where E.ID = {id}"
+        Dim reader = command.ExecuteReader()
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
+        connection.Close()
+        Return rentalTable
+    End Function
 End Class

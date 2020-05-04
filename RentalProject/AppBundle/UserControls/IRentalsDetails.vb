@@ -31,4 +31,8 @@
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         Me.SendToBack()
     End Sub
+
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        Dim data As DataTable = EntityRental.getInstance().getRentalDatesbyID(RentalID.Text)
+    End Sub
 End Class
