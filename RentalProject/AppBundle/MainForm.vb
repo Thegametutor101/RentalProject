@@ -69,4 +69,8 @@
         InterfacePanel.Controls.Add(rentals)
         rentals.BringToFront()
     End Sub
+
+    Private Sub InterfacePanel_Paint(sender As Object, e As PaintEventArgs) Handles InterfacePanel.Paint
+
+    End Sub
 End Class

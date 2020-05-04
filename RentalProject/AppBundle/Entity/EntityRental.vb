@@ -2,7 +2,7 @@
 
 Public Class EntityRental
 
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
+    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3306;"
     Dim connection As New MySqlConnection(connectionString)
     Shared instance As EntityRental = Nothing
 

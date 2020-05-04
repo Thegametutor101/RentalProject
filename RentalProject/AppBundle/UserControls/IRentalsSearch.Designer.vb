@@ -55,8 +55,9 @@ Partial Class IRentalsSearch
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(782, 61)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 1
         '
         'BackButton
@@ -68,8 +69,9 @@ Partial Class IRentalsSearch
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 61)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -208,6 +210,7 @@ Partial Class IRentalsSearch
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(394, 429)
@@ -240,7 +243,8 @@ Partial Class IRentalsSearch
         Me.Panel3.Controls.Add(Me.SearchButton)
         Me.Panel3.Controls.Add(Me.DetailsButton)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 429)
+        Me.Panel3.Location = New System.Drawing.Point(0, 348)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(394, 52)
         Me.Panel3.TabIndex = 1
@@ -256,6 +260,7 @@ Partial Class IRentalsSearch
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Location = New System.Drawing.Point(0, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(157, 52)
         Me.SearchButton.TabIndex = 0
@@ -274,14 +279,14 @@ Partial Class IRentalsSearch
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
         Me.DetailsButton.Location = New System.Drawing.Point(157, 0)
         Me.DetailsButton.Name = "DetailsButton"
-        Me.DetailsButton.Size = New System.Drawing.Size(237, 52)
+        Me.DetailsButton.Size = New System.Drawing.Size(178, 42)
         Me.DetailsButton.TabIndex = 1
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
         '
         'IRentalsSearch
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -289,9 +294,10 @@ Partial Class IRentalsSearch
         Me.Controls.Add(Me.ViewPanel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.MinimumSize = New System.Drawing.Size(782, 542)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IRentalsSearch"
-        Me.Size = New System.Drawing.Size(782, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
