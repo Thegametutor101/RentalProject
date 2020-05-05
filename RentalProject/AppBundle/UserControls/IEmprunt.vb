@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class IEmprunt
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3306;Convert Zero Datetime=True"
+    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
 
     Dim reader As MySqlDataReader
@@ -14,6 +14,14 @@ Public Class IEmprunt
     Dim slCategorie As String = "select noCategorie,nom from categorie;"
     Dim slEquipement As String = "select noEquipement,nom,Etat from Equipement where noCategorie="
     Dim nomComplet As String
+    Dim rentals As IRentals
+
+    Sub New(rental As IRentals)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        rentals = rental
+    End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
     End Sub
@@ -22,7 +30,7 @@ Public Class IEmprunt
         '  Dim noCategorie As String
         DateTimePicker1.MinDate = Date.Now
         DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.CustomFormat = "dd-MM-yyyy hh:mm:ss"
+        DateTimePicker1.CustomFormat = "dddd dd-MM-yyyy hh:mm:ss"
         DateTimePicker1.Enabled = False
         CbCategorie.Text = "Sélectionnez une catégorie"
 
@@ -61,13 +69,6 @@ Public Class IEmprunt
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        insertToRental()
-        RefreshEquipement()
-
-    End Sub
-
-
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
             DateTimePicker1.Enabled = True
@@ -81,7 +82,6 @@ Public Class IEmprunt
     End Sub
 
     Private Sub NumericUpDownHeure_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDownHeure.ValueChanged
-
         DateTimePicker1.Value = Date.Now.AddHours(NumericUpDownHeure.Value + (NumericUpDownJour.Value * 24))
     End Sub
 
@@ -178,11 +178,34 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
         reader = com.ExecuteReader
         While (reader.Read)
             LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetDateTime(2).ToString())
-
             ctrEmprunt += 1
         End While
         connection.Close()
     End Function
+
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.SendToBack()
+            rentals.loadData(EntityRental.getInstance().getRentals())
+        End If
+    End Sub
+
+    Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
+        insertToRental()
+        RefreshEquipement()
+    End Sub
+
+    Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            CbEquipement.Text = ""
+            CbCategorie.Text = ""
+            CbPersonne.Text = ""
+            TbAutorise.Text = ""
+            NumericUpDownJour.Value = 0
+            NumericUpDownHeure.Value = 0
+            DateTimePicker1.Value = Date.Now
+        End If
+    End Sub
 End Class
 
 

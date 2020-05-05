@@ -61,4 +61,21 @@ Public Class ModelRental
         connection.Close()
         Return True
     End Function
+
+    Public Function updateRentalReturnDate(ByVal id As Integer,
+                                           ByVal duree As String,
+                                           ByVal dateRetour As Date,
+                                           ByVal commentaires As String)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"update emprunt set duree = '{duree}', dateRetour = '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', commentaires = '{commentaires}' where ID = {id}"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("L'emprunt à été modifié avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la modification.")
+        End Try
+    End Function
 End Class

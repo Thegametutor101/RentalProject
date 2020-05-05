@@ -11,17 +11,6 @@ Public Class IModifyInventory
         Inventory = IInventory
     End Sub
 
-    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
-        'Confirmation d'annulation
-        Dim result As DialogResult = MessageBox.Show("Êtes vous sûr de vouloir annuler la modification de cet équipement?", "Confirmation", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            TBName.Text = ""
-            CBCat.SelectedText = ""
-            TBEtat.Text = ""
-            Me.SendToBack()
-        End If
-    End Sub
-
     Private Sub IModifyInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadData(EntityCategory.getInstance.getCategory)
     End Sub
@@ -44,14 +33,9 @@ Public Class IModifyInventory
         TBDispo.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(4).Value
     End Function
 
-    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, ButtonCancel.Click
         'Retour au UC inventaire
-        'Confirmation de retour
-        Dim result As DialogResult = MessageBox.Show("Êtes vous sûr de vouloir revenir à la page précédente?", "Confirmation", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            TBName.Text = ""
-            CBCat.SelectedText = ""
-            TBEtat.Text = ""
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.SendToBack()
         End If
     End Sub

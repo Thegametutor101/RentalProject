@@ -45,31 +45,14 @@ Public Class IAddInventory
         End Try
     End Function
 
-    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
-        'Confirmation d'annulation
-        Dim result As DialogResult = MessageBox.Show("Êtes vous sûr de vouloir annuler la création de cet équipement?", "Confirmation", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            TBName.Text = ""
-            CBCat.SelectedText = ""
-            TBEtat.Text = ""
-            Me.SendToBack()
-        End If
-
-
-    End Sub
-
-    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
         'Retour au UC inventaire
-        Dim result As DialogResult = MessageBox.Show("Êtes vous sûr de vouloir revenir à la page précédente?", "Confirmation", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            TBName.Text = ""
-            CBCat.SelectedText = ""
-            TBEtat.Text = ""
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.SendToBack()
         End If
     End Sub
 
-    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
         Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3306")
         Dim com As New MySqlCommand

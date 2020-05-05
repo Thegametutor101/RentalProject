@@ -6,6 +6,7 @@
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         Dim home As New IHome()
+        home.Dock = DockStyle.Fill
         InterfacePanel.Controls.Add(home)
         home.BringToFront()
     End Sub
@@ -16,7 +17,7 @@
         End If
     End Sub
 
-    Private Sub MaximizeButton_Click(sender As Object, e As EventArgs) Handles MaximizeButton.Click
+    Private Sub MaximizeButton_Click(sender As Object, e As EventArgs) Handles MaximizeButton.Click, HeaderBar.DoubleClick
         If Me.WindowState = FormWindowState.Normal Then
             Me.WindowState = FormWindowState.Maximized
         Else

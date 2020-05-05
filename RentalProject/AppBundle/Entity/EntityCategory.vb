@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class EntityCategory
 
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3306;"
+    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
     Dim connection As New MySqlConnection(connectionString)
     Shared instance As EntityCategory = Nothing
 
