@@ -21,9 +21,16 @@ Public Class IInventory
     End Sub
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
-        Dim InventoryModif As New IModifyInventory(Me)
+        Dim InventoryModif As New IModifyEquipment(Me)
         InventoryModif.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(InventoryModif)
         InventoryModif.BringToFront()
+    End Sub
+
+    Private Sub CategoryButton_Click(sender As Object, e As EventArgs) Handles CategoryButton.Click
+        Dim category As New ICategory(Me)
+        category.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(category)
+        category.BringToFront()
     End Sub
 End Class

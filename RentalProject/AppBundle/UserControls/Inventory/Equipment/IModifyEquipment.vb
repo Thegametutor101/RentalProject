@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class IModifyInventory
+Public Class IModifyEquipment
 
     Dim Inventory As IInventory
 

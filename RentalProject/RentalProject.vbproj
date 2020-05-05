@@ -101,6 +101,7 @@
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityPerson.vb" />
     <Compile Include="AppBundle\Entity\EntityRental.vb" />
+    <Compile Include="AppBundle\Model\ModelCategory.vb" />
     <Compile Include="AppBundle\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,18 @@
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
     <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\UserControls\Inventory\Category\ICategory.Designer.vb">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Inventory\Category\ICategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Inventory\Category\ICategorySearch.Designer.vb">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Inventory\Category\ICategorySearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\Persons\IAddPerson.Designer.vb">
       <DependentUpon>IAddPerson.vb</DependentUpon>
     </Compile>
@@ -177,16 +190,16 @@
     <Compile Include="AppBundle\UserControls\Rentals\IRentalsSearch.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\Inventory\IAddEquipment.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\Equipment\IAddEquipment.Designer.vb">
       <DependentUpon>IAddEquipment.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\Inventory\IAddEquipment.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\Equipment\IAddEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\Inventory\IModifyInventory.Designer.vb">
-      <DependentUpon>IModifyInventory.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\Inventory\Equipment\IModifyEquipment.Designer.vb">
+      <DependentUpon>IModifyEquipment.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\Inventory\IModifyInventory.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\Equipment\IModifyEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -208,6 +221,12 @@
   <ItemGroup>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\Category\ICategory.resx">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\Category\ICategorySearch.resx">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\Persons\IAddPerson.resx">
       <DependentUpon>IAddPerson.vb</DependentUpon>
@@ -239,11 +258,11 @@
     <EmbeddedResource Include="AppBundle\UserControls\Rentals\IRentalsSearch.resx">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\Inventory\IAddEquipment.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\Equipment\IAddEquipment.resx">
       <DependentUpon>IAddEquipment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\Inventory\IModifyInventory.resx">
-      <DependentUpon>IModifyInventory.vb</DependentUpon>
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\Equipment\IModifyEquipment.resx">
+      <DependentUpon>IModifyEquipment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -40,7 +40,7 @@ Partial Class IPerson
         Me.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddButton.ForeColor = System.Drawing.Color.White
-        Me.AddButton.Location = New System.Drawing.Point(65, 62)
+        Me.AddButton.Location = New System.Drawing.Point(11, 62)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(197, 61)
         Me.AddButton.TabIndex = 4
@@ -55,7 +55,7 @@ Partial Class IPerson
         Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Location = New System.Drawing.Point(350, 62)
+        Me.DeleteButton.Location = New System.Drawing.Point(378, 62)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(197, 61)
         Me.DeleteButton.TabIndex = 5

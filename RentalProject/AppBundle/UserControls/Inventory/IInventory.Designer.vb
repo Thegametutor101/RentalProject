@@ -23,7 +23,7 @@ Partial Class IInventory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.MenuPanel = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DeleteButton = New System.Windows.Forms.Button()
         Me.ModifyButton = New System.Windows.Forms.Button()
         Me.AddInventoryButton = New System.Windows.Forms.Button()
@@ -36,26 +36,28 @@ Partial Class IInventory
         Me.RentedInventory = New System.Windows.Forms.TabPage()
         Me.DammagedInventory = New System.Windows.Forms.TabPage()
         Me.OrderedInventory = New System.Windows.Forms.TabPage()
-        Me.MenuPanel.SuspendLayout()
+        Me.CategoryButton = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.ViewPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.CompleteInventory.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MenuPanel
+        'Panel1
         '
-        Me.MenuPanel.Controls.Add(Me.DeleteButton)
-        Me.MenuPanel.Controls.Add(Me.ModifyButton)
-        Me.MenuPanel.Controls.Add(Me.AddInventoryButton)
-        Me.MenuPanel.Controls.Add(Me.Panel3)
-        Me.MenuPanel.Controls.Add(Me.Panel4)
-        Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuPanel.Location = New System.Drawing.Point(0, 0)
-        Me.MenuPanel.Margin = New System.Windows.Forms.Padding(2)
-        Me.MenuPanel.Name = "MenuPanel"
-        Me.MenuPanel.Size = New System.Drawing.Size(250, 440)
-        Me.MenuPanel.TabIndex = 0
+        Me.Panel1.Controls.Add(Me.CategoryButton)
+        Me.Panel1.Controls.Add(Me.DeleteButton)
+        Me.Panel1.Controls.Add(Me.ModifyButton)
+        Me.Panel1.Controls.Add(Me.AddInventoryButton)
+        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(250, 440)
+        Me.Panel1.TabIndex = 0
         '
         'DeleteButton
         '
@@ -222,17 +224,34 @@ Partial Class IInventory
         Me.OrderedInventory.TabIndex = 3
         Me.OrderedInventory.Text = "Inventaire en Commande"
         '
+        'CategoryButton
+        '
+        Me.CategoryButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.CategoryButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.CategoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.CategoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.CategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CategoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CategoryButton.ForeColor = System.Drawing.Color.White
+        Me.CategoryButton.Location = New System.Drawing.Point(0, 390)
+        Me.CategoryButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CategoryButton.Name = "CategoryButton"
+        Me.CategoryButton.Size = New System.Drawing.Size(207, 50)
+        Me.CategoryButton.TabIndex = 7
+        Me.CategoryButton.Text = "Categories"
+        Me.CategoryButton.UseVisualStyleBackColor = False
+        '
         'IInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.ViewPanel)
-        Me.Controls.Add(Me.MenuPanel)
+        Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "IInventory"
         Me.Size = New System.Drawing.Size(586, 440)
-        Me.MenuPanel.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ViewPanel.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.CompleteInventory.ResumeLayout(False)
@@ -241,7 +260,7 @@ Partial Class IInventory
 
     End Sub
 
-    Friend WithEvents MenuPanel As Panel
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents ViewPanel As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel
@@ -254,4 +273,5 @@ Partial Class IInventory
     Friend WithEvents RentedInventory As TabPage
     Friend WithEvents DammagedInventory As TabPage
     Friend WithEvents OrderedInventory As TabPage
+    Friend WithEvents CategoryButton As Button
 End Class
