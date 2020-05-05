@@ -14,7 +14,7 @@ Public Class IInventory
     End Sub
 
     Private Sub AddInventoryButton_Click(sender As Object, e As EventArgs) Handles AddInventoryButton.Click
-        Dim Inventory As New IAddInventory(Me)
+        Dim Inventory As New IAddEquipment(Me)
         Inventory.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(Inventory)
         Inventory.BringToFront()

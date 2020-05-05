@@ -35,4 +35,8 @@
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         Dim data As DataTable = EntityRental.getInstance().getRentalDatesbyID(RentalID.Text)
     End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
 End Class

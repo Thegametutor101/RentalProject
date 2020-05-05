@@ -109,23 +109,42 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
-    <Compile Include="AppBundle\UserControls\IModifyRental.Designer.vb">
-      <DependentUpon>IModifyRental.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\Persons\IAddPerson.Designer.vb">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IModifyRental.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppBundle\UserControls\IRentalsDetails.Designer.vb">
-      <DependentUpon>IRentalsDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AppBundle\UserControls\IRentalsDetails.vb">
+    <Compile Include="AppBundle\UserControls\Persons\IAddPerson.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IEmprunt.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Persons\IPersonSearch.Designer.vb">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Persons\IPersonSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Rentals\IModifyRental.Designer.vb">
+      <DependentUpon>IModifyRental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Rentals\IModifyRental.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Persons\IPerson.Designer.vb">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Persons\IPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Rentals\IRentalsDetails.Designer.vb">
+      <DependentUpon>IRentalsDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Rentals\IRentalsDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\Rentals\IEmprunt.Designer.vb">
       <DependentUpon>IEmprunt.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IEmprunt.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IEmprunt.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\IHome.Designer.vb">
@@ -134,40 +153,40 @@
     <Compile Include="AppBundle\UserControls\IHome.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IInventory.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\IInventory.Designer.vb">
       <DependentUpon>IInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IInventory.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\IInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IRentals.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IRentals.Designer.vb">
       <DependentUpon>IRentals.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IRentals.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IRentals.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IReturn.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IReturn.Designer.vb">
       <DependentUpon>IReturn.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IReturn.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IReturn.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IRentalsSearch.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IRentalsSearch.Designer.vb">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IRentalsSearch.vb">
+    <Compile Include="AppBundle\UserControls\Rentals\IRentalsSearch.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IAddInventory.Designer.vb">
-      <DependentUpon>IAddInventory.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\Inventory\IAddEquipment.Designer.vb">
+      <DependentUpon>IAddEquipment.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IAddInventory.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\IAddEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IModifyInventory.Designer.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\IModifyInventory.Designer.vb">
       <DependentUpon>IModifyInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\IModifyInventory.vb">
+    <Compile Include="AppBundle\UserControls\Inventory\IModifyInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -190,31 +209,40 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IRentalsDetails.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Persons\IAddPerson.resx">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\Persons\IPerson.resx">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\Persons\IPersonSearch.resx">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\Rentals\IRentalsDetails.resx">
       <DependentUpon>IRentalsDetails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IEmprunt.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Rentals\IEmprunt.resx">
       <DependentUpon>IEmprunt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IHome.resx">
       <DependentUpon>IHome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IInventory.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\IInventory.resx">
       <DependentUpon>IInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Rentals\IRentals.resx">
       <DependentUpon>IRentals.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IReturn.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Rentals\IReturn.resx">
       <DependentUpon>IReturn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IRentalsSearch.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Rentals\IRentalsSearch.resx">
       <DependentUpon>IRentalsSearch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IAddInventory.resx">
-      <DependentUpon>IAddInventory.vb</DependentUpon>
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\IAddEquipment.resx">
+      <DependentUpon>IAddEquipment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IModifyInventory.resx">
+    <EmbeddedResource Include="AppBundle\UserControls\Inventory\IModifyInventory.resx">
       <DependentUpon>IModifyInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

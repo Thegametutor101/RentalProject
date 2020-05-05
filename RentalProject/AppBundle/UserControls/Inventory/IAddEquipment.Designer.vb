@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class IAddInventory
+Partial Class IAddEquipment
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -23,7 +23,6 @@ Partial Class IAddInventory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,6 +31,7 @@ Partial Class IAddInventory
         Me.CBCat = New System.Windows.Forms.ComboBox()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
+        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,20 +44,6 @@ Partial Class IAddInventory
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 1
-        '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -132,6 +118,20 @@ Partial Class IAddInventory
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '
+        'BackButton
+        '
+        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BackButton.FlatAppearance.BorderSize = 0
+        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
+        Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
+        Me.BackButton.TabIndex = 0
+        Me.BackButton.UseVisualStyleBackColor = True
+        '
         'IAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,6 +146,7 @@ Partial Class IAddInventory
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "IAddInventory"
         Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
