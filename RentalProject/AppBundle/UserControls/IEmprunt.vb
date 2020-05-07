@@ -47,13 +47,15 @@ Public Class IEmprunt
         If (DateTimePicker1.Value.DayOfWeek = 6) Then
             MessageBox.Show("La date donné est en dehors des heures du cégep")
             validDate = False
-        Else validDate = True
+        Else
+            validDate = True
         End If
 
         If (DateTimePicker1.Value.DayOfWeek = 0) Then
             MessageBox.Show("La date donné est en dehors des heures du cégep")
             validDate = False
-        Else validDate = True
+        Else
+            validDate = True
         End If
         NumericUpDownJour.Value = DateTimePicker1.Value.DayOfYear - Date.Now.DayOfYear
         NumericUpDownHeure.Value = DateTimePicker1.Value.Hour - Date.Now.Hour
@@ -67,18 +69,7 @@ Public Class IEmprunt
         refreshEmpruntEnCours()
         refreshCategorie()
         nomComplet = ListPersonne(CbPersonne.SelectedIndex, 1) + " " + ListPersonne(CbPersonne.SelectedIndex, 2)
-
-
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now And validDate = True) Then
-            insertToRental()
-            RefreshEquipement()
-        Else MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
-        End If
-    End Sub
-
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
@@ -118,7 +109,8 @@ Public Class IEmprunt
                 ctrEquipement += 1
             End While
             connection.Close()
-        Else MessageBox.Show("Aucune Categorie sélectionné")
+        Else
+            MessageBox.Show("Aucune Categorie sélectionné")
         End If
 
 
@@ -207,8 +199,12 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        insertToRental()
-        RefreshEquipement()
+        If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now And validDate = True) Then
+            insertToRental()
+            RefreshEquipement()
+        Else
+            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+        End If
     End Sub
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
