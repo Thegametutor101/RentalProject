@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class IAddEquipment
+Partial Class IAddInventory
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.
