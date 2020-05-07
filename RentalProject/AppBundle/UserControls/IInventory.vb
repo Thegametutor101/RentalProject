@@ -14,14 +14,14 @@ Public Class IInventory
     End Sub
 
     Private Sub AddInventoryButton_Click(sender As Object, e As EventArgs) Handles AddInventoryButton.Click
-        Dim Inventory As New IAddEquipment(Me)
+        Dim Inventory As New IAddInventory(Me)
         Inventory.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(Inventory)
         Inventory.BringToFront()
     End Sub
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
-        Dim InventoryModif As New IModifyEquipment(Me)
+        Dim InventoryModif As New IModifyInventory(Me)
         InventoryModif.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(InventoryModif)
         InventoryModif.BringToFront()
