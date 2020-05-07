@@ -122,7 +122,7 @@ Public Class IEmprunt
             autorisation = TbAutorise.Text
             duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
             dateRetour = DateTimePicker1.Value
-            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour)
+            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
             empruntEntity.updateEquipementStatus(no_equipement)
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")

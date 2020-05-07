@@ -45,6 +45,8 @@ Partial Class IEmprunt
         Me.ResetButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.CbPersonne = New System.Windows.Forms.ComboBox()
+        Me.Comments = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -205,14 +207,14 @@ Partial Class IEmprunt
         Me.LbEmprunt.Location = New System.Drawing.Point(448, 91)
         Me.LbEmprunt.Margin = New System.Windows.Forms.Padding(4)
         Me.LbEmprunt.Name = "LbEmprunt"
-        Me.LbEmprunt.Size = New System.Drawing.Size(327, 276)
+        Me.LbEmprunt.Size = New System.Drawing.Size(327, 116)
         Me.LbEmprunt.TabIndex = 19
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(516, 381)
+        Me.Label8.Location = New System.Drawing.Point(524, 211)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(188, 40)
@@ -314,6 +316,26 @@ Partial Class IEmprunt
         Me.CbPersonne.Size = New System.Drawing.Size(265, 24)
         Me.CbPersonne.TabIndex = 85
         '
+        'Comments
+        '
+        Me.Comments.Location = New System.Drawing.Point(448, 297)
+        Me.Comments.MaxLength = 1000
+        Me.Comments.Multiline = True
+        Me.Comments.Name = "Comments"
+        Me.Comments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.Comments.Size = New System.Drawing.Size(327, 106)
+        Me.Comments.TabIndex = 87
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(444, 274)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(118, 20)
+        Me.Label10.TabIndex = 86
+        Me.Label10.Text = "Commentaires"
+        '
         'IEmprunt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -321,6 +343,8 @@ Partial Class IEmprunt
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Comments)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.CbPersonne)
         Me.Controls.Add(Me.SaveButton)
         Me.Controls.Add(Me.ResetButton)
@@ -378,4 +402,6 @@ Partial Class IEmprunt
     Friend WithEvents ResetButton As Button
     Friend WithEvents CancelButton As Button
     Friend WithEvents CbPersonne As ComboBox
+    Friend WithEvents Comments As TextBox
+    Friend WithEvents Label10 As Label
 End Class
