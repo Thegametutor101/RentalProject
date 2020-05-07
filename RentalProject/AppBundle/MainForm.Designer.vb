@@ -31,7 +31,7 @@ Partial Class MainForm
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.SettingsButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
-        Me.DashBoardButton = New System.Windows.Forms.Button()
+        Me.PersonButton = New System.Windows.Forms.Button()
         Me.InventoryButton = New System.Windows.Forms.Button()
         Me.RentalsButton = New System.Windows.Forms.Button()
         Me.InterfacePanel = New System.Windows.Forms.Panel()
@@ -48,7 +48,7 @@ Partial Class MainForm
         Me.HeaderBar.Controls.Add(Me.ExitButton)
         Me.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.HeaderBar.Location = New System.Drawing.Point(0, 0)
-        Me.HeaderBar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.HeaderBar.Margin = New System.Windows.Forms.Padding(2)
         Me.HeaderBar.Name = "HeaderBar"
         Me.HeaderBar.Size = New System.Drawing.Size(736, 36)
         Me.HeaderBar.TabIndex = 0
@@ -76,7 +76,7 @@ Partial Class MainForm
         Me.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MinimizeButton.Image = Global.RentalProject.My.Resources.Resources.baseline_minimize_black_18dp
         Me.MinimizeButton.Location = New System.Drawing.Point(607, 0)
-        Me.MinimizeButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimizeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimizeButton.Name = "MinimizeButton"
         Me.MinimizeButton.Size = New System.Drawing.Size(43, 36)
         Me.MinimizeButton.TabIndex = 15
@@ -91,7 +91,7 @@ Partial Class MainForm
         Me.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MaximizeButton.Image = Global.RentalProject.My.Resources.Resources.baseline_maximize_black_18dp
         Me.MaximizeButton.Location = New System.Drawing.Point(650, 0)
-        Me.MaximizeButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MaximizeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeButton.Name = "MaximizeButton"
         Me.MaximizeButton.Size = New System.Drawing.Size(43, 36)
         Me.MaximizeButton.TabIndex = 16
@@ -106,7 +106,7 @@ Partial Class MainForm
         Me.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ExitButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_black_18dp
         Me.ExitButton.Location = New System.Drawing.Point(693, 0)
-        Me.ExitButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ExitButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(43, 36)
         Me.ExitButton.TabIndex = 17
@@ -117,12 +117,12 @@ Partial Class MainForm
         Me.MenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.MenuPanel.Controls.Add(Me.SettingsButton)
         Me.MenuPanel.Controls.Add(Me.CloseButton)
-        Me.MenuPanel.Controls.Add(Me.DashBoardButton)
+        Me.MenuPanel.Controls.Add(Me.PersonButton)
         Me.MenuPanel.Controls.Add(Me.InventoryButton)
         Me.MenuPanel.Controls.Add(Me.RentalsButton)
         Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuPanel.Location = New System.Drawing.Point(0, 36)
-        Me.MenuPanel.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
+        Me.MenuPanel.Margin = New System.Windows.Forms.Padding(8)
         Me.MenuPanel.Name = "MenuPanel"
         Me.MenuPanel.Size = New System.Drawing.Size(150, 440)
         Me.MenuPanel.TabIndex = 1
@@ -138,7 +138,7 @@ Partial Class MainForm
         Me.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SettingsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SettingsButton.Location = New System.Drawing.Point(0, 346)
-        Me.SettingsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SettingsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SettingsButton.Name = "SettingsButton"
         Me.SettingsButton.Size = New System.Drawing.Size(150, 47)
         Me.SettingsButton.TabIndex = 4
@@ -156,30 +156,30 @@ Partial Class MainForm
         Me.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CloseButton.Location = New System.Drawing.Point(0, 393)
-        Me.CloseButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CloseButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(150, 47)
         Me.CloseButton.TabIndex = 3
         Me.CloseButton.Text = "Quitter l'application"
         Me.CloseButton.UseVisualStyleBackColor = False
         '
-        'DashBoardButton
+        'PersonButton
         '
-        Me.DashBoardButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.DashBoardButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DashBoardButton.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DashBoardButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DashBoardButton.FlatAppearance.BorderSize = 2
-        Me.DashBoardButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.DashBoardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DashBoardButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DashBoardButton.Location = New System.Drawing.Point(0, 94)
-        Me.DashBoardButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.DashBoardButton.Name = "DashBoardButton"
-        Me.DashBoardButton.Size = New System.Drawing.Size(150, 47)
-        Me.DashBoardButton.TabIndex = 2
-        Me.DashBoardButton.Text = "Panneau de contrôles"
-        Me.DashBoardButton.UseVisualStyleBackColor = False
+        Me.PersonButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.PersonButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PersonButton.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PersonButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.PersonButton.FlatAppearance.BorderSize = 2
+        Me.PersonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.PersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PersonButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PersonButton.Location = New System.Drawing.Point(0, 94)
+        Me.PersonButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.PersonButton.Name = "PersonButton"
+        Me.PersonButton.Size = New System.Drawing.Size(150, 47)
+        Me.PersonButton.TabIndex = 2
+        Me.PersonButton.Text = "Personnes"
+        Me.PersonButton.UseVisualStyleBackColor = False
         '
         'InventoryButton
         '
@@ -192,7 +192,7 @@ Partial Class MainForm
         Me.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.InventoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InventoryButton.Location = New System.Drawing.Point(0, 47)
-        Me.InventoryButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.InventoryButton.Margin = New System.Windows.Forms.Padding(2)
         Me.InventoryButton.Name = "InventoryButton"
         Me.InventoryButton.Size = New System.Drawing.Size(150, 47)
         Me.InventoryButton.TabIndex = 1
@@ -210,7 +210,7 @@ Partial Class MainForm
         Me.RentalsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RentalsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentalsButton.Location = New System.Drawing.Point(0, 0)
-        Me.RentalsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RentalsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalsButton.Name = "RentalsButton"
         Me.RentalsButton.Size = New System.Drawing.Size(150, 47)
         Me.RentalsButton.TabIndex = 0
@@ -222,7 +222,7 @@ Partial Class MainForm
         Me.InterfacePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.InterfacePanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InterfacePanel.Location = New System.Drawing.Point(150, 36)
-        Me.InterfacePanel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.InterfacePanel.Margin = New System.Windows.Forms.Padding(2)
         Me.InterfacePanel.Name = "InterfacePanel"
         Me.InterfacePanel.Size = New System.Drawing.Size(586, 440)
         Me.InterfacePanel.TabIndex = 2
@@ -237,7 +237,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.HeaderBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
         Me.Text = "MainForm"
         Me.HeaderBar.ResumeLayout(False)
@@ -256,7 +256,7 @@ Partial Class MainForm
     Friend WithEvents InterfacePanel As Panel
     Friend WithEvents SettingsButton As Button
     Friend WithEvents CloseButton As Button
-    Friend WithEvents DashBoardButton As Button
+    Friend WithEvents PersonButton As Button
     Friend WithEvents InventoryButton As Button
     Friend WithEvents RentalsButton As Button
 End Class

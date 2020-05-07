@@ -28,6 +28,13 @@ Public Class IInventory
         InventoryModif.BringToFront()
     End Sub
 
+    Private Sub CategoryButton_Click(sender As Object, e As EventArgs) Handles CategoryButton.Click
+        Dim category As New ICategory(Me)
+        category.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(category)
+        category.BringToFront()
+    End Sub
+
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
         Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then

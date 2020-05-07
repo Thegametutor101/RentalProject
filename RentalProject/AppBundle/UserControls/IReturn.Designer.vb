@@ -40,9 +40,9 @@ Partial Class IReturn
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 62)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 1
         '
         'Label2
@@ -50,10 +50,9 @@ Partial Class IReturn
         Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label2.Location = New System.Drawing.Point(252, 7)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(189, 6)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(299, 42)
+        Me.Label2.Size = New System.Drawing.Size(224, 34)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Menu Retour"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -67,9 +66,9 @@ Partial Class IReturn
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -81,7 +80,7 @@ Partial Class IReturn
         Me.Label1.Location = New System.Drawing.Point(183, 80)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 25)
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "ID Emprunt"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -99,6 +98,7 @@ Partial Class IReturn
         '
         Me.RentTableDGV.AllowUserToAddRows = False
         Me.RentTableDGV.AllowUserToDeleteRows = False
+        Me.RentTableDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.RentTableDGV.BackgroundColor = System.Drawing.SystemColors.Window
         Me.RentTableDGV.ColumnHeadersHeight = 29
         Me.RentTableDGV.Location = New System.Drawing.Point(13, 127)
@@ -107,7 +107,7 @@ Partial Class IReturn
         Me.RentTableDGV.Name = "RentTableDGV"
         Me.RentTableDGV.ReadOnly = True
         Me.RentTableDGV.RowHeadersWidth = 51
-        Me.RentTableDGV.Size = New System.Drawing.Size(752, 314)
+        Me.RentTableDGV.Size = New System.Drawing.Size(564, 255)
         Me.RentTableDGV.TabIndex = 3
         '
         'ReturnButton
@@ -146,10 +146,8 @@ Partial Class IReturn
         '
         'IReturn
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.ReturnButton)
@@ -157,10 +155,10 @@ Partial Class IReturn
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IReturn"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         CType(Me.RentTableDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

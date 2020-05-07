@@ -47,4 +47,11 @@
             SearchTextBox.Select()
         End If
     End Sub
+
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        If Not IsNumeric(SearchTextBox.Text) And SearchTextBox.Text.Length > 0 Then
+            MessageBox.Show("Valeur numerique obligatoire")
+            SearchTextBox.Clear()
+        End If
+    End Sub
 End Class

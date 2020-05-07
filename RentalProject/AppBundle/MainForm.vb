@@ -70,7 +70,11 @@
         rentals.BringToFront()
     End Sub
 
-    Private Sub InterfacePanel_Paint(sender As Object, e As PaintEventArgs) Handles InterfacePanel.Paint
-
+    Private Sub PeopleButton_Click(sender As Object, e As EventArgs) Handles PersonButton.Click
+        InterfacePanel.Controls.Clear()
+        Dim persons As New IPerson(Me)
+        persons.Dock = DockStyle.Fill
+        InterfacePanel.Controls.Add(persons)
+        persons.BringToFront()
     End Sub
 End Class
