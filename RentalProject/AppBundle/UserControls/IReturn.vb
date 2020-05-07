@@ -15,7 +15,6 @@
     End Sub
 
     Private Sub IReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
         RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub

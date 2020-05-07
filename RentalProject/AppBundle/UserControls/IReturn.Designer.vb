@@ -59,6 +59,7 @@ Partial Class IReturn
         '
         'BackButton
         '
+        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
         Me.BackButton.FlatAppearance.BorderSize = 0
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
@@ -76,7 +77,8 @@ Partial Class IReturn
         Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(77, 65)
+        Me.Label1.Location = New System.Drawing.Point(183, 80)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 8
@@ -85,9 +87,11 @@ Partial Class IReturn
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(196, 66)
+        Me.SearchTextBox.Location = New System.Drawing.Point(311, 80)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.SearchTextBox.Multiline = True
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(154, 20)
+        Me.SearchTextBox.Size = New System.Drawing.Size(177, 34)
         Me.SearchTextBox.TabIndex = 1
         '
         'RentTableDGV
@@ -97,7 +101,8 @@ Partial Class IReturn
         Me.RentTableDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.RentTableDGV.BackgroundColor = System.Drawing.SystemColors.Window
         Me.RentTableDGV.ColumnHeadersHeight = 29
-        Me.RentTableDGV.Location = New System.Drawing.Point(10, 103)
+        Me.RentTableDGV.Location = New System.Drawing.Point(13, 127)
+        Me.RentTableDGV.Margin = New System.Windows.Forms.Padding(4)
         Me.RentTableDGV.MultiSelect = False
         Me.RentTableDGV.Name = "RentTableDGV"
         Me.RentTableDGV.ReadOnly = True
@@ -108,15 +113,16 @@ Partial Class IReturn
         'ReturnButton
         '
         Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ReturnButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ReturnButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(196, 375)
-        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReturnButton.Location = New System.Drawing.Point(311, 462)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(172, 50)
+        Me.ReturnButton.Size = New System.Drawing.Size(177, 62)
         Me.ReturnButton.TabIndex = 4
         Me.ReturnButton.Text = "Retourner"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -124,15 +130,16 @@ Partial Class IReturn
         'SearchButton
         '
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(402, 53)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SearchButton.Location = New System.Drawing.Point(607, 65)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(172, 45)
+        Me.SearchButton.Size = New System.Drawing.Size(158, 55)
         Me.SearchButton.TabIndex = 2
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False

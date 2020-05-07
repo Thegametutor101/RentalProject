@@ -74,13 +74,15 @@ Partial Class IRentals
         'DetailsButton
         '
         Me.DetailsButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DetailsButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DetailsButton.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DetailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
-        Me.DetailsButton.Location = New System.Drawing.Point(0, 379)
+        Me.DetailsButton.Location = New System.Drawing.Point(0, 467)
+        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.DetailsButton.Name = "DetailsButton"
         Me.DetailsButton.Size = New System.Drawing.Size(197, 61)
         Me.DetailsButton.TabIndex = 5
@@ -90,13 +92,15 @@ Partial Class IRentals
         'SearchButton
         '
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Top
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(0, 132)
+        Me.SearchButton.Location = New System.Drawing.Point(0, 162)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(197, 61)
         Me.SearchButton.TabIndex = 4
@@ -106,13 +110,15 @@ Partial Class IRentals
         'ReturnButton
         '
         Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ReturnButton.Dock = System.Windows.Forms.DockStyle.Top
         Me.ReturnButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ReturnButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(0, 71)
+        Me.ReturnButton.Location = New System.Drawing.Point(0, 87)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(197, 61)
         Me.ReturnButton.TabIndex = 3
@@ -122,13 +128,15 @@ Partial Class IRentals
         'RentButton
         '
         Me.RentButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.RentButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RentButton.Dock = System.Windows.Forms.DockStyle.Top
         Me.RentButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.RentButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.RentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentButton.ForeColor = System.Drawing.Color.White
-        Me.RentButton.Location = New System.Drawing.Point(0, 10)
+        Me.RentButton.Location = New System.Drawing.Point(0, 12)
+        Me.RentButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.RentButton.Name = "RentButton"
         Me.RentButton.Size = New System.Drawing.Size(197, 61)
         Me.RentButton.TabIndex = 2
@@ -138,7 +146,8 @@ Partial Class IRentals
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(197, 10)
+        Me.Panel3.Location = New System.Drawing.Point(263, 12)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(39, 430)
         Me.Panel3.TabIndex = 1
@@ -179,6 +188,7 @@ Partial Class IRentals
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(350, 440)

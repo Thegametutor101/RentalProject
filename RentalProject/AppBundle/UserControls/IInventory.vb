@@ -13,6 +13,7 @@ Public Class IInventory
         DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
     End Sub
 
+
     Private Sub AddInventoryButton_Click(sender As Object, e As EventArgs) Handles AddInventoryButton.Click
         Dim Inventory As New IAddInventory(Me)
         Inventory.Dock = DockStyle.Fill
@@ -32,5 +33,14 @@ Public Class IInventory
         category.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(category)
         category.BringToFront()
+    End Sub
+
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+        Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Dim equipemententity As New EntityEquipment
+            equipemententity.delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
+        End If
     End Sub
 End Class

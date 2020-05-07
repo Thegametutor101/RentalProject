@@ -125,7 +125,7 @@ Public Class EntityRental
     Public Function getRentalsByCategoryName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where upper(C2.nom) like upper('{name}%')"
+        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where upper(C2.nom) like upper('%{name}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("emprunt")
@@ -174,7 +174,7 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
-        command.CommandText = $"Select E.ID, E.DateEmprunt, E.duree, E.dateRetour, E.commentaires from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement where E.ID = {id}"
+        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation), E.DateEmprunt, E.duree, E.dateRetour, E.commentaires from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where E.ID = {id}"
         Dim reader = command.ExecuteReader()
         Dim rentalTable As New DataTable("emprunt")
         rentalTable.Load(reader)
