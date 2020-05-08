@@ -43,7 +43,7 @@ Public Class ModelRental
             connection.Open()
             command.CommandText = $"insert into emprunt
  
-                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', {commentaires})"
+                values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
