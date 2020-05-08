@@ -2,7 +2,7 @@
 Public Class IEmprunt
     Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
-
+    Dim validDate As Boolean = False
     Dim reader As MySqlDataReader
     Dim readdate As MySqlDataReader
     Dim com As New MySqlCommand
@@ -46,12 +46,16 @@ Public Class IEmprunt
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         If (DateTimePicker1.Value.DayOfWeek = 6) Then
             MessageBox.Show("La date donné est en dehors des heures du cégep")
-            DateTimePicker1.Value = DateTimePicker1.Value.AddDays(2)
+            validDate = False
+        Else
+            validDate = True
         End If
-        '''TODO date validations during weekends and college closed.
+
         If (DateTimePicker1.Value.DayOfWeek = 0) Then
             MessageBox.Show("La date donné est en dehors des heures du cégep")
-            DateTimePicker1.Value = DateTimePicker1.Value.AddDays(1)
+            validDate = False
+        Else
+            validDate = True
         End If
         NumericUpDownJour.Value = DateTimePicker1.Value.DayOfYear - Date.Now.DayOfYear
         NumericUpDownHeure.Value = DateTimePicker1.Value.Hour - Date.Now.Hour
@@ -65,8 +69,6 @@ Public Class IEmprunt
         refreshEmpruntEnCours()
         refreshCategorie()
         nomComplet = ListPersonne(CbPersonne.SelectedIndex, 1) + " " + ListPersonne(CbPersonne.SelectedIndex, 2)
-
-
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -91,20 +93,26 @@ Public Class IEmprunt
         Dim ctrEquipement As Integer
         CbEquipement.Items.Clear()
         CbEquipement.Text = "Sélectionnez un equipement"
-        noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
-        ctrEquipement = 0
-        connection.Open()
+        If (CbCategorie.SelectedIndex > -1) Then
+            noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
 
-        com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
-        reader = com.ExecuteReader
-        While (reader.Read)
-            CbEquipement.Items.Add(reader.GetString(0) + "-" + reader.GetString(1) + " " + reader.GetString(2))
-            ListEquipement(ctrEquipement, 0) = reader.GetString(0)
-            ListEquipement(ctrEquipement, 1) = reader.GetString(1)
-            ListEquipement(ctrEquipement, 2) = reader.GetString(2)
-            ctrEquipement += 1
-        End While
-        connection.Close()
+            ctrEquipement = 0
+            connection.Open()
+
+            com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
+            reader = com.ExecuteReader
+            While (reader.Read)
+                CbEquipement.Items.Add(reader.GetString(0) + "-" + reader.GetString(1) + " " + reader.GetString(2))
+                ListEquipement(ctrEquipement, 0) = reader.GetString(0)
+                ListEquipement(ctrEquipement, 1) = reader.GetString(1)
+                ListEquipement(ctrEquipement, 2) = reader.GetString(2)
+                ctrEquipement += 1
+            End While
+            connection.Close()
+        Else
+            MessageBox.Show("Aucune Categorie sélectionné")
+        End If
+
 
     End Function
 
@@ -122,7 +130,7 @@ Public Class IEmprunt
             autorisation = TbAutorise.Text
             duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
             dateRetour = DateTimePicker1.Value
-            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour)
+            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
             empruntEntity.updateEquipementStatus(no_equipement)
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
@@ -191,8 +199,12 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        insertToRental()
-        RefreshEquipement()
+        If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now And validDate = True) Then
+            insertToRental()
+            RefreshEquipement()
+        Else
+            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+        End If
     End Sub
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click

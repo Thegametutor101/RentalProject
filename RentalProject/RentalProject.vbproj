@@ -104,6 +104,7 @@
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityPerson.vb" />
     <Compile Include="AppBundle\Entity\EntityRental.vb" />
+    <Compile Include="AppBundle\Model\ModelCategory.vb" />
     <Compile Include="AppBundle\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +113,42 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\UserControls\ICategory.Designer.vb">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategorySearch.Designer.vb">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategorySearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddPerson.Designer.vb">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonSearch.Designer.vb">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IModifyRental.Designer.vb">
       <DependentUpon>IModifyRental.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\IModifyRental.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPerson.Designer.vb">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPerson.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\IRentalsDetails.Designer.vb">
@@ -200,6 +232,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyRental.resx">
       <DependentUpon>IModifyRental.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\ICategory.resx">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\ICategorySearch.resx">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IAddPerson.resx">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPerson.resx">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPersonSearch.resx">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentalsDetails.resx">
       <DependentUpon>IRentalsDetails.vb</DependentUpon>

@@ -35,14 +35,15 @@ Public Class ModelRental
                               ByVal autorisation As String,
                               ByVal dateEmprunt As Date,
                               ByVal duree As String,
-                              ByVal dateRetour As Date)
+                              ByVal dateRetour As Date,
+                              ByVal commentaires As String)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
             command.CommandText = $"insert into emprunt
  
-                values('','{noPersonne}','{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}')"
+                values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
