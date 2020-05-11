@@ -147,27 +147,24 @@ Partial Class IModifyInventory
         '
         Me.TBEtat.Location = New System.Drawing.Point(311, 257)
         Me.TBEtat.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBEtat.Multiline = True
         Me.TBEtat.Name = "TBEtat"
-        Me.TBEtat.Size = New System.Drawing.Size(220, 34)
+        Me.TBEtat.Size = New System.Drawing.Size(220, 22)
         Me.TBEtat.TabIndex = 11
         '
         'TBDispo
         '
         Me.TBDispo.Location = New System.Drawing.Point(311, 320)
         Me.TBDispo.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBDispo.Multiline = True
         Me.TBDispo.Name = "TBDispo"
-        Me.TBDispo.Size = New System.Drawing.Size(220, 34)
+        Me.TBDispo.Size = New System.Drawing.Size(220, 22)
         Me.TBDispo.TabIndex = 12
         '
         'TBName
         '
         Me.TBName.Location = New System.Drawing.Point(311, 139)
         Me.TBName.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBName.Multiline = True
         Me.TBName.Name = "TBName"
-        Me.TBName.Size = New System.Drawing.Size(220, 34)
+        Me.TBName.Size = New System.Drawing.Size(220, 22)
         Me.TBName.TabIndex = 9
         '
         'Panel2

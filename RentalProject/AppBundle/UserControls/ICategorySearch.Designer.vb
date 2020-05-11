@@ -31,14 +31,14 @@ Partial Class ICategorySearch
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ByName = New System.Windows.Forms.RadioButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DGVQuantity = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.SearchButton = New System.Windows.Forms.Button()
-        Me.DGVQuantity = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         CType(Me.DGVQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -85,9 +85,8 @@ Partial Class ICategorySearch
         Me.TBQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBQuantity.Location = New System.Drawing.Point(36, 203)
         Me.TBQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TBQuantity.Multiline = True
         Me.TBQuantity.Name = "TBQuantity"
-        Me.TBQuantity.Size = New System.Drawing.Size(295, 34)
+        Me.TBQuantity.Size = New System.Drawing.Size(295, 24)
         Me.TBQuantity.TabIndex = 18
         '
         'ByQuantity
@@ -109,9 +108,8 @@ Partial Class ICategorySearch
         Me.TBNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBNom.Location = New System.Drawing.Point(36, 92)
         Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TBNom.Multiline = True
         Me.TBNom.Name = "TBNom"
-        Me.TBNom.Size = New System.Drawing.Size(295, 34)
+        Me.TBNom.Size = New System.Drawing.Size(295, 24)
         Me.TBNom.TabIndex = 15
         '
         'Label1
@@ -147,6 +145,22 @@ Partial Class ICategorySearch
         Me.Panel3.Size = New System.Drawing.Size(426, 480)
         Me.Panel3.TabIndex = 6
         '
+        'DGVQuantity
+        '
+        Me.DGVQuantity.AllowUserToAddRows = False
+        Me.DGVQuantity.AllowUserToDeleteRows = False
+        Me.DGVQuantity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGVQuantity.BackgroundColor = System.Drawing.Color.White
+        Me.DGVQuantity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVQuantity.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGVQuantity.Location = New System.Drawing.Point(0, 0)
+        Me.DGVQuantity.Margin = New System.Windows.Forms.Padding(4)
+        Me.DGVQuantity.Name = "DGVQuantity"
+        Me.DGVQuantity.ReadOnly = True
+        Me.DGVQuantity.RowHeadersWidth = 51
+        Me.DGVQuantity.Size = New System.Drawing.Size(426, 412)
+        Me.DGVQuantity.TabIndex = 11
+        '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.SearchButton)
@@ -173,22 +187,6 @@ Partial Class ICategorySearch
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
-        'DGVQuantity
-        '
-        Me.DGVQuantity.AllowUserToAddRows = False
-        Me.DGVQuantity.AllowUserToDeleteRows = False
-        Me.DGVQuantity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DGVQuantity.BackgroundColor = System.Drawing.Color.White
-        Me.DGVQuantity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVQuantity.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVQuantity.Location = New System.Drawing.Point(0, 0)
-        Me.DGVQuantity.Margin = New System.Windows.Forms.Padding(4)
-        Me.DGVQuantity.Name = "DGVQuantity"
-        Me.DGVQuantity.ReadOnly = True
-        Me.DGVQuantity.RowHeadersWidth = 51
-        Me.DGVQuantity.Size = New System.Drawing.Size(426, 412)
-        Me.DGVQuantity.TabIndex = 11
-        '
         'ICategorySearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -199,7 +197,7 @@ Partial Class ICategorySearch
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "ICategorySearch"
         Me.Size = New System.Drawing.Size(781, 542)
@@ -207,8 +205,8 @@ Partial Class ICategorySearch
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
         CType(Me.DGVQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -126,9 +126,8 @@ Partial Class IPersonSearch
         Me.TBNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBNom.Location = New System.Drawing.Point(197, 128)
         Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TBNom.Multiline = True
         Me.TBNom.Name = "TBNom"
-        Me.TBNom.Size = New System.Drawing.Size(136, 34)
+        Me.TBNom.Size = New System.Drawing.Size(136, 24)
         Me.TBNom.TabIndex = 15
         '
         'Label2
@@ -156,9 +155,8 @@ Partial Class IPersonSearch
         Me.TBPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBPrenom.Location = New System.Drawing.Point(34, 128)
         Me.TBPrenom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TBPrenom.Multiline = True
         Me.TBPrenom.Name = "TBPrenom"
-        Me.TBPrenom.Size = New System.Drawing.Size(136, 34)
+        Me.TBPrenom.Size = New System.Drawing.Size(136, 24)
         Me.TBPrenom.TabIndex = 12
         '
         'ByName

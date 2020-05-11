@@ -33,6 +33,16 @@
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        SearchItems()
+    End Sub
+
+    Private Sub PressedEnter(sender As Object, e As KeyEventArgs) Handles TBPrenom.KeyUp, TBNom.KeyUp, CBStatut.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            SearchItems()
+        End If
+    End Sub
+
+    Private Function SearchItems()
         Dim lastName = Trim(TBNom.Text)
         Dim firstName = Trim(TBPrenom.Text)
         Dim statut = Trim(CBStatut.Text)
@@ -48,8 +58,7 @@
         ElseIf CBStatut.Text.Length > 0 Then
             DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByStatut(statut)
         End If
-
-    End Sub
+    End Function
 
     Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles TBPrenom.TextChanged, TBNom.TextChanged, CBStatut.TextChanged
         Dim lastName = Trim(TBNom.Text)

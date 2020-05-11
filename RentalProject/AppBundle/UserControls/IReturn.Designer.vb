@@ -104,10 +104,10 @@ Partial Class IReturn
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(545, 0)
+        Me.ReturnButton.Location = New System.Drawing.Point(518, 0)
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(236, 72)
+        Me.ReturnButton.Size = New System.Drawing.Size(263, 72)
         Me.ReturnButton.TabIndex = 5
         Me.ReturnButton.Text = "Retourner"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -131,7 +131,7 @@ Partial Class IReturn
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 25)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(570, 33)
+        Me.Panel7.Size = New System.Drawing.Size(518, 33)
         Me.Panel7.TabIndex = 10
         '
         'Label1
@@ -139,21 +139,20 @@ Partial Class IReturn
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(202, 0)
+        Me.Label1.Location = New System.Drawing.Point(150, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 5, 10, 5)
-        Me.Label1.Size = New System.Drawing.Size(133, 30)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 0, 10, 5)
+        Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "ID de l'emprunt"
         '
         'SearchTextBox
         '
         Me.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SearchTextBox.Location = New System.Drawing.Point(335, 0)
+        Me.SearchTextBox.Location = New System.Drawing.Point(283, 0)
         Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(5)
-        Me.SearchTextBox.Multiline = True
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(235, 33)
+        Me.SearchTextBox.Size = New System.Drawing.Size(235, 22)
         Me.SearchTextBox.TabIndex = 9
         '
         'Panel6
@@ -161,7 +160,7 @@ Partial Class IReturn
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel6.Location = New System.Drawing.Point(0, 58)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(570, 25)
+        Me.Panel6.Size = New System.Drawing.Size(518, 25)
         Me.Panel6.TabIndex = 9
         '
         'Panel5
@@ -170,14 +169,14 @@ Partial Class IReturn
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(570, 25)
+        Me.Panel5.Size = New System.Drawing.Size(518, 25)
         Me.Panel5.TabIndex = 8
         '
         'WarningLabel
         '
         Me.WarningLabel.AutoSize = True
         Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WarningLabel.Location = New System.Drawing.Point(361, 0)
+        Me.WarningLabel.Location = New System.Drawing.Point(309, 0)
         Me.WarningLabel.Name = "WarningLabel"
         Me.WarningLabel.Padding = New System.Windows.Forms.Padding(0, 3, 8, 0)
         Me.WarningLabel.Size = New System.Drawing.Size(209, 20)
@@ -194,10 +193,10 @@ Partial Class IReturn
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(570, 0)
+        Me.SearchButton.Location = New System.Drawing.Point(518, 0)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(211, 83)
+        Me.SearchButton.Size = New System.Drawing.Size(263, 83)
         Me.SearchButton.TabIndex = 7
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False

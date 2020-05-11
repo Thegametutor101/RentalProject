@@ -87,9 +87,8 @@ Partial Class IAddPerson
         '
         Me.TBNom.Location = New System.Drawing.Point(127, 117)
         Me.TBNom.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBNom.Multiline = True
         Me.TBNom.Name = "TBNom"
-        Me.TBNom.Size = New System.Drawing.Size(231, 34)
+        Me.TBNom.Size = New System.Drawing.Size(231, 22)
         Me.TBNom.TabIndex = 13
         '
         'LAStatut
@@ -118,9 +117,8 @@ Partial Class IAddPerson
         '
         Me.TBPrenom.Location = New System.Drawing.Point(127, 187)
         Me.TBPrenom.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBPrenom.Multiline = True
         Me.TBPrenom.Name = "TBPrenom"
-        Me.TBPrenom.Size = New System.Drawing.Size(231, 34)
+        Me.TBPrenom.Size = New System.Drawing.Size(231, 22)
         Me.TBPrenom.TabIndex = 19
         '
         'LAPrenom
@@ -138,9 +136,8 @@ Partial Class IAddPerson
         '
         Me.TBTelephone.Location = New System.Drawing.Point(127, 256)
         Me.TBTelephone.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBTelephone.Multiline = True
         Me.TBTelephone.Name = "TBTelephone"
-        Me.TBTelephone.Size = New System.Drawing.Size(231, 34)
+        Me.TBTelephone.Size = New System.Drawing.Size(231, 22)
         Me.TBTelephone.TabIndex = 25
         '
         'LATelephone
@@ -158,9 +155,8 @@ Partial Class IAddPerson
         '
         Me.TBBureau.Location = New System.Drawing.Point(503, 258)
         Me.TBBureau.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBBureau.Multiline = True
         Me.TBBureau.Name = "TBBureau"
-        Me.TBBureau.Size = New System.Drawing.Size(231, 34)
+        Me.TBBureau.Size = New System.Drawing.Size(231, 22)
         Me.TBBureau.TabIndex = 31
         '
         'LABureau
@@ -178,9 +174,8 @@ Partial Class IAddPerson
         '
         Me.TBService.Location = New System.Drawing.Point(503, 186)
         Me.TBService.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBService.Multiline = True
         Me.TBService.Name = "TBService"
-        Me.TBService.Size = New System.Drawing.Size(231, 34)
+        Me.TBService.Size = New System.Drawing.Size(231, 22)
         Me.TBService.TabIndex = 29
         '
         'LAService
@@ -198,9 +193,8 @@ Partial Class IAddPerson
         '
         Me.TBDepartement.Location = New System.Drawing.Point(503, 117)
         Me.TBDepartement.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBDepartement.Multiline = True
         Me.TBDepartement.Name = "TBDepartement"
-        Me.TBDepartement.Size = New System.Drawing.Size(231, 34)
+        Me.TBDepartement.Size = New System.Drawing.Size(231, 22)
         Me.TBDepartement.TabIndex = 27
         '
         'LADepartement
@@ -218,9 +212,8 @@ Partial Class IAddPerson
         '
         Me.TBPoste.Location = New System.Drawing.Point(503, 327)
         Me.TBPoste.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBPoste.Multiline = True
         Me.TBPoste.Name = "TBPoste"
-        Me.TBPoste.Size = New System.Drawing.Size(231, 34)
+        Me.TBPoste.Size = New System.Drawing.Size(231, 22)
         Me.TBPoste.TabIndex = 33
         '
         'LAPoste

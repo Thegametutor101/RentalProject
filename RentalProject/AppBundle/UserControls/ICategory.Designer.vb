@@ -33,10 +33,10 @@ Partial Class ICategory
         Me.TBName = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.WarningLabel = New System.Windows.Forms.Label()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DGVCategory = New System.Windows.Forms.DataGridView()
-        Me.WarningLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -141,11 +141,12 @@ Partial Class ICategory
         '
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label1.Location = New System.Drawing.Point(151, 0)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(129, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 10, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 8, 10, 8)
-        Me.Label1.Size = New System.Drawing.Size(132, 33)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 0, 10, 8)
+        Me.Label1.Size = New System.Drawing.Size(154, 28)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Nom de Catégorie"
         '
@@ -155,9 +156,8 @@ Partial Class ICategory
         Me.TBName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBName.Location = New System.Drawing.Point(283, 0)
         Me.TBName.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBName.Multiline = True
         Me.TBName.Name = "TBName"
-        Me.TBName.Size = New System.Drawing.Size(235, 35)
+        Me.TBName.Size = New System.Drawing.Size(235, 26)
         Me.TBName.TabIndex = 19
         '
         'Panel6
@@ -176,6 +176,17 @@ Partial Class ICategory
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(518, 22)
         Me.Panel5.TabIndex = 16
+        '
+        'WarningLabel
+        '
+        Me.WarningLabel.AutoSize = True
+        Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Right
+        Me.WarningLabel.Location = New System.Drawing.Point(309, 0)
+        Me.WarningLabel.Name = "WarningLabel"
+        Me.WarningLabel.Padding = New System.Windows.Forms.Padding(0, 3, 8, 0)
+        Me.WarningLabel.Size = New System.Drawing.Size(209, 20)
+        Me.WarningLabel.TabIndex = 1
+        Me.WarningLabel.Text = "* Entrez un ID pour rechercher"
         '
         'AddButton
         '
@@ -219,17 +230,6 @@ Partial Class ICategory
         Me.DGVCategory.RowHeadersWidth = 51
         Me.DGVCategory.Size = New System.Drawing.Size(781, 325)
         Me.DGVCategory.TabIndex = 13
-        '
-        'WarningLabel
-        '
-        Me.WarningLabel.AutoSize = True
-        Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WarningLabel.Location = New System.Drawing.Point(309, 0)
-        Me.WarningLabel.Name = "WarningLabel"
-        Me.WarningLabel.Padding = New System.Windows.Forms.Padding(0, 3, 8, 0)
-        Me.WarningLabel.Size = New System.Drawing.Size(209, 20)
-        Me.WarningLabel.TabIndex = 1
-        Me.WarningLabel.Text = "* Entrez un ID pour rechercher"
         '
         'ICategory
         '

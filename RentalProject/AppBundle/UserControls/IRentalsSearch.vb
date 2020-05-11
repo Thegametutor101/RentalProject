@@ -86,6 +86,16 @@
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        SearchItems()
+    End Sub
+
+    Private Sub PressedEnter(sender As Object, e As KeyEventArgs) Handles RenterFirstName.KeyUp, RenterLastName.KeyUp, CategoryName.KeyUp, AuthorisationName.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            SearchItems()
+        End If
+    End Sub
+
+    Private Function SearchItems()
         Dim firstName = Trim(RenterFirstName.Text)
         Dim lastName = Trim(RenterLastName.Text)
         Dim category = Trim(CategoryName.Text)
@@ -107,7 +117,7 @@
             data = EntityRental.getInstance().getRentalsByRenteeName(authorisor)
             loadData(data, False)
         End If
-    End Sub
+    End Function
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         Me.SendToBack()

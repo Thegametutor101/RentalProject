@@ -98,18 +98,16 @@ Partial Class IAddInventory
         '
         Me.TBName.Location = New System.Drawing.Point(290, 149)
         Me.TBName.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBName.Multiline = True
         Me.TBName.Name = "TBName"
-        Me.TBName.Size = New System.Drawing.Size(251, 34)
+        Me.TBName.Size = New System.Drawing.Size(251, 22)
         Me.TBName.TabIndex = 5
         '
         'TBEtat
         '
         Me.TBEtat.Location = New System.Drawing.Point(290, 302)
         Me.TBEtat.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBEtat.Multiline = True
         Me.TBEtat.Name = "TBEtat"
-        Me.TBEtat.Size = New System.Drawing.Size(251, 34)
+        Me.TBEtat.Size = New System.Drawing.Size(251, 22)
         Me.TBEtat.TabIndex = 6
         '
         'CBCat

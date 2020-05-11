@@ -99,9 +99,8 @@ Partial Class IRentalsSearch
         Me.AuthorisationName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorisationName.Location = New System.Drawing.Point(60, 324)
         Me.AuthorisationName.Margin = New System.Windows.Forms.Padding(4)
-        Me.AuthorisationName.Multiline = True
         Me.AuthorisationName.Name = "AuthorisationName"
-        Me.AuthorisationName.Size = New System.Drawing.Size(291, 40)
+        Me.AuthorisationName.Size = New System.Drawing.Size(291, 24)
         Me.AuthorisationName.TabIndex = 20
         '
         'ByAuthorisationName
@@ -122,9 +121,8 @@ Partial Class IRentalsSearch
         Me.CategoryName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CategoryName.Location = New System.Drawing.Point(60, 220)
         Me.CategoryName.Margin = New System.Windows.Forms.Padding(4)
-        Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
-        Me.CategoryName.Size = New System.Drawing.Size(291, 40)
+        Me.CategoryName.Size = New System.Drawing.Size(291, 24)
         Me.CategoryName.TabIndex = 18
         '
         'ByCategoryName
@@ -155,9 +153,8 @@ Partial Class IRentalsSearch
         Me.RenterLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RenterLastName.Location = New System.Drawing.Point(217, 121)
         Me.RenterLastName.Margin = New System.Windows.Forms.Padding(4)
-        Me.RenterLastName.Multiline = True
         Me.RenterLastName.Name = "RenterLastName"
-        Me.RenterLastName.Size = New System.Drawing.Size(134, 40)
+        Me.RenterLastName.Size = New System.Drawing.Size(134, 24)
         Me.RenterLastName.TabIndex = 15
         '
         'Label2
@@ -186,9 +183,8 @@ Partial Class IRentalsSearch
         Me.RenterFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RenterFirstName.Location = New System.Drawing.Point(60, 121)
         Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(4)
-        Me.RenterFirstName.Multiline = True
         Me.RenterFirstName.Name = "RenterFirstName"
-        Me.RenterFirstName.Size = New System.Drawing.Size(134, 40)
+        Me.RenterFirstName.Size = New System.Drawing.Size(134, 24)
         Me.RenterFirstName.TabIndex = 12
         '
         'ByRenterName

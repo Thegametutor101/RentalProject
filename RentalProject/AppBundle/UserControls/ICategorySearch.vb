@@ -47,6 +47,16 @@
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        SearchItems()
+    End Sub
+
+    Private Sub PressedEnter(sender As Object, e As KeyEventArgs) Handles TBNom.KeyUp, TBQuantity.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            SearchItems()
+        End If
+    End Sub
+
+    Private Function SearchItems()
         Dim name = Trim(TBNom.Text)
         Dim quantity = Trim(TBQuantity.Text)
 
@@ -55,5 +65,5 @@
         ElseIf quantity.Length > 0 Then
             DGVQuantity.DataSource = EntityCategory.getInstance.getCategoryByQuantity(quantity)
         End If
-    End Sub
+    End Function
 End Class
