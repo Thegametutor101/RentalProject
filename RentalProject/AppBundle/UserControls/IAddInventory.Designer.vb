@@ -23,16 +23,18 @@ Partial Class IAddInventory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BackButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TBName = New System.Windows.Forms.TextBox()
         Me.TBEtat = New System.Windows.Forms.TextBox()
         Me.CBCat = New System.Windows.Forms.ComboBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.SaveButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -53,9 +55,9 @@ Partial Class IAddInventory
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.Size = New System.Drawing.Size(70, 62)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -95,7 +97,7 @@ Partial Class IAddInventory
         'TBName
         '
         Me.TBName.Location = New System.Drawing.Point(290, 149)
-        Me.TBName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Multiline = True
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(251, 34)
@@ -104,7 +106,7 @@ Partial Class IAddInventory
         'TBEtat
         '
         Me.TBEtat.Location = New System.Drawing.Point(290, 302)
-        Me.TBEtat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBEtat.Margin = New System.Windows.Forms.Padding(4)
         Me.TBEtat.Multiline = True
         Me.TBEtat.Name = "TBEtat"
         Me.TBEtat.Size = New System.Drawing.Size(251, 34)
@@ -116,24 +118,35 @@ Partial Class IAddInventory
         Me.CBCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBCat.FormattingEnabled = True
         Me.CBCat.Location = New System.Drawing.Point(290, 229)
-        Me.CBCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
         Me.CBCat.Size = New System.Drawing.Size(251, 24)
         Me.CBCat.TabIndex = 7
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.SaveButton)
+        Me.Panel2.Controls.Add(Me.CancelButton)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 471)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(781, 71)
+        Me.Panel2.TabIndex = 8
         '
         'SaveButton
         '
         Me.SaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SaveButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.SaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SaveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.SaveButton.Location = New System.Drawing.Point(253, 427)
+        Me.SaveButton.Location = New System.Drawing.Point(435, 0)
         Me.SaveButton.Name = "SaveButton"
-        Me.SaveButton.Size = New System.Drawing.Size(132, 44)
-        Me.SaveButton.TabIndex = 83
+        Me.SaveButton.Size = New System.Drawing.Size(173, 71)
+        Me.SaveButton.TabIndex = 85
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
@@ -141,39 +154,27 @@ Partial Class IAddInventory
         '
         Me.CancelButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CancelButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CancelButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.CancelButton.Location = New System.Drawing.Point(409, 427)
+        Me.CancelButton.Location = New System.Drawing.Point(608, 0)
         Me.CancelButton.Name = "CancelButton"
-        Me.CancelButton.Size = New System.Drawing.Size(132, 44)
-        Me.CancelButton.TabIndex = 82
+        Me.CancelButton.Size = New System.Drawing.Size(173, 71)
+        Me.CancelButton.TabIndex = 84
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
-        '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
         '
         'IAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Controls.Add(Me.SaveButton)
-        Me.Controls.Add(Me.CancelButton)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.CBCat)
         Me.Controls.Add(Me.TBEtat)
         Me.Controls.Add(Me.TBName)
@@ -181,10 +182,12 @@ Partial Class IAddInventory
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IAddInventory"
         Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -198,6 +201,7 @@ Partial Class IAddInventory
     Friend WithEvents TBName As TextBox
     Friend WithEvents TBEtat As TextBox
     Friend WithEvents CBCat As ComboBox
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents SaveButton As Button
     Friend WithEvents CancelButton As Button
 End Class

@@ -41,11 +41,13 @@ Partial Class IModifyRental
         Me.Label5 = New System.Windows.Forms.Label()
         Me.NumericDays = New System.Windows.Forms.NumericUpDown()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CancelButton = New System.Windows.Forms.Button()
-        Me.ResetButton = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SaveButton = New System.Windows.Forms.Button()
+        Me.ResetButton = New System.Windows.Forms.Button()
+        Me.CancelButton = New System.Windows.Forms.Button()
         CType(Me.NumericHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericDays, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RentalID
@@ -240,53 +242,67 @@ Partial Class IModifyRental
         Me.CheckBox1.Text = "Date Fixe"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'CancelButton
+        'Panel1
         '
-        Me.CancelButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
-        Me.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CancelButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.CancelButton.Location = New System.Drawing.Point(565, 471)
-        Me.CancelButton.Name = "CancelButton"
-        Me.CancelButton.Size = New System.Drawing.Size(132, 44)
-        Me.CancelButton.TabIndex = 79
-        Me.CancelButton.Text = "Annuler"
-        Me.CancelButton.UseVisualStyleBackColor = False
-        '
-        'ResetButton
-        '
-        Me.ResetButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.ResetButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ResetButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.ResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ResetButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ResetButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.ResetButton.Location = New System.Drawing.Point(427, 471)
-        Me.ResetButton.Name = "ResetButton"
-        Me.ResetButton.Size = New System.Drawing.Size(132, 44)
-        Me.ResetButton.TabIndex = 80
-        Me.ResetButton.Text = "Réinitialiser"
-        Me.ResetButton.UseVisualStyleBackColor = False
+        Me.Panel1.Controls.Add(Me.SaveButton)
+        Me.Panel1.Controls.Add(Me.ResetButton)
+        Me.Panel1.Controls.Add(Me.CancelButton)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 471)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(781, 71)
+        Me.Panel1.TabIndex = 79
         '
         'SaveButton
         '
         Me.SaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SaveButton.Dock = System.Windows.Forms.DockStyle.Right
         Me.SaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SaveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.SaveButton.Location = New System.Drawing.Point(289, 471)
+        Me.SaveButton.Location = New System.Drawing.Point(262, 0)
         Me.SaveButton.Name = "SaveButton"
-        Me.SaveButton.Size = New System.Drawing.Size(132, 44)
-        Me.SaveButton.TabIndex = 81
+        Me.SaveButton.Size = New System.Drawing.Size(173, 71)
+        Me.SaveButton.TabIndex = 84
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
+        '
+        'ResetButton
+        '
+        Me.ResetButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.ResetButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ResetButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ResetButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.ResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ResetButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ResetButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer))
+        Me.ResetButton.Location = New System.Drawing.Point(435, 0)
+        Me.ResetButton.Name = "ResetButton"
+        Me.ResetButton.Size = New System.Drawing.Size(173, 71)
+        Me.ResetButton.TabIndex = 83
+        Me.ResetButton.Text = "Réinitialiser"
+        Me.ResetButton.UseVisualStyleBackColor = False
+        '
+        'CancelButton
+        '
+        Me.CancelButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CancelButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CancelButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.CancelButton.Location = New System.Drawing.Point(608, 0)
+        Me.CancelButton.Name = "CancelButton"
+        Me.CancelButton.Size = New System.Drawing.Size(173, 71)
+        Me.CancelButton.TabIndex = 82
+        Me.CancelButton.Text = "Annuler"
+        Me.CancelButton.UseVisualStyleBackColor = False
         '
         'IModifyRental
         '
@@ -295,9 +311,7 @@ Partial Class IModifyRental
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Controls.Add(Me.SaveButton)
-        Me.Controls.Add(Me.ResetButton)
-        Me.Controls.Add(Me.CancelButton)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.NumericHours)
@@ -322,6 +336,7 @@ Partial Class IModifyRental
         Me.Size = New System.Drawing.Size(781, 542)
         CType(Me.NumericHours, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericDays, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,7 +361,8 @@ Partial Class IModifyRental
     Friend WithEvents Label5 As Label
     Friend WithEvents NumericDays As NumericUpDown
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CancelButton As Button
-    Friend WithEvents ResetButton As Button
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents SaveButton As Button
+    Friend WithEvents ResetButton As Button
+    Friend WithEvents CancelButton As Button
 End Class

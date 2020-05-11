@@ -17,6 +17,7 @@
     Private Sub IReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
         RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        SearchButton.Enabled = False
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -49,9 +50,23 @@
     End Sub
 
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        SearchTextBox.Text = Trim(SearchTextBox.Text)
         If Not IsNumeric(SearchTextBox.Text) And SearchTextBox.Text.Length > 0 Then
             MessageBox.Show("Valeur numerique obligatoire")
             SearchTextBox.Clear()
+            SearchButton.Enabled = False
+        ElseIf Not SearchTextBox.Text.Length > 0 Then
+            SearchButton.Enabled = False
+        Else
+            SearchButton.Enabled = True
+        End If
+    End Sub
+
+    Private Sub SearchButton_EnabledChanged(sender As Object, e As EventArgs) Handles SearchButton.EnabledChanged
+        If SearchButton.Enabled Then
+            WarningLabel.Hide()
+        Else
+            WarningLabel.Show()
         End If
     End Sub
 End Class

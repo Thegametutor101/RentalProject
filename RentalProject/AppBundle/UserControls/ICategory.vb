@@ -11,6 +11,7 @@
     Private Sub ICategory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DGVCategory.DataSource = EntityCategory.getInstance.getCategory
         DGVCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        AddButton.Enabled = False
     End Sub
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
@@ -39,7 +40,9 @@
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-        Me.SendToBack()
+        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.SendToBack()
+        End If
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -47,5 +50,22 @@
         search.Dock = DockStyle.Fill
         MainForm.InterfacePanel.Controls.Add(search)
         search.BringToFront()
+    End Sub
+
+    Private Sub TBName_TextChanged(sender As Object, e As EventArgs) Handles TBName.TextChanged
+        TBName.Text = Trim(TBName.Text)
+        If Not TBName.Text.Length > 0 Then
+            AddButton.Enabled = False
+        Else
+            AddButton.Enabled = True
+        End If
+    End Sub
+
+    Private Sub AddButton_EnabledChanged(sender As Object, e As EventArgs) Handles AddButton.EnabledChanged
+        If AddButton.Enabled Then
+            WarningLabel.Hide()
+        Else
+            WarningLabel.Show()
+        End If
     End Sub
 End Class

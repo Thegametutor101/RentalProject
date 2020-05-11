@@ -29,7 +29,7 @@
         End If
     End Function
 
-    Private Sub ShowButton_EnabledChanged(sender As Object, e As EventArgs) Handles DetailsButton.EnabledChanged
+    Private Sub DetailsButton_EnabledChanged(sender As Object, e As EventArgs) Handles DetailsButton.EnabledChanged
         If DetailsButton.Enabled Then
             WarningLabel.Hide()
         Else

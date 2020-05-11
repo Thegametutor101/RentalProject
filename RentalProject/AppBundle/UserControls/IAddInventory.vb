@@ -56,10 +56,9 @@ Public Class IAddInventory
         'Confirmation que tous les champs sont remplis
         Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
-        If TBName.Text = "" Or CBCat.Text = "" Or TBEtat.Text = "" Then
+        If Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(TBEtat.Text) = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
         Else
-
             'confirmation de l'ajout
             Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & EntityEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
