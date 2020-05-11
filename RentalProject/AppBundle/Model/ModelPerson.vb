@@ -27,7 +27,7 @@ Public Class ModelPerson
                          ByVal departement As String,
                          ByVal service As String,
                          ByVal bureau As String,
-                         ByVal telephone As Integer,
+                         ByVal telephone As String,
                          ByVal poste As Integer)
         Try
             Dim command As New MySqlCommand
@@ -41,6 +41,28 @@ Public Class ModelPerson
             MessageBox.Show("La personne à été ajouté avec succès.")
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
+        End Try
+    End Sub
+
+    Public Sub updatePerson(ByVal noPersonne As Integer,
+                            ByVal nom As String,
+                            ByVal prenom As String,
+                            ByVal statut As String,
+                            ByVal departement As String,
+                            ByVal service As String,
+                            ByVal bureau As String,
+                            ByVal telephone As String,
+                            ByVal poste As Integer)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"update personne set nom = '{nom}', prenom = '{prenom}', statut = '{statut}', nomDepartement = '{departement}', nomService = '{service}', noBureau = '{bureau}', telephone = '{telephone}', poste = '{poste}' where noPersonne = '{noPersonne}')"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("La personne à été modifié avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la modification.")
         End Try
     End Sub
 

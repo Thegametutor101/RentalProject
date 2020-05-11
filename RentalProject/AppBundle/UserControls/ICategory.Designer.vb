@@ -23,14 +23,15 @@ Partial Class ICategory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.DGVCategory = New System.Windows.Forms.DataGridView()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.DeleteButton = New System.Windows.Forms.Button()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.TBName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ModifyButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVCategory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,20 +46,6 @@ Partial Class ICategory
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
-        '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
         '
         'DGVCategory
         '
@@ -83,9 +70,9 @@ Partial Class ICategory
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(350, 364)
+        Me.SearchButton.Location = New System.Drawing.Point(401, 364)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(197, 61)
+        Me.SearchButton.Size = New System.Drawing.Size(146, 61)
         Me.SearchButton.TabIndex = 11
         Me.SearchButton.Text = "Rechercher une Categorie"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -100,7 +87,7 @@ Partial Class ICategory
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
         Me.DeleteButton.Location = New System.Drawing.Point(42, 364)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(197, 61)
+        Me.DeleteButton.Size = New System.Drawing.Size(128, 61)
         Me.DeleteButton.TabIndex = 10
         Me.DeleteButton.Text = "Effacer une Categorie"
         Me.DeleteButton.UseVisualStyleBackColor = False
@@ -138,6 +125,21 @@ Partial Class ICategory
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Nom de la catégorie"
         '
+        'ModifyButton
+        '
+        Me.ModifyButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ModifyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.ModifyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ModifyButton.ForeColor = System.Drawing.Color.White
+        Me.ModifyButton.Location = New System.Drawing.Point(214, 364)
+        Me.ModifyButton.Name = "ModifyButton"
+        Me.ModifyButton.Size = New System.Drawing.Size(146, 61)
+        Me.ModifyButton.TabIndex = 16
+        Me.ModifyButton.Text = "Modifier une Categorie"
+        Me.ModifyButton.UseVisualStyleBackColor = False
+        '
         'Label2
         '
         Me.Label2.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
@@ -146,11 +148,26 @@ Partial Class ICategory
         Me.Label2.Size = New System.Drawing.Size(84, 60)
         Me.Label2.TabIndex = 15
         '
+        'BackButton
+        '
+        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BackButton.FlatAppearance.BorderSize = 0
+        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
+        Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
+        Me.BackButton.TabIndex = 0
+        Me.BackButton.UseVisualStyleBackColor = True
+        '
         'ICategory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.ModifyButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TBName)
         Me.Controls.Add(Me.Label1)
@@ -177,4 +194,5 @@ Partial Class ICategory
     Friend WithEvents TBName As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents ModifyButton As Button
 End Class

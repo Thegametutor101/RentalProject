@@ -10,24 +10,22 @@
     End Sub
 
     Private Sub IAddPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LADepartement.Hide()
-        LAService.Hide()
-        LABureau.Hide()
-        LAPoste.Hide()
-        TBDepartement.Hide()
-        TBService.Hide()
-        TBBureau.Hide()
-        TBPoste.Hide()
+        TBService.Enabled = False
+        TBBureau.Enabled = False
+        TBPoste.Enabled = False
     End Sub
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
+        Try
+            If CBStatut.Text <> "Étudiant" Then
+                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text)
+            Else
+                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, "")
+            End If
 
-        If CBStatut.Text <> "Étudiant" Then
-            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text)
-        Else
-            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, "", "", "", TBTelephone.Text, "")
-        End If
-
+        Catch ex As Exception
+            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+        End Try
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
@@ -37,32 +35,14 @@
 
     Private Sub CBStatut_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBStatut.SelectedIndexChanged
         If CBStatut.Text <> "Étudiant" Then
-            LADepartement.Show()
-            LAService.Show()
-            LABureau.Show()
-            LAPoste.Show()
-            TBDepartement.Show()
-            TBService.Show()
-            TBBureau.Show()
-            TBPoste.Show()
+            TBService.Enabled = True
+            TBBureau.Enabled = True
+            TBPoste.Enabled = True
         Else
-            LADepartement.Hide()
-            LAService.Hide()
-            LABureau.Hide()
-            LAPoste.Hide()
-            TBDepartement.Hide()
-            TBService.Hide()
-            TBBureau.Hide()
-            TBPoste.Hide()
+            TBService.Enabled = False
+            TBBureau.Enabled = False
+            TBPoste.Enabled = False
         End If
-    End Sub
-
-    Private Sub TBTelephone_TextChanged(sender As Object, e As EventArgs) Handles TBTelephone.TextChanged
-        If Not IsNumeric(TBTelephone.Text) And TBTelephone.Text.Length > 0 Then
-            MessageBox.Show("Valeur numerique obligatoire")
-            TBTelephone.Clear()
-        End If
-
     End Sub
 
     Private Sub TBPoste_TextChanged(sender As Object, e As EventArgs) Handles TBPoste.TextChanged
@@ -71,5 +51,9 @@
             TBPoste.Clear()
         End If
 
+    End Sub
+
+    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
+        Me.SendToBack()
     End Sub
 End Class

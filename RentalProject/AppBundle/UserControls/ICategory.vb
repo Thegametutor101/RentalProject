@@ -48,4 +48,11 @@
         MainForm.InterfacePanel.Controls.Add(search)
         search.BringToFront()
     End Sub
+
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        Dim modifyMessage = InputBox("Entrez le noveau nom de la catégorie", "Modifier catégorie")
+
+        ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, modifyMessage)
+
+    End Sub
 End Class

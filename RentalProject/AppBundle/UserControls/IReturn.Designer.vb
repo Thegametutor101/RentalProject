@@ -77,17 +77,17 @@ Partial Class IReturn
         Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(183, 80)
+        Me.Label1.Location = New System.Drawing.Point(55, 73)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 20)
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "ID Emprunt"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(311, 80)
+        Me.SearchTextBox.Location = New System.Drawing.Point(186, 66)
         Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchTextBox.Multiline = True
         Me.SearchTextBox.Name = "SearchTextBox"
@@ -101,7 +101,7 @@ Partial Class IReturn
         Me.RentTableDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.RentTableDGV.BackgroundColor = System.Drawing.SystemColors.Window
         Me.RentTableDGV.ColumnHeadersHeight = 29
-        Me.RentTableDGV.Location = New System.Drawing.Point(13, 127)
+        Me.RentTableDGV.Location = New System.Drawing.Point(13, 117)
         Me.RentTableDGV.Margin = New System.Windows.Forms.Padding(4)
         Me.RentTableDGV.MultiSelect = False
         Me.RentTableDGV.Name = "RentTableDGV"
@@ -119,7 +119,7 @@ Partial Class IReturn
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(311, 462)
+        Me.ReturnButton.Location = New System.Drawing.Point(400, 376)
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(177, 62)
@@ -136,7 +136,7 @@ Partial Class IReturn
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(607, 65)
+        Me.SearchButton.Location = New System.Drawing.Point(419, 55)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(158, 55)

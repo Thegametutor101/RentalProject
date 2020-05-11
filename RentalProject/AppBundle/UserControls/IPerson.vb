@@ -41,4 +41,11 @@
         mainForm.InterfacePanel.Controls.Add(person)
         person.BringToFront()
     End Sub
+
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        Dim person As New IModifyPerson(Me)
+        person.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(person)
+        person.BringToFront()
+    End Sub
 End Class

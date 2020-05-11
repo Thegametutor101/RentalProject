@@ -32,7 +32,6 @@ Partial Class IAddPerson
         Me.LANom = New System.Windows.Forms.Label()
         Me.TBPrenom = New System.Windows.Forms.TextBox()
         Me.LAPrenom = New System.Windows.Forms.Label()
-        Me.TBTelephone = New System.Windows.Forms.TextBox()
         Me.LATelephone = New System.Windows.Forms.Label()
         Me.TBBureau = New System.Windows.Forms.TextBox()
         Me.LABureau = New System.Windows.Forms.Label()
@@ -42,6 +41,7 @@ Partial Class IAddPerson
         Me.LADepartement = New System.Windows.Forms.Label()
         Me.TBPoste = New System.Windows.Forms.TextBox()
         Me.LAPoste = New System.Windows.Forms.Label()
+        Me.TBTelephone = New System.Windows.Forms.MaskedTextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -112,18 +112,20 @@ Partial Class IAddPerson
         'LAStatut
         '
         Me.LAStatut.AutoSize = True
+        Me.LAStatut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LAStatut.Location = New System.Drawing.Point(38, 247)
         Me.LAStatut.Name = "LAStatut"
-        Me.LAStatut.Size = New System.Drawing.Size(35, 13)
+        Me.LAStatut.Size = New System.Drawing.Size(41, 16)
         Me.LAStatut.TabIndex = 12
         Me.LAStatut.Text = "Statut"
         '
         'LANom
         '
         Me.LANom.AutoSize = True
+        Me.LANom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LANom.Location = New System.Drawing.Point(38, 132)
         Me.LANom.Name = "LANom"
-        Me.LANom.Size = New System.Drawing.Size(29, 13)
+        Me.LANom.Size = New System.Drawing.Size(37, 16)
         Me.LANom.TabIndex = 10
         Me.LANom.Text = "Nom"
         '
@@ -137,25 +139,20 @@ Partial Class IAddPerson
         'LAPrenom
         '
         Me.LAPrenom.AutoSize = True
+        Me.LAPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LAPrenom.Location = New System.Drawing.Point(38, 169)
         Me.LAPrenom.Name = "LAPrenom"
-        Me.LAPrenom.Size = New System.Drawing.Size(43, 13)
+        Me.LAPrenom.Size = New System.Drawing.Size(55, 16)
         Me.LAPrenom.TabIndex = 18
         Me.LAPrenom.Text = "Prénom"
-        '
-        'TBTelephone
-        '
-        Me.TBTelephone.Location = New System.Drawing.Point(143, 204)
-        Me.TBTelephone.Name = "TBTelephone"
-        Me.TBTelephone.Size = New System.Drawing.Size(121, 20)
-        Me.TBTelephone.TabIndex = 25
         '
         'LATelephone
         '
         Me.LATelephone.AutoSize = True
+        Me.LATelephone.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LATelephone.Location = New System.Drawing.Point(38, 207)
         Me.LATelephone.Name = "LATelephone"
-        Me.LATelephone.Size = New System.Drawing.Size(58, 13)
+        Me.LATelephone.Size = New System.Drawing.Size(74, 16)
         Me.LATelephone.TabIndex = 24
         Me.LATelephone.Text = "Téléphone"
         '
@@ -169,9 +166,10 @@ Partial Class IAddPerson
         'LABureau
         '
         Me.LABureau.AutoSize = True
+        Me.LABureau.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LABureau.Location = New System.Drawing.Point(311, 207)
         Me.LABureau.Name = "LABureau"
-        Me.LABureau.Size = New System.Drawing.Size(61, 13)
+        Me.LABureau.Size = New System.Drawing.Size(75, 16)
         Me.LABureau.TabIndex = 30
         Me.LABureau.Text = "No. Bureau"
         '
@@ -185,9 +183,10 @@ Partial Class IAddPerson
         'LAService
         '
         Me.LAService.AutoSize = True
+        Me.LAService.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LAService.Location = New System.Drawing.Point(311, 169)
         Me.LAService.Name = "LAService"
-        Me.LAService.Size = New System.Drawing.Size(43, 13)
+        Me.LAService.Size = New System.Drawing.Size(54, 16)
         Me.LAService.TabIndex = 28
         Me.LAService.Text = "Service"
         '
@@ -201,9 +200,10 @@ Partial Class IAddPerson
         'LADepartement
         '
         Me.LADepartement.AutoSize = True
+        Me.LADepartement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LADepartement.Location = New System.Drawing.Point(311, 132)
         Me.LADepartement.Name = "LADepartement"
-        Me.LADepartement.Size = New System.Drawing.Size(68, 13)
+        Me.LADepartement.Size = New System.Drawing.Size(86, 16)
         Me.LADepartement.TabIndex = 26
         Me.LADepartement.Text = "Département"
         '
@@ -217,17 +217,27 @@ Partial Class IAddPerson
         'LAPoste
         '
         Me.LAPoste.AutoSize = True
+        Me.LAPoste.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LAPoste.Location = New System.Drawing.Point(311, 247)
         Me.LAPoste.Name = "LAPoste"
-        Me.LAPoste.Size = New System.Drawing.Size(34, 13)
+        Me.LAPoste.Size = New System.Drawing.Size(43, 16)
         Me.LAPoste.TabIndex = 32
         Me.LAPoste.Text = "Poste"
+        '
+        'TBTelephone
+        '
+        Me.TBTelephone.Location = New System.Drawing.Point(143, 204)
+        Me.TBTelephone.Mask = "(000) 0000-000"
+        Me.TBTelephone.Name = "TBTelephone"
+        Me.TBTelephone.Size = New System.Drawing.Size(121, 20)
+        Me.TBTelephone.TabIndex = 34
         '
         'IAddPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.TBTelephone)
         Me.Controls.Add(Me.TBPoste)
         Me.Controls.Add(Me.LAPoste)
         Me.Controls.Add(Me.TBBureau)
@@ -236,7 +246,6 @@ Partial Class IAddPerson
         Me.Controls.Add(Me.LAService)
         Me.Controls.Add(Me.TBDepartement)
         Me.Controls.Add(Me.LADepartement)
-        Me.Controls.Add(Me.TBTelephone)
         Me.Controls.Add(Me.LATelephone)
         Me.Controls.Add(Me.TBPrenom)
         Me.Controls.Add(Me.LAPrenom)
@@ -265,7 +274,6 @@ Partial Class IAddPerson
     Friend WithEvents LANom As Label
     Friend WithEvents TBPrenom As TextBox
     Friend WithEvents LAPrenom As Label
-    Friend WithEvents TBTelephone As TextBox
     Friend WithEvents LATelephone As Label
     Friend WithEvents TBBureau As TextBox
     Friend WithEvents LABureau As Label
@@ -275,4 +283,5 @@ Partial Class IAddPerson
     Friend WithEvents LADepartement As Label
     Friend WithEvents TBPoste As TextBox
     Friend WithEvents LAPoste As Label
+    Friend WithEvents TBTelephone As MaskedTextBox
 End Class
