@@ -177,7 +177,7 @@ Partial Class IRentals
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(315, 62)
+        Me.Panel4.Size = New System.Drawing.Size(315, 12)
         Me.Panel4.TabIndex = 1
         '
         'ListView1

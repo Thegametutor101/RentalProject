@@ -133,6 +133,18 @@
     <Compile Include="AppBundle\UserControls\IAddPerson.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyPerson.Designer.vb">
+      <DependentUpon>IModifyPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonDetails.Designer.vb">
+      <DependentUpon>IPersonDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IPersonSearch.Designer.vb">
       <DependentUpon>IPersonSearch.vb</DependentUpon>
     </Compile>
@@ -230,6 +242,9 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyPerson.resx">
+      <DependentUpon>IModifyPerson.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyRental.resx">
       <DependentUpon>IModifyRental.vb</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IPerson.resx">
       <DependentUpon>IPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPersonDetails.resx">
+      <DependentUpon>IPersonDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IPersonSearch.resx">
       <DependentUpon>IPersonSearch.vb</DependentUpon>

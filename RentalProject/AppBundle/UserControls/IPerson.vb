@@ -41,4 +41,24 @@
         mainForm.InterfacePanel.Controls.Add(person)
         person.BringToFront()
     End Sub
+
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        If Not IsNothing(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value) Then
+            Dim data As DataTable = EntityPerson.getInstance().getPersonByID(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value)
+            Dim modifyPerson As New IModifyPerson(mainForm, data)
+            modifyPerson.Dock = DockStyle.Fill
+            mainForm.InterfacePanel.Controls.Add(modifyPerson)
+            modifyPerson.BringToFront()
+        End If
+    End Sub
+
+    Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click
+        If Not IsNothing(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value) Then
+            Dim data As DataTable = EntityPerson.getInstance().getPersonByID(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value)
+            Dim detailsPerson As New IPersonDetails(mainForm, data)
+            detailsPerson.Dock = DockStyle.Fill
+            mainForm.InterfacePanel.Controls.Add(detailsPerson)
+            detailsPerson.BringToFront()
+        End If
+    End Sub
 End Class

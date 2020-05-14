@@ -23,9 +23,6 @@ Public Class IEmprunt
         rentals = rental
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-    End Sub
-
     Private Sub IEmprunt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '  Dim noCategorie As String
         DateTimePicker1.MinDate = Date.Now
@@ -132,6 +129,7 @@ Public Class IEmprunt
             dateRetour = DateTimePicker1.Value
             empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
             empruntEntity.updateEquipementStatus(no_equipement)
+            rentals.loadData(EntityRental.getInstance().getRentals())
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try

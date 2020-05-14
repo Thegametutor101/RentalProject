@@ -24,10 +24,10 @@ Public Class EntityPerson
         Return table
     End Function
 
-    Public Function getPersonByID(id As String) As DataTable
+    Public Function getPersonByID(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(noPersonne) = upper('{id}')"
+        command.CommandText = $"Select * from personne where noPersonne = {id}"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
@@ -84,4 +84,15 @@ Public Class EntityPerson
         Return table
     End Function
 
+    Public Function getPersonRentedItemsByID(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select E.nom from equipement E INNER JOIN emprunt E2 on E.noEquipement = E2.noEquipement where E2.noPersonne = {id}"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
 End Class
