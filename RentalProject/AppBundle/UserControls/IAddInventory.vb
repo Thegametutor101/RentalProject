@@ -34,12 +34,12 @@ Public Class IAddInventory
         Dim etat As String
         Dim disponibilite As String
         Try
-            noEquipement = EntityEquipment.getInstance.nextid
+            noEquipement = ModelEquipment.getInstance.nextid
             nom = TBName.Text
             nocategorie = CBCat.SelectedIndex
             etat = TBEtat.Text
             disponibilite = "oui"
-            equipementEntity.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
@@ -60,7 +60,7 @@ Public Class IAddInventory
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
         Else
             'confirmation de l'ajout
-            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & EntityEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
+            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ModelEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 insert_equipment()
                 Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()

@@ -55,9 +55,9 @@ Partial Class IRentalsSearch
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 62)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 1
         '
         'BackButton
@@ -69,9 +69,9 @@ Partial Class IRentalsSearch
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -88,29 +88,27 @@ Partial Class IRentalsSearch
         Me.Panel2.Controls.Add(Me.RenterFirstName)
         Me.Panel2.Controls.Add(Me.ByRenterName)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 62)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(390, 480)
+        Me.Panel2.Size = New System.Drawing.Size(292, 390)
         Me.Panel2.TabIndex = 3
         '
         'AuthorisationName
         '
         Me.AuthorisationName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AuthorisationName.Location = New System.Drawing.Point(60, 324)
-        Me.AuthorisationName.Margin = New System.Windows.Forms.Padding(4)
+        Me.AuthorisationName.Location = New System.Drawing.Point(45, 263)
+        Me.AuthorisationName.Multiline = True
         Me.AuthorisationName.Name = "AuthorisationName"
-        Me.AuthorisationName.Size = New System.Drawing.Size(291, 24)
+        Me.AuthorisationName.Size = New System.Drawing.Size(219, 33)
         Me.AuthorisationName.TabIndex = 20
         '
         'ByAuthorisationName
         '
         Me.ByAuthorisationName.AutoSize = True
         Me.ByAuthorisationName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByAuthorisationName.Location = New System.Drawing.Point(61, 287)
-        Me.ByAuthorisationName.Margin = New System.Windows.Forms.Padding(4)
+        Me.ByAuthorisationName.Location = New System.Drawing.Point(46, 233)
         Me.ByAuthorisationName.Name = "ByAuthorisationName"
-        Me.ByAuthorisationName.Size = New System.Drawing.Size(170, 24)
+        Me.ByAuthorisationName.Size = New System.Drawing.Size(144, 21)
         Me.ByAuthorisationName.TabIndex = 19
         Me.ByAuthorisationName.TabStop = True
         Me.ByAuthorisationName.Text = "Nom d'autorisation"
@@ -119,20 +117,19 @@ Partial Class IRentalsSearch
         'CategoryName
         '
         Me.CategoryName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CategoryName.Location = New System.Drawing.Point(60, 220)
-        Me.CategoryName.Margin = New System.Windows.Forms.Padding(4)
+        Me.CategoryName.Location = New System.Drawing.Point(45, 179)
+        Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
-        Me.CategoryName.Size = New System.Drawing.Size(291, 24)
+        Me.CategoryName.Size = New System.Drawing.Size(219, 33)
         Me.CategoryName.TabIndex = 18
         '
         'ByCategoryName
         '
         Me.ByCategoryName.AutoSize = True
         Me.ByCategoryName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByCategoryName.Location = New System.Drawing.Point(61, 184)
-        Me.ByCategoryName.Margin = New System.Windows.Forms.Padding(4)
+        Me.ByCategoryName.Location = New System.Drawing.Point(46, 150)
         Me.ByCategoryName.Name = "ByCategoryName"
-        Me.ByCategoryName.Size = New System.Drawing.Size(162, 24)
+        Me.ByCategoryName.Size = New System.Drawing.Size(138, 21)
         Me.ByCategoryName.TabIndex = 17
         Me.ByCategoryName.TabStop = True
         Me.ByCategoryName.Text = "Nom de catégorie"
@@ -141,29 +138,27 @@ Partial Class IRentalsSearch
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(266, 100)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(200, 81)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 17)
+        Me.Label3.Size = New System.Drawing.Size(29, 13)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Nom"
         '
         'RenterLastName
         '
         Me.RenterLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RenterLastName.Location = New System.Drawing.Point(217, 121)
-        Me.RenterLastName.Margin = New System.Windows.Forms.Padding(4)
+        Me.RenterLastName.Location = New System.Drawing.Point(163, 98)
+        Me.RenterLastName.Multiline = True
         Me.RenterLastName.Name = "RenterLastName"
-        Me.RenterLastName.Size = New System.Drawing.Size(134, 24)
+        Me.RenterLastName.Size = New System.Drawing.Size(102, 33)
         Me.RenterLastName.TabIndex = 15
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(99, 100)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(74, 81)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 17)
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Prénom"
         '
@@ -171,30 +166,28 @@ Partial Class IRentalsSearch
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 28)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(22, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(157, 24)
+        Me.Label1.Size = New System.Drawing.Size(122, 18)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Rechercher par..."
         '
         'RenterFirstName
         '
         Me.RenterFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RenterFirstName.Location = New System.Drawing.Point(60, 121)
-        Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(4)
+        Me.RenterFirstName.Location = New System.Drawing.Point(45, 98)
+        Me.RenterFirstName.Multiline = True
         Me.RenterFirstName.Name = "RenterFirstName"
-        Me.RenterFirstName.Size = New System.Drawing.Size(134, 24)
+        Me.RenterFirstName.Size = New System.Drawing.Size(102, 33)
         Me.RenterFirstName.TabIndex = 12
         '
         'ByRenterName
         '
         Me.ByRenterName.AutoSize = True
         Me.ByRenterName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByRenterName.Location = New System.Drawing.Point(61, 67)
-        Me.ByRenterName.Margin = New System.Windows.Forms.Padding(4)
+        Me.ByRenterName.Location = New System.Drawing.Point(46, 54)
         Me.ByRenterName.Name = "ByRenterName"
-        Me.ByRenterName.Size = New System.Drawing.Size(186, 24)
+        Me.ByRenterName.Size = New System.Drawing.Size(158, 21)
         Me.ByRenterName.TabIndex = 11
         Me.ByRenterName.TabStop = True
         Me.ByRenterName.Text = "Nom de l'emprunteur"
@@ -205,10 +198,9 @@ Partial Class IRentalsSearch
         Me.ViewPanel.Controls.Add(Me.ListView1)
         Me.ViewPanel.Controls.Add(Me.Panel3)
         Me.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ViewPanel.Location = New System.Drawing.Point(390, 62)
-        Me.ViewPanel.Margin = New System.Windows.Forms.Padding(4)
+        Me.ViewPanel.Location = New System.Drawing.Point(292, 50)
         Me.ViewPanel.Name = "ViewPanel"
-        Me.ViewPanel.Size = New System.Drawing.Size(391, 480)
+        Me.ViewPanel.Size = New System.Drawing.Size(294, 390)
         Me.ViewPanel.TabIndex = 4
         '
         'ListView1
@@ -218,10 +210,10 @@ Partial Class IRentalsSearch
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(391, 416)
+        Me.ListView1.Size = New System.Drawing.Size(294, 338)
         Me.ListView1.TabIndex = 2
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -251,10 +243,10 @@ Partial Class IRentalsSearch
         Me.Panel3.Controls.Add(Me.SearchButton)
         Me.Panel3.Controls.Add(Me.DetailsButton)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 416)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Location = New System.Drawing.Point(0, 338)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(391, 64)
+        Me.Panel3.Size = New System.Drawing.Size(294, 52)
         Me.Panel3.TabIndex = 1
         '
         'SearchButton
@@ -267,10 +259,10 @@ Partial Class IRentalsSearch
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchButton.Location = New System.Drawing.Point(1, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(182, 64)
+        Me.SearchButton.Size = New System.Drawing.Size(136, 52)
         Me.SearchButton.TabIndex = 0
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -285,17 +277,16 @@ Partial Class IRentalsSearch
         Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
-        Me.DetailsButton.Location = New System.Drawing.Point(182, 0)
-        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DetailsButton.Location = New System.Drawing.Point(137, 0)
         Me.DetailsButton.Name = "DetailsButton"
-        Me.DetailsButton.Size = New System.Drawing.Size(209, 64)
+        Me.DetailsButton.Size = New System.Drawing.Size(157, 52)
         Me.DetailsButton.TabIndex = 1
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
         '
         'IRentalsSearch
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -303,10 +294,10 @@ Partial Class IRentalsSearch
         Me.Controls.Add(Me.ViewPanel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IRentalsSearch"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

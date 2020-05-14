@@ -73,44 +73,28 @@ Public Class EntityEquipment
         Return table
     End Function
 
-    Public Function updateequipment(noequipement As Integer, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
+    Public Function getEquipmentByEtat(etat As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie + 1}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
-        connection.Open()
-        Dim add As Integer = command.ExecuteNonQuery()
-        connection.Close()
-    End Function
-
-    Public Function addequipment(noequipement As Integer, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie + 1}','{etat}','{disponibilite}')"
-        connection.Open()
-        Dim add As Integer = command.ExecuteNonQuery()
-        connection.Close()
-    End Function
-
-    Public Function nextid() As Integer
-        Dim command As New MySqlCommand
-        Dim ID As Integer
-        command.Connection = connection
-        command.CommandText = "select max(noequipement) from equipement"
+        command.CommandText = $"Select * from equipement where upper(etat) like upper('{etat}')"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        reader.Read()
-        ID = reader(0)
+        Dim table As New DataTable("equipement")
+        table.Load(reader)
         connection.Close()
-        Return (ID + 1)
+        Return table
     End Function
 
-    Public Function delequipement(noequipement As Integer)
+    Public Function getEquipmentDetailed(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Delete from equipement where noequipement = '{noequipement}'"
         connection.Open()
+        command.CommandText = $"Select E.noEquipement, initcap(E.nom), initcap(C2.nom), initcap(E.etat),initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.noBureau, initcap(E2.autorisation), E2.DateEmprunt, E2.dateRetour from equipement E left join emprunt E2 on E.noEquipement = E2.noEquipement left join personne P on E2.noPersonne = P.noPersonne inner join categorie C2 on E.noCategorie = C2.noCategorie where E.NoEquipement = {id}"
         Dim reader = command.ExecuteReader()
+        Dim equipmentTable As New DataTable("equipement")
+        equipmentTable.Load(reader)
         connection.Close()
+        Return equipmentTable
     End Function
 
 End Class
