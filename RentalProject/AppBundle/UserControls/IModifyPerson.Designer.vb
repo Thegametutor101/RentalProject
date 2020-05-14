@@ -36,14 +36,14 @@ Partial Class IModifyPerson
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ID = New System.Windows.Forms.TextBox()
-        Me.FirstName = New System.Windows.Forms.TextBox()
         Me.LastName = New System.Windows.Forms.TextBox()
         Me.Department = New System.Windows.Forms.TextBox()
         Me.Service = New System.Windows.Forms.TextBox()
-        Me.Office = New System.Windows.Forms.TextBox()
-        Me.Phone = New System.Windows.Forms.TextBox()
-        Me.Extension = New System.Windows.Forms.TextBox()
         Me.Status = New System.Windows.Forms.ComboBox()
+        Me.Phone = New System.Windows.Forms.MaskedTextBox()
+        Me.FirstName = New System.Windows.Forms.MaskedTextBox()
+        Me.Office = New System.Windows.Forms.MaskedTextBox()
+        Me.Extension = New System.Windows.Forms.MaskedTextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -208,19 +208,10 @@ Partial Class IModifyPerson
         Me.ID.Size = New System.Drawing.Size(100, 22)
         Me.ID.TabIndex = 90
         '
-        'FirstName
-        '
-        Me.FirstName.Location = New System.Drawing.Point(169, 87)
-        Me.FirstName.Name = "FirstName"
-        Me.FirstName.ReadOnly = True
-        Me.FirstName.Size = New System.Drawing.Size(204, 22)
-        Me.FirstName.TabIndex = 91
-        '
         'LastName
         '
         Me.LastName.Location = New System.Drawing.Point(470, 87)
         Me.LastName.Name = "LastName"
-        Me.LastName.ReadOnly = True
         Me.LastName.Size = New System.Drawing.Size(204, 22)
         Me.LastName.TabIndex = 92
         '
@@ -228,7 +219,6 @@ Partial Class IModifyPerson
         '
         Me.Department.Location = New System.Drawing.Point(169, 237)
         Me.Department.Name = "Department"
-        Me.Department.ReadOnly = True
         Me.Department.Size = New System.Drawing.Size(204, 22)
         Me.Department.TabIndex = 93
         '
@@ -236,33 +226,8 @@ Partial Class IModifyPerson
         '
         Me.Service.Location = New System.Drawing.Point(470, 237)
         Me.Service.Name = "Service"
-        Me.Service.ReadOnly = True
         Me.Service.Size = New System.Drawing.Size(204, 22)
         Me.Service.TabIndex = 94
-        '
-        'Office
-        '
-        Me.Office.Location = New System.Drawing.Point(169, 316)
-        Me.Office.Name = "Office"
-        Me.Office.ReadOnly = True
-        Me.Office.Size = New System.Drawing.Size(100, 22)
-        Me.Office.TabIndex = 95
-        '
-        'Phone
-        '
-        Me.Phone.Location = New System.Drawing.Point(169, 388)
-        Me.Phone.Name = "Phone"
-        Me.Phone.ReadOnly = True
-        Me.Phone.Size = New System.Drawing.Size(204, 22)
-        Me.Phone.TabIndex = 96
-        '
-        'Extension
-        '
-        Me.Extension.Location = New System.Drawing.Point(470, 388)
-        Me.Extension.Name = "Extension"
-        Me.Extension.ReadOnly = True
-        Me.Extension.Size = New System.Drawing.Size(100, 22)
-        Me.Extension.TabIndex = 97
         '
         'Status
         '
@@ -276,6 +241,37 @@ Partial Class IModifyPerson
         Me.Status.Size = New System.Drawing.Size(204, 24)
         Me.Status.TabIndex = 98
         '
+        'Phone
+        '
+        Me.Phone.Location = New System.Drawing.Point(169, 387)
+        Me.Phone.Mask = "(000) 000-0000"
+        Me.Phone.Name = "Phone"
+        Me.Phone.Size = New System.Drawing.Size(204, 22)
+        Me.Phone.TabIndex = 99
+        '
+        'FirstName
+        '
+        Me.FirstName.Location = New System.Drawing.Point(169, 86)
+        Me.FirstName.Name = "FirstName"
+        Me.FirstName.Size = New System.Drawing.Size(204, 22)
+        Me.FirstName.TabIndex = 100
+        '
+        'Office
+        '
+        Me.Office.Location = New System.Drawing.Point(169, 316)
+        Me.Office.Mask = "LL0000"
+        Me.Office.Name = "Office"
+        Me.Office.Size = New System.Drawing.Size(95, 22)
+        Me.Office.TabIndex = 101
+        '
+        'Extension
+        '
+        Me.Extension.Location = New System.Drawing.Point(470, 387)
+        Me.Extension.Mask = "999999"
+        Me.Extension.Name = "Extension"
+        Me.Extension.Size = New System.Drawing.Size(95, 22)
+        Me.Extension.TabIndex = 102
+        '
         'IModifyPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -283,14 +279,14 @@ Partial Class IModifyPerson
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Controls.Add(Me.Status)
         Me.Controls.Add(Me.Extension)
-        Me.Controls.Add(Me.Phone)
         Me.Controls.Add(Me.Office)
+        Me.Controls.Add(Me.FirstName)
+        Me.Controls.Add(Me.Phone)
+        Me.Controls.Add(Me.Status)
         Me.Controls.Add(Me.Service)
         Me.Controls.Add(Me.Department)
         Me.Controls.Add(Me.LastName)
-        Me.Controls.Add(Me.FirstName)
         Me.Controls.Add(Me.ID)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -325,12 +321,12 @@ Partial Class IModifyPerson
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents ID As TextBox
-    Friend WithEvents FirstName As TextBox
     Friend WithEvents LastName As TextBox
     Friend WithEvents Department As TextBox
     Friend WithEvents Service As TextBox
-    Friend WithEvents Office As TextBox
-    Friend WithEvents Phone As TextBox
-    Friend WithEvents Extension As TextBox
     Friend WithEvents Status As ComboBox
+    Friend WithEvents Phone As MaskedTextBox
+    Friend WithEvents FirstName As MaskedTextBox
+    Friend WithEvents Office As MaskedTextBox
+    Friend WithEvents Extension As MaskedTextBox
 End Class

@@ -45,15 +45,16 @@ Partial Class IPersonDetails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -307,15 +308,6 @@ Partial Class IPersonDetails
         Me.Panel3.Size = New System.Drawing.Size(216, 480)
         Me.Panel3.TabIndex = 5
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.Label10)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(216, 53)
-        Me.Panel4.TabIndex = 6
-        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.ListView1)
@@ -327,6 +319,7 @@ Partial Class IPersonDetails
         '
         'ListView1
         '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.EquipmentName})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Enabled = False
         Me.ListView1.FullRowSelect = True
@@ -338,6 +331,20 @@ Partial Class IPersonDetails
         Me.ListView1.TabIndex = 1
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'EquipmentName
+        '
+        Me.EquipmentName.Text = "Nom de l'équipement"
+        Me.EquipmentName.Width = 205
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label10)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(216, 53)
+        Me.Panel4.TabIndex = 6
         '
         'Label10
         '
@@ -368,9 +375,9 @@ Partial Class IPersonDetails
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -402,4 +409,5 @@ Partial Class IPersonDetails
     Friend WithEvents ListView1 As ListView
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label10 As Label
+    Friend WithEvents EquipmentName As ColumnHeader
 End Class

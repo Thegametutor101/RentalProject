@@ -95,4 +95,52 @@ Public Class EntityPerson
         connection.Close()
         Return table
     End Function
+
+    Public Function getPersonByDepartment(department As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{department}%')"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByService(service As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{service}%')"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByRenting() As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByLate() As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne where dateRetour < current_date"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
 End Class

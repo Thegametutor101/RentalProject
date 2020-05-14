@@ -1,4 +1,6 @@
-﻿Public Class IPersonSearch
+﻿Imports System.Text.RegularExpressions
+
+Public Class IPersonSearch
 
     Dim person As IPerson
     Dim mainForm As MainForm
@@ -17,22 +19,72 @@
         DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
-    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByName.CheckedChanged, ByStatut.CheckedChanged
+    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByName.CheckedChanged, ByStatut.CheckedChanged, ByDepartment.CheckedChanged, ByService.CheckedChanged, ByRenting.CheckedChanged, ByLate.CheckedChanged
         TBNom.Text = ""
         TBPrenom.Text = ""
         CBStatut.Text = ""
+        Department.Text = ""
+        Service.Text = ""
         If ByName.Checked Then
             TBNom.Enabled = True
             TBPrenom.Enabled = True
             CBStatut.Enabled = False
+            Department.Enabled = False
+            Service.Enabled = False
+            ByRenting.Checked = False
+            ByLate.Checked = False
         ElseIf ByStatut.Checked Then
-            CBStatut.Enabled = True
             TBNom.Enabled = False
             TBPrenom.Enabled = False
+            CBStatut.Enabled = True
+            Department.Enabled = False
+            Service.Enabled = False
+            ByRenting.Checked = False
+            ByLate.Checked = False
+        ElseIf ByDepartment.Checked Then
+            TBNom.Enabled = False
+            TBPrenom.Enabled = False
+            CBStatut.Enabled = False
+            Department.Enabled = True
+            Service.Enabled = False
+            ByRenting.Checked = False
+            ByLate.Checked = False
+        ElseIf ByService.Checked Then
+            TBNom.Enabled = False
+            TBPrenom.Enabled = False
+            CBStatut.Enabled = False
+            Department.Enabled = False
+            Service.Enabled = True
+            ByRenting.Checked = False
+            ByLate.Checked = False
+        ElseIf ByRenting.Checked Then
+            TBNom.Enabled = False
+            TBPrenom.Enabled = False
+            CBStatut.Enabled = False
+            Department.Enabled = False
+            Service.Enabled = False
+            ByRenting.Checked = True
+            ByLate.Checked = False
+        ElseIf ByLate.Checked Then
+            TBNom.Enabled = False
+            TBPrenom.Enabled = False
+            CBStatut.Enabled = False
+            Department.Enabled = False
+            Service.Enabled = False
+            ByRenting.Checked = False
+            ByLate.Checked = True
         End If
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[\d-]", String.Empty)
+        TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[^A-Za-z ]", String.Empty)
+        TBNom.Text = Regex.Replace(TBNom.Text, "[\d-]", String.Empty)
+        TBNom.Text = Regex.Replace(TBNom.Text, "[^A-Za-z ]", String.Empty)
+        Department.Text = Regex.Replace(Department.Text, "[\d-]", String.Empty)
+        Department.Text = Regex.Replace(Department.Text, "[^A-Za-z ]", String.Empty)
+        Service.Text = Regex.Replace(Service.Text, "[\d-]", String.Empty)
+        Service.Text = Regex.Replace(Service.Text, "[^A-Za-z ]", String.Empty)
         SearchItems()
     End Sub
 
@@ -45,8 +97,8 @@
     Private Function SearchItems()
         Dim lastName = Trim(TBNom.Text)
         Dim firstName = Trim(TBPrenom.Text)
-        Dim statut = Trim(CBStatut.Text)
-
+        Dim dept = Trim(Department.Text)
+        Dim serv = Trim(Service.Text)
         If lastName.Length > 0 Or firstName.Length > 0 Then
             If lastName.Length > 0 And firstName.Length > 0 Then
                 DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByFirstNameAndLastName(firstName, lastName)
@@ -56,15 +108,33 @@
                 DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByLastName(firstName)
             End If
         ElseIf CBStatut.Text.Length > 0 Then
-            DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByStatut(statut)
+            DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByStatut(CBStatut.Text)
+        ElseIf dept.Length > 0 Then
+            DGVPerson.DataSource = EntityPerson.getInstance.getPersonByDepartment(dept)
+        ElseIf serv.Length > 0 Then
+            DGVPerson.DataSource = EntityPerson.getInstance.getPersonByService(serv)
+        ElseIf ByRenting.Checked Then
+            Dim data As DataTable = EntityPerson.getInstance.getPersonByRenting()
+            DGVPerson.DataSource = data
+            If data.Rows.Count < 1 Then
+                DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
+            End If
+        ElseIf ByLate.Checked Then
+            Dim data As DataTable = EntityPerson.getInstance.getPersonByLate()
+            DGVPerson.DataSource = data
+            If data.Rows.Count < 1 Then
+                DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
+            End If
         End If
     End Function
 
-    Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles TBPrenom.TextChanged, TBNom.TextChanged, CBStatut.TextChanged
+    Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles TBPrenom.TextChanged, TBNom.TextChanged, CBStatut.TextChanged, Department.TextChanged, Service.TextChanged, ByStatut.CheckedChanged, ByRenting.CheckedChanged, ByLate.CheckedChanged
         Dim lastName = Trim(TBNom.Text)
         Dim firstName = Trim(TBPrenom.Text)
         Dim statut = Trim(CBStatut.Text)
-        If (firstName.Length > 0 Or lastName.Length > 0) Or statut.Length > 0 Then
+        Dim dept = Trim(Department.Text)
+        Dim serv = Trim(Service.Text)
+        If (firstName.Length > 0 Or lastName.Length > 0) Or (ByStatut.Checked And statut.Length > 0) Or dept.Length > 0 Or serv.Length > 0 Or ByRenting.Checked Or ByLate.Checked Then
             SearchButton.Enabled = True
         Else
             SearchButton.Enabled = False

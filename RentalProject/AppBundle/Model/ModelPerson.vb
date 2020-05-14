@@ -12,16 +12,16 @@ Public Class ModelPerson
         Return instance
     End Function
 
-    Public Sub deletePerson(id As Integer)
+    Public Function deletePerson(id As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Delete from personne where noPersonne = {id}"
         connection.Open()
         command.ExecuteNonQuery()
         connection.Close()
-    End Sub
+    End Function
 
-    Public Sub addPerson(ByVal nom As String,
+    Public Function addPerson(ByVal nom As String,
                          ByVal prenom As String,
                          ByVal statut As String,
                          ByVal departement As String,
@@ -42,6 +42,27 @@ Public Class ModelPerson
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
         End Try
-    End Sub
+    End Function
 
+    Public Function modifyPerson(id As Integer,
+                                 lastName As String,
+                                 firstName As String,
+                                 status As String,
+                                 department As String,
+                                 service As String,
+                                 office As String,
+                                 phone As String,
+                                 extension As Integer)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"update personne set nom = initcap('{lastName}'), prenom = initcap('{firstName}'), statut = initcap('{status}'), nomDepartement = initcap('{department}'), nomService = initcap('{service}'), noBureau = upper('{office}'), telephone = '{phone}', poste = '{extension}'"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("La personne à été modifié avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la modification.")
+        End Try
+    End Function
 End Class
