@@ -40,9 +40,7 @@
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Me.SendToBack()
-        End If
+        Me.SendToBack()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -50,6 +48,13 @@
         search.Dock = DockStyle.Fill
         MainForm.InterfacePanel.Controls.Add(search)
         search.BringToFront()
+    End Sub
+
+    Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
+        Dim modifyMessage = InputBox("Entrez le noveau nom de la catégorie", "Modifier catégorie")
+
+        ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, modifyMessage)
+
     End Sub
 
     Private Sub TBName_TextChanged(sender As Object, e As EventArgs) Handles TBName.TextChanged

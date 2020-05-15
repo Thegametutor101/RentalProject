@@ -27,7 +27,7 @@ Public Class ModelPerson
                          ByVal departement As String,
                          ByVal service As String,
                          ByVal bureau As String,
-                         ByVal telephone As Integer,
+                         ByVal telephone As String,
                          ByVal poste As Integer)
         Try
             Dim command As New MySqlCommand
@@ -57,7 +57,7 @@ Public Class ModelPerson
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"update personne set nom = initcap('{lastName}'), prenom = initcap('{firstName}'), statut = initcap('{status}'), nomDepartement = initcap('{department}'), nomService = initcap('{service}'), noBureau = upper('{office}'), telephone = '{phone}', poste = '{extension}'"
+            command.CommandText = $"update personne set nom = initcap('{lastName}'), prenom = initcap('{firstName}'), statut = initcap('{status}'), nomDepartement = initcap('{department}'), nomService = initcap('{service}'), noBureau = upper('{office}'), telephone = '{phone}', poste = '{extension}' where noPersonne = {id}"
             Dim result = command.ExecuteNonQuery()
             connection.Close()
             MessageBox.Show("La personne à été modifié avec succès.")

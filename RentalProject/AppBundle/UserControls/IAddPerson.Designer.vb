@@ -30,7 +30,6 @@ Partial Class IAddPerson
         Me.LANom = New System.Windows.Forms.Label()
         Me.TBPrenom = New System.Windows.Forms.TextBox()
         Me.LAPrenom = New System.Windows.Forms.Label()
-        Me.TBTelephone = New System.Windows.Forms.TextBox()
         Me.LATelephone = New System.Windows.Forms.Label()
         Me.TBBureau = New System.Windows.Forms.TextBox()
         Me.LABureau = New System.Windows.Forms.Label()
@@ -40,6 +39,7 @@ Partial Class IAddPerson
         Me.LADepartement = New System.Windows.Forms.Label()
         Me.TBPoste = New System.Windows.Forms.TextBox()
         Me.LAPoste = New System.Windows.Forms.Label()
+        Me.TBTelephone = New System.Windows.Forms.MaskedTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
@@ -132,20 +132,11 @@ Partial Class IAddPerson
         Me.LAPrenom.TabIndex = 18
         Me.LAPrenom.Text = "Prénom"
         '
-        'TBTelephone
-        '
-        Me.TBTelephone.Location = New System.Drawing.Point(127, 256)
-        Me.TBTelephone.Margin = New System.Windows.Forms.Padding(4)
-        Me.TBTelephone.Name = "TBTelephone"
-        Me.TBTelephone.Size = New System.Drawing.Size(231, 22)
-        Me.TBTelephone.TabIndex = 25
-        '
         'LATelephone
         '
         Me.LATelephone.AutoSize = True
-        Me.LATelephone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LATelephone.Location = New System.Drawing.Point(22, 256)
-        Me.LATelephone.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LATelephone.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LATelephone.Location = New System.Drawing.Point(22, 260)
         Me.LATelephone.Name = "LATelephone"
         Me.LATelephone.Size = New System.Drawing.Size(86, 20)
         Me.LATelephone.TabIndex = 24
@@ -227,6 +218,14 @@ Partial Class IAddPerson
         Me.LAPoste.TabIndex = 32
         Me.LAPoste.Text = "Poste"
         '
+        'TBTelephone
+        '
+        Me.TBTelephone.Location = New System.Drawing.Point(127, 257)
+        Me.TBTelephone.Mask = "(000) 0000-000"
+        Me.TBTelephone.Name = "TBTelephone"
+        Me.TBTelephone.Size = New System.Drawing.Size(231, 22)
+        Me.TBTelephone.TabIndex = 34
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.AddButton)
@@ -278,6 +277,7 @@ Partial Class IAddPerson
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.TBTelephone)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TBPoste)
         Me.Controls.Add(Me.LAPoste)
@@ -287,7 +287,6 @@ Partial Class IAddPerson
         Me.Controls.Add(Me.LAService)
         Me.Controls.Add(Me.TBDepartement)
         Me.Controls.Add(Me.LADepartement)
-        Me.Controls.Add(Me.TBTelephone)
         Me.Controls.Add(Me.LATelephone)
         Me.Controls.Add(Me.TBPrenom)
         Me.Controls.Add(Me.LAPrenom)
@@ -315,7 +314,6 @@ Partial Class IAddPerson
     Friend WithEvents LANom As Label
     Friend WithEvents TBPrenom As TextBox
     Friend WithEvents LAPrenom As Label
-    Friend WithEvents TBTelephone As TextBox
     Friend WithEvents LATelephone As Label
     Friend WithEvents TBBureau As TextBox
     Friend WithEvents LABureau As Label
@@ -325,6 +323,7 @@ Partial Class IAddPerson
     Friend WithEvents LADepartement As Label
     Friend WithEvents TBPoste As TextBox
     Friend WithEvents LAPoste As Label
+    Friend WithEvents TBTelephone As MaskedTextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents AddButton As Button
     Friend WithEvents CancelButton As Button
