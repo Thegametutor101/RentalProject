@@ -39,8 +39,15 @@ Public Class IInventory
         Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             Dim equipemententity As New EntityEquipment
-            equipemententity.delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            ModelEquipment.getInstance().delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
             DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim InventorySearch As New IInventorySearch(Me)
+        InventorySearch.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(InventorySearch)
+        InventorySearch.BringToFront()
     End Sub
 End Class

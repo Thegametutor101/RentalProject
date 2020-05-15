@@ -53,7 +53,7 @@ Public Class IModifyInventory
             nocategorie = CBCat.SelectedIndex
             etat = TBEtat.Text
             disponibilite = TBDispo.Text
-            equipementEntity.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            ModelEquipment.getInstance.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try

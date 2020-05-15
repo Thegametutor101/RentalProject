@@ -24,6 +24,7 @@ Partial Class IRentalsDetails
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ModifyButton = New System.Windows.Forms.Button()
+        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RentalID = New System.Windows.Forms.TextBox()
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
@@ -48,7 +49,6 @@ Partial Class IRentalsDetails
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class IRentalsDetails
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 2
@@ -75,7 +75,7 @@ Partial Class IRentalsDetails
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
         Me.ModifyButton.Location = New System.Drawing.Point(393, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(193, 50)
         Me.ModifyButton.TabIndex = 2
@@ -91,8 +91,9 @@ Partial Class IRentalsDetails
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 61)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -123,7 +124,7 @@ Partial Class IRentalsDetails
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 50)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(586, 390)
         Me.Panel2.TabIndex = 3
@@ -131,7 +132,7 @@ Partial Class IRentalsDetails
         'RentalID
         '
         Me.RentalID.Location = New System.Drawing.Point(64, 21)
-        Me.RentalID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RentalID.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalID.Multiline = True
         Me.RentalID.Name = "RentalID"
         Me.RentalID.ReadOnly = True
@@ -142,7 +143,7 @@ Partial Class IRentalsDetails
         '
         Me.ReturnDate.Enabled = False
         Me.ReturnDate.Location = New System.Drawing.Point(346, 352)
-        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(189, 20)
         Me.ReturnDate.TabIndex = 56
@@ -151,7 +152,7 @@ Partial Class IRentalsDetails
         '
         Me.RentalDate.Enabled = False
         Me.RentalDate.Location = New System.Drawing.Point(79, 352)
-        Me.RentalDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RentalDate.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(189, 20)
         Me.RentalDate.TabIndex = 55
@@ -159,7 +160,7 @@ Partial Class IRentalsDetails
         'Authorisation
         '
         Me.Authorisation.Location = New System.Drawing.Point(155, 260)
-        Me.Authorisation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Authorisation.Margin = New System.Windows.Forms.Padding(2)
         Me.Authorisation.Multiline = True
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
@@ -169,7 +170,7 @@ Partial Class IRentalsDetails
         'EquipmentState
         '
         Me.EquipmentState.Location = New System.Drawing.Point(380, 202)
-        Me.EquipmentState.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EquipmentState.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentState.Multiline = True
         Me.EquipmentState.Name = "EquipmentState"
         Me.EquipmentState.ReadOnly = True
@@ -179,7 +180,7 @@ Partial Class IRentalsDetails
         'CategoryName
         '
         Me.CategoryName.Location = New System.Drawing.Point(141, 201)
-        Me.CategoryName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CategoryName.Margin = New System.Windows.Forms.Padding(2)
         Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
         Me.CategoryName.ReadOnly = True
@@ -189,7 +190,7 @@ Partial Class IRentalsDetails
         'EquipmentName
         '
         Me.EquipmentName.Location = New System.Drawing.Point(164, 164)
-        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentName.Multiline = True
         Me.EquipmentName.Name = "EquipmentName"
         Me.EquipmentName.ReadOnly = True
@@ -199,7 +200,7 @@ Partial Class IRentalsDetails
         'RenterOffice
         '
         Me.RenterOffice.Location = New System.Drawing.Point(470, 114)
-        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterOffice.Multiline = True
         Me.RenterOffice.Name = "RenterOffice"
         Me.RenterOffice.ReadOnly = True
@@ -209,7 +210,7 @@ Partial Class IRentalsDetails
         'RenterFirstName
         '
         Me.RenterFirstName.Location = New System.Drawing.Point(164, 76)
-        Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterFirstName.Multiline = True
         Me.RenterFirstName.Name = "RenterFirstName"
         Me.RenterFirstName.ReadOnly = True
@@ -219,7 +220,7 @@ Partial Class IRentalsDetails
         'RenterLastName
         '
         Me.RenterLastName.Location = New System.Drawing.Point(380, 74)
-        Me.RenterLastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterLastName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterLastName.Multiline = True
         Me.RenterLastName.Name = "RenterLastName"
         Me.RenterLastName.ReadOnly = True
@@ -229,7 +230,7 @@ Partial Class IRentalsDetails
         'RenterStatus
         '
         Me.RenterStatus.Location = New System.Drawing.Point(164, 115)
-        Me.RenterStatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterStatus.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterStatus.Multiline = True
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
@@ -368,20 +369,6 @@ Partial Class IRentalsDetails
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "ID"
         '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
-        '
         'IRentalsDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,7 +378,7 @@ Partial Class IRentalsDetails
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IRentalsDetails"
         Me.Size = New System.Drawing.Size(586, 440)
