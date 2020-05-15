@@ -72,4 +72,16 @@ Public Class IModifyPerson
             Me.SendToBack()
         End If
     End Sub
+
+    Private Sub Status_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Status.SelectedIndexChanged
+        If Status.SelectedIndex = 0 Then
+            Department.Enabled = False
+            Service.Enabled = False
+            Office.Enabled = False
+        Else
+            Department.Enabled = True
+            Service.Enabled = True
+            Office.Enabled = True
+        End If
+    End Sub
 End Class
