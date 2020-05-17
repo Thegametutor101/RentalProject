@@ -11,6 +11,7 @@ Public Class IAddInventory
     End Sub
 
     Private Sub IAddInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'aller chercher les catégories existantes pour la combobox
         loaddata(EntityCategory.getInstance.getCategory)
     End Sub
 
@@ -27,6 +28,7 @@ Public Class IAddInventory
     End Function
 
     Private Function insert_equipment()
+        'Création des variables pour l'ajout
         Dim equipementEntity As New EntityEquipment
         Dim noEquipement As Integer
         Dim nom As String
@@ -34,13 +36,20 @@ Public Class IAddInventory
         Dim etat As String
         Dim disponibilite As String
         Try
+            'obtenir le prochain ID d'équipement pour éviter un double de clé primaire
             noEquipement = ModelEquipment.getInstance.nextid
+            'les nom est entré dans la textbox
             nom = TBName.Text
+            'la catégorie est entrée dans la combobox
             nocategorie = CBCat.SelectedIndex
+            'l'état est entré dans la textbox
             etat = TBEtat.Text
+            'l'équipement est automatiquement disponible
             disponibilite = "oui"
+            'Ajout de l'équipement à la base de données
             ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
         Catch ex As Exception
+            'message d'erreur lorsque les champs ne sont pas tous remplis
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
     End Function
@@ -62,8 +71,11 @@ Public Class IAddInventory
             'confirmation de l'ajout
             Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ModelEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
+                'la procédure d'insertion se lance
                 insert_equipment()
+                'on met la datagridview à jour
                 Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
+                'on retourne au contrôle utilisateur d'inventaire
                 Me.SendToBack()
             End If
         End If

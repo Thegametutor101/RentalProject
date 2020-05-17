@@ -9,13 +9,16 @@ Public Class IEquipmentDetails
         Inventory = IInventory
     End Sub
     Private Sub IEquipmentDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'on va chercher les informations détaillées de l'équipement grâce à son ID
         Dim item As DataTable = EntityEquipment.getInstance().getEquipmentDetailed(Inventory.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
         For Each it As DataRow In item.Rows
             EquipmentID.Text = it.Item(0)
             EquipmentName.Text = it.Item(1)
             CategoryName.Text = it.Item(2)
             EquipmentState.Text = it.Item(3)
+            'certains Équipements ne sont pas empruntés on évite les erreurs possibles en mettant les prochaines informations dans un try catch
             Try
+                'Insertion des informations d'emprunt et de personne dans les textbox
                 RenterFirstName.Text = it.Item(4)
                 RenterLastName.Text = it.Item(5)
                 RenterStatus.Text = it.Item(6)
