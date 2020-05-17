@@ -26,30 +26,6 @@ Public Class EntityRental
         Return table
     End Function
 
-    Public Function getRentalsByIdFormat(id As Integer) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where ID = {id}"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("emprunt")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getRentalsByRenterId(id As Integer) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where noPersonne = {id}"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("emprunt")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
     Public Function getRentalsByRenterFirstName(firstName As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -78,42 +54,6 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(P.prenom) like upper('{firstName}%') and upper(P.nom) like upper('{lastName}%')"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("emprunt")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getRentalsByEquipmentNumber(id As Integer) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where noEquipement = {id}"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("emprunt")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getRentalsByEquipmentName(name As String) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(E2.nom) like upper('%{name}%')"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("emprunt")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getRentalsByCategoryNumber(id As Integer) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where noCategorie = {id}"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("emprunt")

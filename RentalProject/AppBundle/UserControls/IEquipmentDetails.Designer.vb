@@ -55,7 +55,7 @@ Partial Class IEquipmentDetails
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 2
@@ -68,7 +68,7 @@ Partial Class IEquipmentDetails
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(52, 50)
         Me.BackButton.TabIndex = 0
@@ -77,7 +77,7 @@ Partial Class IEquipmentDetails
         'EquipmentID
         '
         Me.EquipmentID.Location = New System.Drawing.Point(52, 65)
-        Me.EquipmentID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EquipmentID.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentID.Multiline = True
         Me.EquipmentID.Name = "EquipmentID"
         Me.EquipmentID.ReadOnly = True
@@ -88,7 +88,7 @@ Partial Class IEquipmentDetails
         '
         Me.ReturnDate.Enabled = False
         Me.ReturnDate.Location = New System.Drawing.Point(346, 380)
-        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(189, 20)
         Me.ReturnDate.TabIndex = 79
@@ -97,7 +97,7 @@ Partial Class IEquipmentDetails
         '
         Me.RentalDate.Enabled = False
         Me.RentalDate.Location = New System.Drawing.Point(103, 380)
-        Me.RentalDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RentalDate.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(189, 20)
         Me.RentalDate.TabIndex = 78
@@ -105,7 +105,7 @@ Partial Class IEquipmentDetails
         'EquipmentState
         '
         Me.EquipmentState.Location = New System.Drawing.Point(360, 145)
-        Me.EquipmentState.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EquipmentState.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentState.Multiline = True
         Me.EquipmentState.Name = "EquipmentState"
         Me.EquipmentState.ReadOnly = True
@@ -115,7 +115,7 @@ Partial Class IEquipmentDetails
         'CategoryName
         '
         Me.CategoryName.Location = New System.Drawing.Point(130, 143)
-        Me.CategoryName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CategoryName.Margin = New System.Windows.Forms.Padding(2)
         Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
         Me.CategoryName.ReadOnly = True
@@ -125,7 +125,7 @@ Partial Class IEquipmentDetails
         'EquipmentName
         '
         Me.EquipmentName.Location = New System.Drawing.Point(130, 101)
-        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentName.Multiline = True
         Me.EquipmentName.Name = "EquipmentName"
         Me.EquipmentName.ReadOnly = True
@@ -200,18 +200,18 @@ Partial Class IEquipmentDetails
         '
         'RenterOffice
         '
-        Me.RenterOffice.Location = New System.Drawing.Point(436, 259)
-        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterOffice.Location = New System.Drawing.Point(452, 259)
+        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterOffice.Multiline = True
         Me.RenterOffice.Name = "RenterOffice"
         Me.RenterOffice.ReadOnly = True
-        Me.RenterOffice.Size = New System.Drawing.Size(98, 19)
+        Me.RenterOffice.Size = New System.Drawing.Size(82, 19)
         Me.RenterOffice.TabIndex = 89
         '
         'RenterFirstName
         '
         Me.RenterFirstName.Location = New System.Drawing.Point(130, 221)
-        Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterFirstName.Multiline = True
         Me.RenterFirstName.Name = "RenterFirstName"
         Me.RenterFirstName.ReadOnly = True
@@ -221,7 +221,7 @@ Partial Class IEquipmentDetails
         'RenterLastName
         '
         Me.RenterLastName.Location = New System.Drawing.Point(360, 219)
-        Me.RenterLastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterLastName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterLastName.Multiline = True
         Me.RenterLastName.Name = "RenterLastName"
         Me.RenterLastName.ReadOnly = True
@@ -231,7 +231,7 @@ Partial Class IEquipmentDetails
         'RenterStatus
         '
         Me.RenterStatus.Location = New System.Drawing.Point(130, 260)
-        Me.RenterStatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenterStatus.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterStatus.Multiline = True
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
@@ -296,7 +296,7 @@ Partial Class IEquipmentDetails
         'Authorisation
         '
         Me.Authorisation.Location = New System.Drawing.Point(130, 310)
-        Me.Authorisation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Authorisation.Margin = New System.Windows.Forms.Padding(2)
         Me.Authorisation.Multiline = True
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True

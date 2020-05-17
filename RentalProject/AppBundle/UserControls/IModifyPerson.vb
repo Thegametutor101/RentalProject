@@ -17,6 +17,10 @@ Public Class IModifyPerson
         setDefaults()
     End Sub
 
+    ''' <summary>
+    ''' Entre les valeurs initiales de la personne sélectionné.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function setDefaults()
         For Each it As DataRow In data.Rows
             'Inserting values into textBoxes
@@ -44,6 +48,12 @@ Public Class IModifyPerson
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gestion des valeurs entrés dans les champs texts et permet l'ajout
+    ''' seulement si les champs sont valide.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         FirstName.Text = Regex.Replace(FirstName.Text, "[\d-]", String.Empty)
         LastName.Text = Regex.Replace(LastName.Text, "[\d-]", String.Empty)
@@ -73,6 +83,11 @@ Public Class IModifyPerson
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gestion des champs acéssibles selon le statut de personne (étudiant, prof, etc).
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Status_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Status.SelectedIndexChanged
         If Status.SelectedIndex = 0 Then
             Department.Enabled = False

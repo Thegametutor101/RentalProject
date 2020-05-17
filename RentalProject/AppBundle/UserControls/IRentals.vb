@@ -15,6 +15,12 @@
         loadData(EntityRental.getInstance().getRentals())
     End Sub
 
+    ''' <summary>
+    ''' Fonction affichant la liste des emprunts et empêche
+    ''' l'utilisateur d'appuyer le bouton recherche s'il n'y en a pas.
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
     Public Function loadData(data As DataTable)
         ListView1.Items.Clear()
         Dim rentalTable As DataTable = data
@@ -37,6 +43,12 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Permet l'utilisateur d'appuyer le boutton détail
+    ''' si un emprunt est sélectionné dans la liste.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.Items.Count > 0 Then
             If Not IsNothing(ListView1.FocusedItem) AndAlso ListView1.FocusedItem.Index >= 0 Then

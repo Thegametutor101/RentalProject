@@ -21,6 +21,10 @@ Public Class ModelRental
         connection.Close()
     End Sub
 
+    ''' <summary>
+    ''' Mets l'équipement qui est retourné disponible.
+    ''' </summary>
+    ''' <param name="id"></param>
     Public Sub updateStateEquipment(id As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -53,6 +57,11 @@ Public Class ModelRental
         End Try
     End Function
 
+    ''' <summary>
+    ''' Mets l'équipement qui est emprunté non disponible.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
     Public Function updateEquipementStatus(id As Integer) As Boolean
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -63,6 +72,16 @@ Public Class ModelRental
         Return True
     End Function
 
+    ''' <summary>
+    ''' Cette fonction est appelé dans l'interface de modification
+    ''' d'emprunt lorsque la date de retour est valide et
+    ''' l'utilisateur appuie sur le bouton sauvegarder.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="duree"></param>
+    ''' <param name="dateRetour"></param>
+    ''' <param name="commentaires"></param>
+    ''' <returns></returns>
     Public Function updateRentalReturnDate(ByVal id As Integer,
                                            ByVal duree As String,
                                            ByVal dateRetour As Date,

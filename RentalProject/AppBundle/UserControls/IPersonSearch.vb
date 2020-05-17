@@ -19,6 +19,12 @@ Public Class IPersonSearch
         DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
+    ''' <summary>
+    ''' Fait la gestion des champs textes lorsq'un boutton radio différent
+    ''' est sélectionné.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByName.CheckedChanged, ByStatut.CheckedChanged, ByDepartment.CheckedChanged, ByService.CheckedChanged, ByRenting.CheckedChanged, ByLate.CheckedChanged
         TBNom.Text = ""
         TBPrenom.Text = ""
@@ -76,6 +82,11 @@ Public Class IPersonSearch
         End If
     End Sub
 
+    ''' <summary>
+    ''' Fait la gestion des valeurs entrées dans les champs textes.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[\d-]", String.Empty)
         TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[^A-Za-z ]", String.Empty)
@@ -94,6 +105,10 @@ Public Class IPersonSearch
         End If
     End Sub
 
+    ''' <summary>
+    ''' Fait la recherche selon les parametres entrés et les affiche.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function SearchItems()
         Dim lastName = Trim(TBNom.Text)
         Dim firstName = Trim(TBPrenom.Text)
@@ -128,6 +143,12 @@ Public Class IPersonSearch
         End If
     End Function
 
+    ''' <summary>
+    ''' Débloque le bouton recherche si selon les valeurs entrés
+    ''' dans les champs text ou si l'un des bouttons radio selon les emprunts est coché.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles TBPrenom.TextChanged, TBNom.TextChanged, CBStatut.TextChanged, Department.TextChanged, Service.TextChanged, ByStatut.CheckedChanged, ByRenting.CheckedChanged, ByLate.CheckedChanged
         Dim lastName = Trim(TBNom.Text)
         Dim firstName = Trim(TBPrenom.Text)

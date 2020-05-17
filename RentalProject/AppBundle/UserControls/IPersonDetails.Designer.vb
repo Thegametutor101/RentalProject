@@ -63,9 +63,9 @@ Partial Class IPersonDetails
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 62)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
         '
         'ModifyButton
@@ -78,10 +78,10 @@ Partial Class IPersonDetails
         Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
-        Me.ModifyButton.Location = New System.Drawing.Point(524, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ModifyButton.Location = New System.Drawing.Point(393, 0)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(257, 62)
+        Me.ModifyButton.Size = New System.Drawing.Size(193, 50)
         Me.ModifyButton.TabIndex = 2
         Me.ModifyButton.Text = "Modifier cette personne"
         Me.ModifyButton.UseVisualStyleBackColor = False
@@ -95,9 +95,9 @@ Partial Class IPersonDetails
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -122,99 +122,110 @@ Partial Class IPersonDetails
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 62)
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(565, 480)
+        Me.Panel2.Size = New System.Drawing.Size(424, 390)
         Me.Panel2.TabIndex = 4
         '
         'Status
         '
         Me.Status.Enabled = False
-        Me.Status.Location = New System.Drawing.Point(129, 149)
+        Me.Status.Location = New System.Drawing.Point(97, 121)
+        Me.Status.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
-        Me.Status.Size = New System.Drawing.Size(163, 22)
+        Me.Status.Size = New System.Drawing.Size(123, 20)
         Me.Status.TabIndex = 134
         '
         'Extension
         '
         Me.Extension.Enabled = False
-        Me.Extension.Location = New System.Drawing.Point(389, 373)
+        Me.Extension.Location = New System.Drawing.Point(292, 303)
+        Me.Extension.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Extension.Name = "Extension"
         Me.Extension.ReadOnly = True
-        Me.Extension.Size = New System.Drawing.Size(100, 22)
+        Me.Extension.Size = New System.Drawing.Size(76, 20)
         Me.Extension.TabIndex = 133
         '
         'Phone
         '
         Me.Phone.Enabled = False
-        Me.Phone.Location = New System.Drawing.Point(129, 373)
+        Me.Phone.Location = New System.Drawing.Point(97, 303)
+        Me.Phone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Phone.Name = "Phone"
         Me.Phone.ReadOnly = True
-        Me.Phone.Size = New System.Drawing.Size(163, 22)
+        Me.Phone.Size = New System.Drawing.Size(123, 20)
         Me.Phone.TabIndex = 132
         '
         'Office
         '
         Me.Office.Enabled = False
-        Me.Office.Location = New System.Drawing.Point(129, 301)
+        Me.Office.Location = New System.Drawing.Point(97, 245)
+        Me.Office.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Office.Name = "Office"
         Me.Office.ReadOnly = True
-        Me.Office.Size = New System.Drawing.Size(100, 22)
+        Me.Office.Size = New System.Drawing.Size(76, 20)
         Me.Office.TabIndex = 131
         '
         'Service
         '
         Me.Service.Enabled = False
-        Me.Service.Location = New System.Drawing.Point(389, 222)
+        Me.Service.Location = New System.Drawing.Point(292, 180)
+        Me.Service.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Service.Name = "Service"
         Me.Service.ReadOnly = True
-        Me.Service.Size = New System.Drawing.Size(163, 22)
+        Me.Service.Size = New System.Drawing.Size(123, 20)
         Me.Service.TabIndex = 130
         '
         'Department
         '
         Me.Department.Enabled = False
-        Me.Department.Location = New System.Drawing.Point(129, 222)
+        Me.Department.Location = New System.Drawing.Point(97, 180)
+        Me.Department.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Department.Name = "Department"
         Me.Department.ReadOnly = True
-        Me.Department.Size = New System.Drawing.Size(163, 22)
+        Me.Department.Size = New System.Drawing.Size(123, 20)
         Me.Department.TabIndex = 129
         '
         'LastName
         '
         Me.LastName.Enabled = False
-        Me.LastName.Location = New System.Drawing.Point(389, 72)
+        Me.LastName.Location = New System.Drawing.Point(292, 58)
+        Me.LastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.LastName.Name = "LastName"
         Me.LastName.ReadOnly = True
-        Me.LastName.Size = New System.Drawing.Size(163, 22)
+        Me.LastName.Size = New System.Drawing.Size(123, 20)
         Me.LastName.TabIndex = 128
         '
         'FirstName
         '
         Me.FirstName.Enabled = False
-        Me.FirstName.Location = New System.Drawing.Point(129, 72)
+        Me.FirstName.Location = New System.Drawing.Point(97, 58)
+        Me.FirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.FirstName.Name = "FirstName"
         Me.FirstName.ReadOnly = True
-        Me.FirstName.Size = New System.Drawing.Size(163, 22)
+        Me.FirstName.Size = New System.Drawing.Size(123, 20)
         Me.FirstName.TabIndex = 127
         '
         'ID
         '
         Me.ID.Enabled = False
-        Me.ID.Location = New System.Drawing.Point(64, 18)
+        Me.ID.Location = New System.Drawing.Point(48, 15)
+        Me.ID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
-        Me.ID.Size = New System.Drawing.Size(100, 22)
+        Me.ID.Size = New System.Drawing.Size(76, 20)
         Me.ID.TabIndex = 126
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(331, 375)
+        Me.Label9.Location = New System.Drawing.Point(248, 305)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 20)
+        Me.Label9.Size = New System.Drawing.Size(44, 17)
         Me.Label9.TabIndex = 125
         Me.Label9.Text = "Poste"
         '
@@ -222,9 +233,10 @@ Partial Class IPersonDetails
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(37, 375)
+        Me.Label8.Location = New System.Drawing.Point(28, 305)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(86, 20)
+        Me.Label8.Size = New System.Drawing.Size(76, 17)
         Me.Label8.TabIndex = 124
         Me.Label8.Text = "Telephone"
         '
@@ -232,9 +244,10 @@ Partial Class IPersonDetails
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(60, 303)
+        Me.Label7.Location = New System.Drawing.Point(45, 246)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 20)
+        Me.Label7.Size = New System.Drawing.Size(54, 17)
         Me.Label7.TabIndex = 123
         Me.Label7.Text = "Bureau"
         '
@@ -242,9 +255,10 @@ Partial Class IPersonDetails
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(318, 224)
+        Me.Label6.Location = New System.Drawing.Point(238, 182)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 20)
+        Me.Label6.Size = New System.Drawing.Size(55, 17)
         Me.Label6.TabIndex = 122
         Me.Label6.Text = "Service"
         '
@@ -252,9 +266,10 @@ Partial Class IPersonDetails
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(17, 224)
+        Me.Label5.Location = New System.Drawing.Point(13, 182)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 20)
+        Me.Label5.Size = New System.Drawing.Size(90, 17)
         Me.Label5.TabIndex = 121
         Me.Label5.Text = "Département"
         '
@@ -262,9 +277,10 @@ Partial Class IPersonDetails
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(70, 151)
+        Me.Label4.Location = New System.Drawing.Point(52, 123)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 20)
+        Me.Label4.Size = New System.Drawing.Size(45, 17)
         Me.Label4.TabIndex = 120
         Me.Label4.Text = "Statut"
         '
@@ -272,9 +288,10 @@ Partial Class IPersonDetails
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(339, 74)
+        Me.Label3.Location = New System.Drawing.Point(254, 60)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 20)
+        Me.Label3.Size = New System.Drawing.Size(37, 17)
         Me.Label3.TabIndex = 119
         Me.Label3.Text = "Nom"
         '
@@ -282,9 +299,10 @@ Partial Class IPersonDetails
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(56, 74)
+        Me.Label2.Location = New System.Drawing.Point(42, 60)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 20)
+        Me.Label2.Size = New System.Drawing.Size(57, 17)
         Me.Label2.TabIndex = 118
         Me.Label2.Text = "Prénom"
         '
@@ -292,9 +310,10 @@ Partial Class IPersonDetails
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 20)
+        Me.Label1.Location = New System.Drawing.Point(22, 16)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(26, 20)
+        Me.Label1.Size = New System.Drawing.Size(21, 17)
         Me.Label1.TabIndex = 117
         Me.Label1.Text = "ID"
         '
@@ -303,18 +322,20 @@ Partial Class IPersonDetails
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(565, 62)
+        Me.Panel3.Location = New System.Drawing.Point(424, 50)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(216, 480)
+        Me.Panel3.Size = New System.Drawing.Size(162, 390)
         Me.Panel3.TabIndex = 5
         '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.ListView1)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(0, 53)
+        Me.Panel5.Location = New System.Drawing.Point(0, 43)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(216, 427)
+        Me.Panel5.Size = New System.Drawing.Size(162, 347)
         Me.Panel5.TabIndex = 7
         '
         'ListView1
@@ -325,9 +346,10 @@ Partial Class IPersonDetails
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(216, 427)
+        Me.ListView1.Size = New System.Drawing.Size(162, 347)
         Me.ListView1.TabIndex = 1
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -342,8 +364,9 @@ Partial Class IPersonDetails
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(216, 53)
+        Me.Panel4.Size = New System.Drawing.Size(162, 43)
         Me.Panel4.TabIndex = 6
         '
         'Label10
@@ -352,15 +375,16 @@ Partial Class IPersonDetails
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(0, 0)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Padding = New System.Windows.Forms.Padding(10, 5, 0, 0)
-        Me.Label10.Size = New System.Drawing.Size(200, 45)
+        Me.Label10.Padding = New System.Windows.Forms.Padding(8, 4, 0, 0)
+        Me.Label10.Size = New System.Drawing.Size(169, 38)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Équipements empruntés" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "par cette personne."
         '
         'IPersonDetails
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -368,9 +392,10 @@ Partial Class IPersonDetails
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IPersonDetails"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

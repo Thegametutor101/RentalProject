@@ -19,6 +19,10 @@
         setDefaults()
     End Sub
 
+    ''' <summary>
+    ''' Entre les valeurs initiales de l'emprunt dans les champs text et les dates.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function setDefaults()
         For Each it As DataRow In data.Rows
             'setting defaults
@@ -51,6 +55,13 @@
         loaded = True
     End Function
 
+    ''' <summary>
+    ''' Vérifie si la date de retour sélectionné est valide selon
+    ''' les dates d'ouverture du cegep. Elle débloque ou bloque
+    ''' aussi le boutton sauvegarder selon la date de retour.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Duration_ValueChanged(sender As Object, e As EventArgs) Handles NumericDays.ValueChanged, NumericHours.ValueChanged
         If NumericHours.Value = 24 Then
             NumericDays.Increment = 1
@@ -69,6 +80,12 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gestion des champs de temps d'emprunt selon
+    ''' si la boite de date fixe est cochée.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
             NumericDays.Enabled = False
@@ -81,6 +98,11 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Entre automatiquement le délai en heure et jours selon la date de retour.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ReturnDate_ValueChanged(sender As Object, e As EventArgs) Handles ReturnDate.ValueChanged
         If loaded AndAlso CheckBox1.Checked Then
             Dim hourDiff As Integer = DateDiff(DateInterval.Hour, RentalDate.Value, ReturnDate.Value)
