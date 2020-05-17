@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class IModifyInventory
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class IModifyInventory
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
@@ -30,13 +30,15 @@ Partial Class IModifyInventory
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LabelNo = New System.Windows.Forms.Label()
-        Me.TBName = New System.Windows.Forms.TextBox()
         Me.CBCat = New System.Windows.Forms.ComboBox()
         Me.TBEtat = New System.Windows.Forms.TextBox()
         Me.TBDispo = New System.Windows.Forms.TextBox()
+        Me.TBName = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ButtonModif = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -45,9 +47,9 @@ Partial Class IModifyInventory
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(586, 50)
+        Me.Panel1.Size = New System.Drawing.Size(781, 62)
         Me.Panel1.TabIndex = 2
         '
         'BackButton
@@ -58,126 +60,165 @@ Partial Class IModifyInventory
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
+        Me.BackButton.Size = New System.Drawing.Size(93, 62)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(161, 151)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(246, 153)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(29, 13)
+        Me.Label1.Size = New System.Drawing.Size(44, 20)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Nom"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(161, 105)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(260, 91)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(21, 13)
+        Me.Label2.Size = New System.Drawing.Size(30, 20)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "No"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(161, 199)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(209, 214)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.Size = New System.Drawing.Size(81, 20)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Catégorie"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(161, 248)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(251, 271)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(26, 13)
+        Me.Label4.Size = New System.Drawing.Size(39, 20)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "État"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(161, 293)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(189, 334)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 13)
+        Me.Label5.Size = New System.Drawing.Size(101, 20)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Disponibilité"
         '
         'LabelNo
         '
         Me.LabelNo.AutoSize = True
-        Me.LabelNo.Location = New System.Drawing.Point(237, 105)
+        Me.LabelNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNo.Location = New System.Drawing.Point(307, 91)
+        Me.LabelNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelNo.Name = "LabelNo"
-        Me.LabelNo.Size = New System.Drawing.Size(22, 13)
+        Me.LabelNo.Size = New System.Drawing.Size(32, 20)
         Me.LabelNo.TabIndex = 8
         Me.LabelNo.Text = "NA"
-        '
-        'TBName
-        '
-        Me.TBName.Location = New System.Drawing.Point(240, 144)
-        Me.TBName.Name = "TBName"
-        Me.TBName.Size = New System.Drawing.Size(121, 20)
-        Me.TBName.TabIndex = 9
         '
         'CBCat
         '
         Me.CBCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBCat.FormattingEnabled = True
-        Me.CBCat.Location = New System.Drawing.Point(240, 191)
+        Me.CBCat.Location = New System.Drawing.Point(311, 210)
+        Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
-        Me.CBCat.Size = New System.Drawing.Size(121, 21)
+        Me.CBCat.Size = New System.Drawing.Size(220, 24)
         Me.CBCat.TabIndex = 10
         '
         'TBEtat
         '
-        Me.TBEtat.Location = New System.Drawing.Point(240, 241)
+        Me.TBEtat.Location = New System.Drawing.Point(311, 257)
+        Me.TBEtat.Margin = New System.Windows.Forms.Padding(4)
         Me.TBEtat.Name = "TBEtat"
-        Me.TBEtat.Size = New System.Drawing.Size(121, 20)
+        Me.TBEtat.Size = New System.Drawing.Size(220, 22)
         Me.TBEtat.TabIndex = 11
         '
         'TBDispo
         '
-        Me.TBDispo.Location = New System.Drawing.Point(240, 286)
+        Me.TBDispo.Location = New System.Drawing.Point(311, 320)
+        Me.TBDispo.Margin = New System.Windows.Forms.Padding(4)
         Me.TBDispo.Name = "TBDispo"
-        Me.TBDispo.Size = New System.Drawing.Size(121, 20)
+        Me.TBDispo.Size = New System.Drawing.Size(220, 22)
         Me.TBDispo.TabIndex = 12
+        '
+        'TBName
+        '
+        Me.TBName.Location = New System.Drawing.Point(311, 139)
+        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
+        Me.TBName.Name = "TBName"
+        Me.TBName.Size = New System.Drawing.Size(220, 22)
+        Me.TBName.TabIndex = 9
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.ButtonModif)
+        Me.Panel2.Controls.Add(Me.ButtonCancel)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 471)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(781, 71)
+        Me.Panel2.TabIndex = 13
         '
         'ButtonModif
         '
-        Me.ButtonModif.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ButtonModif.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.ButtonModif.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonModif.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ButtonModif.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.ButtonModif.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ButtonModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonModif.Location = New System.Drawing.Point(183, 361)
+        Me.ButtonModif.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonModif.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.ButtonModif.Location = New System.Drawing.Point(435, 0)
         Me.ButtonModif.Name = "ButtonModif"
-        Me.ButtonModif.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonModif.TabIndex = 13
-        Me.ButtonModif.Text = "Modifier"
+        Me.ButtonModif.Size = New System.Drawing.Size(173, 71)
+        Me.ButtonModif.TabIndex = 85
+        Me.ButtonModif.Text = "Sauvegarder"
         Me.ButtonModif.UseVisualStyleBackColor = False
         '
         'ButtonCancel
         '
-        Me.ButtonCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ButtonCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.ButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonCancel.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.ButtonCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonCancel.Location = New System.Drawing.Point(321, 361)
+        Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.ButtonCancel.Location = New System.Drawing.Point(608, 0)
         Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonCancel.TabIndex = 14
+        Me.ButtonCancel.Size = New System.Drawing.Size(173, 71)
+        Me.ButtonCancel.TabIndex = 84
         Me.ButtonCancel.Text = "Annuler"
         Me.ButtonCancel.UseVisualStyleBackColor = False
         '
         'IModifyInventory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Controls.Add(Me.ButtonCancel)
-        Me.Controls.Add(Me.ButtonModif)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TBDispo)
         Me.Controls.Add(Me.TBEtat)
         Me.Controls.Add(Me.CBCat)
@@ -189,9 +230,12 @@ Partial Class IModifyInventory
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IModifyInventory"
-        Me.Size = New System.Drawing.Size(586, 440)
+        Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,10 +249,11 @@ Partial Class IModifyInventory
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents LabelNo As Label
-    Friend WithEvents TBName As TextBox
     Friend WithEvents CBCat As ComboBox
     Friend WithEvents TBEtat As TextBox
     Friend WithEvents TBDispo As TextBox
+    Friend WithEvents TBName As TextBox
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents ButtonModif As Button
     Friend WithEvents ButtonCancel As Button
 End Class

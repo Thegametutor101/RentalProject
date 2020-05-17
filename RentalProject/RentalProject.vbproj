@@ -72,6 +72,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -97,10 +99,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBundle\Controllers\ControllerDates.vb" />
     <Compile Include="AppBundle\Entity\EntityCategory.vb" />
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityPerson.vb" />
     <Compile Include="AppBundle\Entity\EntityRental.vb" />
+    <Compile Include="AppBundle\Model\ModelCategory.vb" />
     <Compile Include="AppBundle\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +113,62 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\UserControls\ICategory.Designer.vb">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategorySearch.Designer.vb">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategorySearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddPerson.Designer.vb">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IAddPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyPerson.Designer.vb">
+      <DependentUpon>IModifyPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonDetails.Designer.vb">
+      <DependentUpon>IPersonDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonSearch.Designer.vb">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPersonSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyRental.Designer.vb">
+      <DependentUpon>IModifyRental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IModifyRental.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPerson.Designer.vb">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsDetails.Designer.vb">
+      <DependentUpon>IRentalsDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IRentalsDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IEmprunt.Designer.vb">
       <DependentUpon>IEmprunt.vb</DependentUpon>
     </Compile>
@@ -126,12 +185,6 @@
       <DependentUpon>IInventory.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\IInventory.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AppBundle\UserControls\IRent.Designer.vb">
-      <DependentUpon>IRent.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AppBundle\UserControls\IRent.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\IRentals.Designer.vb">
@@ -164,6 +217,23 @@
     <Compile Include="AppBundle\UserControls\IModifyInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IInventorySearch.Designer.vb">
+      <DependentUpon>IInventorySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IInventorySearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEquipmentDetails.Designer.vb">
+      <DependentUpon>IEquipmentDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEquipmentDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -184,6 +254,36 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyPerson.resx">
+      <DependentUpon>IModifyPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IInventorySearch.resx">
+      <DependentUpon>IInventorySearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IModifyRental.resx">
+      <DependentUpon>IModifyRental.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\ICategory.resx">
+      <DependentUpon>ICategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\ICategorySearch.resx">
+      <DependentUpon>ICategorySearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IAddPerson.resx">
+      <DependentUpon>IAddPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPerson.resx">
+      <DependentUpon>IPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPersonDetails.resx">
+      <DependentUpon>IPersonDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IPersonSearch.resx">
+      <DependentUpon>IPersonSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IRentalsDetails.resx">
+      <DependentUpon>IRentalsDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IEmprunt.resx">
       <DependentUpon>IEmprunt.vb</DependentUpon>
     </EmbeddedResource>
@@ -192,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IInventory.resx">
       <DependentUpon>IInventory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\IRent.resx">
-      <DependentUpon>IRent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IRentals.resx">
       <DependentUpon>IRentals.vb</DependentUpon>
@@ -211,6 +308,9 @@
     <EmbeddedResource Include="AppBundle\UserControls\IModifyInventory.resx">
       <DependentUpon>IModifyInventory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IEquipmentDetails.resx">
+      <DependentUpon>IEquipmentDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -219,6 +319,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -240,9 +347,12 @@
   <ItemGroup>
     <None Include="Resources\baseline_minimize_black_18dp.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Small_logo_departement_informatique.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline-backward-black-18dp-4x.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

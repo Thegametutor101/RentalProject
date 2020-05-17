@@ -31,7 +31,7 @@ Partial Class MainForm
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.SettingsButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
-        Me.DashBoardButton = New System.Windows.Forms.Button()
+        Me.PersonButton = New System.Windows.Forms.Button()
         Me.InventoryButton = New System.Windows.Forms.Button()
         Me.RentalsButton = New System.Windows.Forms.Button()
         Me.InterfacePanel = New System.Windows.Forms.Panel()
@@ -116,7 +116,7 @@ Partial Class MainForm
         Me.MenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.MenuPanel.Controls.Add(Me.SettingsButton)
         Me.MenuPanel.Controls.Add(Me.CloseButton)
-        Me.MenuPanel.Controls.Add(Me.DashBoardButton)
+        Me.MenuPanel.Controls.Add(Me.PersonButton)
         Me.MenuPanel.Controls.Add(Me.InventoryButton)
         Me.MenuPanel.Controls.Add(Me.RentalsButton)
         Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
@@ -162,23 +162,23 @@ Partial Class MainForm
         Me.CloseButton.Text = "Quitter l'application"
         Me.CloseButton.UseVisualStyleBackColor = False
         '
-        'DashBoardButton
+        'PersonButton
         '
-        Me.DashBoardButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.DashBoardButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DashBoardButton.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DashBoardButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DashBoardButton.FlatAppearance.BorderSize = 2
-        Me.DashBoardButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.DashBoardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DashBoardButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DashBoardButton.Location = New System.Drawing.Point(0, 116)
-        Me.DashBoardButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DashBoardButton.Name = "DashBoardButton"
-        Me.DashBoardButton.Size = New System.Drawing.Size(200, 58)
-        Me.DashBoardButton.TabIndex = 2
-        Me.DashBoardButton.Text = "Panneau de contrôles"
-        Me.DashBoardButton.UseVisualStyleBackColor = False
+        Me.PersonButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.PersonButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PersonButton.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PersonButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.PersonButton.FlatAppearance.BorderSize = 2
+        Me.PersonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.PersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PersonButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PersonButton.Location = New System.Drawing.Point(0, 116)
+        Me.PersonButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PersonButton.Name = "PersonButton"
+        Me.PersonButton.Size = New System.Drawing.Size(200, 58)
+        Me.PersonButton.TabIndex = 2
+        Me.PersonButton.Text = "Personnes"
+        Me.PersonButton.UseVisualStyleBackColor = False
         '
         'InventoryButton
         '
@@ -255,7 +255,7 @@ Partial Class MainForm
     Friend WithEvents InterfacePanel As Panel
     Friend WithEvents SettingsButton As Button
     Friend WithEvents CloseButton As Button
-    Friend WithEvents DashBoardButton As Button
+    Friend WithEvents PersonButton As Button
     Friend WithEvents InventoryButton As Button
     Friend WithEvents RentalsButton As Button
 End Class
