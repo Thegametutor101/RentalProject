@@ -36,6 +36,27 @@ Public Class IAddPerson
         End If
         Return emailExpression.IsMatch(email)
     End Function
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
+        If Not String.IsNullOrEmpty(TBNom.Text) And
+          Not String.IsNullOrEmpty(TBPrenom.Text) And
+           Not String.IsNullOrEmpty(CBStatut.Text) And
+          Not String.IsNullOrEmpty(TBTelephone.Text) Then
+            If CBStatut.Text <> "Étudiant" Then
+                If Not String.IsNullOrEmpty(TBDepartement.Text) And
+                    Not String.IsNullOrEmpty(TBService.Text) And
+                      Not String.IsNullOrEmpty(TBBureau.Text) Then
+                    If Not String.IsNullOrEmpty(TBPoste.Text) Then
+                        TBPoste.Text = 0
+                    End If
+                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text))
+                    Else MessageBox.Show("Veuillez vérifier les informations")
+                End If
+            Else
+                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, "", "", "", TBTelephone.Text, 0)
+            End If
+        Else MessageBox.Show("Veuillez vérifier les informations")
+            End If
+
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
         'Try
@@ -78,5 +99,9 @@ Public Class IAddPerson
             MessageBox.Show("Valeur numerique obligatoire")
             TBPoste.Clear()
         End If
+    End Sub
+
+    Private Sub MaskedTextBox2_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
+
     End Sub
 End Class
