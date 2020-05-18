@@ -22,22 +22,8 @@ Public Class ModelEquipment
         connection.Close()
     End Function
 
-    'On va chercher les prochain ID pour éviter un doublon de clé primaire
-    Public Function nextid() As Integer
-        Dim command As New MySqlCommand
-        Dim ID As Integer
-        command.Connection = connection
-        command.CommandText = "select max(noequipement) from equipement"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        reader.Read()
-        ID = reader(0)
-        connection.Close()
-        Return (ID + 1)
-    End Function
-
     'on ajoute un équipement à la base de données en fonction de certaines valeurs
-    Public Function addequipment(noequipement As Integer, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
+    Public Function addequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie + 1}','{etat}','{disponibilite}')"

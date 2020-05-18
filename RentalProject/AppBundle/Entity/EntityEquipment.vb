@@ -119,4 +119,16 @@ Public Class EntityEquipment
         Return equipmentTable
     End Function
 
+    Public Function getEquipmentIDs() As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        connection.Open()
+        command.CommandText = $"Select noEquipement from equipement"
+        Dim reader = command.ExecuteReader()
+        Dim equipmentTable As New DataTable("equipement")
+        equipmentTable.Load(reader)
+        connection.Close()
+        Return equipmentTable
+    End Function
+
 End Class

@@ -29,25 +29,34 @@ Public Class IAddInventory
 
     Private Function insert_equipment()
         'Création des variables pour l'ajout
-        Dim equipementEntity As New EntityEquipment
-        Dim noEquipement As Integer
+        Dim noEquipement As String
         Dim nom As String
         Dim nocategorie As Integer
         Dim etat As String
         Dim disponibilite As String
+        Dim isUnique As Boolean = True
+        Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
         Try
-            'obtenir le prochain ID d'équipement pour éviter un double de clé primaire
-            noEquipement = ModelEquipment.getInstance.nextid
-            'les nom est entré dans la textbox
-            nom = TBName.Text
-            'la catégorie est entrée dans la combobox
-            nocategorie = CBCat.SelectedIndex
-            'l'état est entré dans la textbox
-            etat = TBEtat.Text
-            'l'équipement est automatiquement disponible
-            disponibilite = "oui"
-            'Ajout de l'équipement à la base de données
-            ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            For Each it As DataRow In data.Rows
+                If it.Item(0) = ID.Text Then
+                    isUnique = False
+                End If
+            Next
+            If isUnique Then
+                noEquipement = ID.Text
+                'les nom est entré dans la textbox
+                nom = TBName.Text
+                'la catégorie est entrée dans la combobox
+                nocategorie = CBCat.SelectedIndex
+                'l'état est entré dans la textbox
+                etat = TBEtat.Text
+                'l'équipement est automatiquement disponible
+                disponibilite = "oui"
+                'Ajout de l'équipement à la base de données
+                ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            Else
+                MessageBox.Show($"Ce numéro d'équipement est déja utilisé,{Environment.NewLine}Veuillez en entrer un différent.")
+            End If
         Catch ex As Exception
             'message d'erreur lorsque les champs ne sont pas tous remplis
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
@@ -65,7 +74,7 @@ Public Class IAddInventory
         'Confirmation que tous les champs sont remplis
         Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
-        If Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(TBEtat.Text) = "" Then
+        If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(TBEtat.Text) = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
         Else
             'confirmation de l'ajout
