@@ -27,7 +27,7 @@
             RenterFirstName.Text = it.Item(1)
             RenterLastName.Text = it.Item(2)
             RenterStatus.Text = it.Item(3)
-            RenterOffice.Text = it.Item(4)
+            Email.Text = it.Item(4)
             EquipmentName.Text = it.Item(5)
             CategoryName.Text = it.Item(6)
             EquipmentState.Text = it.Item(7)
@@ -52,9 +52,5 @@
         modifyRental.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(modifyRental)
         modifyRental.BringToFront()
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
     End Sub
 End Class

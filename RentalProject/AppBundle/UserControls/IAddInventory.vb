@@ -82,7 +82,7 @@ Public Class IAddInventory
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
-        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
+        Dim con As New MySqlConnection(MainForm.getInstance().connectionString)
         Dim com As New MySqlCommand
         If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")

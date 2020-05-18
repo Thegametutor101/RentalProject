@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ModelRental
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
-    Dim connection As New MySqlConnection(connectionString)
+
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelRental = Nothing
     Public Shared Function getInstance() As ModelRental
         If IsNothing(instance) Then
@@ -45,9 +45,7 @@ Public Class ModelRental
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"insert into emprunt
- 
-                values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
+            command.CommandText = $"insert into emprunt values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()

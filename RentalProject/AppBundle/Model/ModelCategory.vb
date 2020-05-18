@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ModelCategory
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
-    Dim connection As New MySqlConnection(connectionString)
+
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelCategory = Nothing
 
     Public Shared Function getInstance() As ModelCategory

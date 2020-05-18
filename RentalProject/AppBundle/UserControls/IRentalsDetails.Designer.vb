@@ -33,7 +33,6 @@ Partial Class IRentalsDetails
         Me.EquipmentState = New System.Windows.Forms.TextBox()
         Me.CategoryName = New System.Windows.Forms.TextBox()
         Me.EquipmentName = New System.Windows.Forms.TextBox()
-        Me.RenterOffice = New System.Windows.Forms.TextBox()
         Me.RenterFirstName = New System.Windows.Forms.TextBox()
         Me.RenterLastName = New System.Windows.Forms.TextBox()
         Me.RenterStatus = New System.Windows.Forms.TextBox()
@@ -43,12 +42,13 @@ Partial Class IRentalsDetails
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Email = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -99,6 +99,8 @@ Partial Class IRentalsDetails
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.Email)
         Me.Panel2.Controls.Add(Me.RentalID)
         Me.Panel2.Controls.Add(Me.ReturnDate)
         Me.Panel2.Controls.Add(Me.RentalDate)
@@ -106,7 +108,6 @@ Partial Class IRentalsDetails
         Me.Panel2.Controls.Add(Me.EquipmentState)
         Me.Panel2.Controls.Add(Me.CategoryName)
         Me.Panel2.Controls.Add(Me.EquipmentName)
-        Me.Panel2.Controls.Add(Me.RenterOffice)
         Me.Panel2.Controls.Add(Me.RenterFirstName)
         Me.Panel2.Controls.Add(Me.RenterLastName)
         Me.Panel2.Controls.Add(Me.RenterStatus)
@@ -116,7 +117,6 @@ Partial Class IRentalsDetails
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -131,6 +131,7 @@ Partial Class IRentalsDetails
         '
         'RentalID
         '
+        Me.RentalID.Enabled = False
         Me.RentalID.Location = New System.Drawing.Point(64, 21)
         Me.RentalID.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalID.Multiline = True
@@ -142,7 +143,7 @@ Partial Class IRentalsDetails
         'ReturnDate
         '
         Me.ReturnDate.Enabled = False
-        Me.ReturnDate.Location = New System.Drawing.Point(346, 352)
+        Me.ReturnDate.Location = New System.Drawing.Point(346, 341)
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(189, 20)
@@ -151,7 +152,7 @@ Partial Class IRentalsDetails
         'RentalDate
         '
         Me.RentalDate.Enabled = False
-        Me.RentalDate.Location = New System.Drawing.Point(79, 352)
+        Me.RentalDate.Location = New System.Drawing.Point(79, 341)
         Me.RentalDate.Margin = New System.Windows.Forms.Padding(2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(189, 20)
@@ -159,56 +160,51 @@ Partial Class IRentalsDetails
         '
         'Authorisation
         '
-        Me.Authorisation.Location = New System.Drawing.Point(155, 260)
+        Me.Authorisation.Enabled = False
+        Me.Authorisation.Location = New System.Drawing.Point(174, 260)
         Me.Authorisation.Margin = New System.Windows.Forms.Padding(2)
         Me.Authorisation.Multiline = True
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
-        Me.Authorisation.Size = New System.Drawing.Size(222, 19)
+        Me.Authorisation.Size = New System.Drawing.Size(368, 19)
         Me.Authorisation.TabIndex = 54
         '
         'EquipmentState
         '
+        Me.EquipmentState.Enabled = False
         Me.EquipmentState.Location = New System.Drawing.Point(380, 202)
         Me.EquipmentState.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentState.Multiline = True
         Me.EquipmentState.Name = "EquipmentState"
         Me.EquipmentState.ReadOnly = True
-        Me.EquipmentState.Size = New System.Drawing.Size(166, 19)
+        Me.EquipmentState.Size = New System.Drawing.Size(162, 19)
         Me.EquipmentState.TabIndex = 53
         '
         'CategoryName
         '
-        Me.CategoryName.Location = New System.Drawing.Point(141, 201)
+        Me.CategoryName.Enabled = False
+        Me.CategoryName.Location = New System.Drawing.Point(164, 201)
         Me.CategoryName.Margin = New System.Windows.Forms.Padding(2)
         Me.CategoryName.Multiline = True
         Me.CategoryName.Name = "CategoryName"
         Me.CategoryName.ReadOnly = True
-        Me.CategoryName.Size = New System.Drawing.Size(185, 19)
+        Me.CategoryName.Size = New System.Drawing.Size(162, 19)
         Me.CategoryName.TabIndex = 52
         '
         'EquipmentName
         '
-        Me.EquipmentName.Location = New System.Drawing.Point(164, 164)
+        Me.EquipmentName.Enabled = False
+        Me.EquipmentName.Location = New System.Drawing.Point(174, 164)
         Me.EquipmentName.Margin = New System.Windows.Forms.Padding(2)
         Me.EquipmentName.Multiline = True
         Me.EquipmentName.Name = "EquipmentName"
         Me.EquipmentName.ReadOnly = True
-        Me.EquipmentName.Size = New System.Drawing.Size(224, 19)
+        Me.EquipmentName.Size = New System.Drawing.Size(368, 19)
         Me.EquipmentName.TabIndex = 51
-        '
-        'RenterOffice
-        '
-        Me.RenterOffice.Location = New System.Drawing.Point(470, 114)
-        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2)
-        Me.RenterOffice.Multiline = True
-        Me.RenterOffice.Name = "RenterOffice"
-        Me.RenterOffice.ReadOnly = True
-        Me.RenterOffice.Size = New System.Drawing.Size(73, 19)
-        Me.RenterOffice.TabIndex = 50
         '
         'RenterFirstName
         '
+        Me.RenterFirstName.Enabled = False
         Me.RenterFirstName.Location = New System.Drawing.Point(164, 76)
         Me.RenterFirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterFirstName.Multiline = True
@@ -219,6 +215,7 @@ Partial Class IRentalsDetails
         '
         'RenterLastName
         '
+        Me.RenterLastName.Enabled = False
         Me.RenterLastName.Location = New System.Drawing.Point(380, 74)
         Me.RenterLastName.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterLastName.Multiline = True
@@ -229,19 +226,20 @@ Partial Class IRentalsDetails
         '
         'RenterStatus
         '
+        Me.RenterStatus.Enabled = False
         Me.RenterStatus.Location = New System.Drawing.Point(164, 115)
         Me.RenterStatus.Margin = New System.Windows.Forms.Padding(2)
         Me.RenterStatus.Multiline = True
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
-        Me.RenterStatus.Size = New System.Drawing.Size(139, 19)
+        Me.RenterStatus.Size = New System.Drawing.Size(162, 19)
         Me.RenterStatus.TabIndex = 47
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(343, 321)
+        Me.Label12.Location = New System.Drawing.Point(343, 310)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(100, 17)
@@ -252,7 +250,7 @@ Partial Class IRentalsDetails
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(76, 321)
+        Me.Label11.Location = New System.Drawing.Point(76, 310)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(105, 17)
@@ -263,7 +261,7 @@ Partial Class IRentalsDetails
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(76, 262)
+        Me.Label10.Location = New System.Drawing.Point(85, 262)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(85, 17)
@@ -285,7 +283,7 @@ Partial Class IRentalsDetails
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(76, 202)
+        Me.Label8.Location = New System.Drawing.Point(91, 202)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 17)
@@ -296,23 +294,12 @@ Partial Class IRentalsDetails
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(76, 164)
+        Me.Label7.Location = New System.Drawing.Point(87, 166)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 17)
         Me.Label7.TabIndex = 41
         Me.Label7.Text = "Équipement"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(343, 115)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(128, 17)
-        Me.Label6.TabIndex = 40
-        Me.Label6.Text = "Numéro de Bureau"
         '
         'Label5
         '
@@ -369,6 +356,27 @@ Partial Class IRentalsDetails
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "ID"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(338, 117)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(42, 17)
+        Me.Label6.TabIndex = 107
+        Me.Label6.Text = "Email"
+        '
+        'Email
+        '
+        Me.Email.Enabled = False
+        Me.Email.Location = New System.Drawing.Point(380, 115)
+        Me.Email.Margin = New System.Windows.Forms.Padding(2)
+        Me.Email.Name = "Email"
+        Me.Email.ReadOnly = True
+        Me.Email.Size = New System.Drawing.Size(162, 20)
+        Me.Email.TabIndex = 106
+        '
         'IRentalsDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -399,7 +407,6 @@ Partial Class IRentalsDetails
     Friend WithEvents EquipmentState As TextBox
     Friend WithEvents CategoryName As TextBox
     Friend WithEvents EquipmentName As TextBox
-    Friend WithEvents RenterOffice As TextBox
     Friend WithEvents RenterFirstName As TextBox
     Friend WithEvents RenterLastName As TextBox
     Friend WithEvents RenterStatus As TextBox
@@ -409,11 +416,12 @@ Partial Class IRentalsDetails
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ModifyButton As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Email As TextBox
 End Class

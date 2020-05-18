@@ -31,6 +31,7 @@
             Office.Text = it.Item(6)
             Phone.Text = it.Item(7)
             Extension.Text = it.Item(8)
+            Email.Text = it.Item(9)
         Next
         ''' Cette partie recherche touos les quipements que cette
         ''' personne à emprunté et les affiche dans la liste.

@@ -26,6 +26,8 @@ Partial Class IPersonDetails
         Me.ModifyButton = New System.Windows.Forms.Button()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Email = New System.Windows.Forms.TextBox()
         Me.Status = New System.Windows.Forms.TextBox()
         Me.Extension = New System.Windows.Forms.TextBox()
         Me.Phone = New System.Windows.Forms.TextBox()
@@ -103,6 +105,8 @@ Partial Class IPersonDetails
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label11)
+        Me.Panel2.Controls.Add(Me.Email)
         Me.Panel2.Controls.Add(Me.Status)
         Me.Panel2.Controls.Add(Me.Extension)
         Me.Panel2.Controls.Add(Me.Phone)
@@ -128,10 +132,31 @@ Partial Class IPersonDetails
         Me.Panel2.Size = New System.Drawing.Size(424, 390)
         Me.Panel2.TabIndex = 4
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(246, 123)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(42, 17)
+        Me.Label11.TabIndex = 136
+        Me.Label11.Text = "Email"
+        '
+        'Email
+        '
+        Me.Email.Enabled = False
+        Me.Email.Location = New System.Drawing.Point(292, 120)
+        Me.Email.Margin = New System.Windows.Forms.Padding(2)
+        Me.Email.Name = "Email"
+        Me.Email.ReadOnly = True
+        Me.Email.Size = New System.Drawing.Size(123, 20)
+        Me.Email.TabIndex = 135
+        '
         'Status
         '
         Me.Status.Enabled = False
-        Me.Status.Location = New System.Drawing.Point(97, 121)
+        Me.Status.Location = New System.Drawing.Point(97, 120)
         Me.Status.Margin = New System.Windows.Forms.Padding(2)
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
@@ -141,7 +166,7 @@ Partial Class IPersonDetails
         'Extension
         '
         Me.Extension.Enabled = False
-        Me.Extension.Location = New System.Drawing.Point(292, 303)
+        Me.Extension.Location = New System.Drawing.Point(292, 302)
         Me.Extension.Margin = New System.Windows.Forms.Padding(2)
         Me.Extension.Name = "Extension"
         Me.Extension.ReadOnly = True
@@ -151,7 +176,7 @@ Partial Class IPersonDetails
         'Phone
         '
         Me.Phone.Enabled = False
-        Me.Phone.Location = New System.Drawing.Point(97, 303)
+        Me.Phone.Location = New System.Drawing.Point(97, 302)
         Me.Phone.Margin = New System.Windows.Forms.Padding(2)
         Me.Phone.Name = "Phone"
         Me.Phone.ReadOnly = True
@@ -161,7 +186,7 @@ Partial Class IPersonDetails
         'Office
         '
         Me.Office.Enabled = False
-        Me.Office.Location = New System.Drawing.Point(97, 245)
+        Me.Office.Location = New System.Drawing.Point(97, 241)
         Me.Office.Margin = New System.Windows.Forms.Padding(2)
         Me.Office.Name = "Office"
         Me.Office.ReadOnly = True
@@ -171,7 +196,7 @@ Partial Class IPersonDetails
         'Service
         '
         Me.Service.Enabled = False
-        Me.Service.Location = New System.Drawing.Point(292, 180)
+        Me.Service.Location = New System.Drawing.Point(292, 179)
         Me.Service.Margin = New System.Windows.Forms.Padding(2)
         Me.Service.Name = "Service"
         Me.Service.ReadOnly = True
@@ -181,7 +206,7 @@ Partial Class IPersonDetails
         'Department
         '
         Me.Department.Enabled = False
-        Me.Department.Location = New System.Drawing.Point(97, 180)
+        Me.Department.Location = New System.Drawing.Point(97, 177)
         Me.Department.Margin = New System.Windows.Forms.Padding(2)
         Me.Department.Name = "Department"
         Me.Department.ReadOnly = True
@@ -191,7 +216,7 @@ Partial Class IPersonDetails
         'LastName
         '
         Me.LastName.Enabled = False
-        Me.LastName.Location = New System.Drawing.Point(292, 58)
+        Me.LastName.Location = New System.Drawing.Point(292, 56)
         Me.LastName.Margin = New System.Windows.Forms.Padding(2)
         Me.LastName.Name = "LastName"
         Me.LastName.ReadOnly = True
@@ -201,7 +226,7 @@ Partial Class IPersonDetails
         'FirstName
         '
         Me.FirstName.Enabled = False
-        Me.FirstName.Location = New System.Drawing.Point(97, 58)
+        Me.FirstName.Location = New System.Drawing.Point(97, 57)
         Me.FirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.FirstName.Name = "FirstName"
         Me.FirstName.ReadOnly = True
@@ -211,7 +236,7 @@ Partial Class IPersonDetails
         'ID
         '
         Me.ID.Enabled = False
-        Me.ID.Location = New System.Drawing.Point(48, 15)
+        Me.ID.Location = New System.Drawing.Point(48, 13)
         Me.ID.Margin = New System.Windows.Forms.Padding(2)
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
@@ -222,7 +247,7 @@ Partial Class IPersonDetails
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(248, 305)
+        Me.Label9.Location = New System.Drawing.Point(244, 305)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(44, 17)
@@ -233,7 +258,7 @@ Partial Class IPersonDetails
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(28, 305)
+        Me.Label8.Location = New System.Drawing.Point(17, 305)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(76, 17)
@@ -244,7 +269,7 @@ Partial Class IPersonDetails
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(45, 246)
+        Me.Label7.Location = New System.Drawing.Point(39, 244)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(54, 17)
@@ -255,7 +280,7 @@ Partial Class IPersonDetails
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(238, 182)
+        Me.Label6.Location = New System.Drawing.Point(233, 180)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 17)
@@ -266,7 +291,7 @@ Partial Class IPersonDetails
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(13, 182)
+        Me.Label5.Location = New System.Drawing.Point(3, 180)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(90, 17)
@@ -277,7 +302,7 @@ Partial Class IPersonDetails
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(52, 123)
+        Me.Label4.Location = New System.Drawing.Point(48, 123)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 17)
@@ -288,7 +313,7 @@ Partial Class IPersonDetails
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(254, 60)
+        Me.Label3.Location = New System.Drawing.Point(251, 60)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 17)
@@ -299,7 +324,7 @@ Partial Class IPersonDetails
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(42, 60)
+        Me.Label2.Location = New System.Drawing.Point(36, 60)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 17)
@@ -435,4 +460,6 @@ Partial Class IPersonDetails
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents EquipmentName As ColumnHeader
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Email As TextBox
 End Class

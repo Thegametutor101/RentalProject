@@ -2,10 +2,8 @@
 
 Public Class EntityEquipment
 
-    'création de la connection à la base de données
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
     'création de la connection mysql
-    Dim connection As New MySqlConnection(connectionString)
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As EntityEquipment = Nothing
 
     Public Shared Function getInstance() As EntityEquipment

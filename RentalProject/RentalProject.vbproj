@@ -115,6 +115,7 @@
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
     <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\Model\ModelReturn.vb" />
     <Compile Include="AppBundle\UserControls\ICategory.Designer.vb">
       <DependentUpon>ICategory.vb</DependentUpon>
     </Compile>

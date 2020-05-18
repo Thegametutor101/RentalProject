@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class EntityPerson
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
-    Dim connection As New MySqlConnection(connectionString)
+
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As EntityPerson = Nothing
 
     Public Shared Function getInstance() As EntityPerson

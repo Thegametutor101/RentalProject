@@ -2,8 +2,7 @@
 
 Public Class EntityRental
 
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
-    Dim connection As New MySqlConnection(connectionString)
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As EntityRental = Nothing
 
     Public Shared Function getInstance() As EntityRental
@@ -102,7 +101,7 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
-        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.noBureau, initcap(E2.nom), initcap(C2.nom), initcap(E2.etat), initcap(E.autorisation), E.DateEmprunt, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id}"
+        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E2.nom), initcap(C2.nom), initcap(E2.etat), initcap(E.autorisation), E.DateEmprunt, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id}"
         Dim reader = command.ExecuteReader()
         Dim rentalTable As New DataTable("emprunt")
         rentalTable.Load(reader)

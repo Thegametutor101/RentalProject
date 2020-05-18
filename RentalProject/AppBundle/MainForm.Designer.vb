@@ -29,10 +29,10 @@ Partial Class MainForm
         Me.MaximizeButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuPanel = New System.Windows.Forms.Panel()
-        Me.SettingsButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
         Me.PersonButton = New System.Windows.Forms.Button()
         Me.InventoryButton = New System.Windows.Forms.Button()
+        Me.ReturnButton = New System.Windows.Forms.Button()
         Me.RentalsButton = New System.Windows.Forms.Button()
         Me.InterfacePanel = New System.Windows.Forms.Panel()
         Me.HeaderBar.SuspendLayout()
@@ -115,10 +115,10 @@ Partial Class MainForm
         'MenuPanel
         '
         Me.MenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.MenuPanel.Controls.Add(Me.SettingsButton)
         Me.MenuPanel.Controls.Add(Me.CloseButton)
         Me.MenuPanel.Controls.Add(Me.PersonButton)
         Me.MenuPanel.Controls.Add(Me.InventoryButton)
+        Me.MenuPanel.Controls.Add(Me.ReturnButton)
         Me.MenuPanel.Controls.Add(Me.RentalsButton)
         Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuPanel.Location = New System.Drawing.Point(0, 36)
@@ -126,24 +126,6 @@ Partial Class MainForm
         Me.MenuPanel.Name = "MenuPanel"
         Me.MenuPanel.Size = New System.Drawing.Size(150, 440)
         Me.MenuPanel.TabIndex = 1
-        '
-        'SettingsButton
-        '
-        Me.SettingsButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.SettingsButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SettingsButton.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.SettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.SettingsButton.FlatAppearance.BorderSize = 2
-        Me.SettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
-        Me.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SettingsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SettingsButton.Location = New System.Drawing.Point(0, 346)
-        Me.SettingsButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.SettingsButton.Name = "SettingsButton"
-        Me.SettingsButton.Size = New System.Drawing.Size(150, 47)
-        Me.SettingsButton.TabIndex = 4
-        Me.SettingsButton.Text = "Paramètres"
-        Me.SettingsButton.UseVisualStyleBackColor = False
         '
         'CloseButton
         '
@@ -173,7 +155,7 @@ Partial Class MainForm
         Me.PersonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.PersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PersonButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PersonButton.Location = New System.Drawing.Point(0, 94)
+        Me.PersonButton.Location = New System.Drawing.Point(0, 141)
         Me.PersonButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PersonButton.Name = "PersonButton"
         Me.PersonButton.Size = New System.Drawing.Size(150, 47)
@@ -191,13 +173,31 @@ Partial Class MainForm
         Me.InventoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.InventoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InventoryButton.Location = New System.Drawing.Point(0, 47)
+        Me.InventoryButton.Location = New System.Drawing.Point(0, 94)
         Me.InventoryButton.Margin = New System.Windows.Forms.Padding(2)
         Me.InventoryButton.Name = "InventoryButton"
         Me.InventoryButton.Size = New System.Drawing.Size(150, 47)
         Me.InventoryButton.TabIndex = 1
         Me.InventoryButton.Text = "Inventaire"
         Me.InventoryButton.UseVisualStyleBackColor = False
+        '
+        'ReturnButton
+        '
+        Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ReturnButton.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ReturnButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ReturnButton.FlatAppearance.BorderSize = 2
+        Me.ReturnButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(243, Byte), Integer))
+        Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReturnButton.Location = New System.Drawing.Point(0, 47)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReturnButton.Name = "ReturnButton"
+        Me.ReturnButton.Size = New System.Drawing.Size(150, 47)
+        Me.ReturnButton.TabIndex = 5
+        Me.ReturnButton.Text = "Retours"
+        Me.ReturnButton.UseVisualStyleBackColor = False
         '
         'RentalsButton
         '
@@ -254,9 +254,9 @@ Partial Class MainForm
     Friend WithEvents Label1 As Label
     Friend WithEvents MenuPanel As Panel
     Friend WithEvents InterfacePanel As Panel
-    Friend WithEvents SettingsButton As Button
     Friend WithEvents CloseButton As Button
     Friend WithEvents PersonButton As Button
     Friend WithEvents InventoryButton As Button
     Friend WithEvents RentalsButton As Button
+    Friend WithEvents ReturnButton As Button
 End Class

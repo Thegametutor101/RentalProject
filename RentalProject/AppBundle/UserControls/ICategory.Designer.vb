@@ -54,7 +54,7 @@ Partial Class ICategory
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class ICategory
         Me.Panel2.Controls.Add(Me.DeleteButton)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 378)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(586, 62)
         Me.Panel2.TabIndex = 15
@@ -95,7 +95,7 @@ Partial Class ICategory
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Location = New System.Drawing.Point(83, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(173, 62)
         Me.SearchButton.TabIndex = 18
@@ -112,7 +112,7 @@ Partial Class ICategory
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
         Me.ModifyButton.Location = New System.Drawing.Point(256, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(165, 62)
         Me.ModifyButton.TabIndex = 17
@@ -143,7 +143,7 @@ Partial Class ICategory
         Me.Panel3.Controls.Add(Me.Panel8)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 50)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(586, 64)
         Me.Panel3.TabIndex = 16
@@ -154,7 +154,7 @@ Partial Class ICategory
         Me.Panel7.Controls.Add(Me.TBName)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 18)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(421, 25)
         Me.Panel7.TabIndex = 18
@@ -185,7 +185,7 @@ Partial Class ICategory
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel6.Location = New System.Drawing.Point(0, 43)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(421, 21)
         Me.Panel6.TabIndex = 17
@@ -195,7 +195,7 @@ Partial Class ICategory
         Me.Panel5.Controls.Add(Me.WarningLabel)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(421, 18)
         Me.Panel5.TabIndex = 16
@@ -217,7 +217,7 @@ Partial Class ICategory
         Me.Panel8.Controls.Add(Me.AddButton)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel8.Location = New System.Drawing.Point(421, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(165, 64)
         Me.Panel8.TabIndex = 19
@@ -242,7 +242,7 @@ Partial Class ICategory
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 114)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(586, 264)
         Me.Panel4.TabIndex = 17
