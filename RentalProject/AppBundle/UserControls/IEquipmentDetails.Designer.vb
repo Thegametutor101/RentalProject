@@ -36,7 +36,7 @@ Partial Class IEquipmentDetails
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RenterOffice = New System.Windows.Forms.TextBox()
+        Me.Email = New System.Windows.Forms.TextBox()
         Me.RenterFirstName = New System.Windows.Forms.TextBox()
         Me.RenterLastName = New System.Windows.Forms.TextBox()
         Me.RenterStatus = New System.Windows.Forms.TextBox()
@@ -198,15 +198,15 @@ Partial Class IEquipmentDetails
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "ID"
         '
-        'RenterOffice
+        'Email
         '
-        Me.RenterOffice.Location = New System.Drawing.Point(452, 259)
-        Me.RenterOffice.Margin = New System.Windows.Forms.Padding(2)
-        Me.RenterOffice.Multiline = True
-        Me.RenterOffice.Name = "RenterOffice"
-        Me.RenterOffice.ReadOnly = True
-        Me.RenterOffice.Size = New System.Drawing.Size(82, 19)
-        Me.RenterOffice.TabIndex = 89
+        Me.Email.Location = New System.Drawing.Point(360, 259)
+        Me.Email.Margin = New System.Windows.Forms.Padding(2)
+        Me.Email.Multiline = True
+        Me.Email.Name = "Email"
+        Me.Email.ReadOnly = True
+        Me.Email.Size = New System.Drawing.Size(175, 19)
+        Me.Email.TabIndex = 89
         '
         'RenterFirstName
         '
@@ -242,12 +242,12 @@ Partial Class IEquipmentDetails
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(320, 261)
+        Me.Label6.Location = New System.Drawing.Point(314, 260)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(128, 17)
+        Me.Label6.Size = New System.Drawing.Size(42, 17)
         Me.Label6.TabIndex = 85
-        Me.Label6.Text = "Numéro de Bureau"
+        Me.Label6.Text = "Email"
         '
         'Label5
         '
@@ -321,7 +321,7 @@ Partial Class IEquipmentDetails
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.Authorisation)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.RenterOffice)
+        Me.Controls.Add(Me.Email)
         Me.Controls.Add(Me.RenterFirstName)
         Me.Controls.Add(Me.RenterLastName)
         Me.Controls.Add(Me.RenterStatus)
@@ -365,7 +365,7 @@ Partial Class IEquipmentDetails
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents RenterOffice As TextBox
+    Friend WithEvents Email As TextBox
     Friend WithEvents RenterFirstName As TextBox
     Friend WithEvents RenterLastName As TextBox
     Friend WithEvents RenterStatus As TextBox

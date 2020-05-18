@@ -28,13 +28,14 @@ Public Class ModelPerson
                          ByVal service As String,
                          ByVal bureau As String,
                          ByVal telephone As String,
-                         ByVal poste As Integer)
+                         ByVal poste As Integer,
+                         ByVal email As String)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
             command.CommandText = $"insert into personne
-            values('','{nom}','{prenom}', '{statut}', '{departement}', '{service}', '{bureau}', '{telephone}', '{poste}')"
+            values('','{nom}','{prenom}', '{statut}', '{departement}', '{service}', '{bureau}', '{telephone}', {poste}, {email})"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()

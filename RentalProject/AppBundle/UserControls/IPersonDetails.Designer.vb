@@ -63,7 +63,7 @@ Partial Class IPersonDetails
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Class IPersonDetails
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
         Me.ModifyButton.Location = New System.Drawing.Point(393, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(193, 50)
         Me.ModifyButton.TabIndex = 2
@@ -95,7 +95,7 @@ Partial Class IPersonDetails
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
@@ -123,7 +123,7 @@ Partial Class IPersonDetails
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 50)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(424, 390)
         Me.Panel2.TabIndex = 4
@@ -132,7 +132,7 @@ Partial Class IPersonDetails
         '
         Me.Status.Enabled = False
         Me.Status.Location = New System.Drawing.Point(97, 121)
-        Me.Status.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Status.Margin = New System.Windows.Forms.Padding(2)
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
         Me.Status.Size = New System.Drawing.Size(123, 20)
@@ -142,7 +142,7 @@ Partial Class IPersonDetails
         '
         Me.Extension.Enabled = False
         Me.Extension.Location = New System.Drawing.Point(292, 303)
-        Me.Extension.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Extension.Margin = New System.Windows.Forms.Padding(2)
         Me.Extension.Name = "Extension"
         Me.Extension.ReadOnly = True
         Me.Extension.Size = New System.Drawing.Size(76, 20)
@@ -152,7 +152,7 @@ Partial Class IPersonDetails
         '
         Me.Phone.Enabled = False
         Me.Phone.Location = New System.Drawing.Point(97, 303)
-        Me.Phone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Phone.Margin = New System.Windows.Forms.Padding(2)
         Me.Phone.Name = "Phone"
         Me.Phone.ReadOnly = True
         Me.Phone.Size = New System.Drawing.Size(123, 20)
@@ -162,7 +162,7 @@ Partial Class IPersonDetails
         '
         Me.Office.Enabled = False
         Me.Office.Location = New System.Drawing.Point(97, 245)
-        Me.Office.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Office.Margin = New System.Windows.Forms.Padding(2)
         Me.Office.Name = "Office"
         Me.Office.ReadOnly = True
         Me.Office.Size = New System.Drawing.Size(76, 20)
@@ -172,7 +172,7 @@ Partial Class IPersonDetails
         '
         Me.Service.Enabled = False
         Me.Service.Location = New System.Drawing.Point(292, 180)
-        Me.Service.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Service.Margin = New System.Windows.Forms.Padding(2)
         Me.Service.Name = "Service"
         Me.Service.ReadOnly = True
         Me.Service.Size = New System.Drawing.Size(123, 20)
@@ -182,7 +182,7 @@ Partial Class IPersonDetails
         '
         Me.Department.Enabled = False
         Me.Department.Location = New System.Drawing.Point(97, 180)
-        Me.Department.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Department.Margin = New System.Windows.Forms.Padding(2)
         Me.Department.Name = "Department"
         Me.Department.ReadOnly = True
         Me.Department.Size = New System.Drawing.Size(123, 20)
@@ -192,7 +192,7 @@ Partial Class IPersonDetails
         '
         Me.LastName.Enabled = False
         Me.LastName.Location = New System.Drawing.Point(292, 58)
-        Me.LastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LastName.Margin = New System.Windows.Forms.Padding(2)
         Me.LastName.Name = "LastName"
         Me.LastName.ReadOnly = True
         Me.LastName.Size = New System.Drawing.Size(123, 20)
@@ -202,7 +202,7 @@ Partial Class IPersonDetails
         '
         Me.FirstName.Enabled = False
         Me.FirstName.Location = New System.Drawing.Point(97, 58)
-        Me.FirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.FirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.FirstName.Name = "FirstName"
         Me.FirstName.ReadOnly = True
         Me.FirstName.Size = New System.Drawing.Size(123, 20)
@@ -212,7 +212,7 @@ Partial Class IPersonDetails
         '
         Me.ID.Enabled = False
         Me.ID.Location = New System.Drawing.Point(48, 15)
-        Me.ID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ID.Margin = New System.Windows.Forms.Padding(2)
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
         Me.ID.Size = New System.Drawing.Size(76, 20)
@@ -323,7 +323,7 @@ Partial Class IPersonDetails
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(424, 50)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(162, 390)
         Me.Panel3.TabIndex = 5
@@ -333,7 +333,7 @@ Partial Class IPersonDetails
         Me.Panel5.Controls.Add(Me.ListView1)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 43)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(162, 347)
         Me.Panel5.TabIndex = 7
@@ -346,7 +346,7 @@ Partial Class IPersonDetails
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(162, 347)
@@ -364,7 +364,7 @@ Partial Class IPersonDetails
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(162, 43)
         Me.Panel4.TabIndex = 6
@@ -392,7 +392,7 @@ Partial Class IPersonDetails
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IPersonDetails"
         Me.Size = New System.Drawing.Size(586, 440)

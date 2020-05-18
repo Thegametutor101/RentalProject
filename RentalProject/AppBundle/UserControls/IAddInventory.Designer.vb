@@ -26,7 +26,6 @@ Partial Class IAddInventory
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TBName = New System.Windows.Forms.TextBox()
-        Me.TBEtat = New System.Windows.Forms.TextBox()
         Me.CBCat = New System.Windows.Forms.ComboBox()
         Me.ID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -35,6 +34,7 @@ Partial Class IAddInventory
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.CBEtat = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,7 +43,7 @@ Partial Class IAddInventory
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(171, 156)
+        Me.Label1.Location = New System.Drawing.Point(171, 162)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 17)
         Me.Label1.TabIndex = 2
@@ -53,7 +53,7 @@ Partial Class IAddInventory
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(174, 281)
+        Me.Label2.Location = New System.Drawing.Point(175, 281)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(33, 17)
         Me.Label2.TabIndex = 3
@@ -63,7 +63,7 @@ Partial Class IAddInventory
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(143, 213)
+        Me.Label3.Location = New System.Drawing.Point(139, 219)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(69, 17)
         Me.Label3.TabIndex = 4
@@ -71,31 +71,24 @@ Partial Class IAddInventory
         '
         'TBName
         '
-        Me.TBName.Location = New System.Drawing.Point(220, 153)
+        Me.TBName.Location = New System.Drawing.Point(220, 159)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(189, 20)
         Me.TBName.TabIndex = 5
-        '
-        'TBEtat
-        '
-        Me.TBEtat.Location = New System.Drawing.Point(220, 278)
-        Me.TBEtat.Name = "TBEtat"
-        Me.TBEtat.Size = New System.Drawing.Size(189, 20)
-        Me.TBEtat.TabIndex = 6
         '
         'CBCat
         '
         Me.CBCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBCat.FormattingEnabled = True
-        Me.CBCat.Location = New System.Drawing.Point(220, 209)
+        Me.CBCat.Location = New System.Drawing.Point(220, 215)
         Me.CBCat.Name = "CBCat"
         Me.CBCat.Size = New System.Drawing.Size(189, 21)
         Me.CBCat.TabIndex = 7
         '
         'ID
         '
-        Me.ID.Location = New System.Drawing.Point(220, 97)
+        Me.ID.Location = New System.Drawing.Point(220, 103)
         Me.ID.Name = "ID"
         Me.ID.Size = New System.Drawing.Size(189, 20)
         Me.ID.TabIndex = 10
@@ -104,7 +97,7 @@ Partial Class IAddInventory
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(60, 100)
+        Me.Label4.Location = New System.Drawing.Point(61, 106)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(147, 17)
         Me.Label4.TabIndex = 11
@@ -181,6 +174,17 @@ Partial Class IAddInventory
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
+        'CBEtat
+        '
+        Me.CBEtat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBEtat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBEtat.FormattingEnabled = True
+        Me.CBEtat.Items.AddRange(New Object() {"Neuf", "Endommagé", "En réparation", "Brisé"})
+        Me.CBEtat.Location = New System.Drawing.Point(220, 277)
+        Me.CBEtat.Name = "CBEtat"
+        Me.CBEtat.Size = New System.Drawing.Size(189, 21)
+        Me.CBEtat.TabIndex = 86
+        '
         'IAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -188,12 +192,12 @@ Partial Class IAddInventory
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.CBEtat)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ID)
         Me.Controls.Add(Me.CBCat)
-        Me.Controls.Add(Me.TBEtat)
         Me.Controls.Add(Me.TBName)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -211,7 +215,6 @@ Partial Class IAddInventory
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TBName As TextBox
-    Friend WithEvents TBEtat As TextBox
     Friend WithEvents CBCat As ComboBox
     Friend WithEvents ID As TextBox
     Friend WithEvents Label4 As Label
@@ -220,4 +223,5 @@ Partial Class IAddInventory
     Friend WithEvents CancelButton As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BackButton As Button
+    Friend WithEvents CBEtat As ComboBox
 End Class

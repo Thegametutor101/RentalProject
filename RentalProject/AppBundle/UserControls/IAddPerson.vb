@@ -1,4 +1,6 @@
-﻿Public Class IAddPerson
+﻿Imports System.Text.RegularExpressions
+
+Public Class IAddPerson
 
     Dim person As IPerson
 
@@ -15,14 +17,39 @@
         TBPoste.Enabled = False
     End Sub
 
+    ''' <summary>
+    ''' Cette fonction vérifie que l'adresse courriel est valide.
+    ''' </summary>
+    ''' <param name="email"></param>
+    ''' <returns></returns>
+    Function IsEmail(ByVal email As String) As Boolean
+        Static emailExpression As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
+        Dim containsAt As Boolean = False
+        For i = 0 To email.Length - 1
+            If email.Chars(i) = "@" Then
+                containsAt = True
+            End If
+        Next
+        If Not containsAt Then
+            _Email.Text = $"{_Email.Text}@cegeptr.qc.ca"
+            email = $"{email}@cegeptr.qc.ca"
+        End If
+        Return emailExpression.IsMatch(email)
+    End Function
+
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
         Try
-            If CBStatut.Text <> "Étudiant" Then
-                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text)
+            If IsEmail(Email.Text) Then
+                If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    If CBStatut.Text <> "Étudiant" Then
+                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text, Email.Text)
+                    Else
+                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, "", Email.Text)
+                    End If
+                End If
             Else
-                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, "")
+                MessageBox.Show("Cette adresse courriel est invalide.")
             End If
-
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
@@ -51,13 +78,6 @@
         If Not IsNumeric(TBPoste.Text) And TBPoste.Text.Length > 0 Then
             MessageBox.Show("Valeur numerique obligatoire")
             TBPoste.Clear()
-        End If
-
-    End Sub
-
-    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
-        If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Me.SendToBack()
         End If
     End Sub
 End Class

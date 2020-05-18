@@ -33,6 +33,7 @@ Public Class IModifyPerson
             Office.Text = it.Item(6)
             Phone.Text = it.Item(7)
             Extension.Text = it.Item(8)
+            Email.Text = it.Item(9)
         Next
     End Function
 
@@ -47,6 +48,26 @@ Public Class IModifyPerson
             Me.SendToBack()
         End If
     End Sub
+
+    ''' <summary>
+    ''' Cette fonction vérifie que l'adresse courriel est valide.
+    ''' </summary>
+    ''' <param name="email"></param>
+    ''' <returns></returns>
+    Function IsEmail(ByVal email As String) As Boolean
+        Static emailExpression As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
+        Dim containsAt As Boolean = False
+        For i = 0 To email.Length - 1
+            If email.Chars(i) = "@" Then
+                containsAt = True
+            End If
+        Next
+        If Not containsAt Then
+            _Email.Text = $"{_Email.Text}@cegeptr.qc.ca"
+            email = $"{email}@cegeptr.qc.ca"
+        End If
+        Return emailExpression.IsMatch(email)
+    End Function
 
     ''' <summary>
     ''' Gestion des valeurs entrés dans les champs texts et permet l'ajout
@@ -75,11 +96,15 @@ Public Class IModifyPerson
            String.IsNullOrEmpty(Service.Text) Or
            String.IsNullOrEmpty(Phone.Text) Then
             MessageBox.Show("Veuillez remplir tous les champs avant de soumettre.")
-        ElseIf Not Status.Text = "Étudiant" And Office.Text.Length < 6 Then
-            MessageBox.Show("Veuillez entrer un Bureau valide.")
-        ElseIf MessageBox.Show($"Voulez-vous vraiment sauvegarder ces modifications?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, Service.Text, Office.Text, Phone.Text, Extension.Text)
-            Me.SendToBack()
+        ElseIf Not IsEmail(Email.Text) Then
+            MessageBox.Show("Veuillez entrer une adresse de courriel valide.")
+        ElseIf MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            If Not Status.Text = "Étudiant" And Office.Text.Length < 6 Then
+                MessageBox.Show("Veuillez entrer un Bureau valide.")
+            ElseIf MessageBox.Show($"Voulez-vous vraiment sauvegarder ces modifications?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, Service.Text, Office.Text, Phone.Text, Extension.Text)
+                Me.SendToBack()
+            End If
         End If
     End Sub
 

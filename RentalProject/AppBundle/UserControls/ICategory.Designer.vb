@@ -54,9 +54,9 @@ Partial Class ICategory
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 62)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
         '
         'BackButton
@@ -69,7 +69,7 @@ Partial Class ICategory
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
         Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 62)
+        Me.BackButton.Size = New System.Drawing.Size(52, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -79,9 +79,10 @@ Partial Class ICategory
         Me.Panel2.Controls.Add(Me.ModifyButton)
         Me.Panel2.Controls.Add(Me.DeleteButton)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 466)
+        Me.Panel2.Location = New System.Drawing.Point(0, 378)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(781, 76)
+        Me.Panel2.Size = New System.Drawing.Size(586, 62)
         Me.Panel2.TabIndex = 15
         '
         'SearchButton
@@ -93,9 +94,10 @@ Partial Class ICategory
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(110, 0)
+        Me.SearchButton.Location = New System.Drawing.Point(83, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(231, 76)
+        Me.SearchButton.Size = New System.Drawing.Size(173, 62)
         Me.SearchButton.TabIndex = 18
         Me.SearchButton.Text = "Rechercher une Categorie"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -109,9 +111,10 @@ Partial Class ICategory
         Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
-        Me.ModifyButton.Location = New System.Drawing.Point(341, 0)
+        Me.ModifyButton.Location = New System.Drawing.Point(256, 0)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(220, 76)
+        Me.ModifyButton.Size = New System.Drawing.Size(165, 62)
         Me.ModifyButton.TabIndex = 17
         Me.ModifyButton.Text = "Modifier une Categorie"
         Me.ModifyButton.UseVisualStyleBackColor = False
@@ -125,10 +128,9 @@ Partial Class ICategory
         Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Location = New System.Drawing.Point(561, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DeleteButton.Location = New System.Drawing.Point(421, 0)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(220, 76)
+        Me.DeleteButton.Size = New System.Drawing.Size(165, 62)
         Me.DeleteButton.TabIndex = 11
         Me.DeleteButton.Text = "Effacer une Categorie"
         Me.DeleteButton.UseVisualStyleBackColor = False
@@ -140,9 +142,10 @@ Partial Class ICategory
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel8)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 62)
+        Me.Panel3.Location = New System.Drawing.Point(0, 50)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(781, 79)
+        Me.Panel3.Size = New System.Drawing.Size(586, 64)
         Me.Panel3.TabIndex = 16
         '
         'Panel7
@@ -150,9 +153,10 @@ Partial Class ICategory
         Me.Panel7.Controls.Add(Me.Label1)
         Me.Panel7.Controls.Add(Me.TBName)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(0, 22)
+        Me.Panel7.Location = New System.Drawing.Point(0, 18)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(561, 31)
+        Me.Panel7.Size = New System.Drawing.Size(421, 25)
         Me.Panel7.TabIndex = 18
         '
         'Label1
@@ -160,11 +164,11 @@ Partial Class ICategory
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(172, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 10, 0)
+        Me.Label1.Location = New System.Drawing.Point(114, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 8, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 0, 10, 8)
-        Me.Label1.Size = New System.Drawing.Size(154, 28)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(0, 0, 8, 6)
+        Me.Label1.Size = New System.Drawing.Size(130, 23)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Nom de Catégorie"
         '
@@ -172,18 +176,18 @@ Partial Class ICategory
         '
         Me.TBName.Dock = System.Windows.Forms.DockStyle.Right
         Me.TBName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBName.Location = New System.Drawing.Point(326, 0)
-        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
+        Me.TBName.Location = New System.Drawing.Point(244, 0)
         Me.TBName.Name = "TBName"
-        Me.TBName.Size = New System.Drawing.Size(235, 26)
+        Me.TBName.Size = New System.Drawing.Size(177, 22)
         Me.TBName.TabIndex = 19
         '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 53)
+        Me.Panel6.Location = New System.Drawing.Point(0, 43)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(561, 26)
+        Me.Panel6.Size = New System.Drawing.Size(421, 21)
         Me.Panel6.TabIndex = 17
         '
         'Panel5
@@ -191,18 +195,20 @@ Partial Class ICategory
         Me.Panel5.Controls.Add(Me.WarningLabel)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(561, 22)
+        Me.Panel5.Size = New System.Drawing.Size(421, 18)
         Me.Panel5.TabIndex = 16
         '
         'WarningLabel
         '
         Me.WarningLabel.AutoSize = True
         Me.WarningLabel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WarningLabel.Location = New System.Drawing.Point(352, 0)
+        Me.WarningLabel.Location = New System.Drawing.Point(264, 0)
+        Me.WarningLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.WarningLabel.Name = "WarningLabel"
-        Me.WarningLabel.Padding = New System.Windows.Forms.Padding(0, 3, 8, 0)
-        Me.WarningLabel.Size = New System.Drawing.Size(209, 20)
+        Me.WarningLabel.Padding = New System.Windows.Forms.Padding(0, 2, 6, 0)
+        Me.WarningLabel.Size = New System.Drawing.Size(157, 15)
         Me.WarningLabel.TabIndex = 1
         Me.WarningLabel.Text = "* Entrez un ID pour rechercher"
         '
@@ -210,9 +216,10 @@ Partial Class ICategory
         '
         Me.Panel8.Controls.Add(Me.AddButton)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(561, 0)
+        Me.Panel8.Location = New System.Drawing.Point(421, 0)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(220, 79)
+        Me.Panel8.Size = New System.Drawing.Size(165, 64)
         Me.Panel8.TabIndex = 19
         '
         'AddButton
@@ -225,9 +232,8 @@ Partial Class ICategory
         Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddButton.ForeColor = System.Drawing.Color.White
         Me.AddButton.Location = New System.Drawing.Point(0, 0)
-        Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(220, 79)
+        Me.AddButton.Size = New System.Drawing.Size(165, 64)
         Me.AddButton.TabIndex = 23
         Me.AddButton.Text = "Ajouter une Categorie"
         Me.AddButton.UseVisualStyleBackColor = False
@@ -235,9 +241,10 @@ Partial Class ICategory
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 141)
+        Me.Panel4.Location = New System.Drawing.Point(0, 114)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(781, 325)
+        Me.Panel4.Size = New System.Drawing.Size(586, 264)
         Me.Panel4.TabIndex = 17
         '
         'DGVCategory
@@ -248,18 +255,17 @@ Partial Class ICategory
         Me.DGVCategory.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DGVCategory.ColumnHeadersHeight = 29
         Me.DGVCategory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVCategory.Location = New System.Drawing.Point(0, 141)
-        Me.DGVCategory.Margin = New System.Windows.Forms.Padding(4)
+        Me.DGVCategory.Location = New System.Drawing.Point(0, 114)
         Me.DGVCategory.MultiSelect = False
         Me.DGVCategory.Name = "DGVCategory"
         Me.DGVCategory.ReadOnly = True
         Me.DGVCategory.RowHeadersWidth = 51
-        Me.DGVCategory.Size = New System.Drawing.Size(781, 325)
+        Me.DGVCategory.Size = New System.Drawing.Size(586, 264)
         Me.DGVCategory.TabIndex = 13
         '
         'ICategory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -269,10 +275,9 @@ Partial Class ICategory
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "ICategory"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)

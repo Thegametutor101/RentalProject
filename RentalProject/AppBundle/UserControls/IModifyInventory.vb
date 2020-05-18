@@ -31,7 +31,7 @@ Public Class IModifyInventory
         LabelNo.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(0).Value
         TBName.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(1).Value
         CBCat.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(2).Value
-        TBEtat.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(3).Value
+        CBEtat.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(3).Value
         TBDispo.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(4).Value
     End Function
 
@@ -44,21 +44,30 @@ Public Class IModifyInventory
 
     Public Function UpdateEquipement()
         'Création des variables pour l'update
-        Dim equipementEntity As New EntityEquipment
         Dim noEquipement As Integer
         Dim nom As String
         Dim nocategorie As Integer
         Dim etat As String
-        Dim disponibilite As String
+        Dim disponibilite As String = "oui"
         Try
             'on vérifie si tous les champs sont Remplis
             noEquipement = LabelNo.Text
             nom = TBName.Text
             nocategorie = CBCat.SelectedIndex
-            etat = TBEtat.Text
-            disponibilite = TBDispo.Text
-            'on update l'équipement dans la table
-            ModelEquipment.getInstance.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            etat = CBEtat.Text
+            If etat <> "Neuf" Then
+                If etat = "Endommagé" Then
+                    If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                        disponibilite = "oui"
+                    Else
+                        disponibilite = "non"
+                    End If
+                Else
+                    disponibilite = "non"
+                End If
+            End If
+                'on update l'équipement dans la table
+                ModelEquipment.getInstance.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
         Catch ex As Exception
             'message d'erreur lorsque l'un des champs n'est pas rempli
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
@@ -67,7 +76,7 @@ Public Class IModifyInventory
 
     Private Sub ButtonModif_Click(sender As Object, e As EventArgs) Handles ButtonModif.Click
         'Confirmation de la modification
-        Dim result As DialogResult = MessageBox.Show("Voulez vous modifier l'équipement de la base de donnée, ses nouvelles informations seront:" & vbCrLf & "NoEquipement: " & LabelNo.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text & vbCrLf & "Dispo: " & TBDispo.Text, "Confirmation", MessageBoxButtons.YesNo)
+        Dim result As DialogResult = MessageBox.Show("Voulez vous modifier l'équipement de la base de donnée, ses nouvelles informations seront:" & vbCrLf & "NoEquipement: " & LabelNo.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text & vbCrLf & "Dispo: " & TBDispo.Text, "Confirmation", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             'appel de la procédure de mise à jour
             UpdateEquipement()

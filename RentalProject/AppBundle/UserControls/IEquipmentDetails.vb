@@ -22,7 +22,7 @@ Public Class IEquipmentDetails
                 RenterFirstName.Text = it.Item(4)
                 RenterLastName.Text = it.Item(5)
                 RenterStatus.Text = it.Item(6)
-                RenterOffice.Text = it.Item(7)
+                Email.Text = it.Item(7)
                 Authorisation.Text = it.Item(8)
                 RentalDate.Value = it.Item(9)
                 ReturnDate.Value = it.Item(10)

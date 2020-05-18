@@ -49,9 +49,19 @@ Public Class IAddInventory
                 'la catégorie est entrée dans la combobox
                 nocategorie = CBCat.SelectedIndex
                 'l'état est entré dans la textbox
-                etat = TBEtat.Text
-                'l'équipement est automatiquement disponible
-                disponibilite = "oui"
+                etat = CBEtat.Text
+                'l'équipement est disponible selon l'état
+                If etat <> "Neuf" Then
+                    If etat = "Endommagé" Then
+                        If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                            disponibilite = "oui"
+                        Else
+                            disponibilite = "non"
+                        End If
+                    Else
+                        disponibilite = "non"
+                    End If
+                End If
                 'Ajout de l'équipement à la base de données
                 ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
             Else
@@ -74,11 +84,11 @@ Public Class IAddInventory
         'Confirmation que tous les champs sont remplis
         Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
         Dim com As New MySqlCommand
-        If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(TBEtat.Text) = "" Then
+        If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
         Else
             'confirmation de l'ajout
-            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ModelEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
+            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ID.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 'la procédure d'insertion se lance
                 insert_equipment()

@@ -197,20 +197,6 @@ Partial Class IPerson
         Me.ModifyButton.Text = "Modifier une Personne"
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
-        '
         'IPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -237,7 +223,6 @@ Partial Class IPerson
     Friend WithEvents DGVPerson As DataGridView
     Friend WithEvents SearchButton As Button
     Friend WithEvents ModifyButton As Button
-    Friend WithEvents BackButton As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DetailsButton As Button
