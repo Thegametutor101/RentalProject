@@ -224,7 +224,7 @@ Public Class IEmprunt
                 isUnique = False
             End If
         Next
-        If Not IsNothing(CbEquipement.SelectedIndex) And isUnique Then
+        If Not IsNothing(CbEquipement.Text) And Not CbEquipement.Text = "" And CbEquipement.Items.Count > 0 And isUnique Then
             EquipmentCollection.Items.Add(New ListViewItem({ListEquipement(CbEquipement.SelectedIndex, 0), ListEquipement(CbEquipement.SelectedIndex, 1)}))
         ElseIf Not isUnique Then
             MessageBox.Show("Cet article est déja sélectionné.")
@@ -237,6 +237,13 @@ Public Class IEmprunt
                 EquipmentCollection.Items.Remove(EquipmentCollection.SelectedItems.Item(0))
             End If
         End If
+    End Sub
+
+    Private Sub NewPersonButton_Click(sender As Object, e As EventArgs) Handles NewPersonButton.Click
+        Dim person As New IAddPerson(Me)
+        person.Dock = DockStyle.Fill
+        MainForm.InterfacePanel.Controls.Add(person)
+        person.BringToFront()
     End Sub
 End Class
 

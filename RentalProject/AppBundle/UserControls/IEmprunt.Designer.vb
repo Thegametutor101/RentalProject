@@ -46,11 +46,12 @@ Partial Class IEmprunt
         Me.ResetButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.SelectButton = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.EquipmentCollection = New System.Windows.Forms.ListView()
         Me.EquipmentID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.NewPersonButton = New System.Windows.Forms.Button()
+        Me.SelectButton = New System.Windows.Forms.Button()
         CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -121,7 +122,7 @@ Partial Class IEmprunt
         Me.CbEquipement.FormattingEnabled = True
         Me.CbEquipement.Location = New System.Drawing.Point(119, 164)
         Me.CbEquipement.Name = "CbEquipement"
-        Me.CbEquipement.Size = New System.Drawing.Size(164, 21)
+        Me.CbEquipement.Size = New System.Drawing.Size(161, 21)
         Me.CbEquipement.TabIndex = 10
         '
         'NumericUpDownJour
@@ -224,7 +225,7 @@ Partial Class IEmprunt
         Me.CbPersonne.FormattingEnabled = True
         Me.CbPersonne.Location = New System.Drawing.Point(119, 76)
         Me.CbPersonne.Name = "CbPersonne"
-        Me.CbPersonne.Size = New System.Drawing.Size(200, 21)
+        Me.CbPersonne.Size = New System.Drawing.Size(161, 21)
         Me.CbPersonne.TabIndex = 85
         '
         'Comments
@@ -326,15 +327,6 @@ Partial Class IEmprunt
         Me.Label9.TabIndex = 92
         Me.Label9.Text = "Équipements à emprunter"
         '
-        'SelectButton
-        '
-        Me.SelectButton.Location = New System.Drawing.Point(289, 164)
-        Me.SelectButton.Name = "SelectButton"
-        Me.SelectButton.Size = New System.Drawing.Size(30, 21)
-        Me.SelectButton.TabIndex = 94
-        Me.SelectButton.Text = "->"
-        Me.SelectButton.UseVisualStyleBackColor = True
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -365,6 +357,42 @@ Partial Class IEmprunt
         Me.EquipmentName.Text = "Nom d'équipement"
         Me.EquipmentName.Width = 173
         '
+        'NewPersonButton
+        '
+        Me.NewPersonButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.NewPersonButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NewPersonButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.NewPersonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.NewPersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NewPersonButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NewPersonButton.ForeColor = System.Drawing.Color.White
+        Me.NewPersonButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewPersonButton.Location = New System.Drawing.Point(286, 76)
+        Me.NewPersonButton.Name = "NewPersonButton"
+        Me.NewPersonButton.Size = New System.Drawing.Size(33, 21)
+        Me.NewPersonButton.TabIndex = 102
+        Me.NewPersonButton.Text = "+"
+        Me.NewPersonButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewPersonButton.UseVisualStyleBackColor = False
+        '
+        'SelectButton
+        '
+        Me.SelectButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SelectButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SelectButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.SelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.SelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SelectButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SelectButton.ForeColor = System.Drawing.Color.White
+        Me.SelectButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SelectButton.Location = New System.Drawing.Point(286, 164)
+        Me.SelectButton.Name = "SelectButton"
+        Me.SelectButton.Size = New System.Drawing.Size(33, 21)
+        Me.SelectButton.TabIndex = 101
+        Me.SelectButton.Text = "->"
+        Me.SelectButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SelectButton.UseVisualStyleBackColor = False
+        '
         'IEmprunt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -372,9 +400,10 @@ Partial Class IEmprunt
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.NewPersonButton)
+        Me.Controls.Add(Me.SelectButton)
         Me.Controls.Add(Me.EquipmentCollection)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.SelectButton)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Comments)
@@ -431,9 +460,10 @@ Partial Class IEmprunt
     Friend WithEvents ResetButton As Button
     Friend WithEvents CancelButton As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents SelectButton As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents EquipmentCollection As ListView
     Friend WithEvents EquipmentID As ColumnHeader
     Friend WithEvents EquipmentName As ColumnHeader
+    Friend WithEvents NewPersonButton As Button
+    Friend WithEvents SelectButton As Button
 End Class

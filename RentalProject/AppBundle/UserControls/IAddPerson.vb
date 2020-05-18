@@ -2,13 +2,13 @@
 
 Public Class IAddPerson
 
-    Dim person As IPerson
+    Dim rent As IEmprunt
 
-    Sub New(pers As IPerson)
+    Sub New(r As IEmprunt)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        person = pers
+        rent = r
     End Sub
 
     Private Sub IAddPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -38,21 +38,20 @@ Public Class IAddPerson
     End Function
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        Try
+        'Try
+        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
             If IsEmail(Email.Text) Then
                 If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                     If CBStatut.Text <> "Étudiant" Then
-                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text, Email.Text)
-                    Else
-                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, "", Email.Text)
-                    End If
+                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
+                Else
+                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                End If
+                    rent.refreshPersonne()
                 End If
             Else
                 MessageBox.Show("Cette adresse courriel est invalide.")
             End If
-        Catch ex As Exception
-            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
-        End Try
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click

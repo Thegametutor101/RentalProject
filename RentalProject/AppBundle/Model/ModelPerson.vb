@@ -2,7 +2,7 @@
 
 Public Class ModelPerson
 
-    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
+    Dim connection As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;")
     Shared instance As ModelPerson = Nothing
 
     Public Shared Function getInstance() As ModelPerson
@@ -35,7 +35,7 @@ Public Class ModelPerson
             command.Connection = connection
             connection.Open()
             command.CommandText = $"insert into personne
-            values('','{nom}','{prenom}', '{statut}', '{departement}', '{service}', '{bureau}', '{telephone}', {poste}, {email})"
+            values('','{nom}','{prenom}', '{statut}', '{departement}', '{service}', '{bureau}', '{telephone}', {poste}, '{email}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()

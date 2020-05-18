@@ -48,8 +48,9 @@ Partial Class IPerson
         Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(315, 542)
+        Me.Panel3.Size = New System.Drawing.Size(236, 440)
         Me.Panel3.TabIndex = 10
         '
         'DetailsButton
@@ -62,10 +63,10 @@ Partial Class IPerson
         Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetailsButton.ForeColor = System.Drawing.Color.White
-        Me.DetailsButton.Location = New System.Drawing.Point(0, 467)
-        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.DetailsButton.Location = New System.Drawing.Point(0, 379)
+        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.DetailsButton.Name = "DetailsButton"
-        Me.DetailsButton.Size = New System.Drawing.Size(263, 75)
+        Me.DetailsButton.Size = New System.Drawing.Size(197, 61)
         Me.DetailsButton.TabIndex = 12
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
@@ -79,10 +80,9 @@ Partial Class IPerson
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(0, 243)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.SearchButton.Location = New System.Drawing.Point(0, 186)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(263, 77)
+        Me.SearchButton.Size = New System.Drawing.Size(197, 63)
         Me.SearchButton.TabIndex = 8
         Me.SearchButton.Text = "Rechercher une Personne"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -96,10 +96,9 @@ Partial Class IPerson
         Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Location = New System.Drawing.Point(0, 166)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DeleteButton.Location = New System.Drawing.Point(0, 123)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(263, 77)
+        Me.DeleteButton.Size = New System.Drawing.Size(197, 63)
         Me.DeleteButton.TabIndex = 7
         Me.DeleteButton.Text = "Effacer une Personne"
         Me.DeleteButton.UseVisualStyleBackColor = False
@@ -113,10 +112,9 @@ Partial Class IPerson
         Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
-        Me.ModifyButton.Location = New System.Drawing.Point(0, 89)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.ModifyButton.Location = New System.Drawing.Point(0, 73)
         Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(263, 77)
+        Me.ModifyButton.Size = New System.Drawing.Size(197, 50)
         Me.ModifyButton.TabIndex = 9
         Me.ModifyButton.Text = "Modifier une Personne"
         Me.ModifyButton.UseVisualStyleBackColor = False
@@ -130,10 +128,9 @@ Partial Class IPerson
         Me.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddButton.ForeColor = System.Drawing.Color.White
-        Me.AddButton.Location = New System.Drawing.Point(0, 12)
-        Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.AddButton.Location = New System.Drawing.Point(0, 10)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(263, 77)
+        Me.AddButton.Size = New System.Drawing.Size(197, 63)
         Me.AddButton.TabIndex = 6
         Me.AddButton.Text = "Ajouter une Personne"
         Me.AddButton.UseVisualStyleBackColor = False
@@ -141,28 +138,29 @@ Partial Class IPerson
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(263, 12)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Panel1.Location = New System.Drawing.Point(197, 10)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(52, 530)
+        Me.Panel1.Size = New System.Drawing.Size(39, 430)
         Me.Panel1.TabIndex = 10
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(315, 12)
+        Me.Panel2.Size = New System.Drawing.Size(236, 10)
         Me.Panel2.TabIndex = 11
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.DGVPerson)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(315, 0)
+        Me.Panel4.Location = New System.Drawing.Point(236, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(466, 542)
+        Me.Panel4.Size = New System.Drawing.Size(350, 440)
         Me.Panel4.TabIndex = 11
         '
         'DGVPerson
@@ -174,42 +172,25 @@ Partial Class IPerson
         Me.DGVPerson.ColumnHeadersHeight = 29
         Me.DGVPerson.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVPerson.Location = New System.Drawing.Point(0, 0)
-        Me.DGVPerson.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVPerson.MultiSelect = False
         Me.DGVPerson.Name = "DGVPerson"
         Me.DGVPerson.ReadOnly = True
         Me.DGVPerson.RowHeadersWidth = 51
-        Me.DGVPerson.Size = New System.Drawing.Size(466, 542)
+        Me.DGVPerson.Size = New System.Drawing.Size(350, 440)
         Me.DGVPerson.TabIndex = 9
-        '
-        'ModifyButton
-        '
-        Me.ModifyButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.ModifyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ModifyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ModifyButton.ForeColor = System.Drawing.Color.White
-        Me.ModifyButton.Location = New System.Drawing.Point(11, 354)
-        Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(197, 61)
-        Me.ModifyButton.TabIndex = 9
-        Me.ModifyButton.Text = "Modifier une Personne"
-        Me.ModifyButton.UseVisualStyleBackColor = False
         '
         'IPerson
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IPerson"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.DGVPerson, System.ComponentModel.ISupportInitialize).EndInit()

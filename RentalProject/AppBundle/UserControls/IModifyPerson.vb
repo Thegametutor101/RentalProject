@@ -91,6 +91,7 @@ Public Class IModifyPerson
         Office.Text = Trim(Office.Text)
         Phone.Text = Trim(Phone.Text)
         Extension.Text = Trim(Extension.Text)
+        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
         If String.IsNullOrEmpty(LastName.Text) Or String.IsNullOrEmpty(FirstName.Text) Or
            String.IsNullOrEmpty(Status.Text) Or String.IsNullOrEmpty(Department.Text) Or
            String.IsNullOrEmpty(Service.Text) Or

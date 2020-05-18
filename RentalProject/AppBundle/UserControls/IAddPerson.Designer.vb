@@ -54,7 +54,7 @@ Partial Class IAddPerson
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 58)
         Me.Panel1.TabIndex = 2
@@ -67,7 +67,7 @@ Partial Class IAddPerson
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(70, 58)
         Me.BackButton.TabIndex = 0
@@ -210,8 +210,8 @@ Partial Class IAddPerson
         'TBTelephone
         '
         Me.TBTelephone.Location = New System.Drawing.Point(94, 205)
-        Me.TBTelephone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TBTelephone.Mask = "(000) 0000-000"
+        Me.TBTelephone.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBTelephone.Mask = "(000) 000-0000"
         Me.TBTelephone.Name = "TBTelephone"
         Me.TBTelephone.Size = New System.Drawing.Size(174, 20)
         Me.TBTelephone.TabIndex = 34
@@ -222,7 +222,7 @@ Partial Class IAddPerson
         Me.Panel2.Controls.Add(Me.CancelButton)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 380)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(586, 60)
         Me.Panel2.TabIndex = 34
@@ -238,7 +238,7 @@ Partial Class IAddPerson
         Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer))
         Me.AddButton.Location = New System.Drawing.Point(326, 0)
-        Me.AddButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.AddButton.Margin = New System.Windows.Forms.Padding(2)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(130, 60)
         Me.AddButton.TabIndex = 87
@@ -256,7 +256,7 @@ Partial Class IAddPerson
         Me.CancelButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CancelButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(58, Byte), Integer))
         Me.CancelButton.Location = New System.Drawing.Point(456, 0)
-        Me.CancelButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CancelButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(130, 60)
         Me.CancelButton.TabIndex = 86
