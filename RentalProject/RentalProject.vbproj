@@ -115,6 +115,7 @@
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
     <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
+    <Compile Include="AppBundle\Model\ModelReturn.vb" />
     <Compile Include="AppBundle\UserControls\ICategory.Designer.vb">
       <DependentUpon>ICategory.vb</DependentUpon>
     </Compile>
@@ -217,6 +218,18 @@
     <Compile Include="AppBundle\UserControls\IModifyInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IInventorySearch.Designer.vb">
+      <DependentUpon>IInventorySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IInventorySearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEquipmentDetails.Designer.vb">
+      <DependentUpon>IEquipmentDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IEquipmentDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Model1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyPerson.resx">
       <DependentUpon>IModifyPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IInventorySearch.resx">
+      <DependentUpon>IInventorySearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyRental.resx">
       <DependentUpon>IModifyRental.vb</DependentUpon>
@@ -292,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyInventory.resx">
       <DependentUpon>IModifyInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IEquipmentDetails.resx">
+      <DependentUpon>IEquipmentDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

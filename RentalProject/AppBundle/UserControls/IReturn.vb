@@ -1,4 +1,6 @@
-﻿Public Class IReturn
+﻿Imports System.Text.RegularExpressions
+
+Public Class IReturn
 
     Dim rentals As IRentals
 
@@ -32,16 +34,22 @@
     End Sub
 
     Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
+        Dim comment As String = ""
+        Dim reception As String = ""
+        Dim equipmentName As String = ""
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-
-
+            If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                comment = InputBox("Note:", "Commentaires")
+            End If
+            reception = InputBox("Votre Nom:", "La personne qui reçoit ce retour")
             Dim selectIndex As Integer = RentTableDGV.SelectedCells(0).RowIndex
             Dim selectRow As DataGridViewRow = RentTableDGV.Rows(selectIndex)
             Dim id As Integer = selectRow.Cells("ID").Value
-
-
+            equipmentName = selectRow.Cells("Nom_Équipement").Value
+            comment = Regex.Replace(comment, "'", "''")
+            comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
+            ModelReturn.getInstance().addReturn(reception, equipmentName, comment)
             ModelRental.getInstance().deleteRental(id)
-
             RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
             RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         Else

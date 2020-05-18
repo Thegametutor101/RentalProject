@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ModelCategory
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
-    Dim connection As New MySqlConnection(connectionString)
+
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelCategory = Nothing
 
     Public Shared Function getInstance() As ModelCategory
@@ -37,6 +37,20 @@ Public Class ModelCategory
             MessageBox.Show("La categorie à été ajouté avec succès.")
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
+        End Try
+    End Sub
+
+    Public Sub updateCategory(ByVal noCategorie As Integer, ByVal nom As String)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"update categorie set nom = '{nom}' where noCategorie = '{noCategorie}')"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("La categorie à été modifiée avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de l'a modification")
         End Try
     End Sub
 End Class

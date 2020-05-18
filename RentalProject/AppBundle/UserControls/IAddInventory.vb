@@ -11,6 +11,7 @@ Public Class IAddInventory
     End Sub
 
     Private Sub IAddInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'aller chercher les catégories existantes pour la combobox
         loaddata(EntityCategory.getInstance.getCategory)
     End Sub
 
@@ -27,20 +28,47 @@ Public Class IAddInventory
     End Function
 
     Private Function insert_equipment()
-        Dim equipementEntity As New EntityEquipment
-        Dim noEquipement As Integer
+        'Création des variables pour l'ajout
+        Dim noEquipement As String
         Dim nom As String
         Dim nocategorie As Integer
         Dim etat As String
         Dim disponibilite As String
+        Dim isUnique As Boolean = True
+        Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
         Try
-            noEquipement = EntityEquipment.getInstance.nextid
-            nom = TBName.Text
-            nocategorie = CBCat.SelectedIndex
-            etat = TBEtat.Text
-            disponibilite = "oui"
-            equipementEntity.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            For Each it As DataRow In data.Rows
+                If it.Item(0) = ID.Text Then
+                    isUnique = False
+                End If
+            Next
+            If isUnique Then
+                noEquipement = ID.Text
+                'les nom est entré dans la textbox
+                nom = TBName.Text
+                'la catégorie est entrée dans la combobox
+                nocategorie = CBCat.SelectedIndex
+                'l'état est entré dans la textbox
+                etat = CBEtat.Text
+                'l'équipement est disponible selon l'état
+                If etat <> "Neuf" Then
+                    If etat = "Endommagé" Then
+                        If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                            disponibilite = "oui"
+                        Else
+                            disponibilite = "non"
+                        End If
+                    Else
+                        disponibilite = "non"
+                    End If
+                End If
+                'Ajout de l'équipement à la base de données
+                ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            Else
+                MessageBox.Show($"Ce numéro d'équipement est déja utilisé,{Environment.NewLine}Veuillez en entrer un différent.")
+            End If
         Catch ex As Exception
+            'message d'erreur lorsque les champs ne sont pas tous remplis
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
     End Function
@@ -54,16 +82,19 @@ Public Class IAddInventory
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
-        Dim con As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308")
+        Dim con As New MySqlConnection(MainForm.getInstance().connectionString)
         Dim com As New MySqlCommand
-        If Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(TBEtat.Text) = "" Then
+        If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
             MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
         Else
             'confirmation de l'ajout
-            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & EntityEquipment.getInstance.nextid & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & TBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
+            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ID.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
+                'la procédure d'insertion se lance
                 insert_equipment()
+                'on met la datagridview à jour
                 Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
+                'on retourne au contrôle utilisateur d'inventaire
                 Me.SendToBack()
             End If
         End If

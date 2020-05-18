@@ -1,6 +1,10 @@
 ﻿Public Class IRentalsDetails
 
     Dim mainForm As MainForm
+    ''' <summary>
+    ''' Cet attribut est le numero de l'emprunt pour récupérer
+    ''' toutes les informations requises de la base de donnés.
+    ''' </summary>
     Dim id As Integer
 
     Sub New(main As MainForm, number As Integer)
@@ -11,6 +15,11 @@
         id = number
     End Sub
 
+    ''' <summary>
+    ''' Ce Sub applique les données récupérées dans les champs textes.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub IRentalsDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim item As DataTable = EntityRental.getInstance().getRentalDetailed(id)
         For Each it As DataRow In item.Rows
@@ -18,7 +27,7 @@
             RenterFirstName.Text = it.Item(1)
             RenterLastName.Text = it.Item(2)
             RenterStatus.Text = it.Item(3)
-            RenterOffice.Text = it.Item(4)
+            Email.Text = it.Item(4)
             EquipmentName.Text = it.Item(5)
             CategoryName.Text = it.Item(6)
             EquipmentState.Text = it.Item(7)
@@ -32,6 +41,11 @@
         Me.SendToBack()
     End Sub
 
+    ''' <summary>
+    ''' Ce sub permet de modifier les informations de l'emprunt affiché.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         Dim data As DataTable = EntityRental.getInstance().getRentalDatesbyID(RentalID.Text)
         Dim modifyRental As New IModifyRental(mainForm, data)

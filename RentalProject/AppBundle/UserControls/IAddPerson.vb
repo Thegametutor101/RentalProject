@@ -1,33 +1,57 @@
-﻿Public Class IAddPerson
+﻿Imports System.Text.RegularExpressions
 
-    Dim person As IPerson
+Public Class IAddPerson
 
-    Sub New(pers As IPerson)
+    Dim rent As IEmprunt
+
+    Sub New(r As IEmprunt)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        person = pers
+        rent = r
     End Sub
 
     Private Sub IAddPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LADepartement.Hide()
-        LAService.Hide()
-        LABureau.Hide()
-        LAPoste.Hide()
-        TBDepartement.Hide()
-        TBService.Hide()
-        TBBureau.Hide()
-        TBPoste.Hide()
+        TBService.Enabled = False
+        TBBureau.Enabled = False
+        TBPoste.Enabled = False
     End Sub
 
-    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-
-        If CBStatut.Text <> "Étudiant" Then
-            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, TBPoste.Text)
-        Else
-            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, "", "", "", TBTelephone.Text, "")
+    ''' <summary>
+    ''' Cette fonction vérifie que l'adresse courriel est valide.
+    ''' </summary>
+    ''' <param name="email"></param>
+    ''' <returns></returns>
+    Function IsEmail(ByVal email As String) As Boolean
+        Static emailExpression As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
+        Dim containsAt As Boolean = False
+        For i = 0 To email.Length - 1
+            If email.Chars(i) = "@" Then
+                containsAt = True
+            End If
+        Next
+        If Not containsAt Then
+            _Email.Text = $"{_Email.Text}@cegeptr.qc.ca"
+            email = $"{email}@cegeptr.qc.ca"
         End If
+        Return emailExpression.IsMatch(email)
+    End Function
 
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
+        'Try
+        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
+            If IsEmail(Email.Text) Then
+                If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    If CBStatut.Text <> "Étudiant" Then
+                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
+                Else
+                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                End If
+                    rent.refreshPersonne()
+                End If
+            Else
+                MessageBox.Show("Cette adresse courriel est invalide.")
+            End If
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
@@ -39,32 +63,14 @@
 
     Private Sub CBStatut_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBStatut.SelectedIndexChanged
         If CBStatut.Text <> "Étudiant" Then
-            LADepartement.Show()
-            LAService.Show()
-            LABureau.Show()
-            LAPoste.Show()
-            TBDepartement.Show()
-            TBService.Show()
-            TBBureau.Show()
-            TBPoste.Show()
+            TBService.Enabled = True
+            TBBureau.Enabled = True
+            TBPoste.Enabled = True
         Else
-            LADepartement.Hide()
-            LAService.Hide()
-            LABureau.Hide()
-            LAPoste.Hide()
-            TBDepartement.Hide()
-            TBService.Hide()
-            TBBureau.Hide()
-            TBPoste.Hide()
+            TBService.Enabled = False
+            TBBureau.Enabled = False
+            TBPoste.Enabled = False
         End If
-    End Sub
-
-    Private Sub TBTelephone_TextChanged(sender As Object, e As EventArgs) Handles TBTelephone.TextChanged
-        If Not IsNumeric(TBTelephone.Text) And TBTelephone.Text.Length > 0 Then
-            MessageBox.Show("Valeur numerique obligatoire")
-            TBTelephone.Clear()
-        End If
-
     End Sub
 
     Private Sub TBPoste_TextChanged(sender As Object, e As EventArgs) Handles TBPoste.TextChanged
@@ -72,6 +78,5 @@
             MessageBox.Show("Valeur numerique obligatoire")
             TBPoste.Clear()
         End If
-
     End Sub
 End Class

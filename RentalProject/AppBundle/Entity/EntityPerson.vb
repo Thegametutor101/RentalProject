@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class EntityPerson
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;"
-    Dim connection As New MySqlConnection(connectionString)
+
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As EntityPerson = Nothing
 
     Public Shared Function getInstance() As EntityPerson
@@ -48,18 +48,6 @@ Public Class EntityPerson
         Return table
     End Function
 
-    Public Function getPersonneByFirstName(name As String) As DataTable
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(prenom) like upper('{name}')"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("personne")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
     Public Function getPersonneByFirstNameAndLastName(firstName As String, lastName As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -88,6 +76,54 @@ Public Class EntityPerson
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select E.nom from equipement E INNER JOIN emprunt E2 on E.noEquipement = E2.noEquipement where E2.noPersonne = {id}"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByDepartment(department As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{department}%')"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByService(service As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{service}%')"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByRenting() As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getPersonByLate() As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne where dateRetour < current_date"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")

@@ -15,6 +15,10 @@
         setDefaults()
     End Sub
 
+    ''' <summary>
+    ''' Entre les données de la personne selectionné dans les champs text.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function setDefaults()
         For Each it As DataRow In data.Rows
             'Inserting values into textBoxes
@@ -27,7 +31,10 @@
             Office.Text = it.Item(6)
             Phone.Text = it.Item(7)
             Extension.Text = it.Item(8)
+            Email.Text = it.Item(9)
         Next
+        ''' Cette partie recherche touos les quipements que cette
+        ''' personne à emprunté et les affiche dans la liste.
         Dim equipmentList As DataTable = EntityPerson.getInstance().getPersonRentedItemsByID(CInt(ID.Text))
         For Each it As DataRow In equipmentList.Rows
             If Not IsNothing(it) Then

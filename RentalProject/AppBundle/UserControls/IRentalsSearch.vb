@@ -9,6 +9,8 @@
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
         rentals = rental
+        ''' Ces lignes font les premieres restrictions pour l'utilisateur.
+        ''' cette gestion est appliqué plus bas.
         DetailsButton.Enabled = False
         SearchButton.Enabled = False
         ByRenterName.Checked = True
@@ -18,9 +20,18 @@
         loadData(EntityRental.getInstance().getRentals(), True)
     End Sub
 
+    ''' <summary>
+    ''' Cette fonction permet de charger les donnés qui seront affiché à l'utilisateur.
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <param name="type"></param>
+    ''' <returns></returns>
     Public Function loadData(data As DataTable, type As Boolean)
         ListView1.Items.Clear()
         Dim rentalTable As DataTable = data
+        ''' Cette vérification empêche l'utilisateur d'utiliser cette interface
+        ''' s'il n'y a pas d'emprunt à afficher. Ou si la recherche effectué ne
+        ''' retourne aucun résultat, on affiche la totalité des emprunts.
         If Not rentalTable.Rows.Count > 0 Then
             If type Then
                 MessageBox.Show("Aucun Emprunt dans la base de donnée.")
@@ -42,6 +53,12 @@
         End If
     End Function
 
+    ''' <summary>
+    ''' Ce Sub agit lors d'une modification à la ligne sélectionné et
+    ''' permet d'afficher les détails de l'article choisi.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If Not IsNothing(ListView1.FocusedItem) AndAlso ListView1.FocusedItem.Index >= 0 Then
             DetailsButton.Enabled = True
@@ -50,6 +67,12 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Ce sub agit lorsqu'un nouveau boutton radio est choisi
+    ''' et déactive les autres champs text.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByRenterName.CheckedChanged, ByAuthorisationName.CheckedChanged, ByCategoryName.CheckedChanged
         RenterFirstName.Text = ""
         RenterLastName.Text = ""
@@ -73,6 +96,12 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Ce sub agit lorsque les champs text sont modifié pour
+    ''' débloquer le boutton recherche si les champs contiennent des données.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles RenterFirstName.TextChanged, RenterLastName.TextChanged, CategoryName.TextChanged, AuthorisationName.TextChanged
         RenterFirstName.Text = Trim(RenterFirstName.Text)
         RenterLastName.Text = Trim(RenterLastName.Text)
@@ -95,6 +124,11 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Cette fonction effectue la recherche lorsque le bouton
+    ''' recherche est appuyé selon les paramètres de chercherches entrés.
+    ''' </summary>
+    ''' <returns></returns>
     Private Function SearchItems()
         Dim firstName = Trim(RenterFirstName.Text)
         Dim lastName = Trim(RenterLastName.Text)
@@ -123,6 +157,11 @@
         Me.SendToBack()
     End Sub
 
+    ''' <summary>
+    ''' Affiche l'interface d'informations détaillées de l'article sélectionné.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub DetailsButton_Click(sender As Object, e As EventArgs) Handles DetailsButton.Click, ListView1.DoubleClick
         If Not IsNothing(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
             Dim detail As New IRentalsDetails(mainForm, CInt(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text))

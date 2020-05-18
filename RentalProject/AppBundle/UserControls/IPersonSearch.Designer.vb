@@ -25,6 +25,10 @@ Partial Class IPersonSearch
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Service = New System.Windows.Forms.TextBox()
+        Me.ByService = New System.Windows.Forms.RadioButton()
+        Me.Department = New System.Windows.Forms.TextBox()
+        Me.ByDepartment = New System.Windows.Forms.RadioButton()
         Me.CBStatut = New System.Windows.Forms.ComboBox()
         Me.ByStatut = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,6 +41,8 @@ Partial Class IPersonSearch
         Me.DGVPerson = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.SearchButton = New System.Windows.Forms.Button()
+        Me.ByRenting = New System.Windows.Forms.RadioButton()
+        Me.ByLate = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -70,6 +76,12 @@ Partial Class IPersonSearch
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.ByLate)
+        Me.Panel2.Controls.Add(Me.ByRenting)
+        Me.Panel2.Controls.Add(Me.Service)
+        Me.Panel2.Controls.Add(Me.ByService)
+        Me.Panel2.Controls.Add(Me.Department)
+        Me.Panel2.Controls.Add(Me.ByDepartment)
         Me.Panel2.Controls.Add(Me.CBStatut)
         Me.Panel2.Controls.Add(Me.ByStatut)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -85,6 +97,52 @@ Partial Class IPersonSearch
         Me.Panel2.Size = New System.Drawing.Size(351, 480)
         Me.Panel2.TabIndex = 4
         '
+        'Service
+        '
+        Me.Service.Enabled = False
+        Me.Service.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Service.Location = New System.Drawing.Point(34, 389)
+        Me.Service.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Service.Name = "Service"
+        Me.Service.Size = New System.Drawing.Size(299, 24)
+        Me.Service.TabIndex = 22
+        '
+        'ByService
+        '
+        Me.ByService.AutoSize = True
+        Me.ByService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ByService.Location = New System.Drawing.Point(34, 352)
+        Me.ByService.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByService.Name = "ByService"
+        Me.ByService.Size = New System.Drawing.Size(86, 24)
+        Me.ByService.TabIndex = 21
+        Me.ByService.TabStop = True
+        Me.ByService.Text = "Service"
+        Me.ByService.UseVisualStyleBackColor = True
+        '
+        'Department
+        '
+        Me.Department.Enabled = False
+        Me.Department.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Department.Location = New System.Drawing.Point(34, 294)
+        Me.Department.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Department.Name = "Department"
+        Me.Department.Size = New System.Drawing.Size(299, 24)
+        Me.Department.TabIndex = 20
+        '
+        'ByDepartment
+        '
+        Me.ByDepartment.AutoSize = True
+        Me.ByDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ByDepartment.Location = New System.Drawing.Point(34, 257)
+        Me.ByDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByDepartment.Name = "ByDepartment"
+        Me.ByDepartment.Size = New System.Drawing.Size(127, 24)
+        Me.ByDepartment.TabIndex = 19
+        Me.ByDepartment.TabStop = True
+        Me.ByDepartment.Text = "Département"
+        Me.ByDepartment.UseVisualStyleBackColor = True
+        '
         'CBStatut
         '
         Me.CBStatut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -92,7 +150,7 @@ Partial Class IPersonSearch
         Me.CBStatut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBStatut.FormattingEnabled = True
         Me.CBStatut.Items.AddRange(New Object() {"Étudiant", "Professeur", "Technicien", "Administration"})
-        Me.CBStatut.Location = New System.Drawing.Point(34, 219)
+        Me.CBStatut.Location = New System.Drawing.Point(34, 198)
         Me.CBStatut.Margin = New System.Windows.Forms.Padding(4)
         Me.CBStatut.Name = "CBStatut"
         Me.CBStatut.Size = New System.Drawing.Size(299, 24)
@@ -102,7 +160,7 @@ Partial Class IPersonSearch
         '
         Me.ByStatut.AutoSize = True
         Me.ByStatut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByStatut.Location = New System.Drawing.Point(34, 187)
+        Me.ByStatut.Location = New System.Drawing.Point(34, 166)
         Me.ByStatut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByStatut.Name = "ByStatut"
         Me.ByStatut.Size = New System.Drawing.Size(74, 24)
@@ -114,7 +172,7 @@ Partial Class IPersonSearch
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(244, 107)
+        Me.Label3.Location = New System.Drawing.Point(244, 90)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 17)
         Me.Label3.TabIndex = 16
@@ -124,7 +182,7 @@ Partial Class IPersonSearch
         '
         Me.TBNom.Enabled = False
         Me.TBNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBNom.Location = New System.Drawing.Point(197, 128)
+        Me.TBNom.Location = New System.Drawing.Point(197, 111)
         Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBNom.Name = "TBNom"
         Me.TBNom.Size = New System.Drawing.Size(136, 24)
@@ -133,7 +191,7 @@ Partial Class IPersonSearch
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(72, 107)
+        Me.Label2.Location = New System.Drawing.Point(72, 90)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 17)
         Me.Label2.TabIndex = 14
@@ -143,7 +201,7 @@ Partial Class IPersonSearch
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 31)
+        Me.Label1.Location = New System.Drawing.Point(13, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(157, 24)
         Me.Label1.TabIndex = 13
@@ -153,7 +211,7 @@ Partial Class IPersonSearch
         '
         Me.TBPrenom.Enabled = False
         Me.TBPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBPrenom.Location = New System.Drawing.Point(34, 128)
+        Me.TBPrenom.Location = New System.Drawing.Point(34, 111)
         Me.TBPrenom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBPrenom.Name = "TBPrenom"
         Me.TBPrenom.Size = New System.Drawing.Size(136, 24)
@@ -163,7 +221,7 @@ Partial Class IPersonSearch
         '
         Me.ByName.AutoSize = True
         Me.ByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByName.Location = New System.Drawing.Point(34, 76)
+        Me.ByName.Location = New System.Drawing.Point(34, 62)
         Me.ByName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByName.Name = "ByName"
         Me.ByName.Size = New System.Drawing.Size(65, 24)
@@ -224,6 +282,28 @@ Partial Class IPersonSearch
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
+        'ByRenting
+        '
+        Me.ByRenting.AutoSize = True
+        Me.ByRenting.Location = New System.Drawing.Point(34, 440)
+        Me.ByRenting.Name = "ByRenting"
+        Me.ByRenting.Size = New System.Drawing.Size(117, 21)
+        Me.ByRenting.TabIndex = 23
+        Me.ByRenting.TabStop = True
+        Me.ByRenting.Text = "Ont Emprunté"
+        Me.ByRenting.UseVisualStyleBackColor = True
+        '
+        'ByLate
+        '
+        Me.ByLate.AutoSize = True
+        Me.ByLate.Location = New System.Drawing.Point(197, 440)
+        Me.ByLate.Name = "ByLate"
+        Me.ByLate.Size = New System.Drawing.Size(72, 21)
+        Me.ByLate.TabIndex = 24
+        Me.ByLate.TabStop = True
+        Me.ByLate.Text = "Retard"
+        Me.ByLate.UseVisualStyleBackColor = True
+        '
         'IPersonSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -263,4 +343,10 @@ Partial Class IPersonSearch
     Friend WithEvents DGVPerson As DataGridView
     Friend WithEvents Panel4 As Panel
     Friend WithEvents SearchButton As Button
+    Friend WithEvents Service As TextBox
+    Friend WithEvents ByService As RadioButton
+    Friend WithEvents Department As TextBox
+    Friend WithEvents ByDepartment As RadioButton
+    Friend WithEvents ByLate As RadioButton
+    Friend WithEvents ByRenting As RadioButton
 End Class

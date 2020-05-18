@@ -1,7 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ModelRental
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
+
+    Public connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
     Shared instance As ModelRental = Nothing
     Public Shared Function getInstance() As ModelRental
@@ -21,6 +22,10 @@ Public Class ModelRental
         connection.Close()
     End Sub
 
+    ''' <summary>
+    ''' Mets l'équipement qui est retourné disponible.
+    ''' </summary>
+    ''' <param name="id"></param>
     Public Sub updateStateEquipment(id As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -41,9 +46,7 @@ Public Class ModelRental
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"insert into emprunt
- 
-                values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
+            command.CommandText = $"insert into emprunt values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
@@ -53,6 +56,11 @@ Public Class ModelRental
         End Try
     End Function
 
+    ''' <summary>
+    ''' Mets l'équipement qui est emprunté non disponible.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
     Public Function updateEquipementStatus(id As Integer) As Boolean
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -63,6 +71,16 @@ Public Class ModelRental
         Return True
     End Function
 
+    ''' <summary>
+    ''' Cette fonction est appelé dans l'interface de modification
+    ''' d'emprunt lorsque la date de retour est valide et
+    ''' l'utilisateur appuie sur le bouton sauvegarder.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="duree"></param>
+    ''' <param name="dateRetour"></param>
+    ''' <param name="commentaires"></param>
+    ''' <returns></returns>
     Public Function updateRentalReturnDate(ByVal id As Integer,
                                            ByVal duree As String,
                                            ByVal dateRetour As Date,

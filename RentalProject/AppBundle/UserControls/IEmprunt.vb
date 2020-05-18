@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class IEmprunt
-    Dim connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
+
+    Public connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
     Dim validDate As Boolean = False
     Dim reader As MySqlDataReader
@@ -30,10 +31,7 @@ Public Class IEmprunt
         DateTimePicker1.CustomFormat = "dddd dd-MM-yyyy hh:mm:ss"
         DateTimePicker1.Enabled = False
         CbCategorie.Text = "Sélectionnez une catégorie"
-
         refreshPersonne()
-
-
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDownJour.ValueChanged
@@ -63,7 +61,7 @@ Public Class IEmprunt
     End Sub
 
     Private Sub CbPersonne_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbPersonne.SelectedIndexChanged
-        refreshEmpruntEnCours()
+        'refreshEmpruntEnCours()
         refreshCategorie()
         nomComplet = ListPersonne(CbPersonne.SelectedIndex, 1) + " " + ListPersonne(CbPersonne.SelectedIndex, 2)
     End Sub
@@ -123,13 +121,16 @@ Public Class IEmprunt
         Dim dateRetour As Date
         Try
             no_personne = CInt(ListPersonne(CbPersonne.SelectedIndex, 0))
-            no_equipement = ListEquipement(CbEquipement.SelectedIndex, 0)
             autorisation = TbAutorise.Text
             duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
             dateRetour = DateTimePicker1.Value
-            empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
-            empruntEntity.updateEquipementStatus(no_equipement)
+            For Each item As ListViewItem In EquipmentCollection.Items
+                no_equipement = item.SubItems(0).Text
+                empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
+                empruntEntity.updateEquipementStatus(no_equipement)
+            Next
             rentals.loadData(EntityRental.getInstance().getRentals())
+            Me.SendToBack()
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
@@ -170,24 +171,24 @@ Public Class IEmprunt
         connection.Close()
     End Function
 
-    Public Function refreshEmpruntEnCours()
-        Dim noPersonne As String
-        Dim ctrEmprunt As Integer
-        LbEmprunt.Items.Clear()
-        CbEquipement.Text = "Sélectionnez un equipement"
-        noPersonne = ListPersonne(CbPersonne.SelectedIndex, 0)
-        ctrEmprunt = 0
-        connection.Open()
+    '    Public Function refreshEmpruntEnCours()
+    '        Dim noPersonne As String
+    '        Dim ctrEmprunt As Integer
+    '        LbEmprunt.Items.Clear()
+    '        CbEquipement.Text = "Sélectionnez un equipement"
+    '        noPersonne = ListPersonne(CbPersonne.SelectedIndex, 0)
+    '        ctrEmprunt = 0
+    '        connection.Open()
 
-        com.CommandText = "select e.noCategorie,e.nom,em.dateRetour from emprunt em
-inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" + noPersonne + ";"
-        reader = com.ExecuteReader
-        While (reader.Read)
-            LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetDateTime(2).ToString())
-            ctrEmprunt += 1
-        End While
-        connection.Close()
-    End Function
+    '        com.CommandText = "select e.noCategorie,e.nom,em.dateRetour from emprunt em
+    'inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" + noPersonne + ";"
+    '        reader = com.ExecuteReader
+    '        While (reader.Read)
+    '            LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetDateTime(2).ToString())
+    '            ctrEmprunt += 1
+    '        End While
+    '        connection.Close()
+    '    End Function
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
         If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
@@ -215,6 +216,35 @@ inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" 
             NumericUpDownHeure.Value = 0
             DateTimePicker1.Value = Date.Now
         End If
+    End Sub
+
+    Private Sub SelectButton_Click(sender As Object, e As EventArgs) Handles SelectButton.Click
+        Dim isUnique As Boolean = True
+        For Each it As ListViewItem In EquipmentCollection.Items
+            If it.SubItems(0).Text = ListEquipement(CbEquipement.SelectedIndex, 0) Then
+                isUnique = False
+            End If
+        Next
+        If Not IsNothing(CbEquipement.Text) And Not CbEquipement.Text = "" And CbEquipement.Items.Count > 0 And isUnique Then
+            EquipmentCollection.Items.Add(New ListViewItem({ListEquipement(CbEquipement.SelectedIndex, 0), ListEquipement(CbEquipement.SelectedIndex, 1)}))
+        ElseIf Not isUnique Then
+            MessageBox.Show("Cet article est déja sélectionné.")
+        End If
+    End Sub
+
+    Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.SelectedIndexChanged
+        If Not IsNothing(EquipmentCollection.SelectedItems.Item(0).Text) Then
+            If MessageBox.Show($"Voulez vous retirer cet item?{Environment.NewLine}{EquipmentCollection.SelectedItems.Item(0).Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                EquipmentCollection.Items.Remove(EquipmentCollection.SelectedItems.Item(0))
+            End If
+        End If
+    End Sub
+
+    Private Sub NewPersonButton_Click(sender As Object, e As EventArgs) Handles NewPersonButton.Click
+        Dim person As New IAddPerson(Me)
+        person.Dock = DockStyle.Fill
+        MainForm.InterfacePanel.Controls.Add(person)
+        person.BringToFront()
     End Sub
 End Class
 
