@@ -2,7 +2,7 @@
 
 Public Class ModelPerson
 
-    Dim connection As New MySqlConnection("Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;")
+    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelPerson = Nothing
 
     Public Shared Function getInstance() As ModelPerson

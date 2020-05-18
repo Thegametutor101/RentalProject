@@ -1,7 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class IEmprunt
 
-    Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
+    Public connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
+    Dim connection As New MySqlConnection(connectionString)
     Dim validDate As Boolean = False
     Dim reader As MySqlDataReader
     Dim readdate As MySqlDataReader
