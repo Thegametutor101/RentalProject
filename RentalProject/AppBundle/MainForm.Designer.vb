@@ -195,7 +195,7 @@ Partial Class MainForm
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(200, 58)
         Me.ReturnButton.TabIndex = 5
-        Me.ReturnButton.Text = "Retours"
+        Me.ReturnButton.Text = "Historique"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
         'RentalsButton
