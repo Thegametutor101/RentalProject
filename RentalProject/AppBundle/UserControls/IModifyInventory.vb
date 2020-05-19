@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-
+﻿Imports System.Text.RegularExpressions
 Public Class IModifyInventory
 
     Dim Inventory As IInventory
@@ -13,11 +12,7 @@ Public Class IModifyInventory
 
     Private Sub IModifyInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'on va chercher les différentes catégories existantes pour la combobox
-        Try
-            loadData(EntityCategory.getInstance.getCategory)
-        Catch ex As Exception
-            MessageBox.Show("Il y a eu une erreur dans le chargement des données de l'équipement:" + ex.Message)
-        End Try
+        loadData(EntityCategory.getInstance.getCategory)
     End Sub
 
     Public Function loadData(data As DataTable)
@@ -31,7 +26,7 @@ Public Class IModifyInventory
                     CBCat.ValueMember = "nocategorie"
                 End If
             Next
-            'Inscrire les informations de l;'équipement Sélectionné
+            'Inscrire les informations de l'équipement Sélectionné
             'on ne doit pas permettre la modification de l'ID c'Est pourquoi c'Est un label
             LabelNo.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(0).Value
             TBName.Text = Inventory.DataGridView1.SelectedRows.Item(0).Cells(1).Value
@@ -52,8 +47,7 @@ Public Class IModifyInventory
 
     Public Function UpdateEquipement()
         'Création des variables pour l'update
-        Try
-            Dim noEquipement As Integer
+        Dim noEquipement As String
             Dim nom As String
             Dim nocategorie As Integer
             Dim etat As String
@@ -81,17 +75,15 @@ Public Class IModifyInventory
                 'message d'erreur lorsque l'un des champs n'est pas rempli
                 MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
             End Try
-        Catch ex As Exception
-            MessageBox.Show("La modification n'a pas pu être effectuée:" + ex.Message)
-        End Try
     End Function
 
     Private Sub ButtonModif_Click(sender As Object, e As EventArgs) Handles ButtonModif.Click
         'Confirmation de la modification
-        Try
-            If Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
-                MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
-            Else
+        Static textExpression As New Regex("^[a-zA-Z0-9]+$")
+        If Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
+            MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
+        Else
+            If textExpression.IsMatch(TBName.Text) Then
                 Dim result As DialogResult = MessageBox.Show("Voulez vous modifier l'équipement de la base de donnée, ses nouvelles informations seront:" & vbCrLf & "NoEquipement: " & LabelNo.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text & vbCrLf & "Dispo: " & TBDispo.Text, "Confirmation", MessageBoxButtons.YesNo)
                 If result = DialogResult.Yes Then
 
@@ -101,9 +93,9 @@ Public Class IModifyInventory
                     Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
                     Me.SendToBack()
                 End If
+            Else
+                MessageBox.Show("Veuillez utiliser des chiffres et/ou des lettres pour le nom")
             End If
-        Catch ex As Exception
-            MessageBox.Show("La modification n'a pas pu être effectuée:" + ex.Message)
-        End Try
+        End If
     End Sub
 End Class

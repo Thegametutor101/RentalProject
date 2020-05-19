@@ -54,7 +54,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(noEquipement) = upper('{id}')"
+            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(noEquipement) like upper('{id}')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")
@@ -140,12 +140,12 @@ Public Class EntityEquipment
     End Function
 
     'On va chercher les infroamtions d'un équipement en fonction de son Id, ainsi que de l'emprunt qui lui est associé et de la personne qui l'a emprunté
-    Public Function getEquipmentDetailed(id As Integer) As DataTable
+    Public Function getEquipmentDetailed(id As String) As DataTable
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"Select E.noEquipement, initcap(E.nom), initcap(C2.nom), initcap(E.etat),initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E2.autorisation), E2.DateEmprunt, E2.dateRetour from equipement E left join emprunt E2 on E.noEquipement = E2.noEquipement left join personne P on E2.noPersonne = P.noPersonne inner join categorie C2 on E.noCategorie = C2.noCategorie where E.NoEquipement = {id}"
+            command.CommandText = $"Select E.noEquipement, initcap(E.nom), initcap(C2.nom), initcap(E.etat),initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E2.autorisation), E2.DateEmprunt, E2.dateRetour from equipement E left join emprunt E2 on E.noEquipement = E2.noEquipement left join personne P on E2.noPersonne = P.noPersonne inner join categorie C2 on E.noCategorie = C2.noCategorie where E.NoEquipement = '{id}'"
             Dim reader = command.ExecuteReader()
             Dim equipmentTable As New DataTable("equipement")
             equipmentTable.Load(reader)

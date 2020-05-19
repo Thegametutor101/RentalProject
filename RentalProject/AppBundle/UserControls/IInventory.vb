@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Public Class IInventory
+﻿Public Class IInventory
     Dim mainForm As MainForm
 
     Sub New(main As MainForm)
@@ -83,4 +82,5 @@ Public Class IInventory
             MessageBox.Show("L'ouverture de la page de recherche a échoué:" + ex.Message)
         End Try
     End Sub
+
 End Class

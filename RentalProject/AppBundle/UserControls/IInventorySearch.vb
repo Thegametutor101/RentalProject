@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'Imports MySql.Data.MySqlClient
 Public Class IInventorySearch
     Dim Inventory As IInventory
 
@@ -61,5 +61,4 @@ Public Class IInventorySearch
             MessageBox.Show("Veuillez sélectionner une élément à détailler")
         End Try
     End Sub
-
 End Class

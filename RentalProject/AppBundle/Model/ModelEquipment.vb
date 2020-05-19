@@ -13,7 +13,7 @@ Public Class ModelEquipment
     End Function
 
     'on va modifier un équipement en fonction de certaines valeurs
-    Public Function updateequipment(noequipement As Integer, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
+    Public Function updateequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
@@ -22,8 +22,8 @@ Public Class ModelEquipment
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur a eu lieu:" + ex.Message)
-        connection.Close()
+            MessageBox.Show("La modification de la base de données a échoué:" + ex.Message)
+            connection.Close()
         End Try
     End Function
 
@@ -37,13 +37,13 @@ Public Class ModelEquipment
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur a eu lieu:" + ex.Message)
+            MessageBox.Show("L'ajout de l'éqiupement a échoué:" + ex.Message)
             connection.Close()
         End Try
     End Function
 
     'on supprime un Équipement de la table via son ID
-    Public Function delequipement(noequipement As Integer)
+    Public Function delequipement(noequipement As String)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
@@ -52,7 +52,7 @@ Public Class ModelEquipment
             Dim reader = command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur a eu lieu:" + ex.Message)
+            MessageBox.Show("La suppression de l'équipement a échoué:" + ex.Message)
             connection.Close()
         End Try
     End Function
