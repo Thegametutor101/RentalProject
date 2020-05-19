@@ -26,4 +26,18 @@ Public Class ModelReturn
             MessageBox.Show("Une erreur c'est produite lors de la sauvegarde du retour.")
         End Try
     End Sub
+
+    Public Sub deleteReturn(id As Integer)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"delete from retour where noRetour = {id}"
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("La suppression s'est effecté avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Une erreur c'est produite lors de la suppression du retour.")
+        End Try
+    End Sub
 End Class

@@ -6,7 +6,6 @@
     Shared instance As MainForm = Nothing
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Me.CenterToScreen()
         Dim home As New IHome()
         home.Dock = DockStyle.Fill
@@ -86,5 +85,13 @@
         persons.Dock = DockStyle.Fill
         InterfacePanel.Controls.Add(persons)
         persons.BringToFront()
+    End Sub
+
+    Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
+        InterfacePanel.Controls.Clear()
+        Dim viewReturns As New IViewReturns(Me)
+        viewReturns.Dock = DockStyle.Fill
+        InterfacePanel.Controls.Add(viewReturns)
+        viewReturns.BringToFront()
     End Sub
 End Class

@@ -104,6 +104,7 @@
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityPerson.vb" />
     <Compile Include="AppBundle\Entity\EntityRental.vb" />
+    <Compile Include="AppBundle\Entity\EntityReturn.vb" />
     <Compile Include="AppBundle\Model\ModelCategory.vb" />
     <Compile Include="AppBundle\MainForm.vb">
       <SubType>Form</SubType>
@@ -230,6 +231,12 @@
     <Compile Include="AppBundle\UserControls\IEquipmentDetails.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IViewReturns.Designer.vb">
+      <DependentUpon>IViewReturns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IViewReturns.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Model1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -311,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IEquipmentDetails.resx">
       <DependentUpon>IEquipmentDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IViewReturns.resx">
+      <DependentUpon>IViewReturns.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

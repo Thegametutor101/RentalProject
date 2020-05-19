@@ -12,7 +12,6 @@ Public Class EntityRental
         Return instance
     End Function
 
-
     Public Function getRentals() As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
