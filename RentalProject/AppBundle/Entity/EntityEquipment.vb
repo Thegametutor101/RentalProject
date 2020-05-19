@@ -129,4 +129,6 @@ Public Class EntityEquipment
         Return equipmentTable
     End Function
 
+
+
 End Class

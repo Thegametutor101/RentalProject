@@ -240,7 +240,7 @@ Public Class IEmprunt
         RefreshEquipement()
     End Sub
 
-    Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.SelectedIndexChanged
+    Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.DoubleClick
         If Not IsNothing(EquipmentCollection.SelectedItems.Item(0).Text) Then
             If MessageBox.Show($"Voulez vous retirer cet item?{Environment.NewLine}{EquipmentCollection.SelectedItems.Item(0).Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 EquipmentCollection.Items.Remove(EquipmentCollection.SelectedItems.Item(0))
@@ -254,6 +254,8 @@ Public Class IEmprunt
         MainForm.InterfacePanel.Controls.Add(person)
         person.BringToFront()
     End Sub
+
+
 End Class
 
 

@@ -116,6 +116,12 @@
     <Compile Include="AppBundle\Model\ModelPerson.vb" />
     <Compile Include="AppBundle\Model\ModelRental.vb" />
     <Compile Include="AppBundle\Model\ModelReturn.vb" />
+    <Compile Include="AppBundle\UserControls\ICategorieAutre.Designer.vb">
+      <DependentUpon>ICategorieAutre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\ICategorieAutre.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\ICategory.Designer.vb">
       <DependentUpon>ICategory.vb</DependentUpon>
     </Compile>
@@ -254,6 +260,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\ICategorieAutre.resx">
+      <DependentUpon>ICategorieAutre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IModifyPerson.resx">
       <DependentUpon>IModifyPerson.vb</DependentUpon>

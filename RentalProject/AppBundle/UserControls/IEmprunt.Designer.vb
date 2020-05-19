@@ -37,7 +37,6 @@ Partial Class IEmprunt
         Me.Label7 = New System.Windows.Forms.Label()
         Me.NumericUpDownHeure = New System.Windows.Forms.NumericUpDown()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.CbPersonne = New System.Windows.Forms.ComboBox()
         Me.Comments = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -52,6 +51,7 @@ Partial Class IEmprunt
         Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.NewPersonButton = New System.Windows.Forms.Button()
         Me.SelectButton = New System.Windows.Forms.Button()
+        Me.BackButton = New System.Windows.Forms.Button()
         CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -203,21 +203,6 @@ Partial Class IEmprunt
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 22
         '
-        'BackButton
-        '
-        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 50)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
-        '
         'CbPersonne
         '
         Me.CbPersonne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -339,6 +324,7 @@ Partial Class IEmprunt
         'EquipmentCollection
         '
         Me.EquipmentCollection.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.EquipmentID, Me.EquipmentName})
+        Me.EquipmentCollection.FullRowSelect = True
         Me.EquipmentCollection.HideSelection = False
         Me.EquipmentCollection.Location = New System.Drawing.Point(336, 74)
         Me.EquipmentCollection.Name = "EquipmentCollection"
@@ -392,6 +378,21 @@ Partial Class IEmprunt
         Me.SelectButton.Text = "->"
         Me.SelectButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.SelectButton.UseVisualStyleBackColor = False
+        '
+        'BackButton
+        '
+        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BackButton.FlatAppearance.BorderSize = 0
+        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
+        Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
+        Me.BackButton.TabIndex = 0
+        Me.BackButton.UseVisualStyleBackColor = True
         '
         'IEmprunt
         '

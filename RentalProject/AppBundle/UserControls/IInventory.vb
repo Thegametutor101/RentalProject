@@ -60,4 +60,11 @@ Public Class IInventory
         InventorySearch.BringToFront()
     End Sub
 
+    Private Sub BtAutre_Click(sender As Object, e As EventArgs) Handles BtAutre.Click
+        'Ouverture du contrôle utilisateur de recherche d'équipement
+        Dim ICategorieAutre As New ICategorieAutre()
+        ICategorieAutre.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(ICategorieAutre)
+        ICategorieAutre.BringToFront()
+    End Sub
 End Class
