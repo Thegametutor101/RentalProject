@@ -13,33 +13,48 @@ Public Class ModelEquipment
     End Function
 
     'on va modifier un équipement en fonction de certaines valeurs
-    Public Function updateequipment(noequipement As Integer, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie + 1}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
-        connection.Open()
-        Dim add As Integer = command.ExecuteNonQuery()
-        connection.Close()
+    Public Function updateequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie + 1}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
+            connection.Open()
+            Dim add As Integer = command.ExecuteNonQuery()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("La modification de la base de données a échoué:" + ex.Message)
+            connection.Close()
+        End Try
     End Function
 
     'on ajoute un équipement à la base de données en fonction de certaines valeurs
     Public Function addequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie}','{etat}','{disponibilite}')"
-        connection.Open()
-        Dim add As Integer = command.ExecuteNonQuery()
-        connection.Close()
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie + 1}','{etat}','{disponibilite}')"
+            connection.Open()
+            Dim add As Integer = command.ExecuteNonQuery()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("L'ajout de l'éqiupement a échoué:" + ex.Message)
+            connection.Close()
+        End Try
     End Function
 
     'on supprime un Équipement de la table via son ID
-    Public Function delequipement(noequipement As Integer)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Delete from equipement where noequipement = '{noequipement}'"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        connection.Close()
+    Public Function delequipement(noequipement As String)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Delete from equipement where noequipement = '{noequipement}'"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("La suppression de l'équipement a échoué:" + ex.Message)
+            connection.Close()
+        End Try
     End Function
 
     Public Function updateeEquipementCategorie(noequipement As Integer, nocategorie As Integer)

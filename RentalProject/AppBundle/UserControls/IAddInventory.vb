@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text.RegularExpressions
 Public Class IAddInventory
     Dim Inventory As IInventory
 
@@ -30,12 +30,12 @@ Public Class IAddInventory
     Private Function insert_equipment()
         'Création des variables pour l'ajout
         Dim noEquipement As String
-        Dim nom As String
-        Dim nocategorie As Integer
-        Dim etat As String
-        Dim disponibilite As String
-        Dim isUnique As Boolean = True
-        Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
+            Dim nom As String
+            Dim nocategorie As Integer
+            Dim etat As String
+            Dim disponibilite As String
+            Dim isUnique As Boolean = True
+            Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
         Try
             For Each it As DataRow In data.Rows
                 If it.Item(0) = ID.Text Then
@@ -62,6 +62,8 @@ Public Class IAddInventory
                     Else
                         disponibilite = "non"
                     End If
+                Else
+                    disponibilite = "oui"
                 End If
                 'Ajout de l'équipement à la base de données
                 ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
@@ -83,21 +85,24 @@ Public Class IAddInventory
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
-        Dim con As New MySqlConnection(MainForm.getInstance().connectionString)
-        Dim com As New MySqlCommand
+        Static textExpression As New Regex("^[a-zA-Z0-9]+$")
         If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
-            MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
-        Else
-            'confirmation de l'ajout
-            Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ID.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
-            If result = DialogResult.Yes Then
-                'la procédure d'insertion se lance
-                insert_equipment()
-                'on met la datagridview à jour
-                Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
-                'on retourne au contrôle utilisateur d'inventaire
-                Me.SendToBack()
+                MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
+            Else
+                If textExpression.IsMatch(TBName.Text) And textExpression.IsMatch(ID.Text) Then
+                    'confirmation de l'ajout
+                    Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ID.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
+                    If result = DialogResult.Yes Then
+                        'la procédure d'insertion se lance
+                        insert_equipment()
+                        'on met la datagridview à jour
+                        Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
+                        'on retourne au contrôle utilisateur d'inventaire
+                        Me.SendToBack()
+                    End If
+                Else
+                    MessageBox.Show("Veuillez utiliser des chiffres et/ou des lettres pour l'ID et le nom")
+                End If
             End If
-        End If
     End Sub
 End Class
