@@ -215,9 +215,8 @@ Public Class IEmprunt
             CbPersonne.Items.Clear()
             refreshPersonne()
             refreshCategorie()
-            RefreshEquipement()
             TbAutorise.Text = ""
-            EquipmentCollection.Clear()
+            EquipmentCollection.Items.Clear()
             NumericUpDownJour.Value = 0
             NumericUpDownHeure.Value = 0
             DateTimePicker1.Value = Date.Now
