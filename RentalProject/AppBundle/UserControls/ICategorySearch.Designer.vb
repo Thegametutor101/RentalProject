@@ -46,9 +46,9 @@ Partial Class ICategorySearch
         Me.Panel1.Controls.Add(Me.BackButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 62)
+        Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 3
         '
         'BackButton
@@ -59,9 +59,9 @@ Partial Class ICategorySearch
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -73,30 +73,30 @@ Partial Class ICategorySearch
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.ByName)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 62)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(355, 480)
+        Me.Panel2.Size = New System.Drawing.Size(266, 390)
         Me.Panel2.TabIndex = 5
         '
         'TBQuantity
         '
         Me.TBQuantity.Enabled = False
         Me.TBQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBQuantity.Location = New System.Drawing.Point(36, 203)
-        Me.TBQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TBQuantity.Location = New System.Drawing.Point(27, 165)
+        Me.TBQuantity.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TBQuantity.Name = "TBQuantity"
-        Me.TBQuantity.Size = New System.Drawing.Size(295, 24)
+        Me.TBQuantity.Size = New System.Drawing.Size(222, 21)
         Me.TBQuantity.TabIndex = 18
         '
         'ByQuantity
         '
         Me.ByQuantity.AutoSize = True
         Me.ByQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByQuantity.Location = New System.Drawing.Point(36, 172)
-        Me.ByQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByQuantity.Location = New System.Drawing.Point(27, 140)
+        Me.ByQuantity.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ByQuantity.Name = "ByQuantity"
-        Me.ByQuantity.Size = New System.Drawing.Size(93, 24)
+        Me.ByQuantity.Size = New System.Drawing.Size(80, 21)
         Me.ByQuantity.TabIndex = 17
         Me.ByQuantity.TabStop = True
         Me.ByQuantity.Text = "Quantité"
@@ -106,19 +106,20 @@ Partial Class ICategorySearch
         '
         Me.TBNom.Enabled = False
         Me.TBNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBNom.Location = New System.Drawing.Point(36, 92)
-        Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TBNom.Location = New System.Drawing.Point(27, 75)
+        Me.TBNom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TBNom.Name = "TBNom"
-        Me.TBNom.Size = New System.Drawing.Size(295, 24)
+        Me.TBNom.Size = New System.Drawing.Size(222, 21)
         Me.TBNom.TabIndex = 15
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(15, 16)
+        Me.Label1.Location = New System.Drawing.Point(11, 13)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(157, 24)
+        Me.Label1.Size = New System.Drawing.Size(122, 18)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Rechercher par..."
         '
@@ -126,10 +127,10 @@ Partial Class ICategorySearch
         '
         Me.ByName.AutoSize = True
         Me.ByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ByName.Location = New System.Drawing.Point(36, 61)
-        Me.ByName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByName.Location = New System.Drawing.Point(27, 50)
+        Me.ByName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ByName.Name = "ByName"
-        Me.ByName.Size = New System.Drawing.Size(65, 24)
+        Me.ByName.Size = New System.Drawing.Size(55, 21)
         Me.ByName.TabIndex = 11
         Me.ByName.TabStop = True
         Me.ByName.Text = "Nom"
@@ -140,9 +141,10 @@ Partial Class ICategorySearch
         Me.Panel3.Controls.Add(Me.DGVQuantity)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(355, 62)
+        Me.Panel3.Location = New System.Drawing.Point(266, 50)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(426, 480)
+        Me.Panel3.Size = New System.Drawing.Size(320, 390)
         Me.Panel3.TabIndex = 6
         '
         'DGVQuantity
@@ -154,20 +156,20 @@ Partial Class ICategorySearch
         Me.DGVQuantity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVQuantity.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVQuantity.Location = New System.Drawing.Point(0, 0)
-        Me.DGVQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVQuantity.Name = "DGVQuantity"
         Me.DGVQuantity.ReadOnly = True
         Me.DGVQuantity.RowHeadersWidth = 51
-        Me.DGVQuantity.Size = New System.Drawing.Size(426, 412)
+        Me.DGVQuantity.Size = New System.Drawing.Size(320, 335)
         Me.DGVQuantity.TabIndex = 11
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.SearchButton)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 412)
+        Me.Panel4.Location = New System.Drawing.Point(0, 335)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(426, 68)
+        Me.Panel4.Size = New System.Drawing.Size(320, 55)
         Me.Panel4.TabIndex = 0
         '
         'SearchButton
@@ -179,17 +181,17 @@ Partial Class ICategorySearch
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(215, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchButton.Location = New System.Drawing.Point(162, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(211, 68)
+        Me.SearchButton.Size = New System.Drawing.Size(158, 55)
         Me.SearchButton.TabIndex = 12
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'ICategorySearch
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -197,10 +199,9 @@ Partial Class ICategorySearch
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "ICategorySearch"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

@@ -37,43 +37,39 @@ Public Class IAddPerson
         Return emailExpression.IsMatch(email)
     End Function
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        If Not String.IsNullOrEmpty(TBNom.Text) And
-          Not String.IsNullOrEmpty(TBPrenom.Text) And
-           Not String.IsNullOrEmpty(CBStatut.Text) And
-          Not String.IsNullOrEmpty(TBTelephone.Text) Then
-            If CBStatut.Text <> "Étudiant" Then
-                If Not String.IsNullOrEmpty(TBDepartement.Text) And
-                    Not String.IsNullOrEmpty(TBService.Text) And
-                      Not String.IsNullOrEmpty(TBBureau.Text) Then
-                    If Not String.IsNullOrEmpty(TBPoste.Text) Then
-                        TBPoste.Text = 0
-                    End If
-                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text))
-                    Else MessageBox.Show("Veuillez vérifier les informations")
-                End If
-            Else
-                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, "", "", "", TBTelephone.Text, 0)
-            End If
-        Else MessageBox.Show("Veuillez vérifier les informations")
-            End If
-
-
-    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        'Try
         Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
+        If Not String.IsNullOrEmpty(TBNom.Text) And
+            Not String.IsNullOrEmpty(TBPrenom.Text) And
+            Not String.IsNullOrEmpty(CBStatut.Text) And
+            Not String.IsNullOrEmpty(TBTelephone.Text) And TBTelephone.TextLength = 14 Then
+
+
             If IsEmail(Email.Text) Then
                 If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                     If CBStatut.Text <> "Étudiant" Then
-                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
-                Else
-                    ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
-                End If
+                        If Not String.IsNullOrEmpty(TBDepartement.Text) And
+                            Not String.IsNullOrEmpty(TBService.Text) And
+                            Not String.IsNullOrEmpty(TBBureau.Text) Then
+                            If String.IsNullOrEmpty(TBPoste.Text) Then
+                                TBPoste.Text = 0
+
+                            End If
+                        End If
+                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
+                    Else
+                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                    End If
                     rent.refreshPersonne()
                 End If
             Else
                 MessageBox.Show("Cette adresse courriel est invalide.")
             End If
+        Else MessageBox.Show("Veuillez vérifier les informations")
+        End If
     End Sub
+
+
+
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
         'Retour au UC person
@@ -94,7 +90,7 @@ Public Class IAddPerson
         End If
     End Sub
 
-    Private Sub TBPoste_TextChanged(sender As Object, e As EventArgs) Handles TBPoste.TextChanged
+    Private Sub TBPoste_TextChanged(sender As Object, e As EventArgs) 
         If Not IsNumeric(TBPoste.Text) And TBPoste.Text.Length > 0 Then
             MessageBox.Show("Valeur numerique obligatoire")
             TBPoste.Clear()
@@ -102,6 +98,10 @@ Public Class IAddPerson
     End Sub
 
     Private Sub MaskedTextBox2_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
+
+    End Sub
+
+    Private Sub Extension_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TBPoste.MaskInputRejected
 
     End Sub
 End Class

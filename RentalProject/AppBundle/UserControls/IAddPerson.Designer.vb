@@ -37,7 +37,6 @@ Partial Class IAddPerson
         Me.LAService = New System.Windows.Forms.Label()
         Me.TBDepartement = New System.Windows.Forms.TextBox()
         Me.LADepartement = New System.Windows.Forms.Label()
-        Me.TBPoste = New System.Windows.Forms.TextBox()
         Me.LAPoste = New System.Windows.Forms.Label()
         Me.TBTelephone = New System.Windows.Forms.MaskedTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -45,6 +44,7 @@ Partial Class IAddPerson
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.TextBox()
+        Me.TBPoste = New System.Windows.Forms.MaskedTextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -190,13 +190,6 @@ Partial Class IAddPerson
         Me.LADepartement.TabIndex = 26
         Me.LADepartement.Text = "Département"
         '
-        'TBPoste
-        '
-        Me.TBPoste.Location = New System.Drawing.Point(377, 260)
-        Me.TBPoste.Name = "TBPoste"
-        Me.TBPoste.Size = New System.Drawing.Size(174, 20)
-        Me.TBPoste.TabIndex = 33
-        '
         'LAPoste
         '
         Me.LAPoste.AutoSize = True
@@ -280,6 +273,15 @@ Partial Class IAddPerson
         Me.Email.Size = New System.Drawing.Size(174, 20)
         Me.Email.TabIndex = 36
         '
+        'TBPoste
+        '
+        Me.TBPoste.Location = New System.Drawing.Point(377, 263)
+        Me.TBPoste.Margin = New System.Windows.Forms.Padding(2)
+        Me.TBPoste.Mask = "999999"
+        Me.TBPoste.Name = "TBPoste"
+        Me.TBPoste.Size = New System.Drawing.Size(72, 20)
+        Me.TBPoste.TabIndex = 103
+        '
         'IAddPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,11 +289,11 @@ Partial Class IAddPerson
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.TBPoste)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Email)
         Me.Controls.Add(Me.TBTelephone)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.TBPoste)
         Me.Controls.Add(Me.LAPoste)
         Me.Controls.Add(Me.TBBureau)
         Me.Controls.Add(Me.LABureau)
@@ -332,7 +334,6 @@ Partial Class IAddPerson
     Friend WithEvents LAService As Label
     Friend WithEvents TBDepartement As TextBox
     Friend WithEvents LADepartement As Label
-    Friend WithEvents TBPoste As TextBox
     Friend WithEvents LAPoste As Label
     Friend WithEvents TBTelephone As MaskedTextBox
     Friend WithEvents Panel2 As Panel
@@ -340,4 +341,5 @@ Partial Class IAddPerson
     Friend WithEvents CancelButton As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Email As TextBox
+    Friend WithEvents TBPoste As MaskedTextBox
 End Class

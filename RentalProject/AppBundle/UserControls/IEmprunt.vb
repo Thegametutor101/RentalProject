@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class IEmprunt
 
-    Public connectionString = "Server='localhost';Database='projetsession';Uid='root';Pwd='';Port=3308;Convert Zero Datetime=True"
+    Public connectionString = $"{MainForm.getInstance.connectionString}Convert Zero Datetime=True"
     Dim connection As New MySqlConnection(connectionString)
     Dim validDate As Boolean = False
     Dim reader As MySqlDataReader
@@ -38,20 +38,13 @@ Public Class IEmprunt
         DateTimePicker1.Value = Date.Now.AddHours(NumericUpDownHeure.Value + (NumericUpDownJour.Value * 24))
     End Sub
 
+    Public Function ValideDate() As Boolean
+        If (DateTimePicker1.Value.DayOfWeek = 6 Or DateTimePicker1.Value.DayOfWeek = 0) Then
+            Return False
+        Else Return True
+        End If
+    End Function
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-        If (DateTimePicker1.Value.DayOfWeek = 6) Then
-            MessageBox.Show("La date donné est en dehors des heures du cégep")
-            validDate = False
-        Else
-            validDate = True
-        End If
-
-        If (DateTimePicker1.Value.DayOfWeek = 0) Then
-            MessageBox.Show("La date donné est en dehors des heures du cégep")
-            validDate = False
-        Else
-            validDate = True
-        End If
         NumericUpDownJour.Value = DateTimePicker1.Value.DayOfYear - Date.Now.DayOfYear
         NumericUpDownHeure.Value = DateTimePicker1.Value.Hour - Date.Now.Hour
     End Sub
@@ -120,22 +113,27 @@ Public Class IEmprunt
         Dim duree As String
         Dim dateRetour As Date
         Try
-            no_personne = CInt(ListPersonne(CbPersonne.SelectedIndex, 0))
-            autorisation = TbAutorise.Text
-            duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
-            dateRetour = DateTimePicker1.Value
-            For Each item As ListViewItem In EquipmentCollection.Items
-                no_equipement = item.SubItems(0).Text
-                empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
-                empruntEntity.updateEquipementStatus(no_equipement)
-            Next
-            rentals.loadData(EntityRental.getInstance().getRentals())
-            Me.SendToBack()
+            If EquipmentCollection.Items.Count > 0 Then
+                no_personne = CInt(ListPersonne(CbPersonne.SelectedIndex, 0))
+                autorisation = TbAutorise.Text
+                duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
+                dateRetour = DateTimePicker1.Value
+                For Each item As ListViewItem In EquipmentCollection.Items
+                    no_equipement = item.SubItems(0).Text
+                    empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
+                    empruntEntity.updateEquipementStatus(no_equipement)
+                Next
+                rentals.loadData(EntityRental.getInstance().getRentals())
+                Me.SendToBack()
+            Else
+                MessageBox.Show("Veuillez sélectionner des équipement à emprunter.")
+            End If
         Catch ex As Exception
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
     End Function
     Public Function refreshCategorie()
+        CbCategorie.Items.Clear()
         CbCategorie.Enabled = True
         Dim ctr1 As Integer
         ctr1 = 0
@@ -198,20 +196,28 @@ Public Class IEmprunt
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now And validDate = True) Then
-            insertToRental()
-            RefreshEquipement()
-        Else
-            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+        If (ValideDate()) Then
+            If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now) Then
+                insertToRental()
+                RefreshEquipement()
+
+            Else
+                MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+            End If
+        Else MessageBox.Show("La date n'est pas valide")
         End If
     End Sub
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
         If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            CbEquipement.Text = ""
-            CbCategorie.Text = ""
-            CbPersonne.Text = ""
+            CbEquipement.Items.Clear()
+            CbCategorie.Items.Clear()
+            CbPersonne.Items.Clear()
+            refreshPersonne()
+            refreshCategorie()
+            RefreshEquipement()
             TbAutorise.Text = ""
+            EquipmentCollection.Clear()
             NumericUpDownJour.Value = 0
             NumericUpDownHeure.Value = 0
             DateTimePicker1.Value = Date.Now
@@ -221,8 +227,10 @@ Public Class IEmprunt
     Private Sub SelectButton_Click(sender As Object, e As EventArgs) Handles SelectButton.Click
         Dim isUnique As Boolean = True
         For Each it As ListViewItem In EquipmentCollection.Items
-            If it.SubItems(0).Text = ListEquipement(CbEquipement.SelectedIndex, 0) Then
-                isUnique = False
+            If CbEquipement.SelectedIndex > -1 Then
+                If it.SubItems(0).Text = ListEquipement(CbEquipement.SelectedIndex, 0) Then
+                    isUnique = False
+                End If
             End If
         Next
         If Not IsNothing(CbEquipement.Text) And Not CbEquipement.Text = "" And CbEquipement.Items.Count > 0 And isUnique Then
@@ -230,6 +238,7 @@ Public Class IEmprunt
         ElseIf Not isUnique Then
             MessageBox.Show("Cet article est déja sélectionné.")
         End If
+        RefreshEquipement()
     End Sub
 
     Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.SelectedIndexChanged

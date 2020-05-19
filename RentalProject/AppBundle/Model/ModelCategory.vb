@@ -14,15 +14,34 @@ Public Class ModelCategory
 
     Public Sub deleteCategory(id As Integer)
         Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Delete from categorie where noCategorie = {id}"
-        connection.Open()
-        command.ExecuteNonQuery()
-        connection.Close()
-        command.CommandText = $"Delete from equipement where noCategorie = {id}"
-        connection.Open()
-        command.ExecuteNonQuery()
-        connection.Close()
+        Dim reader As MySqlDataReader
+        Dim qte As Integer
+        If (id <> 0) Then
+            command.Connection = connection
+            command.CommandText = $"select quantite from categorie where noCategorie = {id}"
+            connection.Open()
+            reader = command.ExecuteReader()
+            If (reader.Read) Then
+                qte = CInt(reader.GetString(0))
+                connection.Close()
+                connection.Open()
+                command.CommandText = $"update categorie set quantite=quantite+{qte} where noCategorie = 0"
+                command.ExecuteNonQuery()
+                connection.Close()
+            End If
+
+
+            command.CommandText = $"Delete from categorie where noCategorie = {id}"
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+                command.CommandText = $"update equipement set noCategorie=0 where noCategorie = {id}"
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Else
+                MessageBox.Show("La catégorie Autre ne peut pas être supprimé")
+        End If
     End Sub
 
     Public Sub addCategory(ByVal nom As String)
@@ -42,13 +61,17 @@ Public Class ModelCategory
 
     Public Sub updateCategory(ByVal noCategorie As Integer, ByVal nom As String)
         Try
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            connection.Open()
-            command.CommandText = $"update categorie set nom = '{nom}' where noCategorie = '{noCategorie}')"
-            Dim result = command.ExecuteNonQuery()
-            connection.Close()
-            MessageBox.Show("La categorie à été modifiée avec succès.")
+            If (noCategorie <> 0) Then
+                Dim command As New MySqlCommand
+                command.Connection = connection
+                connection.Open()
+                command.CommandText = $"update categorie set nom = '{nom}' where noCategorie = {noCategorie}"
+                Dim result = command.ExecuteNonQuery()
+                connection.Close()
+                MessageBox.Show("La categorie à été modifiée avec succès.")
+            Else
+                MessageBox.Show("La catégorie Autre ne peut pas être modifié")
+            End If
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'a modification")
         End Try

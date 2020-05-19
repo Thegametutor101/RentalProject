@@ -64,4 +64,6 @@
             DGVQuantity.DataSource = EntityCategory.getInstance.getCategoryByQuantity(quantity)
         End If
     End Function
+
+
 End Class

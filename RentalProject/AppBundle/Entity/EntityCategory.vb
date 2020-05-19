@@ -26,7 +26,7 @@ Public Class EntityCategory
     Public Function getCategoryByID(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from categorie where upper(noCategorie) = upper('{id}')"
+        command.CommandText = $"Select * from categorie where noCategorie ={id})"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("categorie")
@@ -50,7 +50,7 @@ Public Class EntityCategory
     Public Function getCategoryByQuantity(quantity As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from categorie where upper(quantite) like upper('{quantity}')"
+        command.CommandText = $"Select * from categorie where quantite='{quantity}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("categorie")
