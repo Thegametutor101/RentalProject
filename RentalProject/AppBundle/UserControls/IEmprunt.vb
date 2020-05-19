@@ -41,7 +41,8 @@ Public Class IEmprunt
     Public Function ValideDate() As Boolean
         If (DateTimePicker1.Value.DayOfWeek = 6 Or DateTimePicker1.Value.DayOfWeek = 0) Then
             Return False
-        Else Return True
+        Else
+            Return True
         End If
     End Function
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
@@ -83,10 +84,8 @@ Public Class IEmprunt
         CbEquipement.Text = "Sélectionnez un equipement"
         If (CbCategorie.SelectedIndex > -1) Then
             noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
-
             ctrEquipement = 0
             connection.Open()
-
             com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
             reader = com.ExecuteReader
             While (reader.Read)
@@ -100,8 +99,6 @@ Public Class IEmprunt
         Else
             MessageBox.Show("Aucune Categorie sélectionné")
         End If
-
-
     End Function
 
     Public Function insertToRental()
@@ -169,25 +166,6 @@ Public Class IEmprunt
         connection.Close()
     End Function
 
-    '    Public Function refreshEmpruntEnCours()
-    '        Dim noPersonne As String
-    '        Dim ctrEmprunt As Integer
-    '        LbEmprunt.Items.Clear()
-    '        CbEquipement.Text = "Sélectionnez un equipement"
-    '        noPersonne = ListPersonne(CbPersonne.SelectedIndex, 0)
-    '        ctrEmprunt = 0
-    '        connection.Open()
-
-    '        com.CommandText = "select e.noCategorie,e.nom,em.dateRetour from emprunt em
-    'inner join equipement e on e.noEquipement=em.noEquipement where em.noPersonne=" + noPersonne + ";"
-    '        reader = com.ExecuteReader
-    '        While (reader.Read)
-    '            LbEmprunt.Items.Add(reader.GetString(0) + " - " + reader.GetString(1) + " " + reader.GetDateTime(2).ToString())
-    '            ctrEmprunt += 1
-    '        End While
-    '        connection.Close()
-    '    End Function
-
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
         If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.SendToBack()
@@ -200,11 +178,11 @@ Public Class IEmprunt
             If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now) Then
                 insertToRental()
                 RefreshEquipement()
-
             Else
                 MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
             End If
-        Else MessageBox.Show("La date n'est pas valide")
+        Else
+            MessageBox.Show("La date n'est pas valide")
         End If
     End Sub
 
@@ -240,7 +218,7 @@ Public Class IEmprunt
         RefreshEquipement()
     End Sub
 
-    Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.SelectedIndexChanged
+    Private Sub EquipmentCollection_DoubleClick(sender As Object, e As EventArgs) Handles EquipmentCollection.DoubleClick
         If Not IsNothing(EquipmentCollection.SelectedItems.Item(0).Text) Then
             If MessageBox.Show($"Voulez vous retirer cet item?{Environment.NewLine}{EquipmentCollection.SelectedItems.Item(0).Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 EquipmentCollection.Items.Remove(EquipmentCollection.SelectedItems.Item(0))
@@ -253,6 +231,10 @@ Public Class IEmprunt
         person.Dock = DockStyle.Fill
         MainForm.InterfacePanel.Controls.Add(person)
         person.BringToFront()
+    End Sub
+
+    Private Sub EquipmentCollection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EquipmentCollection.SelectedIndexChanged
+
     End Sub
 End Class
 
