@@ -47,7 +47,8 @@ Public Class IAddInventory
                 'les nom est entré dans la textbox
                 nom = TBName.Text
                 'la catégorie est entrée dans la combobox
-                nocategorie = CBCat.SelectedIndex
+
+                nocategorie = EntityCategory.getInstance.getNoCategorieByName(CBCat.Text)
                 'l'état est entré dans la textbox
                 etat = CBEtat.Text
                 'l'équipement est disponible selon l'état

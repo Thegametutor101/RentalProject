@@ -15,6 +15,7 @@ Public Class EntityCategory
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from categorie"
+        connection.Close()
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("categorie")
@@ -57,5 +58,18 @@ Public Class EntityCategory
         table.Load(reader)
         connection.Close()
         Return table
+    End Function
+
+    Public Function getNoCategorieByName(NomCategorie As String)
+        Dim command As New MySqlCommand
+
+        command.CommandText = $"select nocategorie from categorie where upper(nom)=upper('{NomCategorie}')"
+        command.Connection = connection
+        connection.Open()
+        Dim reader = command.ExecuteReader
+        While (reader.Read)
+            Return CInt(reader.GetString(0))
+        End While
+        connection.Close()
     End Function
 End Class
