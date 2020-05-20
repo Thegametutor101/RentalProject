@@ -105,9 +105,10 @@ Public Class IEmprunt
         Dim autorisation As String
         Dim duree As String
         Dim dateRetour As Date
+        Dim nomPersonne = Person.Text.Substring(0, Person.Text.IndexOf(","))
         Try
             If EquipmentCollection.Items.Count > 0 Then
-                For Each it As DataRow In EntityPerson.getInstance().getPersonneByLastName(Person.Text).Rows
+                For Each it As DataRow In EntityPerson.getInstance().getPersonneByLastName(nomPersonne).Rows
                     no_personne = it.Item(0)
                 Next
                 autorisation = TbAutorise.Text
