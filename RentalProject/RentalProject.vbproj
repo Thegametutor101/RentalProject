@@ -99,6 +99,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBundle\Controllers\ControllerAutoComplete.vb" />
     <Compile Include="AppBundle\Controllers\ControllerDates.vb" />
     <Compile Include="AppBundle\Entity\EntityCategory.vb" />
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />

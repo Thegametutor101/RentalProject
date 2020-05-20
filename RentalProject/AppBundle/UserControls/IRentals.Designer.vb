@@ -146,7 +146,7 @@ Partial Class IRentals
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
-        Me.SearchButton.Location = New System.Drawing.Point(403, 0)
+        Me.SearchButton.Location = New System.Drawing.Point(348, 0)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(126, 71)
@@ -163,10 +163,10 @@ Partial Class IRentals
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.ForeColor = System.Drawing.Color.White
-        Me.ReturnButton.Location = New System.Drawing.Point(529, 0)
+        Me.ReturnButton.Location = New System.Drawing.Point(474, 0)
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(126, 71)
+        Me.ReturnButton.Size = New System.Drawing.Size(161, 71)
         Me.ReturnButton.TabIndex = 6
         Me.ReturnButton.Text = "Retourner un Équipement"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -181,10 +181,10 @@ Partial Class IRentals
         Me.RentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RentButton.ForeColor = System.Drawing.Color.White
-        Me.RentButton.Location = New System.Drawing.Point(655, 0)
+        Me.RentButton.Location = New System.Drawing.Point(635, 0)
         Me.RentButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.RentButton.Name = "RentButton"
-        Me.RentButton.Size = New System.Drawing.Size(126, 71)
+        Me.RentButton.Size = New System.Drawing.Size(146, 71)
         Me.RentButton.TabIndex = 5
         Me.RentButton.Text = "Ajouter un Emprunt"
         Me.RentButton.UseVisualStyleBackColor = False

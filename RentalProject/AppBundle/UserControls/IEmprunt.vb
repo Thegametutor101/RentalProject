@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text.RegularExpressions
+Imports MySql.Data.MySqlClient
 Public Class IEmprunt
 
     Public connectionString = $"{MainForm.getInstance.connectionString}Convert Zero Datetime=True"
@@ -14,7 +15,6 @@ Public Class IEmprunt
     Dim slPersonne As String = "SELECT noPersonne,prenom,nom from personne;"
     Dim slCategorie As String = "select noCategorie,nom from categorie;"
     Dim slEquipement As String = "select noEquipement,nom,Etat from Equipement where noCategorie="
-    Dim nomComplet As String
     Dim rentals As IRentals
 
     Sub New(rental As IRentals)
@@ -31,7 +31,8 @@ Public Class IEmprunt
         DateTimePicker1.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         DateTimePicker1.Enabled = False
         CbCategorie.Text = "Sélectionnez une catégorie"
-        refreshPersonne()
+        refreshCategorie()
+        createPersonAutoComplete(Person)
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDownJour.ValueChanged
@@ -52,12 +53,6 @@ Public Class IEmprunt
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbCategorie.SelectedIndexChanged
         RefreshEquipement()
-    End Sub
-
-    Private Sub CbPersonne_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbPersonne.SelectedIndexChanged
-        'refreshEmpruntEnCours()
-        refreshCategorie()
-        nomComplet = ListPersonne(CbPersonne.SelectedIndex, 1) + " " + ListPersonne(CbPersonne.SelectedIndex, 2)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -111,7 +106,9 @@ Public Class IEmprunt
         Dim dateRetour As Date
         Try
             If EquipmentCollection.Items.Count > 0 Then
-                no_personne = CInt(ListPersonne(CbPersonne.SelectedIndex, 0))
+                For Each it As DataRow In EntityPerson.getInstance().getPersonneByLastName(Person.Text).Rows
+                    no_personne = it.Item(0)
+                Next
                 autorisation = TbAutorise.Text
                 duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
                 dateRetour = DateTimePicker1.Value
@@ -134,9 +131,11 @@ Public Class IEmprunt
         CbCategorie.Enabled = True
         Dim ctr1 As Integer
         ctr1 = 0
-        com.CommandText = slCategorie
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = slCategorie
         connection.Open()
-        reader = com.ExecuteReader
+        reader = command.ExecuteReader
         While (reader.Read)
             CbCategorie.Items.Add(reader.GetString(0) + " - " + reader.GetString(1))
             ListCategorie(ctr1, 0) = reader.GetString(0)
@@ -144,25 +143,6 @@ Public Class IEmprunt
             ctr1 += 1
         End While
         CbEquipement.Items.Clear()
-        connection.Close()
-    End Function
-
-    Public Function refreshPersonne()
-        Dim ctr As Integer
-        ctr = 0
-        connection.Open()
-        com.Connection = connection
-        com.CommandText = "SELECT noPersonne,nom,prenom from personne"
-
-        reader = com.ExecuteReader
-        While (reader.Read)
-            CbPersonne.Items.Add(reader.GetString(0) + "-" + reader.GetString(1) + " " + reader.GetString(2))
-            ListPersonne(ctr, 0) = reader.GetString(0)
-            ListPersonne(ctr, 1) = reader.GetString(1)
-            ListPersonne(ctr, 2) = reader.GetString(2)
-            ctr += 1
-        End While
-        CbCategorie.Items.Clear()
         connection.Close()
     End Function
 
@@ -174,7 +154,7 @@ Public Class IEmprunt
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        If (ValideDate()) Then
+        If ValideDate() And validPerson() Then
             If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now) Then
                 insertToRental()
                 RefreshEquipement()
@@ -186,12 +166,21 @@ Public Class IEmprunt
         End If
     End Sub
 
+    Public Function validPerson() As Boolean
+        For Each it As DataRow In EntityPerson.getInstance().getPerson().Rows
+            Dim personName = $"{it.Item(1)}, {it.Item(2)}"
+            If personName = Person.Text Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
         If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             CbEquipement.Items.Clear()
             CbCategorie.Items.Clear()
-            CbPersonne.Items.Clear()
-            refreshPersonne()
+            Person.Text = ""
             refreshCategorie()
             TbAutorise.Text = ""
             EquipmentCollection.Items.Clear()
