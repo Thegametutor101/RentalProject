@@ -23,22 +23,24 @@ Partial Class ICategory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.SearchButton = New System.Windows.Forms.Button()
+        Me.ModifyButton = New System.Windows.Forms.Button()
+        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBName = New System.Windows.Forms.TextBox()
+        Me.arrow = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.WarningLabel = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.AddButton = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DGVCategory = New System.Windows.Forms.DataGridView()
-        Me.AddButton = New System.Windows.Forms.Button()
-        Me.ModifyButton = New System.Windows.Forms.Button()
-        Me.DeleteButton = New System.Windows.Forms.Button()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -52,12 +54,39 @@ Partial Class ICategory
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.Panel1.Controls.Add(Me.BackButton)
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(781, 62)
         Me.Panel1.TabIndex = 3
+        '
+        'BackButton
+        '
+        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BackButton.FlatAppearance.BorderSize = 0
+        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
+        Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(69, 62)
+        Me.BackButton.TabIndex = 0
+        Me.BackButton.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(781, 62)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Catégories"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
@@ -88,6 +117,40 @@ Partial Class ICategory
         Me.SearchButton.TabIndex = 18
         Me.SearchButton.UseVisualStyleBackColor = False
         '
+        'ModifyButton
+        '
+        Me.ModifyButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.ModifyButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ModifyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.ModifyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ModifyButton.ForeColor = System.Drawing.Color.White
+        Me.ModifyButton.Image = Global.RentalProject.My.Resources.Resources.baseline_create_white_18dp
+        Me.ModifyButton.Location = New System.Drawing.Point(443, 0)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ModifyButton.Name = "ModifyButton"
+        Me.ModifyButton.Size = New System.Drawing.Size(169, 76)
+        Me.ModifyButton.TabIndex = 17
+        Me.ModifyButton.UseVisualStyleBackColor = False
+        '
+        'DeleteButton
+        '
+        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteButton.ForeColor = System.Drawing.Color.White
+        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
+        Me.DeleteButton.Location = New System.Drawing.Point(612, 0)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(169, 76)
+        Me.DeleteButton.TabIndex = 11
+        Me.DeleteButton.UseVisualStyleBackColor = False
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Panel7)
@@ -105,6 +168,7 @@ Partial Class ICategory
         '
         Me.Panel7.Controls.Add(Me.Label1)
         Me.Panel7.Controls.Add(Me.TBName)
+        Me.Panel7.Controls.Add(Me.arrow)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 22)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -117,7 +181,7 @@ Partial Class ICategory
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(222, 0)
+        Me.Label1.Location = New System.Drawing.Point(167, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 11, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(0, 0, 11, 7)
@@ -129,11 +193,23 @@ Partial Class ICategory
         '
         Me.TBName.Dock = System.Windows.Forms.DockStyle.Right
         Me.TBName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBName.Location = New System.Drawing.Point(377, 0)
-        Me.TBName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBName.Location = New System.Drawing.Point(322, 0)
+        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(235, 26)
         Me.TBName.TabIndex = 19
+        '
+        'arrow
+        '
+        Me.arrow.AutoSize = True
+        Me.arrow.Dock = System.Windows.Forms.DockStyle.Right
+        Me.arrow.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.arrow.Location = New System.Drawing.Point(557, 0)
+        Me.arrow.Name = "arrow"
+        Me.arrow.Size = New System.Drawing.Size(55, 20)
+        Me.arrow.TabIndex = 22
+        Me.arrow.Text = "   ->   "
+        Me.arrow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel6
         '
@@ -175,6 +251,23 @@ Partial Class ICategory
         Me.Panel8.Size = New System.Drawing.Size(169, 79)
         Me.Panel8.TabIndex = 19
         '
+        'AddButton
+        '
+        Me.AddButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.AddButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddButton.ForeColor = System.Drawing.Color.White
+        Me.AddButton.Image = Global.RentalProject.My.Resources.Resources.baseline_add_white_18dp
+        Me.AddButton.Location = New System.Drawing.Point(0, 0)
+        Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.AddButton.Name = "AddButton"
+        Me.AddButton.Size = New System.Drawing.Size(169, 79)
+        Me.AddButton.TabIndex = 23
+        Me.AddButton.UseVisualStyleBackColor = False
+        '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -193,78 +286,13 @@ Partial Class ICategory
         Me.DGVCategory.ColumnHeadersHeight = 29
         Me.DGVCategory.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVCategory.Location = New System.Drawing.Point(0, 141)
-        Me.DGVCategory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVCategory.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVCategory.MultiSelect = False
         Me.DGVCategory.Name = "DGVCategory"
         Me.DGVCategory.ReadOnly = True
         Me.DGVCategory.RowHeadersWidth = 51
         Me.DGVCategory.Size = New System.Drawing.Size(781, 325)
         Me.DGVCategory.TabIndex = 13
-        '
-        'AddButton
-        '
-        Me.AddButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.AddButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddButton.ForeColor = System.Drawing.Color.White
-        Me.AddButton.Image = Global.RentalProject.My.Resources.Resources.baseline_add_white_18dp
-        Me.AddButton.Location = New System.Drawing.Point(0, 0)
-        Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(169, 79)
-        Me.AddButton.TabIndex = 23
-        Me.AddButton.UseVisualStyleBackColor = False
-        '
-        'ModifyButton
-        '
-        Me.ModifyButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.ModifyButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ModifyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ModifyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.ModifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ModifyButton.ForeColor = System.Drawing.Color.White
-        Me.ModifyButton.Image = Global.RentalProject.My.Resources.Resources.baseline_create_white_18dp
-        Me.ModifyButton.Location = New System.Drawing.Point(443, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(169, 76)
-        Me.ModifyButton.TabIndex = 17
-        Me.ModifyButton.UseVisualStyleBackColor = False
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
-        Me.DeleteButton.Location = New System.Drawing.Point(612, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(169, 76)
-        Me.DeleteButton.TabIndex = 11
-        Me.DeleteButton.UseVisualStyleBackColor = False
-        '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(69, 62)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
         '
         'ICategory
         '
@@ -278,7 +306,7 @@ Partial Class ICategory
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "ICategory"
         Me.Size = New System.Drawing.Size(781, 542)
@@ -313,4 +341,6 @@ Partial Class ICategory
     Friend WithEvents ModifyButton As Button
     Friend WithEvents Panel8 As Panel
     Friend WithEvents AddButton As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents arrow As Label
 End Class

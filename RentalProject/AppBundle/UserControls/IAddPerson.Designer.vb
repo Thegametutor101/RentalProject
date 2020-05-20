@@ -24,6 +24,7 @@ Partial Class IAddPerson
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.CBStatut = New System.Windows.Forms.ComboBox()
         Me.TBNom = New System.Windows.Forms.TextBox()
         Me.LAStatut = New System.Windows.Forms.Label()
@@ -45,7 +46,6 @@ Partial Class IAddPerson
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.TextBox()
         Me.TBPoste = New System.Windows.Forms.MaskedTextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -75,6 +75,18 @@ Partial Class IAddPerson
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(781, 71)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Ajout de Personne"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CBStatut
         '
         Me.CBStatut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -82,7 +94,7 @@ Partial Class IAddPerson
         Me.CBStatut.FormattingEnabled = True
         Me.CBStatut.Items.AddRange(New Object() {"Étudiant", "Professeur", "Technicien", "Administration"})
         Me.CBStatut.Location = New System.Drawing.Point(125, 384)
-        Me.CBStatut.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBStatut.Margin = New System.Windows.Forms.Padding(4)
         Me.CBStatut.Name = "CBStatut"
         Me.CBStatut.Size = New System.Drawing.Size(231, 24)
         Me.CBStatut.TabIndex = 15
@@ -90,7 +102,7 @@ Partial Class IAddPerson
         'TBNom
         '
         Me.TBNom.Location = New System.Drawing.Point(127, 113)
-        Me.TBNom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBNom.Margin = New System.Windows.Forms.Padding(4)
         Me.TBNom.Name = "TBNom"
         Me.TBNom.Size = New System.Drawing.Size(231, 22)
         Me.TBNom.TabIndex = 13
@@ -120,7 +132,7 @@ Partial Class IAddPerson
         'TBPrenom
         '
         Me.TBPrenom.Location = New System.Drawing.Point(127, 183)
-        Me.TBPrenom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBPrenom.Margin = New System.Windows.Forms.Padding(4)
         Me.TBPrenom.Name = "TBPrenom"
         Me.TBPrenom.Size = New System.Drawing.Size(231, 22)
         Me.TBPrenom.TabIndex = 19
@@ -149,7 +161,7 @@ Partial Class IAddPerson
         'TBBureau
         '
         Me.TBBureau.Location = New System.Drawing.Point(503, 252)
-        Me.TBBureau.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBBureau.Margin = New System.Windows.Forms.Padding(4)
         Me.TBBureau.Name = "TBBureau"
         Me.TBBureau.Size = New System.Drawing.Size(231, 22)
         Me.TBBureau.TabIndex = 31
@@ -168,7 +180,7 @@ Partial Class IAddPerson
         'TBService
         '
         Me.TBService.Location = New System.Drawing.Point(503, 183)
-        Me.TBService.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBService.Margin = New System.Windows.Forms.Padding(4)
         Me.TBService.Name = "TBService"
         Me.TBService.Size = New System.Drawing.Size(231, 22)
         Me.TBService.TabIndex = 29
@@ -187,7 +199,7 @@ Partial Class IAddPerson
         'TBDepartement
         '
         Me.TBDepartement.Location = New System.Drawing.Point(503, 113)
-        Me.TBDepartement.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBDepartement.Margin = New System.Windows.Forms.Padding(4)
         Me.TBDepartement.Name = "TBDepartement"
         Me.TBDepartement.Size = New System.Drawing.Size(231, 22)
         Me.TBDepartement.TabIndex = 27
@@ -284,7 +296,7 @@ Partial Class IAddPerson
         'Email
         '
         Me.Email.Location = New System.Drawing.Point(127, 320)
-        Me.Email.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Email.Margin = New System.Windows.Forms.Padding(4)
         Me.Email.Name = "Email"
         Me.Email.Size = New System.Drawing.Size(231, 22)
         Me.Email.TabIndex = 36
@@ -297,18 +309,6 @@ Partial Class IAddPerson
         Me.TBPoste.Name = "TBPoste"
         Me.TBPoste.Size = New System.Drawing.Size(95, 22)
         Me.TBPoste.TabIndex = 103
-        '
-        'Label5
-        '
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label5.Location = New System.Drawing.Point(93, 0)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(688, 71)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Ajout de personne"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IAddPerson
         '
@@ -337,7 +337,7 @@ Partial Class IAddPerson
         Me.Controls.Add(Me.LAStatut)
         Me.Controls.Add(Me.LANom)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IAddPerson"
         Me.Size = New System.Drawing.Size(781, 542)

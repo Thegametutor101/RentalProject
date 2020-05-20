@@ -49,9 +49,9 @@
             MessageBox.Show("Cet emprunt est en retard.")
         End If
         RentalDate.Format = DateTimePickerFormat.Custom
-        RentalDate.CustomFormat = "dddd dd-MM-yyyy hh:mm:ss"
+        RentalDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         ReturnDate.Format = DateTimePickerFormat.Custom
-        ReturnDate.CustomFormat = "dddd dd-MM-yyyy hh:mm:ss"
+        ReturnDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         loaded = True
     End Function
 

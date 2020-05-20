@@ -23,6 +23,8 @@ Partial Class ICategorySearch
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TBQuantity = New System.Windows.Forms.TextBox()
         Me.ByQuantity = New System.Windows.Forms.RadioButton()
@@ -33,7 +35,6 @@ Partial Class ICategorySearch
         Me.DGVQuantity = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.SearchButton = New System.Windows.Forms.Button()
-        Me.BackButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -44,12 +45,39 @@ Partial Class ICategorySearch
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.BackButton)
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(781, 62)
         Me.Panel1.TabIndex = 3
+        '
+        'BackButton
+        '
+        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BackButton.FlatAppearance.BorderSize = 0
+        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
+        Me.BackButton.Location = New System.Drawing.Point(0, 0)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(93, 62)
+        Me.BackButton.TabIndex = 0
+        Me.BackButton.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(781, 62)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Recherche - Catégorie"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
@@ -62,7 +90,7 @@ Partial Class ICategorySearch
         Me.Panel2.Location = New System.Drawing.Point(0, 62)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(355, 480)
+        Me.Panel2.Size = New System.Drawing.Size(205, 480)
         Me.Panel2.TabIndex = 5
         '
         'TBQuantity
@@ -72,7 +100,7 @@ Partial Class ICategorySearch
         Me.TBQuantity.Location = New System.Drawing.Point(36, 203)
         Me.TBQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBQuantity.Name = "TBQuantity"
-        Me.TBQuantity.Size = New System.Drawing.Size(295, 24)
+        Me.TBQuantity.Size = New System.Drawing.Size(136, 24)
         Me.TBQuantity.TabIndex = 18
         '
         'ByQuantity
@@ -95,7 +123,7 @@ Partial Class ICategorySearch
         Me.TBNom.Location = New System.Drawing.Point(36, 92)
         Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBNom.Name = "TBNom"
-        Me.TBNom.Size = New System.Drawing.Size(295, 24)
+        Me.TBNom.Size = New System.Drawing.Size(136, 24)
         Me.TBNom.TabIndex = 15
         '
         'Label1
@@ -126,10 +154,10 @@ Partial Class ICategorySearch
         Me.Panel3.Controls.Add(Me.DGVQuantity)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(355, 62)
+        Me.Panel3.Location = New System.Drawing.Point(205, 62)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(426, 480)
+        Me.Panel3.Size = New System.Drawing.Size(576, 480)
         Me.Panel3.TabIndex = 6
         '
         'DGVQuantity
@@ -141,21 +169,21 @@ Partial Class ICategorySearch
         Me.DGVQuantity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVQuantity.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVQuantity.Location = New System.Drawing.Point(0, 0)
-        Me.DGVQuantity.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVQuantity.Name = "DGVQuantity"
         Me.DGVQuantity.ReadOnly = True
         Me.DGVQuantity.RowHeadersWidth = 51
-        Me.DGVQuantity.Size = New System.Drawing.Size(426, 412)
+        Me.DGVQuantity.Size = New System.Drawing.Size(576, 417)
         Me.DGVQuantity.TabIndex = 11
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.SearchButton)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 412)
+        Me.Panel4.Location = New System.Drawing.Point(0, 417)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(426, 68)
+        Me.Panel4.Size = New System.Drawing.Size(576, 63)
         Me.Panel4.TabIndex = 0
         '
         'SearchButton
@@ -168,26 +196,12 @@ Partial Class ICategorySearch
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
-        Me.SearchButton.Location = New System.Drawing.Point(215, 0)
+        Me.SearchButton.Location = New System.Drawing.Point(450, 0)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(211, 68)
+        Me.SearchButton.Size = New System.Drawing.Size(126, 63)
         Me.SearchButton.TabIndex = 12
         Me.SearchButton.UseVisualStyleBackColor = False
-        '
-        'BackButton
-        '
-        Me.BackButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BackButton.FlatAppearance.BorderSize = 0
-        Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
-        Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 62)
-        Me.BackButton.TabIndex = 0
-        Me.BackButton.UseVisualStyleBackColor = True
         '
         'ICategorySearch
         '
@@ -199,7 +213,7 @@ Partial Class ICategorySearch
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "ICategorySearch"
         Me.Size = New System.Drawing.Size(781, 542)
@@ -225,4 +239,5 @@ Partial Class ICategorySearch
     Friend WithEvents DGVQuantity As DataGridView
     Friend WithEvents Panel4 As Panel
     Friend WithEvents SearchButton As Button
+    Friend WithEvents Label5 As Label
 End Class

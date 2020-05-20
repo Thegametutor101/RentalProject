@@ -34,8 +34,8 @@ Partial Class IAddInventory
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
-        Me.CBEtat = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.CBEtat = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -76,7 +76,7 @@ Partial Class IAddInventory
         'TBName
         '
         Me.TBName.Location = New System.Drawing.Point(293, 196)
-        Me.TBName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(251, 22)
         Me.TBName.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class IAddInventory
         Me.CBCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBCat.FormattingEnabled = True
         Me.CBCat.Location = New System.Drawing.Point(293, 265)
-        Me.CBCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
         Me.CBCat.Size = New System.Drawing.Size(251, 24)
         Me.CBCat.TabIndex = 7
@@ -95,7 +95,7 @@ Partial Class IAddInventory
         'ID
         '
         Me.ID.Location = New System.Drawing.Point(293, 127)
-        Me.ID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ID.Margin = New System.Windows.Forms.Padding(4)
         Me.ID.Name = "ID"
         Me.ID.Size = New System.Drawing.Size(251, 22)
         Me.ID.TabIndex = 10
@@ -183,6 +183,18 @@ Partial Class IAddInventory
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(781, 62)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Ajout d'Équipement"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CBEtat
         '
         Me.CBEtat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -190,22 +202,10 @@ Partial Class IAddInventory
         Me.CBEtat.FormattingEnabled = True
         Me.CBEtat.Items.AddRange(New Object() {"Neuf", "Endommagé", "En réparation", "Brisé"})
         Me.CBEtat.Location = New System.Drawing.Point(293, 341)
-        Me.CBEtat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBEtat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBEtat.Name = "CBEtat"
         Me.CBEtat.Size = New System.Drawing.Size(251, 24)
         Me.CBEtat.TabIndex = 86
-        '
-        'Label5
-        '
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label5.Location = New System.Drawing.Point(69, 0)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(712, 62)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Ajout d'équipement"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IAddInventory
         '
@@ -224,7 +224,7 @@ Partial Class IAddInventory
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IAddInventory"
         Me.Size = New System.Drawing.Size(781, 542)

@@ -28,7 +28,7 @@ Public Class IEmprunt
         '  Dim noCategorie As String
         DateTimePicker1.MinDate = Date.Now
         DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.CustomFormat = "dddd dd-MM-yyyy hh:mm:ss"
+        DateTimePicker1.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         DateTimePicker1.Enabled = False
         CbCategorie.Text = "Sélectionnez une catégorie"
         refreshPersonne()
