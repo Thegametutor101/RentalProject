@@ -60,6 +60,26 @@ Public Class EntityRental
         Return table
     End Function
 
+    Public Function getrentalsbyequipment(ID As String) As Integer
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select E.ID from emprunt E where upper(E.noequipement) = upper('{ID}')"
+        connection.Open()
+        Dim value As Integer = command.ExecuteScalar()
+        connection.Close()
+        Return value
+    End Function
+
+    Public Function getequipmentisrented(ID As String) As Boolean
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select count(E.ID) from emprunt E where upper(E.noequipement) = upper('{ID}')"
+        connection.Open()
+        Dim number As Integer = command.ExecuteScalar()
+        connection.Close()
+        Return number > 0
+    End Function
+
     Public Function getRentalsByCategoryName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection

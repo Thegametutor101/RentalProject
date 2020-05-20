@@ -45,11 +45,12 @@ Public Class IReturn
             Dim selectIndex As Integer = RentTableDGV.SelectedCells(0).RowIndex
             Dim selectRow As DataGridViewRow = RentTableDGV.Rows(selectIndex)
             Dim id As Integer = selectRow.Cells("ID").Value
+            Dim equipment As String = selectRow.Cells("noequipement").Value
             equipmentName = selectRow.Cells("Nom_Équipement").Value
             comment = Regex.Replace(comment, "'", "''")
             comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
             ModelReturn.getInstance().addReturn(reception, equipmentName, comment)
-            ModelRental.getInstance().deleteRental(id)
+            ModelRental.getInstance().deleteRental(id, equipment)
             RentTableDGV.DataSource = EntityRental.getInstance().getRentals()
             RentTableDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         Else

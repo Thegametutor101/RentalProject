@@ -17,7 +17,7 @@ Public Class ModelEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie + 1}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
+            command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
@@ -32,12 +32,12 @@ Public Class ModelEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie + 1}','{etat}','{disponibilite}')"
+            command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie}','{etat}','{disponibilite}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("L'ajout de l'éqiupement a échoué:" + ex.Message)
+            MessageBox.Show("L'ajout de l'équipement a échoué:" + ex.Message)
             connection.Close()
         End Try
     End Function

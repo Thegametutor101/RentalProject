@@ -11,17 +11,14 @@ Public Class IInventorySearch
 
     Private Sub IInventorySearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'on copie la datagridview inventaire pour la mettre dans le contrôle utilisateur de recherche
-        Try
-            DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
-        Catch ex As Exception
-            MessageBox.Show("Le chargement des données a échoué:" + ex.Message)
-        End Try
+        DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'on vérifie quel radio button est sélectionné pour savoir quel est le critère de recherche
-        Try
-            If RadioButton1.Checked Then
+        If TextBox1.Text = "" Then
+                MessageBox.Show("Veuillez entrer une valeur dans la recherche")
+            ElseIf RadioButton1.Checked Then
                 DataGridView1.DataSource = EntityEquipment.getInstance().getEquipmentByID(TextBox1.Text)
             ElseIf RadioButton2.Checked Then
                 DataGridView1.DataSource = EntityEquipment.getInstance().getEquipmentByName(TextBox1.Text)
@@ -33,9 +30,6 @@ Public Class IInventorySearch
                 'message d'erreur si aucun bouton n'est sélectionné
                 MessageBox.Show("Veuillez sélectionner une valeur de recherche")
             End If
-        Catch ex As Exception
-            MessageBox.Show("La recherche a échoué:" + ex.Message)
-        End Try
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click

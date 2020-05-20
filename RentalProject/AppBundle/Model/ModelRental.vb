@@ -12,11 +12,11 @@ Public Class ModelRental
         Return instance
     End Function
 
-    Public Sub deleteRental(id As Integer)
+    Public Sub deleteRental(id As Integer, equipment As String)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Delete from emprunt where ID = {id}"
-        updateStateEquipment(id)
+        command.CommandText = $"Delete from emprunt where ID = {id} and upper (noequipement) = upper('{equipment}')"
+        'updateStateEquipment(id)
         connection.Open()
         command.ExecuteNonQuery()
         connection.Close()
@@ -26,14 +26,14 @@ Public Class ModelRental
     ''' Mets l'équipement qui est retourné disponible.
     ''' </summary>
     ''' <param name="id"></param>
-    Public Sub updateStateEquipment(id As Integer)
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Update equipement set disponibilite = 'oui' where noEquipement = (Select noEquipement from emprunt where ID = {id})"
-        connection.Open()
-        command.ExecuteNonQuery()
-        connection.Close()
-    End Sub
+    'Public Sub updateStateEquipment(id As Integer)
+    'Dim command As New MySqlCommand
+    '   command.Connection = connection
+    '  command.CommandText = $"Update equipement set disponibilite = 'oui' where noEquipement = (Select noEquipement from emprunt where ID = {id})"
+    ' connection.Open()
+    'command.ExecuteNonQuery()
+    'connection.Close()
+    'End Sub
 
     Public Function addRental(ByVal noPersonne As Integer,
                               ByVal noEquipement As String,

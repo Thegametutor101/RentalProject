@@ -72,7 +72,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(E.nom) like upper('{name}')"
+            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(E.nom) like upper('%{name}%')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")
@@ -90,7 +90,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(C2.nom) like upper('{name}')"
+            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(C2.nom) like upper('%{name}%')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")
@@ -108,7 +108,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where noCategorie = '{id}'"
+            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where C2.noCategorie = {id}"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")
@@ -126,7 +126,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(etat) like upper('{etat}')"
+            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(etat) like upper('%{etat}%')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")

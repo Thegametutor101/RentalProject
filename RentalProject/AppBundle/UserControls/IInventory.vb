@@ -57,18 +57,24 @@
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
         'Bouton permettant la suppression d'un équipement
         'Confirmation de la suppression
-        Try
+        If EntityRental.getInstance().getequipmentisrented(DataGridView1.SelectedRows.Item(0).Cells(0).Value) Then
+            Dim result As DialogResult = MessageBox.Show("L'équipement sélectionné est emprunté, voulez vous supprimer son prêt?", "Confirmation", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                Dim emprunt = EntityRental.getInstance.getrentalsbyequipment(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                ModelRental.getInstance().deleteRental(emprunt, DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                ModelEquipment.getInstance().delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            End If
+        Else
             Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 Dim equipemententity As New EntityEquipment
                 'Suppression
                 ModelEquipment.getInstance().delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
                 'mise à jour de la Datagridview
-                DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
+
             End If
-        Catch ex As Exception
-            MessageBox.Show("La tentative de supression de l'équipement a échoué:" + ex.Message)
-        End Try
+        End If
+        DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

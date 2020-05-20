@@ -56,8 +56,8 @@ Public Class IModifyInventory
                 'on vérifie si tous les champs sont Remplis
                 noEquipement = LabelNo.Text
                 nom = TBName.Text
-                nocategorie = CBCat.SelectedIndex
-                etat = CBEtat.Text
+            nocategorie = EntityCategory.getInstance.getNoCategorieByName(CBCat.Text)
+            etat = CBEtat.Text
                 If etat <> "Neuf" Then
                     If etat = "Endommagé" Then
                         If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
