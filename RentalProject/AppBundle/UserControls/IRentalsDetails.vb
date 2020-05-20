@@ -35,6 +35,8 @@
             RentalDate.Value = it.Item(9)
             ReturnDate.Value = it.Item(10)
         Next
+        RentalDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
+        ReturnDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
@@ -52,5 +54,9 @@
         modifyRental.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(modifyRental)
         modifyRental.BringToFront()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

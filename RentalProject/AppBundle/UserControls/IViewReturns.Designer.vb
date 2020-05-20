@@ -23,9 +23,9 @@ Partial Class IViewReturns
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -35,10 +35,28 @@ Partial Class IViewReturns
         '
         Me.Panel1.Controls.Add(Me.DeleteButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 458)
+        Me.Panel1.Location = New System.Drawing.Point(0, 471)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 84)
+        Me.Panel1.Size = New System.Drawing.Size(781, 71)
         Me.Panel1.TabIndex = 0
+        '
+        'DeleteButton
+        '
+        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteButton.ForeColor = System.Drawing.Color.White
+        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
+        Me.DeleteButton.Location = New System.Drawing.Point(655, 0)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
+        Me.DeleteButton.TabIndex = 5
+        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -46,7 +64,7 @@ Partial Class IViewReturns
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(781, 458)
+        Me.Panel2.Size = New System.Drawing.Size(781, 471)
         Me.Panel2.TabIndex = 1
         '
         'DataGridView1
@@ -61,26 +79,8 @@ Partial Class IViewReturns
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(781, 458)
+        Me.DataGridView1.Size = New System.Drawing.Size(781, 471)
         Me.DataGridView1.TabIndex = 0
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Location = New System.Drawing.Point(487, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(294, 84)
-        Me.DeleteButton.TabIndex = 5
-        Me.DeleteButton.Text = "Supprimer un enregistrement"
-        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'IViewReturns
         '
