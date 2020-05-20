@@ -50,7 +50,6 @@ Public Class ModelRental
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
-            MessageBox.Show("L'emprunt à été ajouté avec succès.")
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
         End Try
