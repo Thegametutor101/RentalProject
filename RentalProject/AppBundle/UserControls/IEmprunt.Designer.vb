@@ -38,7 +38,7 @@ Partial Class IEmprunt
         Me.NumericUpDownHeure = New System.Windows.Forms.NumericUpDown()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
-        Me.CbPersonne = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Comments = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -52,7 +52,7 @@ Partial Class IEmprunt
         Me.EquipmentName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.NewPersonButton = New System.Windows.Forms.Button()
         Me.SelectButton = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Person = New System.Windows.Forms.TextBox()
         CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -234,16 +234,17 @@ Partial Class IEmprunt
         Me.BackButton.TabIndex = 0
         Me.BackButton.UseVisualStyleBackColor = True
         '
-        'CbPersonne
+        'Label11
         '
-        Me.CbPersonne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbPersonne.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CbPersonne.FormattingEnabled = True
-        Me.CbPersonne.Location = New System.Drawing.Point(159, 94)
-        Me.CbPersonne.Margin = New System.Windows.Forms.Padding(4)
-        Me.CbPersonne.Name = "CbPersonne"
-        Me.CbPersonne.Size = New System.Drawing.Size(213, 24)
-        Me.CbPersonne.TabIndex = 85
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label11.Location = New System.Drawing.Point(0, 0)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(781, 62)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Ajout d'un Emprunt"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Comments
         '
@@ -414,17 +415,14 @@ Partial Class IEmprunt
         Me.SelectButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.SelectButton.UseVisualStyleBackColor = False
         '
-        'Label11
+        'Person
         '
-        Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label11.Location = New System.Drawing.Point(70, 0)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(711, 62)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "Ajout d'un Emprunt"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Person.Location = New System.Drawing.Point(159, 96)
+        Me.Person.Margin = New System.Windows.Forms.Padding(4)
+        Me.Person.MaxLength = 30
+        Me.Person.Name = "Person"
+        Me.Person.Size = New System.Drawing.Size(213, 22)
+        Me.Person.TabIndex = 103
         '
         'IEmprunt
         '
@@ -433,6 +431,7 @@ Partial Class IEmprunt
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Person)
         Me.Controls.Add(Me.NewPersonButton)
         Me.Controls.Add(Me.SelectButton)
         Me.Controls.Add(Me.EquipmentCollection)
@@ -441,7 +440,6 @@ Partial Class IEmprunt
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Comments)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.CbPersonne)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.NumericUpDownHeure)
@@ -486,7 +484,6 @@ Partial Class IEmprunt
     Friend WithEvents NumericUpDownHeure As NumericUpDown
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BackButton As Button
-    Friend WithEvents CbPersonne As ComboBox
     Friend WithEvents Comments As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel2 As Panel
@@ -501,4 +498,5 @@ Partial Class IEmprunt
     Friend WithEvents NewPersonButton As Button
     Friend WithEvents SelectButton As Button
     Friend WithEvents Label11 As Label
+    Friend WithEvents Person As TextBox
 End Class
