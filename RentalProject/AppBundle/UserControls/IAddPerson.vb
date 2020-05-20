@@ -3,12 +3,14 @@
 Public Class IAddPerson
 
     Dim rent As IEmprunt
+    Dim person As IPerson
 
-    Sub New(r As IEmprunt)
+    Sub New(r As IEmprunt, p As IPerson)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         rent = r
+        person = p
     End Sub
 
     Private Sub IAddPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -37,7 +39,14 @@ Public Class IAddPerson
         Return emailExpression.IsMatch(email)
     End Function
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
+        TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[\d-]", String.Empty)
+        TBNom.Text = Regex.Replace(TBNom.Text, "[\d-]", String.Empty)
+        TBDepartement.Text = Regex.Replace(TBDepartement.Text, "[\d-]", String.Empty)
+        TBService.Text = Regex.Replace(TBService.Text, "[\d-]", String.Empty)
+        TBPrenom.Text = Regex.Replace(TBPrenom.Text, "[^A-Za-z ]", String.Empty)
+        TBNom.Text = Regex.Replace(TBNom.Text, "[^A-Za-z ]", String.Empty)
+        TBDepartement.Text = Regex.Replace(TBDepartement.Text, "[^A-Za-z ]", String.Empty)
+        TBService.Text = Regex.Replace(TBService.Text, "[^A-Za-z ]", String.Empty)
         If Not String.IsNullOrEmpty(TBNom.Text) And
             Not String.IsNullOrEmpty(TBPrenom.Text) And
             Not String.IsNullOrEmpty(CBStatut.Text) And
@@ -51,10 +60,11 @@ Public Class IAddPerson
                             If String.IsNullOrEmpty(TBPoste.Text) Then
                                 TBPoste.Text = 0
                             End If
+                            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
+                        Else messagebox.show("Veuillez Vérifier les informations")
                         End If
-                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
                     Else
-                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
                     End If
                     createPersonAutoComplete(rent.Person)
                     Me.SendToBack()
@@ -65,6 +75,8 @@ Public Class IAddPerson
         Else
             MessageBox.Show("Veuillez vérifier les informations")
         End If
+        person.DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
+        person.DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click

@@ -63,6 +63,7 @@
                 Dim emprunt = EntityRental.getInstance.getrentalsbyequipment(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
                 ModelRental.getInstance().deleteRental(emprunt, DataGridView1.SelectedRows.Item(0).Cells(0).Value)
                 ModelEquipment.getInstance().delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            Else messagebox.show("")
             End If
         Else
             Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
@@ -96,4 +97,5 @@
         mainForm.InterfacePanel.Controls.Add(ICategorieAutre)
         ICategorieAutre.BringToFront()
     End Sub
+
 End Class

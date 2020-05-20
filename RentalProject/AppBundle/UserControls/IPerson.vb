@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        Dim person As New IAddPerson(New IEmprunt(New IRentals(mainForm)))
+        Dim person As New IAddPerson(New IEmprunt(New IRentals(mainForm)), Me)
         person.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(person)
         person.BringToFront()
@@ -45,7 +45,7 @@
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         If Not IsNothing(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value) Then
             Dim data As DataTable = EntityPerson.getInstance().getPersonByID(DGVPerson.Rows(DGVPerson.SelectedRows.Item(0).Index).Cells(0).Value)
-            Dim modifyPerson As New IModifyPerson(mainForm, data)
+            Dim modifyPerson As New IModifyPerson(mainForm, data, Me)
             modifyPerson.Dock = DockStyle.Fill
             mainForm.InterfacePanel.Controls.Add(modifyPerson)
             modifyPerson.BringToFront()

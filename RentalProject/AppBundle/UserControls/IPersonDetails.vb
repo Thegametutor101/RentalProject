@@ -49,7 +49,7 @@
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
         Dim data As DataTable = EntityPerson.getInstance().getPersonByID(CInt(ID.Text))
-        Dim modifyPerson As New IModifyPerson(mainForm, data)
+        Dim modifyPerson As New IModifyPerson(mainForm, data, New IPerson(mainForm))
         modifyPerson.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(modifyPerson)
         modifyPerson.BringToFront()

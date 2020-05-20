@@ -4,13 +4,15 @@ Public Class IModifyPerson
 
     Dim mainForm As MainForm
     Dim data As DataTable
+    Dim person As IPerson
 
-    Sub New(main As MainForm, items As DataTable)
+    Sub New(main As MainForm, items As DataTable, p As IPerson)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
         data = items
+        person = p
     End Sub
 
     Private Sub IModifyPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -94,7 +96,7 @@ Public Class IModifyPerson
         Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9.@]", String.Empty)
         If String.IsNullOrEmpty(LastName.Text) Or String.IsNullOrEmpty(FirstName.Text) Or
            String.IsNullOrEmpty(Status.Text) Or String.IsNullOrEmpty(Department.Text) Or
-           String.IsNullOrEmpty(Service.Text) Or
+           (String.IsNullOrEmpty(Service.Text) And Status.Text <> "Étudiant") Or
            String.IsNullOrEmpty(Phone.Text) Then
             MessageBox.Show("Veuillez remplir tous les champs avant de soumettre.")
         ElseIf Not IsEmail(Email.Text) Then
@@ -107,6 +109,8 @@ Public Class IModifyPerson
                 Me.SendToBack()
             End If
         End If
+        person.DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
+        person.DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
     ''' <summary>
