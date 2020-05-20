@@ -43,10 +43,9 @@ Partial Class ICategorieAutre
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.noEquipement, Me.Nom, Me.noCategorie, Me.Etat, Me.Disponibilite})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(279, 112)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ListView1.Location = New System.Drawing.Point(209, 91)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(424, 373)
+        Me.ListView1.Size = New System.Drawing.Size(319, 304)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -76,10 +75,9 @@ Partial Class ICategorieAutre
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(74, 415)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(56, 337)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 28)
+        Me.Button1.Size = New System.Drawing.Size(93, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Appliqué"
         Me.Button1.UseVisualStyleBackColor = True
@@ -87,29 +85,26 @@ Partial Class ICategorieAutre
         'CbCategorie
         '
         Me.CbCategorie.FormattingEnabled = True
-        Me.CbCategorie.Location = New System.Drawing.Point(64, 363)
-        Me.CbCategorie.Margin = New System.Windows.Forms.Padding(4)
+        Me.CbCategorie.Location = New System.Drawing.Point(48, 295)
         Me.CbCategorie.Name = "CbCategorie"
-        Me.CbCategorie.Size = New System.Drawing.Size(160, 24)
+        Me.CbCategorie.Size = New System.Drawing.Size(121, 21)
         Me.CbCategorie.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(60, 321)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(45, 261)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(176, 17)
+        Me.Label1.Size = New System.Drawing.Size(130, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Catégorie qui sera attribué"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(338, 93)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(254, 76)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(278, 17)
+        Me.Label2.Size = New System.Drawing.Size(207, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Liste d'équipement dans la catégorie Autre"
         '
@@ -119,8 +114,9 @@ Partial Class ICategorieAutre
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 71)
+        Me.Panel1.Size = New System.Drawing.Size(586, 58)
         Me.Panel1.TabIndex = 5
         '
         'BackButton
@@ -131,9 +127,9 @@ Partial Class ICategorieAutre
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(93, 71)
+        Me.BackButton.Size = New System.Drawing.Size(70, 58)
         Me.BackButton.TabIndex = 12
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -142,16 +138,15 @@ Partial Class ICategorieAutre
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
         Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(781, 71)
+        Me.Label5.Size = New System.Drawing.Size(586, 58)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Équipements sans Catégorie"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ICategorieAutre
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -162,10 +157,9 @@ Partial Class ICategorieAutre
         Me.Controls.Add(Me.CbCategorie)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ListView1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MinimumSize = New System.Drawing.Size(781, 542)
+        Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "ICategorieAutre"
-        Me.Size = New System.Drawing.Size(781, 542)
+        Me.Size = New System.Drawing.Size(586, 440)
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

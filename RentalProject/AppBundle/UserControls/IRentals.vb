@@ -29,7 +29,7 @@
         Else
             For Each it As DataRow In rentalTable.Rows
                 If Not IsNothing(it) Then
-                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2), it.Item(3)}))
+                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2)}))
                 End If
             Next
         End If

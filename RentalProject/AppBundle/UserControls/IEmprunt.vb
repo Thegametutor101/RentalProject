@@ -80,6 +80,7 @@ Public Class IEmprunt
         If (CbCategorie.SelectedIndex > -1) Then
             noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
             ctrEquipement = 0
+            com.Connection = connection
             connection.Open()
             com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
             reader = com.ExecuteReader
@@ -118,6 +119,7 @@ Public Class IEmprunt
                     empruntEntity.updateEquipementStatus(no_equipement)
                 Next
                 rentals.loadData(EntityRental.getInstance().getRentals())
+                MessageBox.Show("L'emprunt à été ajouté avec succès.")
                 Me.SendToBack()
             Else
                 MessageBox.Show("Veuillez sélectionner des équipement à emprunter.")

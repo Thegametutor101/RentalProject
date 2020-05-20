@@ -15,7 +15,7 @@ Public Class EntityRental
     Public Function getRentals() As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)) as Emprunté_par, E2.nom as Nom_Équipement, initcap(E.autorisation) as autorisation from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne"
+        command.CommandText = $"Select distinct E.ID, initcap(concat(P.nom, ', ', P.prenom)) as Emprunté_par, initcap(E.autorisation) as autorisation from emprunt E inner join personne P on E.noPersonne = P.noPersonne"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("emprunt")
@@ -60,7 +60,7 @@ Public Class EntityRental
         Return table
     End Function
 
-    Public Function getrentalsbyequipment(ID As String) As Integer
+    Public Function getRentalsByEquipment(ID As String) As Integer
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID from emprunt E where upper(E.noequipement) = upper('{ID}')"
@@ -70,7 +70,7 @@ Public Class EntityRental
         Return value
     End Function
 
-    Public Function getequipmentisrented(ID As String) As Boolean
+    Public Function getEquipmentIsRented(ID As String) As Boolean
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select count(E.ID) from emprunt E where upper(E.noequipement) = upper('{ID}')"
@@ -120,7 +120,7 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
-        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E2.nom), initcap(C2.nom), initcap(E2.etat), initcap(E.autorisation), E.DateEmprunt, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id}"
+        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E.autorisation), E.DateEmprunt, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id}"
         Dim reader = command.ExecuteReader()
         Dim rentalTable As New DataTable("emprunt")
         rentalTable.Load(reader)

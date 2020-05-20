@@ -66,4 +66,8 @@ Public Class ICategorieAutre
 
         End If
     End Sub
+
+    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+        Me.SendToBack()
+    End Sub
 End Class
