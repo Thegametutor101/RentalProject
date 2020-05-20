@@ -53,7 +53,7 @@ Partial Class IReturn
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 50)
         Me.Panel1.TabIndex = 1
@@ -67,7 +67,7 @@ Partial Class IReturn
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(70, 50)
         Me.BackButton.TabIndex = 0
@@ -89,7 +89,7 @@ Partial Class IReturn
         Me.Panel2.Controls.Add(Me.ReturnButton)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 382)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(586, 58)
         Me.Panel2.TabIndex = 6
@@ -120,7 +120,7 @@ Partial Class IReturn
         Me.Panel3.Controls.Add(Me.SearchButton)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 50)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(586, 67)
         Me.Panel3.TabIndex = 7
@@ -132,7 +132,7 @@ Partial Class IReturn
         Me.Panel7.Controls.Add(Me.arrow)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 20)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(459, 27)
         Me.Panel7.TabIndex = 10
@@ -154,7 +154,7 @@ Partial Class IReturn
         '
         Me.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Right
         Me.SearchTextBox.Location = New System.Drawing.Point(237, 0)
-        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(177, 20)
         Me.SearchTextBox.TabIndex = 9
@@ -176,7 +176,7 @@ Partial Class IReturn
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel6.Location = New System.Drawing.Point(0, 47)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(459, 20)
         Me.Panel6.TabIndex = 9
@@ -186,7 +186,7 @@ Partial Class IReturn
         Me.Panel5.Controls.Add(Me.WarningLabel)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(459, 20)
         Me.Panel5.TabIndex = 8
@@ -226,7 +226,7 @@ Partial Class IReturn
         Me.Panel4.Controls.Add(Me.RentTableDGV)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 117)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(586, 265)
         Me.Panel4.TabIndex = 8
@@ -240,7 +240,7 @@ Partial Class IReturn
         Me.RentTableDGV.ColumnHeadersHeight = 29
         Me.RentTableDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RentTableDGV.Location = New System.Drawing.Point(0, 0)
-        Me.RentTableDGV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RentTableDGV.Margin = New System.Windows.Forms.Padding(4)
         Me.RentTableDGV.MultiSelect = False
         Me.RentTableDGV.Name = "RentTableDGV"
         Me.RentTableDGV.ReadOnly = True
@@ -259,7 +259,7 @@ Partial Class IReturn
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(586, 440)
         Me.Name = "IReturn"
         Me.Size = New System.Drawing.Size(586, 440)

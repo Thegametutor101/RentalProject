@@ -105,6 +105,7 @@ Public Class IEmprunt
         Dim autorisation As String
         Dim duree As String
         Dim dateRetour As Date
+        Dim id As Integer
         Dim nomPersonne = Person.Text.Substring(0, Person.Text.IndexOf(","))
         Try
             If EquipmentCollection.Items.Count > 0 Then
@@ -114,9 +115,10 @@ Public Class IEmprunt
                 autorisation = TbAutorise.Text
                 duree = (NumericUpDownJour.Value * 24) + NumericUpDownHeure.Value
                 dateRetour = DateTimePicker1.Value
+                id = EntityRental.getInstance.Empruntnextid()
                 For Each item As ListViewItem In EquipmentCollection.Items
                     no_equipement = item.SubItems(0).Text
-                    empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
+                    empruntEntity.addRental(id, no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
                     empruntEntity.updateEquipementStatus(no_equipement)
                 Next
                 rentals.loadData(EntityRental.getInstance().getRentals())

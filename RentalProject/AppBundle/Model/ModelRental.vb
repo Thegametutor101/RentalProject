@@ -35,7 +35,7 @@ Public Class ModelRental
     'connection.Close()
     'End Sub
 
-    Public Function addRental(ByVal noPersonne As Integer,
+    Public Function addRental(ByVal NoEmprunt As Integer, ByVal noPersonne As Integer,
                               ByVal noEquipement As String,
                               ByVal autorisation As String,
                               ByVal dateEmprunt As Date,
@@ -46,7 +46,7 @@ Public Class ModelRental
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"insert into emprunt values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
+            command.CommandText = $"insert into emprunt values({NoEmprunt},{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
