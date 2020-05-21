@@ -47,7 +47,7 @@ Public Class IAddPerson
         TBNom.Text = Regex.Replace(TBNom.Text, "[^A-Za-z ]", String.Empty)
         TBDepartement.Text = Regex.Replace(TBDepartement.Text, "[^A-Za-z ]", String.Empty)
         TBService.Text = Regex.Replace(TBService.Text, "[^A-Za-z ]", String.Empty)
-        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9-._]", String.Empty)
+        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9-._@]", String.Empty)
         If Not String.IsNullOrEmpty(TBNom.Text) And
             Not String.IsNullOrEmpty(TBPrenom.Text) And
             Not String.IsNullOrEmpty(CBStatut.Text) And
@@ -98,4 +98,5 @@ Public Class IAddPerson
             TBPoste.Enabled = False
         End If
     End Sub
+
 End Class
