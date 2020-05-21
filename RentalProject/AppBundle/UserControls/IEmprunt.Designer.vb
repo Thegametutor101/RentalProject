@@ -53,6 +53,7 @@ Partial Class IEmprunt
         Me.NewPersonButton = New System.Windows.Forms.Button()
         Me.SelectButton = New System.Windows.Forms.Button()
         Me.Person = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDownJour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownHeure, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -424,6 +425,16 @@ Partial Class IEmprunt
         Me.Person.Size = New System.Drawing.Size(213, 22)
         Me.Person.TabIndex = 103
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(156, 75)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(94, 17)
+        Me.Label12.TabIndex = 104
+        Me.Label12.Text = "Nom, Prénom"
+        '
         'IEmprunt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -431,6 +442,7 @@ Partial Class IEmprunt
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Person)
         Me.Controls.Add(Me.NewPersonButton)
         Me.Controls.Add(Me.SelectButton)
@@ -499,4 +511,5 @@ Partial Class IEmprunt
     Friend WithEvents SelectButton As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Person As TextBox
+    Friend WithEvents Label12 As Label
 End Class
