@@ -174,6 +174,21 @@ Public Class EntityEquipment
         End Try
     End Function
 
-
+    Public Function getEquipmentRented(ID As String) As DataTable
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select EQ.noEquipement as No_Équipement, EQ.nom as Nom_Équipement from emprunt EM inner join equipement EQ on EM.noEquipement = EQ.noEquipement where upper(EM.ID) = upper('{ID}')"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim equipmentTable As New DataTable("equipement")
+            equipmentTable.Load(reader)
+            connection.Close()
+            Return equipmentTable
+        Catch ex As Exception
+            MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
+            connection.Close()
+        End Try
+    End Function
 
 End Class

@@ -9,6 +9,7 @@
         mainForm = main
         DetailsButton.Enabled = False
         SearchButton.Enabled = True
+        ReturnButton.Enabled = False
     End Sub
 
     Private Sub IRentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,13 +30,13 @@
         Else
             For Each it As DataRow In rentalTable.Rows
                 If Not IsNothing(it) Then
-                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2), it.Item(3)}))
+                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2)}))
                 End If
             Next
         End If
     End Function
 
-    Private Sub DetailsButton_EnabledChanged(sender As Object, e As EventArgs) Handles DetailsButton.EnabledChanged
+    Private Sub DetailsButton_EnabledChanged(sender As Object, e As EventArgs) Handles DetailsButton.EnabledChanged, ReturnButton.EnabledChanged
         If DetailsButton.Enabled Then
             WarningLabel.Hide()
         Else
@@ -53,8 +54,10 @@
         If ListView1.Items.Count > 0 Then
             If Not IsNothing(ListView1.FocusedItem) AndAlso ListView1.FocusedItem.Index >= 0 Then
                 DetailsButton.Enabled = True
+                ReturnButton.Enabled = True
             Else
                 DetailsButton.Enabled = False
+                ReturnButton.Enabled = False
             End If
         End If
     End Sub
@@ -67,10 +70,12 @@
     End Sub
 
     Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
-        Dim ret As New IReturn(Me)
-        ret.Dock = DockStyle.Fill
-        mainForm.InterfacePanel.Controls.Add(ret)
-        ret.BringToFront()
+        If Not IsNothing(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
+            Dim ret As New IReturnDetails(Me, ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text)
+            ret.Dock = DockStyle.Fill
+            mainForm.InterfacePanel.Controls.Add(ret)
+            ret.BringToFront()
+        End If
     End Sub
 
 

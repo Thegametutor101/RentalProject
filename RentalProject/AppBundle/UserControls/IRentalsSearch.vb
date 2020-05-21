@@ -39,7 +39,6 @@
             Else
                 RenterFirstName.Text = ""
                 RenterLastName.Text = ""
-                CategoryName.Text = ""
                 AuthorisationName.Text = ""
                 MessageBox.Show($"Aucun Emprunt correspondant à vos critères{Environment.NewLine}dans la base de donnée.")
                 loadData(EntityRental.getInstance().getRentals(), True)
@@ -47,7 +46,7 @@
         Else
             For Each it As DataRow In rentalTable.Rows
                 If Not IsNothing(it) Then
-                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2), it.Item(3)}))
+                    ListView1.Items.Add(New ListViewItem({it.Item(0), it.Item(1), it.Item(2)}))
                 End If
             Next
         End If
@@ -73,25 +72,17 @@
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByRenterName.CheckedChanged, ByAuthorisationName.CheckedChanged, ByCategoryName.CheckedChanged
+    Private Sub Radio_CheckedChanged(sender As Object, e As EventArgs) Handles ByRenterName.CheckedChanged, ByAuthorisationName.CheckedChanged
         RenterFirstName.Text = ""
         RenterLastName.Text = ""
-        CategoryName.Text = ""
         AuthorisationName.Text = ""
         If ByRenterName.Checked Then
             RenterFirstName.Enabled = True
             RenterLastName.Enabled = True
-            CategoryName.Enabled = False
-            AuthorisationName.Enabled = False
-        ElseIf ByCategoryName.Checked Then
-            RenterFirstName.Enabled = False
-            RenterLastName.Enabled = False
-            CategoryName.Enabled = True
             AuthorisationName.Enabled = False
         ElseIf ByAuthorisationName.Checked Then
             RenterFirstName.Enabled = False
             RenterLastName.Enabled = False
-            CategoryName.Enabled = False
             AuthorisationName.Enabled = True
         End If
     End Sub
@@ -102,12 +93,11 @@
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles RenterFirstName.TextChanged, RenterLastName.TextChanged, CategoryName.TextChanged, AuthorisationName.TextChanged
+    Private Sub SearchBoxes_TextChanged(sender As Object, e As EventArgs) Handles RenterFirstName.TextChanged, RenterLastName.TextChanged, AuthorisationName.TextChanged
         RenterFirstName.Text = Trim(RenterFirstName.Text)
         RenterLastName.Text = Trim(RenterLastName.Text)
-        CategoryName.Text = Trim(CategoryName.Text)
         AuthorisationName.Text = Trim(AuthorisationName.Text)
-        If (RenterFirstName.Text.Length > 0 Or RenterLastName.Text.Length > 0) Or CategoryName.Text.Length > 0 Or AuthorisationName.Text.Length > 0 Then
+        If (RenterFirstName.Text.Length > 0 Or RenterLastName.Text.Length > 0) Or AuthorisationName.Text.Length > 0 Then
             SearchButton.Enabled = True
         Else
             SearchButton.Enabled = False
@@ -118,7 +108,7 @@
         SearchItems()
     End Sub
 
-    Private Sub PressedEnter(sender As Object, e As KeyEventArgs) Handles RenterFirstName.KeyUp, RenterLastName.KeyUp, CategoryName.KeyUp, AuthorisationName.KeyUp
+    Private Sub PressedEnter(sender As Object, e As KeyEventArgs) Handles RenterFirstName.KeyUp, RenterLastName.KeyUp, AuthorisationName.KeyUp
         If e.KeyCode = Keys.Enter Then
             SearchItems()
         End If
@@ -132,7 +122,6 @@
     Private Function SearchItems()
         Dim firstName = Trim(RenterFirstName.Text)
         Dim lastName = Trim(RenterLastName.Text)
-        Dim category = Trim(CategoryName.Text)
         Dim authorisor = Trim(AuthorisationName.Text)
         Dim data As DataTable
         If (firstName.Length > 0 Or lastName.Length > 0) Then
@@ -143,9 +132,6 @@
             ElseIf (firstName.Length > 0 And Not (lastName.Length > 0)) Then
                 data = EntityRental.getInstance().getRentalsByRenterFirstName(firstName)
             End If
-            loadData(data, False)
-        ElseIf CategoryName.Text.Length > 0 Then
-            data = EntityRental.getInstance().getRentalsByCategoryName(category)
             loadData(data, False)
         ElseIf AuthorisationName.Text.Length > 0 Then
             data = EntityRental.getInstance().getRentalsByRenteeName(authorisor)

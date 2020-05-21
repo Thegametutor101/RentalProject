@@ -80,6 +80,7 @@ Public Class IEmprunt
         If (CbCategorie.SelectedIndex > -1) Then
             noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
             ctrEquipement = 0
+            com.Connection = connection
             connection.Open()
             com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
             reader = com.ExecuteReader
@@ -104,9 +105,10 @@ Public Class IEmprunt
         Dim autorisation As String
         Dim duree As String
         Dim dateRetour As Date
+        Dim nomPersonne = Person.Text.Substring(0, Person.Text.IndexOf(","))
         Try
             If EquipmentCollection.Items.Count > 0 Then
-                For Each it As DataRow In EntityPerson.getInstance().getPersonneByLastName(Person.Text).Rows
+                For Each it As DataRow In EntityPerson.getInstance().getPersonneByLastName(nomPersonne).Rows
                     no_personne = it.Item(0)
                 Next
                 autorisation = TbAutorise.Text
@@ -115,9 +117,10 @@ Public Class IEmprunt
                 For Each item As ListViewItem In EquipmentCollection.Items
                     no_equipement = item.SubItems(0).Text
                     empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
-                    empruntEntity.updateEquipementStatus(no_equipement)
+                    empruntEntity.updateEquipmentNonAvailable(no_equipement)
                 Next
                 rentals.loadData(EntityRental.getInstance().getRentals())
+                MessageBox.Show("L'emprunt à été ajouté avec succès.")
                 Me.SendToBack()
             Else
                 MessageBox.Show("Veuillez sélectionner des équipement à emprunter.")
@@ -126,6 +129,7 @@ Public Class IEmprunt
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
     End Function
+
     Public Function refreshCategorie()
         CbCategorie.Items.Clear()
         CbCategorie.Enabled = True

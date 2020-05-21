@@ -2,8 +2,8 @@
 
     Dim mainForm As MainForm
     ''' <summary>
-    ''' Cet attribut est le numero de l'emprunt pour récupérer
-    ''' toutes les informations requises de la base de donnés.
+    ''' Cet attribut est le numéro de'emprunt pour récupérer
+    ''' touts les informations requises de la base de données
     ''' </summary>
     Dim id As Integer
 
@@ -21,6 +21,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub IRentalsDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim item As DataTable = EntityRental.getInstance().getRentalDetailed(id)
         For Each it As DataRow In item.Rows
             RentalID.Text = it.Item(0)
@@ -28,15 +29,15 @@
             RenterLastName.Text = it.Item(2)
             RenterStatus.Text = it.Item(3)
             Email.Text = it.Item(4)
-            EquipmentName.Text = it.Item(5)
-            CategoryName.Text = it.Item(6)
-            EquipmentState.Text = it.Item(7)
-            Authorisation.Text = it.Item(8)
-            RentalDate.Value = it.Item(9)
-            ReturnDate.Value = it.Item(10)
+            Authorisation.Text = it.Item(5)
+            RentalDate.Value = it.Item(6)
+            ReturnDate.Value = it.Item(7)
         Next
         RentalDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         ReturnDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
+
+        DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
+
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
