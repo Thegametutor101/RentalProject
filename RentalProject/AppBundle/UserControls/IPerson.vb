@@ -21,21 +21,30 @@
     End Sub
 
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
-        If MessageBox.Show("Êtes-vous sûr de vouloir effacer cette personne?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Dim selectIndex As Integer = DGVPerson.SelectedCells(0).RowIndex
-            Dim selectRow As DataGridViewRow = DGVPerson.Rows(selectIndex)
-            Dim id As Integer = selectRow.Cells("noPersonne").Value
+        If DGVPerson.Rows.Count <> 0 Then
+            If MessageBox.Show("Êtes-vous sûr de vouloir effacer cette personne?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                Dim selectIndex As Integer = DGVPerson.SelectedCells(0).RowIndex
+                Dim selectRow As DataGridViewRow = DGVPerson.Rows(selectIndex)
+                Dim id As Integer = selectRow.Cells("noPersonne").Value
 
-            If ModelPerson.getInstance.verifPersonHasRental(id) = False Then
-                ModelPerson.getInstance().deletePerson(id)
-            Else
-                MessageBox.Show("Cette personne ne peut pas être supprimer parce qu'elle possède un emprunt")
-
-            End If
-            DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
+                If Not EntityRental.getInstance().verifPersonHasRental(id) Then
+                    If EntityReturn.getInstance().verifPersonHasReturn(id) Then
+                        If MessageBox.Show($"Cette personnes possède un historique de retour{Environment.NewLine}Voulez-vous tout de même la supprimer?{Environment.NewLine}Cette action supprimera tout l'historique d'emprunt de cette personne", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                            ModelPerson.getInstance().deletePerson(id)
+                            DeleteButton.Enabled = False
+                        End If
+                    Else
+                        ModelPerson.getInstance().deletePerson(id)
+                        DeleteButton.Enabled = False
+                    End If
+                Else
+                    MessageBox.Show("Cette personne ne peut pas être supprimer parce qu'elle possède un emprunt")
+                End If
+                DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
                 DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
             Else
                 DGVPerson.Select()
+            End If
         End If
     End Sub
 
@@ -64,5 +73,9 @@
             mainForm.InterfacePanel.Controls.Add(detailsPerson)
             detailsPerson.BringToFront()
         End If
+    End Sub
+
+    Private Sub DGVPerson_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPerson.CellContentClick
+        DeleteButton.Enabled = True
     End Sub
 End Class

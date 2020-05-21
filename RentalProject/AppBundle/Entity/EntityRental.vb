@@ -168,4 +168,24 @@ Public Class EntityRental
             Return rentalTable.Rows(0).Item(0) + 1
         End If
     End Function
+
+    Public Function verifPersonHasRental(id As Integer) As Boolean
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select noPersonne from emprunt where noPersonne = {id}"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim rentalTable As New DataTable("emprunt")
+            rentalTable.Load(reader)
+            connection.Close()
+            If rentalTable.Rows.Count = 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Erreur lors de la vérification des emprunts de cette personne.")
+        End Try
+    End Function
 End Class

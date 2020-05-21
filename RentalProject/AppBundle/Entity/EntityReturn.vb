@@ -83,4 +83,24 @@ Public Class EntityReturn
         connection.Close()
         Return table
     End Function
+
+    Public Function verifPersonHasReturn(id As Integer) As Boolean
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select noPersonne from retour where noPersonne = {id}"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim rentalTable As New DataTable("retout")
+            rentalTable.Load(reader)
+            connection.Close()
+            If rentalTable.Rows.Count = 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Erreur lors de la vérification des retour de cette personne.")
+        End Try
+    End Function
 End Class

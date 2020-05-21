@@ -85,10 +85,13 @@ Public Class IAddInventory
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
         Static textExpression As New Regex("^[a-zA-Z0-9-_]+$")
+        Static textExpressionName As New Regex("^[a-zA-Z0-9-_', ]+$")
+        TBName.Text = Regex.Replace(TBName.Text, "'", "''")
         If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
-                MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
-            Else
-                If textExpression.IsMatch(TBName.Text) And textExpression.IsMatch(ID.Text) Then
+            MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
+        Else
+            If textExpression.IsMatch(ID.Text) Then
+                If textExpressionName.IsMatch(TBName.Text) Then
                     'confirmation de l'ajout
                     Dim result As DialogResult = MessageBox.Show("Voulez vous ajouter un nouvel équipement à la base de donnée, ses informations sont:" & vbCrLf & "NoEquipement: " & ID.Text & vbCrLf & "Nom: " & TBName.Text & vbCrLf & "Catégorie: " & CBCat.Text & vbCrLf & "État:" & CBEtat.Text, "Confirmation", MessageBoxButtons.YesNo)
                     If result = DialogResult.Yes Then
@@ -100,8 +103,11 @@ Public Class IAddInventory
                         Me.SendToBack()
                     End If
                 Else
-                    MessageBox.Show("Veuillez utiliser des chiffres et/ou des lettres pour l'ID et le nom")
+                    MessageBox.Show("Veuillez utiliser uniquement des lettres, chiffres, tirets ou appostrophes pour le Nom d'équipement")
                 End If
+            Else
+                MessageBox.Show("Veuillez utiliser uniquement des lettres, chiffres ou tirets pour le Numéro d'équipement")
+            End If
             End If
     End Sub
 
