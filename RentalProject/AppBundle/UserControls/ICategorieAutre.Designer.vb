@@ -79,7 +79,7 @@ Partial Class ICategorieAutre
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 23)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Appliqué"
+        Me.Button1.Text = "Appliquer"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'CbCategorie
@@ -95,9 +95,9 @@ Partial Class ICategorieAutre
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(45, 261)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 13)
+        Me.Label1.Size = New System.Drawing.Size(136, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Catégorie qui sera attribué"
+        Me.Label1.Text = "Catégorie qui sera attribuée"
         '
         'Label2
         '
@@ -114,7 +114,7 @@ Partial Class ICategorieAutre
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 58)
         Me.Panel1.TabIndex = 5
@@ -127,7 +127,7 @@ Partial Class ICategorieAutre
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(70, 58)
         Me.BackButton.TabIndex = 12

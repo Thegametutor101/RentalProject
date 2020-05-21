@@ -9,8 +9,14 @@ Public Class ICategorieAutre
     Dim reader As MySqlDataReader
     Dim com As New MySqlCommand
     Dim adapter As New MySqlDataAdapter
+    Dim Inventory As IInventory
 
-
+    Sub New(IInventory As IInventory)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        Inventory = IInventory
+    End Sub
 
     Public Function LoadListViewAutre(data As DataTable)
         ListView1.Items.Clear()
@@ -44,7 +50,7 @@ Public Class ICategorieAutre
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim NoEquipement As Integer
+        Dim NoEquipement As String
         Dim NomCategorie As String
         Dim NoCategorie As Integer
         NomCategorie = CbCategorie.Text
@@ -59,12 +65,13 @@ Public Class ICategorieAutre
             End While
             connection.Close()
             For Each item As ListViewItem In Me.ListView1.SelectedItems
-                NoEquipement = CInt(item.SubItems.Item(0).Text)
+                NoEquipement = item.SubItems.Item(0).Text
                 ModelEquipment.getInstance.updateeEquipementCategorie(NoEquipement, NoCategorie)
             Next
             LoadListViewAutre(EntityEquipment.getInstance.getEquipmentByCategoryID(0))
 
         End If
+        Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click

@@ -63,7 +63,7 @@
                 Dim emprunt = EntityRental.getInstance.getrentalsbyequipment(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
                 ModelRental.getInstance().deleteRental(emprunt, DataGridView1.SelectedRows.Item(0).Cells(0).Value)
                 ModelEquipment.getInstance().delequipement(DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-            Else messagebox.show("")
+            Else MessageBox.Show("La suppression n'a pas eu lieu")
             End If
         Else
             Dim result As DialogResult = MessageBox.Show("Voulez vous vraiment supprimer l'équipement selectionné?", "Confirmation", MessageBoxButtons.YesNo)
@@ -92,7 +92,7 @@
 
     Private Sub BtAutre_Click(sender As Object, e As EventArgs) Handles BtAutre.Click
         'Ouverture du contrôle utilisateur de recherche d'équipement
-        Dim ICategorieAutre As New ICategorieAutre()
+        Dim ICategorieAutre As New ICategorieAutre(Me)
         ICategorieAutre.Dock = DockStyle.Fill
         mainForm.InterfacePanel.Controls.Add(ICategorieAutre)
         ICategorieAutre.BringToFront()
