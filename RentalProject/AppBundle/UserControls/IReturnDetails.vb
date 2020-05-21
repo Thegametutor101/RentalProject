@@ -41,7 +41,6 @@ Public Class IReturnDetails
         Dim comment As String = ""
         Dim reception As String = ""
         Dim equipmentName As String = ""
-
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour pour cet equipement?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 comment = InputBox("Note:", "Commentaires")
@@ -53,12 +52,14 @@ Public Class IReturnDetails
             equipmentName = selectRow.Cells("Nom_Équipement").Value
             comment = Regex.Replace(comment, "'", "''")
             comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
-            ModelReturn.getInstance().addReturn(reception, equipmentName, comment)
+            ModelReturn.getInstance().addReturn(reception, equipmentName, comment, False)
             ModelRental.getInstance().deleteEquipmentFromRental(equipment)
             DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
             DGVEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            rentals.loadData(EntityRental.getInstance().getRentals())
             If DGVEquipments.Rows.Count = 0 Then
+                rentals.loadData(EntityRental.getInstance().getRentals())
+                rentals.DetailsButton.Enabled = False
+                rentals.ReturnButton.Enabled = False
                 Me.SendToBack()
             End If
         Else
@@ -77,22 +78,30 @@ Public Class IReturnDetails
         Dim comment As String = ""
         Dim reception As String = ""
         Dim equipmentName As String = ""
+        Dim printed As Boolean = False
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 comment = InputBox("Note:", "Commentaires")
+                comment = Regex.Replace(comment, "'", "''")
+                comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
             End If
-            reception = InputBox("Votre Nom:", "La personne qui reçoit ce retour")
-            Dim selectIndex As Integer = DGVEquipments.SelectedCells(0).RowIndex
-            Dim selectRow As DataGridViewRow = DGVEquipments.Rows(selectIndex)
-            Dim equipment As String = selectRow.Cells("No_Équipement").Value
-            equipmentName = selectRow.Cells("Nom_Équipement").Value
-            comment = Regex.Replace(comment, "'", "''")
-            comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
-            ModelReturn.getInstance().addReturn(reception, equipmentName, comment)
-            ModelRental.getInstance().deleteRental(RentalID.Text, equipment)
-            DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
-            DGVEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            While reception = ""
+                reception = InputBox("Votre Nom:", "La personne qui reçoit ce retour")
+                reception = Trim(reception)
+                reception = Regex.Replace(reception, "[^A-Za-z- ]", String.Empty)
+                If reception = "" Then
+                    MessageBox.Show("Vous devez entrer un nom de réception.")
+                End If
+            End While
+            For Each it As DataGridViewRow In DGVEquipments.Rows
+                ModelReturn.getInstance().addReturn(reception, it.Cells(1).Value, comment, printed)
+                ModelRental.getInstance().deleteRental(RentalID.Text, it.Cells(0).Value)
+                printed = True
+            Next
             rentals.loadData(EntityRental.getInstance().getRentals())
+            rentals.DetailsButton.Enabled = False
+            rentals.ReturnButton.Enabled = False
+            Me.SendToBack()
         Else
             DGVEquipments.Select()
         End If

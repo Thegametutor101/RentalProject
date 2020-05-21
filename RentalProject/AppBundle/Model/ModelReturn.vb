@@ -13,7 +13,8 @@ Public Class ModelReturn
 
     Public Sub addReturn(reception As String,
                          equipment As String,
-                         comment As String)
+                         comment As String,
+                         ByRef printed As Boolean)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
@@ -21,7 +22,9 @@ Public Class ModelReturn
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()
-            MessageBox.Show("La suppression s'est effecté avec succès.")
+            If Not printed Then
+                MessageBox.Show("La suppression s'est effecté avec succès.")
+            End If
         Catch ex As Exception
             MessageBox.Show("Une erreur c'est produite lors de la sauvegarde du retour.")
         End Try
