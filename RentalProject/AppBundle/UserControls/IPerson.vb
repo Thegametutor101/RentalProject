@@ -6,6 +6,9 @@
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
+        DetailsButton.Enabled = False
+        DeleteButton.Enabled = False
+        ModifyButton.Enabled = False
     End Sub
 
     Private Sub IPeople_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -77,5 +80,7 @@
 
     Private Sub DGVPerson_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPerson.CellContentClick
         DeleteButton.Enabled = True
+        DetailsButton.Enabled = True
+        ModifyButton.Enabled = False
     End Sub
 End Class
