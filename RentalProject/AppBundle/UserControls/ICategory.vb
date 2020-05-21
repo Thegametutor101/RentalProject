@@ -23,12 +23,12 @@
             ModelCategory.getInstance.addCategory(name)
             Category_Refresh()
         Else
-            MessageBox.Show("Vous devez entre un nom de categorie.")
+            MessageBox.Show("Vous devez entrer un nom de categorie.")
         End If
     End Sub
 
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
-        If MessageBox.Show("Effacer la catégorie, deplacera tous les equipements attachez à celle-ci dans la catégorie Autre, êtes-vous sûr?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+        If MessageBox.Show("Effacer la catégorie, deplacera tous les équipements attachés à celle-ci dans la catégorie Autre, êtes-vous sûr?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim selectIndex As Integer = DGVCategory.SelectedCells(0).RowIndex
             Dim selectRow As DataGridViewRow = DGVCategory.Rows(selectIndex)
             Dim id As Integer = selectRow.Cells("noCategorie").Value
@@ -44,6 +44,7 @@
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
+        inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
         Me.SendToBack()
     End Sub
 
@@ -55,7 +56,7 @@
     End Sub
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
-        Dim modifyMessage = InputBox("Entrez le noveau nom de la catégorie", "Modifier catégorie")
+        Dim modifyMessage = InputBox("Entrez le nouveau nom de la catégorie", "Modifier catégorie")
 
         ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, modifyMessage)
         Category_Refresh()

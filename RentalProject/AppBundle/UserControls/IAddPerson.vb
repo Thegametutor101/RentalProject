@@ -61,10 +61,10 @@ Public Class IAddPerson
                                 TBPoste.Text = 0
                             End If
                             ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
-                        Else messagebox.show("Veuillez Vérifier les informations")
+                        Else MessageBox.Show("Veuillez Vérifier les informations")
                         End If
                     Else
-                            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
                     End If
                     createPersonAutoComplete(rent.Person)
                     Me.SendToBack()

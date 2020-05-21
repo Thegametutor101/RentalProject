@@ -40,7 +40,7 @@ Public Class ModelCategory
                 command.ExecuteNonQuery()
                 connection.Close()
             Else
-                MessageBox.Show("La catégorie Autre ne peut pas être supprimé")
+            MessageBox.Show("La catégorie Autre ne peut pas être supprimée")
         End If
     End Sub
 
@@ -53,7 +53,7 @@ Public Class ModelCategory
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
-            MessageBox.Show("La categorie à été ajouté avec succès.")
+            MessageBox.Show("La categorie à été ajoutée avec succès.")
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
         End Try
@@ -70,7 +70,7 @@ Public Class ModelCategory
                 connection.Close()
                 MessageBox.Show("La categorie à été modifiée avec succès.")
             Else
-                MessageBox.Show("La catégorie Autre ne peut pas être modifié")
+                MessageBox.Show("La catégorie Autre ne peut pas être modifiée")
             End If
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de l'a modification")

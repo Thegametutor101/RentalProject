@@ -53,17 +53,32 @@ Public Class ModelPerson
                                  service As String,
                                  office As String,
                                  phone As String,
-                                 extension As Integer)
+                                 extension As Integer,
+                                 mail As String)
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"update personne set nom = initcap('{lastName}'), prenom = initcap('{firstName}'), statut = initcap('{status}'), nomDepartement = initcap('{department}'), nomService = initcap('{service}'), noBureau = upper('{office}'), telephone = '{phone}', poste = '{extension}' where noPersonne = {id}"
+            command.CommandText = $"update personne set nom = initcap('{lastName}'), prenom = initcap('{firstName}'), statut = initcap('{status}'), nomDepartement = initcap('{department}'), nomService = initcap('{service}'), noBureau = upper('{office}'), telephone = '{phone}', poste = '{extension}', email='{mail}' where noPersonne = {id}"
             Dim result = command.ExecuteNonQuery()
             connection.Close()
             MessageBox.Show("La personne à été modifié avec succès.")
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la modification.")
+        End Try
+    End Function
+
+    Public Function verifPersonHasRental(id As Integer) As Boolean
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"Select noPersonne from emprunt where noPersonne = '{id}'"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            Return True
+        Catch ex As Exception
+            Return False
         End Try
     End Function
 End Class

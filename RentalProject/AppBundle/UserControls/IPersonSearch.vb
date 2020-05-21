@@ -120,7 +120,7 @@ Public Class IPersonSearch
             ElseIf lastName.Length > 0 And Not firstName.Length > 0 Then
                 DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByLastName(lastName)
             ElseIf Not lastName.Length > 0 And firstName.Length > 0 Then
-                DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByLastName(firstName)
+                DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByFirstName(firstName)
             End If
         ElseIf CBStatut.Text.Length > 0 Then
             DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByStatut(CBStatut.Text)

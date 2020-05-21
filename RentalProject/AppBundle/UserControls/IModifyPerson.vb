@@ -86,6 +86,9 @@ Public Class IModifyPerson
         LastName.Text = Regex.Replace(LastName.Text, "[^A-Za-z ]", String.Empty)
         Department.Text = Regex.Replace(Department.Text, "[^A-Za-z ]", String.Empty)
         Service.Text = Regex.Replace(Service.Text, "[^A-Za-z ]", String.Empty)
+        If String.IsNullOrEmpty(Extension.Text) Then
+            Extension.Text = 0
+        End If
         LastName.Text = Trim(LastName.Text)
         FirstName.Text = Trim(FirstName.Text)
         Department.Text = Trim(Department.Text)
@@ -105,10 +108,16 @@ Public Class IModifyPerson
             If Not Status.Text = "Étudiant" And Office.Text.Length < 6 Then
                 MessageBox.Show("Veuillez entrer un Bureau valide.")
             ElseIf MessageBox.Show($"Voulez-vous vraiment sauvegarder ces modifications?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, Service.Text, Office.Text, Phone.Text, Extension.Text)
-                Me.SendToBack()
+                If Status.Text = "Étudiant" Then
+                    ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, "", "", Phone.Text, Extension.Text, Email.Text)
+                    Me.SendToBack()
+                Else
+                    ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, Service.Text, Office.Text, Phone.Text, Extension.Text, Email.Text)
+                    Me.SendToBack()
+                End If
+
             End If
-        End If
+            End If
         person.DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
         person.DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub

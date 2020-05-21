@@ -57,10 +57,10 @@ Public Class ModelEquipment
         End Try
     End Function
 
-    Public Function updateeEquipementCategorie(noequipement As Integer, nocategorie As Integer)
+    Public Function updateeEquipementCategorie(noequipement As String, nocategorie As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"update equipement set nocategorie={nocategorie} where noequipement={noequipement}"
+        command.CommandText = $"update equipement set nocategorie={nocategorie} where noequipement='{noequipement}'"
         connection.Open()
         command.ExecuteNonQuery()
         connection.Close()
