@@ -11,6 +11,7 @@
         home.Dock = DockStyle.Fill
         InterfacePanel.Controls.Add(home)
         home.BringToFront()
+        testConnection()
     End Sub
 
     Public Shared Function getInstance() As MainForm
@@ -18,6 +19,13 @@
             instance = New MainForm()
         End If
         Return instance
+    End Function
+
+    Public Function testConnection()
+        If Not EntityReturn.getInstance().testConnection() Then
+            MessageBox.Show($"Impossible de trouver la base de donnée associée à: {Environment.NewLine}{Environment.NewLine}{connectionString}")
+            Me.Close()
+        End If
     End Function
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click, CloseButton.Click

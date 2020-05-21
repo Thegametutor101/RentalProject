@@ -24,6 +24,17 @@ Public Class EntityReturn
         Return table
     End Function
 
+    Public Function testConnection() As Boolean
+        Dim cmd As New MySqlCommand("SELECT IF(EXISTS (SELECT SCHEMA_NAME " &
+        "FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = @DbName), 'Y','N')", connection)
+        cmd.Parameters.AddWithValue("@DbName", "projetsession")
+        connection.Open()
+        Dim exists As String = cmd.ExecuteScalar().ToString()
+        Console.WriteLine(exists)
+        connection.Close()
+        Return IF(exists = "Y", True, False)
+    End Function
+
     Public Function getReturnByID(id As Integer) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
