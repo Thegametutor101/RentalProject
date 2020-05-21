@@ -81,6 +81,6 @@
     Private Sub DGVPerson_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPerson.CellContentClick
         DeleteButton.Enabled = True
         DetailsButton.Enabled = True
-        ModifyButton.Enabled = False
+        ModifyButton.Enabled = True
     End Sub
 End Class

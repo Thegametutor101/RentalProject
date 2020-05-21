@@ -86,4 +86,5 @@
         InterfacePanel.Controls.Add(viewReturns)
         viewReturns.BringToFront()
     End Sub
+
 End Class
