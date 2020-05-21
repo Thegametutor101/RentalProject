@@ -36,6 +36,18 @@ Public Class EntityPerson
         Return table
     End Function
 
+    Public Function getPersonneByFirstName(name As String) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select * from personne where upper(prenom) like upper('{name}')"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("personne")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
     Public Function getPersonneByLastName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
@@ -99,7 +111,7 @@ Public Class EntityPerson
     Public Function getPersonByService(service As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{service}%')"
+        command.CommandText = $"select * from personne where upper(nomService) like upper('%{service}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
