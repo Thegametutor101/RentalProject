@@ -12,10 +12,12 @@ Public Class EntityCategory
     End Function
 
     Public Function getCategory() As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from categorie"
-        connection.Close()
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("categorie")
@@ -61,10 +63,12 @@ Public Class EntityCategory
     End Function
 
     Public Function getNoCategorieByName(NomCategorie As String)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
-
-        command.CommandText = $"select nocategorie from categorie where upper(nom)=upper('{NomCategorie}')"
         command.Connection = connection
+        command.CommandText = $"select nocategorie from categorie where upper(nom)=upper('{NomCategorie}')"
         connection.Open()
         Dim reader = command.ExecuteReader
         While (reader.Read)

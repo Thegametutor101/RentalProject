@@ -80,6 +80,10 @@
             'mise à jour de la Datagridview
             DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
         End If
+        If DataGridView1.Rows.Count = 0 Then
+            DeleteButton.Enabled = False
+            ModifyButton.Enabled = False
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

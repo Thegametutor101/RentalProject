@@ -101,6 +101,8 @@ Public Class IAddInventory
                         'on met la datagridview à jour
                         Inventory.DataGridView1.DataSource = EntityEquipment.getInstance().getEquipment()
                         'on retourne au contrôle utilisateur d'inventaire
+                        Inventory.DeleteButton.Enabled = True
+                        Inventory.ModifyButton.Enabled = True
                         Me.SendToBack()
                     End If
                 Else
@@ -109,7 +111,7 @@ Public Class IAddInventory
             Else
                 MessageBox.Show("Veuillez utiliser uniquement des lettres, chiffres ou tirets pour le Numéro d'équipement")
             End If
-            End If
+        End If
     End Sub
 
     Private Sub NewCategoryButton_Click(sender As Object, e As EventArgs) Handles NewCategoryButton.Click

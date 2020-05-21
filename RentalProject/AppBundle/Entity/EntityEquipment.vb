@@ -27,7 +27,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -45,7 +44,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -63,7 +61,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -81,7 +78,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -99,7 +95,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -117,7 +112,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -135,7 +129,6 @@ Public Class EntityEquipment
             Return table
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -153,7 +146,6 @@ Public Class EntityEquipment
             Return equipmentTable
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -170,7 +162,6 @@ Public Class EntityEquipment
             Return equipmentTable
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
 
@@ -187,8 +178,6 @@ Public Class EntityEquipment
             Return equipmentTable
         Catch ex As Exception
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
-            connection.Close()
         End Try
     End Function
-
 End Class
