@@ -26,12 +26,16 @@
             Dim selectRow As DataGridViewRow = DGVPerson.Rows(selectIndex)
             Dim id As Integer = selectRow.Cells("noPersonne").Value
 
-            ModelPerson.getInstance().deletePerson(id)
+            If ModelPerson.getInstance.verifPersonHasRental(id) = False Then
+                ModelPerson.getInstance().deletePerson(id)
+            Else
+                MessageBox.Show("Cette personne ne peut pas être supprimer parce qu'elle possède un emprunt")
 
+            End If
             DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
-            DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        Else
-            DGVPerson.Select()
+                DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            Else
+                DGVPerson.Select()
         End If
     End Sub
 
