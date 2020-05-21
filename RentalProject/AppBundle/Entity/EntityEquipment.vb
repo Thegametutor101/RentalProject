@@ -18,7 +18,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select e.noequipement, e.nom, c.nom as categorie, e.etat, e.disponibilite from equipement e inner join categorie c on c.nocategorie=e.nocategorie"
+            command.CommandText = $"Select e.noequipement, e.nom, c2.nom as categorie, e.etat, e.disponibilite from equipement e inner join categorie c2 on c2.nocategorie=e.nocategorie"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")
@@ -54,7 +54,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select E.noequipement, E.nom, C2.nom as categorie, E.etat, E.disponibilite  from equipement E inner join categorie C2 on E.noCategorie = C2.noCategorie where upper(noEquipement) like upper('{id}')"
+            command.CommandText = $"Select e.noequipement, e.nom, c2.nom as categorie, e.etat, e.disponibilite from equipement e inner join categorie c2 on e.noCategorie = c2.noCategorie where upper(noEquipement) like upper('%{id}%')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim table As New DataTable("equipement")

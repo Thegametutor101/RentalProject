@@ -54,10 +54,10 @@ Partial Class ICategorieAutre
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(10, 5, 0, 0)
-        Me.Label1.Size = New System.Drawing.Size(257, 65)
+        Me.Label1.Size = New System.Drawing.Size(233, 85)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Vous pouvez sélectionner un ou" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "plusieurs équipements à ajouter" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "à la catégorie c" &
-    "hoisie plus bas."
+        Me.Label1.Text = "Vous pouvez sélectionner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "un ou plusieurs équipements" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "à ajouter à la catégorie" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+    "choisie plus bas."
         '
         'Panel1
         '
@@ -118,7 +118,7 @@ Partial Class ICategorieAutre
         Me.ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ApplyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApplyButton.ForeColor = System.Drawing.Color.White
-        Me.ApplyButton.Location = New System.Drawing.Point(0, 123)
+        Me.ApplyButton.Location = New System.Drawing.Point(0, 143)
         Me.ApplyButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ApplyButton.Name = "ApplyButton"
         Me.ApplyButton.Size = New System.Drawing.Size(274, 71)
@@ -130,7 +130,7 @@ Partial Class ICategorieAutre
         '
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label4.Location = New System.Drawing.Point(0, 106)
+        Me.Label4.Location = New System.Drawing.Point(0, 126)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(144, 17)
         Me.Label4.TabIndex = 10
@@ -140,7 +140,7 @@ Partial Class ICategorieAutre
         '
         Me.CbCategorie.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbCategorie.FormattingEnabled = True
-        Me.CbCategorie.Location = New System.Drawing.Point(0, 82)
+        Me.CbCategorie.Location = New System.Drawing.Point(0, 102)
         Me.CbCategorie.Margin = New System.Windows.Forms.Padding(4)
         Me.CbCategorie.Name = "CbCategorie"
         Me.CbCategorie.Size = New System.Drawing.Size(274, 24)
@@ -150,7 +150,7 @@ Partial Class ICategorieAutre
         '
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label3.Location = New System.Drawing.Point(0, 65)
+        Me.Label3.Location = New System.Drawing.Point(0, 85)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(144, 17)
         Me.Label3.TabIndex = 6
