@@ -139,4 +139,21 @@ Public Class EntityRental
         connection.Close()
         Return rentalTable
     End Function
+
+    Public Function Empruntnextid() As Integer
+        Dim command As New MySqlCommand
+        Dim ID As Integer
+        command.Connection = connection
+        command.CommandText = "select max(distinct id) from emprunt"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
+        connection.Close()
+        If rentalTable.Rows.Count = 1 And String.IsNullOrEmpty(rentalTable.Rows(0).Item(0).ToString()) Then
+            Return 1
+        Else
+            Return rentalTable.Rows(0).Item(0) + 1
+        End If
+    End Function
 End Class

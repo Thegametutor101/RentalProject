@@ -23,22 +23,54 @@ Partial Class IViewReturns
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.SearchButton = New System.Windows.Forms.Button()
         Me.DeleteButton = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
+        Me.ByDate = New System.Windows.Forms.RadioButton()
+        Me.EquipmentName = New System.Windows.Forms.TextBox()
+        Me.ByEquipment = New System.Windows.Forms.RadioButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Reception = New System.Windows.Forms.TextBox()
+        Me.ByReception = New System.Windows.Forms.RadioButton()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.SearchButton)
         Me.Panel1.Controls.Add(Me.DeleteButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 471)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(781, 71)
         Me.Panel1.TabIndex = 0
+        '
+        'SearchButton
+        '
+        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchButton.ForeColor = System.Drawing.Color.White
+        Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
+        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(126, 71)
+        Me.SearchButton.TabIndex = 6
+        Me.SearchButton.UseVisualStyleBackColor = False
         '
         'DeleteButton
         '
@@ -58,28 +90,144 @@ Partial Class IViewReturns
         Me.DeleteButton.TabIndex = 5
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(781, 71)
+        Me.Panel3.TabIndex = 2
+        '
+        'Label13
+        '
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(781, 71)
+        Me.Label13.TabIndex = 26
+        Me.Label13.Text = "Historique d'Emprunts"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Controls.Add(Me.ReturnDate)
+        Me.Panel2.Controls.Add(Me.ByDate)
+        Me.Panel2.Controls.Add(Me.EquipmentName)
+        Me.Panel2.Controls.Add(Me.ByEquipment)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Reception)
+        Me.Panel2.Controls.Add(Me.ByReception)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 71)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(781, 471)
-        Me.Panel2.TabIndex = 1
+        Me.Panel2.Size = New System.Drawing.Size(262, 400)
+        Me.Panel2.TabIndex = 3
+        '
+        'ReturnDate
+        '
+        Me.ReturnDate.Enabled = False
+        Me.ReturnDate.Location = New System.Drawing.Point(25, 290)
+        Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ReturnDate.Name = "ReturnDate"
+        Me.ReturnDate.Size = New System.Drawing.Size(215, 22)
+        Me.ReturnDate.TabIndex = 57
+        '
+        'ByDate
+        '
+        Me.ByDate.AutoSize = True
+        Me.ByDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ByDate.Location = New System.Drawing.Point(25, 250)
+        Me.ByDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByDate.Name = "ByDate"
+        Me.ByDate.Size = New System.Drawing.Size(138, 24)
+        Me.ByDate.TabIndex = 29
+        Me.ByDate.TabStop = True
+        Me.ByDate.Text = "Date de retour"
+        Me.ByDate.UseVisualStyleBackColor = True
+        '
+        'EquipmentName
+        '
+        Me.EquipmentName.Enabled = False
+        Me.EquipmentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EquipmentName.Location = New System.Drawing.Point(25, 192)
+        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.EquipmentName.Name = "EquipmentName"
+        Me.EquipmentName.Size = New System.Drawing.Size(215, 24)
+        Me.EquipmentName.TabIndex = 28
+        '
+        'ByEquipment
+        '
+        Me.ByEquipment.AutoSize = True
+        Me.ByEquipment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ByEquipment.Location = New System.Drawing.Point(25, 155)
+        Me.ByEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByEquipment.Name = "ByEquipment"
+        Me.ByEquipment.Size = New System.Drawing.Size(169, 24)
+        Me.ByEquipment.TabIndex = 27
+        Me.ByEquipment.TabStop = True
+        Me.ByEquipment.Text = "Nom d'équipement"
+        Me.ByEquipment.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(4, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(157, 24)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Rechercher par..."
+        '
+        'Reception
+        '
+        Me.Reception.Enabled = False
+        Me.Reception.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Reception.Location = New System.Drawing.Point(25, 90)
+        Me.Reception.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Reception.Name = "Reception"
+        Me.Reception.Size = New System.Drawing.Size(215, 24)
+        Me.Reception.TabIndex = 22
+        '
+        'ByReception
+        '
+        Me.ByReception.AutoSize = True
+        Me.ByReception.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ByReception.Location = New System.Drawing.Point(25, 53)
+        Me.ByReception.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ByReception.Name = "ByReception"
+        Me.ByReception.Size = New System.Drawing.Size(105, 24)
+        Me.ByReception.TabIndex = 21
+        Me.ByReception.TabStop = True
+        Me.ByReception.Text = "Réception"
+        Me.ByReception.UseVisualStyleBackColor = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.DataGridView1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(262, 71)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(519, 400)
+        Me.Panel4.TabIndex = 4
         '
         'DataGridView1
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(781, 471)
+        Me.DataGridView1.Size = New System.Drawing.Size(519, 400)
         Me.DataGridView1.TabIndex = 0
         '
         'IViewReturns
@@ -89,20 +237,36 @@ Partial Class IViewReturns
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IViewReturns"
         Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DeleteButton As Button
+    Friend WithEvents SearchButton As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents EquipmentName As TextBox
+    Friend WithEvents ByEquipment As RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Reception As TextBox
+    Friend WithEvents ByReception As RadioButton
+    Friend WithEvents ByDate As RadioButton
+    Friend WithEvents ReturnDate As DateTimePicker
 End Class

@@ -16,7 +16,17 @@ Public Class ModelRental
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Delete from emprunt where ID = {id} and upper (noequipement) = upper('{equipment}')"
-        'updateStateEquipment(id)
+        updateEquipmentAvailable(equipment)
+        connection.Open()
+        command.ExecuteNonQuery()
+        connection.Close()
+    End Sub
+
+    Public Sub deleteEquipmentFromRental(equipment As String)
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Delete from emprunt where (noequipement) = upper('{equipment}')"
+        updateEquipmentAvailable(equipment)
         connection.Open()
         command.ExecuteNonQuery()
         connection.Close()
@@ -26,16 +36,32 @@ Public Class ModelRental
     ''' Mets l'équipement qui est retourné disponible.
     ''' </summary>
     ''' <param name="id"></param>
-    'Public Sub updateStateEquipment(id As Integer)
-    'Dim command As New MySqlCommand
-    '   command.Connection = connection
-    '  command.CommandText = $"Update equipement set disponibilite = 'oui' where noEquipement = (Select noEquipement from emprunt where ID = {id})"
-    ' connection.Open()
-    'command.ExecuteNonQuery()
-    'connection.Close()
-    'End Sub
+    Public Function updateEquipmentAvailable(id As String) As Boolean
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"update equipement set disponibilite='oui' where noEquipement='{id}'"
+        connection.Open()
+        Dim reader = command.ExecuteNonQuery()
+        connection.Close()
+        Return True
+    End Function
 
-    Public Function addRental(ByVal noPersonne As Integer,
+    ''' <summary>
+    ''' Mets l'équipement qui est emprunté non disponible.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function updateEquipmentNonAvailable(id As String) As Boolean
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"update equipement set disponibilite='non' where noEquipement='{id}'"
+        connection.Open()
+        Dim reader = command.ExecuteNonQuery()
+        connection.Close()
+        Return True
+    End Function
+
+    Public Function addRental(ByVal NoEmprunt As Integer, ByVal noPersonne As Integer,
                               ByVal noEquipement As String,
                               ByVal autorisation As String,
                               ByVal dateEmprunt As Date,
@@ -46,7 +72,7 @@ Public Class ModelRental
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
-            command.CommandText = $"insert into emprunt values('',{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
+            command.CommandText = $"insert into emprunt values({NoEmprunt},{noPersonne},'{noEquipement}', '{autorisation}', '{dateEmprunt.ToString("yyyy-MM-dd HH:mm:ss")}','{duree}', '{dateRetour.ToString("yyyy-MM-dd HH:mm:ss")}', '{commentaires}')"
 
             Dim result = command.ExecuteNonQuery()
             connection.Close()
@@ -55,20 +81,7 @@ Public Class ModelRental
         End Try
     End Function
 
-    ''' <summary>
-    ''' Mets l'équipement qui est emprunté non disponible.
-    ''' </summary>
-    ''' <param name="id"></param>
-    ''' <returns></returns>
-    Public Function updateEquipementStatus(id As Integer) As Boolean
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"update equipement set disponibilite='non' where noEquipement='{id}'"
-        connection.Open()
-        Dim reader = command.ExecuteNonQuery()
-        connection.Close()
-        Return True
-    End Function
+
 
     ''' <summary>
     ''' Cette fonction est appelé dans l'interface de modification
