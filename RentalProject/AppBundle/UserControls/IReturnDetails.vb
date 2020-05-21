@@ -5,11 +5,11 @@ Public Class IReturnDetails
     Dim rentals As IRentals
     Dim id As Integer
 
-    Sub New(Irentals As IRentals, number As Integer)
+    Sub New(r As IRentals, number As Integer)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        rentals = Irentals
+        rentals = r
         id = number
     End Sub
 
@@ -41,7 +41,6 @@ Public Class IReturnDetails
         Dim comment As String = ""
         Dim reception As String = ""
         Dim equipmentName As String = ""
-        Dim rentals As IRentals
 
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour pour cet equipement?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -58,13 +57,15 @@ Public Class IReturnDetails
             ModelRental.getInstance().deleteEquipmentFromRental(equipment)
             DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
             DGVEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            rentals.loadData(EntityRental.getInstance().getRentals())
+            If DGVEquipments.Rows.Count = 0 Then
+                Me.SendToBack()
+            End If
         Else
             DGVEquipments.Select()
         End If
 
-        If DGVEquipments.Rows.Count = 0 Then
-            Me.SendToBack()
-        End If
+
 
     End Sub
 
@@ -91,9 +92,9 @@ Public Class IReturnDetails
             ModelRental.getInstance().deleteRental(RentalID.Text, equipment)
             DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
             DGVEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            rentals.loadData(EntityRental.getInstance().getRentals())
         Else
             DGVEquipments.Select()
         End If
-        Me.SendToBack()
     End Sub
 End Class

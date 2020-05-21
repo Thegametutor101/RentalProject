@@ -144,12 +144,16 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         Dim ID As Integer
         command.Connection = connection
-        command.CommandText = "select max(id) from emprunt"
+        command.CommandText = "select max(distinct id) from emprunt"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        reader.Read()
-        ID = reader(0)
+        Dim rentalTable As New DataTable("emprunt")
+        rentalTable.Load(reader)
         connection.Close()
-        Return (ID + 1)
+        If rentalTable.Rows.Count = 1 And String.IsNullOrEmpty(rentalTable.Rows(0).Item(0).ToString()) Then
+            Return 1
+        Else
+            Return rentalTable.Rows(0).Item(0) + 1
+        End If
     End Function
 End Class
