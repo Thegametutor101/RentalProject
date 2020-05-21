@@ -238,6 +238,12 @@
     <Compile Include="AppBundle\UserControls\IReturnDetails.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\IViewReturnDetails.Designer.vb">
+      <DependentUpon>IViewReturnDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\IViewReturnDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\IViewReturns.Designer.vb">
       <DependentUpon>IViewReturns.vb</DependentUpon>
     </Compile>
@@ -329,6 +335,9 @@
     <EmbeddedResource Include="AppBundle\UserControls\IReturnDetails.resx">
       <DependentUpon>IReturnDetails.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\IViewReturnDetails.resx">
+      <DependentUpon>IViewReturnDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\IViewReturns.resx">
       <DependentUpon>IViewReturns.vb</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +394,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline_create_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_sync_black_18dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

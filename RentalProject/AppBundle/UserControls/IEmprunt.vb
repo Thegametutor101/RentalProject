@@ -124,6 +124,8 @@ Public Class IEmprunt
                 rentals.loadData(EntityRental.getInstance().getRentals())
                 MessageBox.Show("L'emprunt à été ajouté avec succès.")
                 Me.SendToBack()
+                rentals.DetailsButton.Enabled = False
+                rentals.ReturnButton.Enabled = False
             Else
                 MessageBox.Show("Veuillez sélectionner des équipement à emprunter.")
             End If
@@ -156,6 +158,8 @@ Public Class IEmprunt
         If MessageBox.Show($"Voulez-vous vraiment faire cette opération?{Environment.NewLine}Tous vos changement seront perdus.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.SendToBack()
             rentals.loadData(EntityRental.getInstance().getRentals())
+            rentals.DetailsButton.Enabled = False
+            rentals.ReturnButton.Enabled = False
         End If
     End Sub
 

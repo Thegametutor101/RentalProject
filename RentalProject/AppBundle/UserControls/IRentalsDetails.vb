@@ -56,4 +56,11 @@
         mainForm.InterfacePanel.Controls.Add(modifyRental)
         modifyRental.BringToFront()
     End Sub
+
+    Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
+        Dim returnDetail As New IReturnDetails(mainForm, New IRentals(mainForm), CInt(RentalID.Text))
+        returnDetail.Dock = DockStyle.Fill
+        mainForm.InterfacePanel.Controls.Add(returnDetail)
+        returnDetail.BringToFront()
+    End Sub
 End Class

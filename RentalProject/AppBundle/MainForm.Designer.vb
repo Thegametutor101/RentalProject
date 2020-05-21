@@ -26,7 +26,6 @@ Partial Class MainForm
         Me.HeaderBar = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MinimizeButton = New System.Windows.Forms.Button()
-        Me.MaximizeButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.CloseButton = New System.Windows.Forms.Button()
@@ -44,7 +43,6 @@ Partial Class MainForm
         Me.HeaderBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.HeaderBar.Controls.Add(Me.Label1)
         Me.HeaderBar.Controls.Add(Me.MinimizeButton)
-        Me.HeaderBar.Controls.Add(Me.MaximizeButton)
         Me.HeaderBar.Controls.Add(Me.ExitButton)
         Me.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.HeaderBar.Location = New System.Drawing.Point(0, 0)
@@ -74,27 +72,12 @@ Partial Class MainForm
         Me.MinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MinimizeButton.Image = Global.RentalProject.My.Resources.Resources.baseline_minimize_black_18dp
-        Me.MinimizeButton.Location = New System.Drawing.Point(810, 0)
+        Me.MinimizeButton.Location = New System.Drawing.Point(867, 0)
         Me.MinimizeButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MinimizeButton.Name = "MinimizeButton"
         Me.MinimizeButton.Size = New System.Drawing.Size(57, 44)
         Me.MinimizeButton.TabIndex = 15
         Me.MinimizeButton.UseVisualStyleBackColor = True
-        '
-        'MaximizeButton
-        '
-        Me.MaximizeButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MaximizeButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.MaximizeButton.FlatAppearance.BorderSize = 0
-        Me.MaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MaximizeButton.Image = Global.RentalProject.My.Resources.Resources.baseline_maximize_black_18dp
-        Me.MaximizeButton.Location = New System.Drawing.Point(867, 0)
-        Me.MaximizeButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MaximizeButton.Name = "MaximizeButton"
-        Me.MaximizeButton.Size = New System.Drawing.Size(57, 44)
-        Me.MaximizeButton.TabIndex = 16
-        Me.MaximizeButton.UseVisualStyleBackColor = True
         '
         'ExitButton
         '
@@ -248,7 +231,6 @@ Partial Class MainForm
 
     Friend WithEvents HeaderBar As Panel
     Friend WithEvents MinimizeButton As Button
-    Friend WithEvents MaximizeButton As Button
     Friend WithEvents ExitButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents MenuPanel As Panel

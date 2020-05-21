@@ -15,7 +15,31 @@ Public Class EntityReturn
     Public Function getReturn() As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from retour"
+        command.CommandText = $"Select distinct R.noRetour, initcap(R.nomReception) as Reçu_par, initcap(concat(P.nom, ', ', P.prenom)) as Retourné_par, R.note from retour R inner join personne P on R.noPersonne = P.noPersonne order by R.noRetour"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("retour")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getReturnByID(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select distinct R.noRetour, initcap(R.nomReception) as Reçu_par, P.nom, P.prenom, P.statut, P.email, R.dateRetour, R.note from retour R inner join personne P on R.noPersonne = P.noPersonne where noRetour = {id}"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("retour")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getReturnEquipments(id As Integer) As DataTable
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select R.noEquipement, E.nom from retour R inner join equipement E on R.noEquipement = E.noEquipement where noRetour = {id} order by R.noEquipement"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("retour")
@@ -27,7 +51,7 @@ Public Class EntityReturn
     Public Function getReturnByReception(reception As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from retour where upper(nomReception) like upper('%{reception}%')"
+        command.CommandText = $"Select distinct noRetour, initcap(nomReception) as Reçu_par, initcap(concat(P.nom, ', ', P.prenom)) as Retourné_par, note from retour R inner join personne P on R.noPersonne = P.noPersonne where upper(R.nomReception) like upper('%{reception}%') order by R.noRetour"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("retour")
@@ -36,10 +60,10 @@ Public Class EntityReturn
         Return table
     End Function
 
-    Public Function getReturnByEquipmentName(equipmentName As String) As DataTable
+    Public Function getReturnByRenterName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from retour where upper(nomEquipement) like upper('%{equipmentName}%')"
+        command.CommandText = $"Select distinct noRetour, initcap(nomReception) as Reçu_par, initcap(concat(P.nom, ', ', P.prenom)) as Retourné_par, note from retour R inner join personne P on R.noPersonne = P.noPersonne where upper(initcap(concat(P.nom, ', ', P.prenom))) like upper('%{name}%') order by R.noRetour"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("retour")
@@ -51,7 +75,7 @@ Public Class EntityReturn
     Public Function getReturnByDate(returnDate As Date) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from retour where extract(DAY from dateRetour) = {returnDate.Day} and extract(MONTH from dateRetour) = {returnDate.Month} and extract(YEAR from dateRetour) = {returnDate.Year}"
+        command.CommandText = $"Select distinct noRetour, initcap(nomReception) as Reçu_par, initcap(concat(P.nom, ', ', P.prenom)) as Retourné_par, note from retour R inner join personne P on R.noPersonne = P.noPersonne where extract(DAY from R.dateRetour) = {returnDate.Day} and extract(MONTH from R.dateRetour) = {returnDate.Month} and extract(YEAR from R.dateRetour) = {returnDate.Year} order by R.noRetour"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("retour")

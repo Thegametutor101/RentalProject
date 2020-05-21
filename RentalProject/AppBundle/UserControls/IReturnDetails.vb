@@ -2,13 +2,15 @@
 
 Public Class IReturnDetails
 
+    Dim mainForm As MainForm
     Dim rentals As IRentals
     Dim id As Integer
 
-    Sub New(r As IRentals, number As Integer)
+    Sub New(main As MainForm, r As IRentals, number As Integer)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+        mainForm = main
         rentals = r
         id = number
     End Sub
@@ -18,7 +20,6 @@ Public Class IReturnDetails
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-
     Private Sub IReturnDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim item As DataTable = EntityRental.getInstance().getRentalDetailed(id)
@@ -32,15 +33,13 @@ Public Class IReturnDetails
             RentalDate.Value = it.Item(6)
         Next
         RentalDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
-
         DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
-
     End Sub
 
     Private Sub EquipReturnButton_Click(sender As Object, e As EventArgs) Handles EquipReturnButton.Click
         Dim comment As String = ""
         Dim reception As String = ""
-        Dim equipmentName As String = ""
+        Dim equipmentNumber As String = ""
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour pour cet equipement?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 comment = InputBox("Note:", "Commentaires")
@@ -49,10 +48,11 @@ Public Class IReturnDetails
             Dim selectIndex As Integer = DGVEquipments.SelectedCells(0).RowIndex
             Dim selectRow As DataGridViewRow = DGVEquipments.Rows(selectIndex)
             Dim equipment As String = selectRow.Cells("No_Équipement").Value
-            equipmentName = selectRow.Cells("Nom_Équipement").Value
+            equipmentNumber = selectRow.Cells("No_Équipement").Value
             comment = Regex.Replace(comment, "'", "''")
             comment = Regex.Replace(comment, "[^A-Za-z0-9' ]", String.Empty)
-            ModelReturn.getInstance().addReturn(reception, equipmentName, comment, False)
+            Dim personNumber As DataRow = EntityRental.getInstance().getRentalByID(CInt(RentalID.Text)).Rows(0)
+            ModelReturn.getInstance().addReturn(CInt(RentalID.Text), reception, personNumber.Item(1), equipmentNumber, comment, False)
             ModelRental.getInstance().deleteEquipmentFromRental(equipment)
             DGVEquipments.DataSource = EntityEquipment.getInstance.getEquipmentRented(RentalID.Text)
             DGVEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
@@ -60,14 +60,15 @@ Public Class IReturnDetails
                 rentals.loadData(EntityRental.getInstance().getRentals())
                 rentals.DetailsButton.Enabled = False
                 rentals.ReturnButton.Enabled = False
-                Me.SendToBack()
+                mainForm.InterfacePanel.Controls.Clear()
+                Dim rental As New IRentals(mainForm)
+                rental.Dock = DockStyle.Fill
+                mainForm.InterfacePanel.Controls.Add(rental)
+                rental.BringToFront()
             End If
         Else
             DGVEquipments.Select()
         End If
-
-
-
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
@@ -77,7 +78,6 @@ Public Class IReturnDetails
     Private Sub FullReturnButton_Click(sender As Object, e As EventArgs) Handles FullReturnButton.Click
         Dim comment As String = ""
         Dim reception As String = ""
-        Dim equipmentName As String = ""
         Dim printed As Boolean = False
         If MessageBox.Show("Êtes-vous sûr de vouloir effectuer le retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             If MessageBox.Show("Voulez vous ajouter un commentaire à ce retour?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -94,14 +94,19 @@ Public Class IReturnDetails
                 End If
             End While
             For Each it As DataGridViewRow In DGVEquipments.Rows
-                ModelReturn.getInstance().addReturn(reception, it.Cells(1).Value, comment, printed)
+                Dim personNumber As DataRow = EntityRental.getInstance().getRentalByID(CInt(RentalID.Text)).Rows(0)
+                ModelReturn.getInstance().addReturn(CInt(RentalID.Text), reception, personNumber.Item(1), it.Cells(0).Value, comment, printed)
                 ModelRental.getInstance().deleteRental(RentalID.Text, it.Cells(0).Value)
                 printed = True
             Next
             rentals.loadData(EntityRental.getInstance().getRentals())
             rentals.DetailsButton.Enabled = False
             rentals.ReturnButton.Enabled = False
-            Me.SendToBack()
+            mainForm.InterfacePanel.Controls.Clear()
+            Dim rental As New IRentals(mainForm)
+            rental.Dock = DockStyle.Fill
+            mainForm.InterfacePanel.Controls.Add(rental)
+            rental.BringToFront()
         Else
             DGVEquipments.Select()
         End If

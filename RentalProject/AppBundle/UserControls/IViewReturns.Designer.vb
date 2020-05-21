@@ -23,20 +23,22 @@ Partial Class IViewReturns
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.SearchButton = New System.Windows.Forms.Button()
-        Me.DeleteButton = New System.Windows.Forms.Button()
+        Me.DetailsButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.ByDate = New System.Windows.Forms.RadioButton()
-        Me.EquipmentName = New System.Windows.Forms.TextBox()
+        Me.RenterName = New System.Windows.Forms.TextBox()
         Me.ByEquipment = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Reception = New System.Windows.Forms.TextBox()
         Me.ByReception = New System.Windows.Forms.RadioButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SearchButton = New System.Windows.Forms.Button()
+        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -46,6 +48,7 @@ Partial Class IViewReturns
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.DetailsButton)
         Me.Panel1.Controls.Add(Me.SearchButton)
         Me.Panel1.Controls.Add(Me.DeleteButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -54,41 +57,23 @@ Partial Class IViewReturns
         Me.Panel1.Size = New System.Drawing.Size(781, 71)
         Me.Panel1.TabIndex = 0
         '
-        'SearchButton
+        'DetailsButton
         '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
-        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(126, 71)
-        Me.SearchButton.TabIndex = 6
-        Me.SearchButton.UseVisualStyleBackColor = False
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
-        Me.DeleteButton.Location = New System.Drawing.Point(655, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
-        Me.DeleteButton.TabIndex = 5
-        Me.DeleteButton.UseVisualStyleBackColor = False
+        Me.DetailsButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DetailsButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DetailsButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DetailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DetailsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DetailsButton.ForeColor = System.Drawing.Color.White
+        Me.DetailsButton.Location = New System.Drawing.Point(529, 0)
+        Me.DetailsButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.DetailsButton.Name = "DetailsButton"
+        Me.DetailsButton.Size = New System.Drawing.Size(126, 71)
+        Me.DetailsButton.TabIndex = 7
+        Me.DetailsButton.Text = "Afficher les Détails"
+        Me.DetailsButton.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -113,9 +98,10 @@ Partial Class IViewReturns
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.ReturnDate)
         Me.Panel2.Controls.Add(Me.ByDate)
-        Me.Panel2.Controls.Add(Me.EquipmentName)
+        Me.Panel2.Controls.Add(Me.RenterName)
         Me.Panel2.Controls.Add(Me.ByEquipment)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Reception)
@@ -129,10 +115,10 @@ Partial Class IViewReturns
         'ReturnDate
         '
         Me.ReturnDate.Enabled = False
-        Me.ReturnDate.Location = New System.Drawing.Point(25, 290)
+        Me.ReturnDate.Location = New System.Drawing.Point(9, 290)
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnDate.Name = "ReturnDate"
-        Me.ReturnDate.Size = New System.Drawing.Size(215, 22)
+        Me.ReturnDate.Size = New System.Drawing.Size(247, 22)
         Me.ReturnDate.TabIndex = 57
         '
         'ByDate
@@ -148,15 +134,15 @@ Partial Class IViewReturns
         Me.ByDate.Text = "Date de retour"
         Me.ByDate.UseVisualStyleBackColor = True
         '
-        'EquipmentName
+        'RenterName
         '
-        Me.EquipmentName.Enabled = False
-        Me.EquipmentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EquipmentName.Location = New System.Drawing.Point(25, 192)
-        Me.EquipmentName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.EquipmentName.Name = "EquipmentName"
-        Me.EquipmentName.Size = New System.Drawing.Size(215, 24)
-        Me.EquipmentName.TabIndex = 28
+        Me.RenterName.Enabled = False
+        Me.RenterName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RenterName.Location = New System.Drawing.Point(25, 192)
+        Me.RenterName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RenterName.Name = "RenterName"
+        Me.RenterName.Size = New System.Drawing.Size(215, 24)
+        Me.RenterName.TabIndex = 28
         '
         'ByEquipment
         '
@@ -165,10 +151,10 @@ Partial Class IViewReturns
         Me.ByEquipment.Location = New System.Drawing.Point(25, 155)
         Me.ByEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByEquipment.Name = "ByEquipment"
-        Me.ByEquipment.Size = New System.Drawing.Size(169, 24)
+        Me.ByEquipment.Size = New System.Drawing.Size(131, 24)
         Me.ByEquipment.TabIndex = 27
         Me.ByEquipment.TabStop = True
-        Me.ByEquipment.Text = "Nom d'équipement"
+        Me.ByEquipment.Text = "Emprunté par"
         Me.ByEquipment.UseVisualStyleBackColor = True
         '
         'Label1
@@ -230,6 +216,59 @@ Partial Class IViewReturns
         Me.DataGridView1.Size = New System.Drawing.Size(519, 400)
         Me.DataGridView1.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.RentalProject.My.Resources.Resources.baseline_sync_black_18dp
+        Me.Button1.Location = New System.Drawing.Point(223, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(39, 39)
+        Me.Button1.TabIndex = 58
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'SearchButton
+        '
+        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchButton.ForeColor = System.Drawing.Color.White
+        Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
+        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(126, 71)
+        Me.SearchButton.TabIndex = 6
+        Me.SearchButton.UseVisualStyleBackColor = False
+        '
+        'DeleteButton
+        '
+        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteButton.ForeColor = System.Drawing.Color.White
+        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
+        Me.DeleteButton.Location = New System.Drawing.Point(655, 0)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
+        Me.DeleteButton.TabIndex = 5
+        Me.DeleteButton.UseVisualStyleBackColor = False
+        '
         'IViewReturns
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -262,11 +301,13 @@ Partial Class IViewReturns
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents EquipmentName As TextBox
+    Friend WithEvents RenterName As TextBox
     Friend WithEvents ByEquipment As RadioButton
     Friend WithEvents Label1 As Label
     Friend WithEvents Reception As TextBox
     Friend WithEvents ByReception As RadioButton
     Friend WithEvents ByDate As RadioButton
     Friend WithEvents ReturnDate As DateTimePicker
+    Friend WithEvents DetailsButton As Button
+    Friend WithEvents Button1 As Button
 End Class

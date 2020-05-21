@@ -70,8 +70,8 @@
     End Sub
 
     Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
-        If Not IsNothing(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
-            Dim ret As New IReturnDetails(Me, ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text)
+        If Not String.IsNullOrEmpty(ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text) Then
+            Dim ret As New IReturnDetails(mainForm, Me, ListView1.Items(ListView1.FocusedItem.Index).SubItems(0).Text)
             ret.Dock = DockStyle.Fill
             mainForm.InterfacePanel.Controls.Add(ret)
             ret.BringToFront()

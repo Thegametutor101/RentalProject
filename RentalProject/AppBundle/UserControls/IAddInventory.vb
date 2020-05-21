@@ -85,7 +85,7 @@ Public Class IAddInventory
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         'Confirmation que tous les champs sont remplis
-        Static textExpression As New Regex("^[a-zA-Z0-9]+$")
+        Static textExpression As New Regex("^[a-zA-Z0-9-_]+$")
         If Trim(ID.Text) = "" Or Trim(TBName.Text) = "" Or Trim(CBCat.Text = "") Or Trim(CBEtat.Text) = "" Then
                 MessageBox.Show("Veuillez remplir tous les champs avant d'ajouter un équipement", "Erreur")
             Else

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class IModifyRental
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,12 @@ Partial Class IModifyRental
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.RentalID = New System.Windows.Forms.TextBox()
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.RentalDate = New System.Windows.Forms.DateTimePicker()
         Me.Authorisation = New System.Windows.Forms.TextBox()
-        Me.EquipmentName = New System.Windows.Forms.TextBox()
         Me.RenterName = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -47,16 +46,18 @@ Partial Class IModifyRental
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.Equipments = New System.Windows.Forms.DataGridView()
         CType(Me.NumericHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericDays, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.Equipments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RentalID
         '
         Me.RentalID.Enabled = False
-        Me.RentalID.Location = New System.Drawing.Point(306, 77)
+        Me.RentalID.Location = New System.Drawing.Point(183, 77)
         Me.RentalID.Multiline = True
         Me.RentalID.Name = "RentalID"
         Me.RentalID.ReadOnly = True
@@ -84,31 +85,21 @@ Partial Class IModifyRental
         'Authorisation
         '
         Me.Authorisation.Enabled = False
-        Me.Authorisation.Location = New System.Drawing.Point(306, 219)
+        Me.Authorisation.Location = New System.Drawing.Point(183, 184)
         Me.Authorisation.Multiline = True
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
-        Me.Authorisation.Size = New System.Drawing.Size(294, 22)
+        Me.Authorisation.Size = New System.Drawing.Size(194, 22)
         Me.Authorisation.TabIndex = 66
-        '
-        'EquipmentName
-        '
-        Me.EquipmentName.Enabled = False
-        Me.EquipmentName.Location = New System.Drawing.Point(306, 165)
-        Me.EquipmentName.Multiline = True
-        Me.EquipmentName.Name = "EquipmentName"
-        Me.EquipmentName.ReadOnly = True
-        Me.EquipmentName.Size = New System.Drawing.Size(294, 22)
-        Me.EquipmentName.TabIndex = 65
         '
         'RenterName
         '
         Me.RenterName.Enabled = False
-        Me.RenterName.Location = New System.Drawing.Point(306, 119)
+        Me.RenterName.Location = New System.Drawing.Point(183, 126)
         Me.RenterName.Multiline = True
         Me.RenterName.Name = "RenterName"
         Me.RenterName.ReadOnly = True
-        Me.RenterName.Size = New System.Drawing.Size(294, 22)
+        Me.RenterName.Size = New System.Drawing.Size(194, 22)
         Me.RenterName.TabIndex = 64
         '
         'Label12
@@ -135,7 +126,7 @@ Partial Class IModifyRental
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(200, 219)
+        Me.Label10.Location = New System.Drawing.Point(72, 184)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(100, 20)
         Me.Label10.TabIndex = 61
@@ -145,7 +136,7 @@ Partial Class IModifyRental
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(203, 165)
+        Me.Label7.Location = New System.Drawing.Point(412, 79)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(97, 20)
         Me.Label7.TabIndex = 60
@@ -155,7 +146,7 @@ Partial Class IModifyRental
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(190, 119)
+        Me.Label4.Location = New System.Drawing.Point(62, 126)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(110, 20)
         Me.Label4.TabIndex = 59
@@ -165,7 +156,7 @@ Partial Class IModifyRental
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(274, 79)
+        Me.Label1.Location = New System.Drawing.Point(146, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(26, 20)
         Me.Label1.TabIndex = 58
@@ -328,6 +319,22 @@ Partial Class IModifyRental
         Me.Label13.Text = "Modification d'Emprunt"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Equipments
+        '
+        Me.Equipments.AllowUserToAddRows = False
+        Me.Equipments.AllowUserToDeleteRows = False
+        Me.Equipments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Equipments.BackgroundColor = System.Drawing.Color.White
+        Me.Equipments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Equipments.Enabled = False
+        Me.Equipments.Location = New System.Drawing.Point(416, 103)
+        Me.Equipments.Margin = New System.Windows.Forms.Padding(4)
+        Me.Equipments.Name = "Equipments"
+        Me.Equipments.RowHeadersWidth = 51
+        Me.Equipments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Equipments.Size = New System.Drawing.Size(287, 134)
+        Me.Equipments.TabIndex = 109
+        '
         'IModifyRental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -335,6 +342,7 @@ Partial Class IModifyRental
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.Equipments)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.CheckBox1)
@@ -348,7 +356,6 @@ Partial Class IModifyRental
         Me.Controls.Add(Me.ReturnDate)
         Me.Controls.Add(Me.RentalDate)
         Me.Controls.Add(Me.Authorisation)
-        Me.Controls.Add(Me.EquipmentName)
         Me.Controls.Add(Me.RenterName)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
@@ -363,6 +370,7 @@ Partial Class IModifyRental
         CType(Me.NumericDays, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        CType(Me.Equipments, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -372,7 +380,6 @@ Partial Class IModifyRental
     Friend WithEvents ReturnDate As DateTimePicker
     Friend WithEvents RentalDate As DateTimePicker
     Friend WithEvents Authorisation As TextBox
-    Friend WithEvents EquipmentName As TextBox
     Friend WithEvents RenterName As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
@@ -393,4 +400,5 @@ Partial Class IModifyRental
     Friend WithEvents CancelButton As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label13 As Label
+    Friend WithEvents Equipments As DataGridView
 End Class

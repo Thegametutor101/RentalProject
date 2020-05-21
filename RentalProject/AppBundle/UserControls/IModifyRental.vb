@@ -32,7 +32,6 @@
             'Inserting values into textBoxes
             RentalID.Text = it.Item(0)
             RenterName.Text = it.Item(1)
-            EquipmentName.Text = it.Item(2)
             Authorisation.Text = it.Item(3)
             RentalDate.Value = it.Item(4)
             NumericDays.Value = defaultDays
@@ -45,6 +44,8 @@
                 ReturnDate.MinDate = Date.Now
             End If
         Next
+        Dim equipmentList As DataTable = EntityRental.getInstance().getRentalEquipments(CInt(RentalID.Text))
+        Equipments.DataSource = equipmentList
         If ReturnDate.Value < Date.Now Then
             MessageBox.Show("Cet emprunt est en retard.")
         End If

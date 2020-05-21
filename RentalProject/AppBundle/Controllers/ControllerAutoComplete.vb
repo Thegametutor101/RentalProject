@@ -51,11 +51,12 @@ Module ControllerAutoComplete
 
     Public Function loadEquipmentData() As AutoCompleteStringCollection
         Dim MySource As New AutoCompleteStringCollection()
-        Dim data As DataTable = EntityReturn.getInstance().getReturn()
+        Dim data As DataTable = EntityPerson.getInstance().getPerson()
         If data.Rows.Count <> 0 Then
             For Each it As DataRow In data.Rows
-                If Not IsNothing(it.Item(2)) And Not it.Item(2) = "" Then
-                    MySource.Add($"{it.Item(2)}")
+                If Not IsNothing(it.Item(1)) And Not it.Item(2) = "" And
+                   Not IsNothing(it.Item(2)) And Not it.Item(2) = "" Then
+                    MySource.Add($"{it.Item(1)}, {it.Item(2)}")
                 End If
             Next
         End If
