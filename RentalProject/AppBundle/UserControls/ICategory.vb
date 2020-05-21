@@ -34,17 +34,23 @@ Public Class ICategory
     End Sub
 
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
-        If MessageBox.Show("Effacer la catégorie, deplacera tous les équipements attachés à celle-ci dans la catégorie Autre, êtes-vous sûr?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Dim selectIndex As Integer = DGVCategory.SelectedCells(0).RowIndex
-            Dim selectRow As DataGridViewRow = DGVCategory.Rows(selectIndex)
-            Dim id As Integer = selectRow.Cells("noCategorie").Value
+        If DGVCategory.Rows.Count <> 0 Then
+            If DGVCategory.SelectedRows(0).Cells(0).Value <> 0 Then
+                If MessageBox.Show("Effacer la catégorie déplacera tous les équipements attachés à celle-ci dans la catégorie Autre, êtes-vous sûr?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    Dim selectIndex As Integer = DGVCategory.SelectedCells(0).RowIndex
+                    Dim selectRow As DataGridViewRow = DGVCategory.Rows(selectIndex)
+                    Dim id As Integer = selectRow.Cells("noCategorie").Value
 
-            ModelCategory.getInstance().deleteCategory(id)
+                    ModelCategory.getInstance().deleteCategory(id)
 
-            DGVCategory.DataSource = EntityCategory.getInstance().getCategory()
-            DGVCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        Else
-            DGVCategory.Select()
+                    DGVCategory.DataSource = EntityCategory.getInstance().getCategory()
+                    DGVCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                Else
+                    DGVCategory.Select()
+                End If
+            Else
+                MessageBox.Show("La catégorie Autre ne peut pas être supprimée")
+            End If
         End If
         Category_Refresh()
     End Sub
