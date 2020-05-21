@@ -164,12 +164,16 @@ Public Class IEmprunt
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        If ValideDate() And validPerson() Then
-            If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now) Then
-                insertToRental()
-                RefreshEquipement()
+        If ValideDate() Then
+            If validPerson() Then
+                If (Not String.IsNullOrEmpty(TbAutorise.Text) And DateTimePicker1.Value > DateTime.Now) Then
+                    insertToRental()
+                    RefreshEquipement()
+                Else
+                    MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+                End If
             Else
-                MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+                MessageBox.Show("Veuillez entrer une personne existante ou en ajouter une nouvelle.")
             End If
         Else
             MessageBox.Show("La date n'est pas valide")
