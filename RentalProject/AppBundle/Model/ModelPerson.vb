@@ -66,4 +66,18 @@ Public Class ModelPerson
             MessageBox.Show("Une erreur s'est produite lors de la modification.")
         End Try
     End Function
+
+    Public Function verifPersonHasRental(id As Integer) As Boolean
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"Select noPersonne from emprunt where noPersonne = '{id}'"
+            Dim result = command.ExecuteNonQuery()
+            connection.Close()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class
