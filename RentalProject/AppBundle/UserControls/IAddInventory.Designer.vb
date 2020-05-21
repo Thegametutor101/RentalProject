@@ -36,6 +36,7 @@ Partial Class IAddInventory
         Me.BackButton = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.CBEtat = New System.Windows.Forms.ComboBox()
+        Me.NewCategoryButton = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -89,7 +90,7 @@ Partial Class IAddInventory
         Me.CBCat.Location = New System.Drawing.Point(293, 265)
         Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
-        Me.CBCat.Size = New System.Drawing.Size(251, 24)
+        Me.CBCat.Size = New System.Drawing.Size(199, 24)
         Me.CBCat.TabIndex = 7
         '
         'ID
@@ -207,6 +208,25 @@ Partial Class IAddInventory
         Me.CBEtat.Size = New System.Drawing.Size(251, 24)
         Me.CBEtat.TabIndex = 86
         '
+        'NewCategoryButton
+        '
+        Me.NewCategoryButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.NewCategoryButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NewCategoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.NewCategoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.NewCategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NewCategoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NewCategoryButton.ForeColor = System.Drawing.Color.White
+        Me.NewCategoryButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewCategoryButton.Location = New System.Drawing.Point(500, 264)
+        Me.NewCategoryButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.NewCategoryButton.Name = "NewCategoryButton"
+        Me.NewCategoryButton.Size = New System.Drawing.Size(44, 26)
+        Me.NewCategoryButton.TabIndex = 103
+        Me.NewCategoryButton.Text = "+"
+        Me.NewCategoryButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewCategoryButton.UseVisualStyleBackColor = False
+        '
         'IAddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -214,6 +234,7 @@ Partial Class IAddInventory
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.NewCategoryButton)
         Me.Controls.Add(Me.CBEtat)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -248,4 +269,5 @@ Partial Class IAddInventory
     Friend WithEvents BackButton As Button
     Friend WithEvents CBEtat As ComboBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents NewCategoryButton As Button
 End Class

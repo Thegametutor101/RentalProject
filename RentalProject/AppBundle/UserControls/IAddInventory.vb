@@ -2,7 +2,6 @@
 Public Class IAddInventory
     Dim Inventory As IInventory
 
-
     Sub New(IInventory As IInventory)
         ' This call is required by the designer.
         InitializeComponent()
@@ -12,7 +11,7 @@ Public Class IAddInventory
 
     Private Sub IAddInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'aller chercher les catégories existantes pour la combobox
-        loaddata(EntityCategory.getInstance.getCategory)
+        loaddata(EntityCategory.getInstance.getCategory())
     End Sub
 
     Private Function loaddata(data As DataTable)
@@ -104,5 +103,22 @@ Public Class IAddInventory
                     MessageBox.Show("Veuillez utiliser des chiffres et/ou des lettres pour l'ID et le nom")
                 End If
             End If
+    End Sub
+
+    Private Sub NewCategoryButton_Click(sender As Object, e As EventArgs) Handles NewCategoryButton.Click
+        Dim categoryName As String = InputBox("Quel est le nom de la catégorie?", "Ajout d'une Catégorie")
+        categoryName = Regex.Replace(categoryName, "[^A-Za-z0-9' ]", String.Empty)
+        If Not String.IsNullOrEmpty(categoryName) Then
+            ModelCategory.getInstance().addCategory(categoryName)
+        Else
+            While MessageBox.Show($"Vous devez entrer un nom de catégorie valide.{Environment.NewLine}Voulez-vous rééssayer?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes
+                categoryName = InputBox("Quel est le nom de la catégorie?", "Ajout d'une Catégorie")
+                categoryName = Regex.Replace(categoryName, "[^A-Za-z0-9' ]", String.Empty)
+                If Not String.IsNullOrEmpty(categoryName) Then
+                    ModelCategory.getInstance().addCategory(categoryName)
+                End If
+            End While
+        End If
+        loaddata(EntityCategory.getInstance.getCategory())
     End Sub
 End Class
