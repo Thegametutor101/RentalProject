@@ -2,8 +2,8 @@
 
     Dim mainForm As MainForm
     ''' <summary>
-    ''' Cet attribut est le numero de l'emprunt pour récupérer
-    ''' toutes les informations requises de la base de donnés.
+    ''' Cet attribut est le numéro de'emprunt pour récupérer
+    ''' touts les informations requises de la base de données
     ''' </summary>
     Dim id As Integer
 

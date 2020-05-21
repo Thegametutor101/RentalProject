@@ -117,7 +117,7 @@ Public Class IEmprunt
                 For Each item As ListViewItem In EquipmentCollection.Items
                     no_equipement = item.SubItems(0).Text
                     empruntEntity.addRental(no_personne, no_equipement, autorisation, Date.Now, duree, dateRetour, Trim(Comments.Text))
-                    empruntEntity.updateEquipementStatus(no_equipement)
+                    empruntEntity.updateEquipmentNonAvailable(no_equipement)
                 Next
                 rentals.loadData(EntityRental.getInstance().getRentals())
                 MessageBox.Show("L'emprunt à été ajouté avec succès.")
@@ -129,6 +129,7 @@ Public Class IEmprunt
             MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
         End Try
     End Function
+
     Public Function refreshCategorie()
         CbCategorie.Items.Clear()
         CbCategorie.Enabled = True

@@ -178,7 +178,7 @@ Public Class EntityEquipment
         Try
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Select EQ.nom as Nom_Equipement from emprunt EM inner join equipement EQ on EM.noEquipement = EQ.noEquipement where upper(EM.ID) = upper('{ID}')"
+            command.CommandText = $"Select EQ.noEquipement as No_Équipement, EQ.nom as Nom_Équipement from emprunt EM inner join equipement EQ on EM.noEquipement = EQ.noEquipement where upper(EM.ID) = upper('{ID}')"
             connection.Open()
             Dim reader = command.ExecuteReader()
             Dim equipmentTable As New DataTable("equipement")
