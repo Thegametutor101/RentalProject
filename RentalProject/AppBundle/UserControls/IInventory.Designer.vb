@@ -43,6 +43,8 @@ Partial Class IInventory
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -51,9 +53,11 @@ Partial Class IInventory
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -65,14 +69,14 @@ Partial Class IInventory
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(586, 324)
+        Me.DataGridView1.Size = New System.Drawing.Size(781, 400)
         Me.DataGridView1.TabIndex = 0
         '
         'Panel2
@@ -81,9 +85,9 @@ Partial Class IInventory
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(586, 58)
+        Me.Panel2.Size = New System.Drawing.Size(781, 71)
         Me.Panel2.TabIndex = 2
         '
         'CategoryButton
@@ -95,10 +99,10 @@ Partial Class IInventory
         Me.CategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CategoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CategoryButton.ForeColor = System.Drawing.Color.White
-        Me.CategoryButton.Location = New System.Drawing.Point(492, 0)
-        Me.CategoryButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CategoryButton.Location = New System.Drawing.Point(656, 0)
+        Me.CategoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CategoryButton.Name = "CategoryButton"
-        Me.CategoryButton.Size = New System.Drawing.Size(94, 58)
+        Me.CategoryButton.Size = New System.Drawing.Size(125, 71)
         Me.CategoryButton.TabIndex = 14
         Me.CategoryButton.Text = "Categories"
         Me.CategoryButton.UseVisualStyleBackColor = False
@@ -108,8 +112,9 @@ Partial Class IInventory
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
         Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(586, 58)
+        Me.Label13.Size = New System.Drawing.Size(781, 71)
         Me.Label13.TabIndex = 17
         Me.Label13.Text = "Équipements"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -122,10 +127,10 @@ Partial Class IInventory
         Me.Panel5.Controls.Add(Me.ModifyButton)
         Me.Panel5.Controls.Add(Me.AddInventoryButton)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 382)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Location = New System.Drawing.Point(0, 471)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(586, 58)
+        Me.Panel5.Size = New System.Drawing.Size(781, 71)
         Me.Panel5.TabIndex = 3
         '
         'BtAutre
@@ -138,9 +143,9 @@ Partial Class IInventory
         Me.BtAutre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtAutre.ForeColor = System.Drawing.Color.White
         Me.BtAutre.Location = New System.Drawing.Point(0, 0)
-        Me.BtAutre.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtAutre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtAutre.Name = "BtAutre"
-        Me.BtAutre.Size = New System.Drawing.Size(116, 58)
+        Me.BtAutre.Size = New System.Drawing.Size(155, 71)
         Me.BtAutre.TabIndex = 15
         Me.BtAutre.Text = "Équipements sans Catégorie"
         Me.BtAutre.UseVisualStyleBackColor = False
@@ -155,10 +160,10 @@ Partial Class IInventory
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
-        Me.Button1.Location = New System.Drawing.Point(210, 0)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Location = New System.Drawing.Point(281, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 58)
+        Me.Button1.Size = New System.Drawing.Size(125, 71)
         Me.Button1.TabIndex = 14
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -172,10 +177,10 @@ Partial Class IInventory
         Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
         Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
-        Me.DeleteButton.Location = New System.Drawing.Point(304, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.DeleteButton.Location = New System.Drawing.Point(406, 0)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(94, 58)
+        Me.DeleteButton.Size = New System.Drawing.Size(125, 71)
         Me.DeleteButton.TabIndex = 12
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
@@ -189,10 +194,10 @@ Partial Class IInventory
         Me.ModifyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
         Me.ModifyButton.Image = Global.RentalProject.My.Resources.Resources.baseline_create_white_18dp
-        Me.ModifyButton.Location = New System.Drawing.Point(398, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModifyButton.Location = New System.Drawing.Point(531, 0)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ModifyButton.Name = "ModifyButton"
-        Me.ModifyButton.Size = New System.Drawing.Size(94, 58)
+        Me.ModifyButton.Size = New System.Drawing.Size(125, 71)
         Me.ModifyButton.TabIndex = 11
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
@@ -206,10 +211,10 @@ Partial Class IInventory
         Me.AddInventoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddInventoryButton.ForeColor = System.Drawing.Color.White
         Me.AddInventoryButton.Image = Global.RentalProject.My.Resources.Resources.baseline_add_white_18dp
-        Me.AddInventoryButton.Location = New System.Drawing.Point(492, 0)
-        Me.AddInventoryButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.AddInventoryButton.Location = New System.Drawing.Point(656, 0)
+        Me.AddInventoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AddInventoryButton.Name = "AddInventoryButton"
-        Me.AddInventoryButton.Size = New System.Drawing.Size(94, 58)
+        Me.AddInventoryButton.Size = New System.Drawing.Size(125, 71)
         Me.AddInventoryButton.TabIndex = 10
         Me.AddInventoryButton.UseVisualStyleBackColor = False
         '
@@ -217,15 +222,15 @@ Partial Class IInventory
         '
         Me.Panel6.Controls.Add(Me.DataGridView1)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(0, 58)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel6.Location = New System.Drawing.Point(0, 71)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(586, 324)
+        Me.Panel6.Size = New System.Drawing.Size(781, 400)
         Me.Panel6.TabIndex = 4
         '
         'IInventory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -233,10 +238,10 @@ Partial Class IInventory
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel2)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(586, 440)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IInventory"
-        Me.Size = New System.Drawing.Size(586, 440)
+        Me.Size = New System.Drawing.Size(781, 542)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)

@@ -48,33 +48,34 @@ Public Class IModifyInventory
     Public Function UpdateEquipement()
         'Création des variables pour l'update
         Dim noEquipement As String
-            Dim nom As String
-            Dim nocategorie As Integer
-            Dim etat As String
-            Dim disponibilite As String = "oui"
-            Try
-                'on vérifie si tous les champs sont Remplis
-                noEquipement = LabelNo.Text
-                nom = TBName.Text
+        Dim nom As String
+        Dim nocategorie As Integer
+        Dim etat As String
+        Dim disponibilite As String = "oui"
+        Try
+            'on vérifie si tous les champs sont Remplis
+            noEquipement = LabelNo.Text
+            nom = TBName.Text
             nocategorie = EntityCategory.getInstance.getNoCategorieByName(CBCat.Text)
             etat = CBEtat.Text
-                If etat <> "Neuf" Then
-                    If etat = "Endommagé" Then
-                        If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                            disponibilite = "oui"
-                        Else
-                            disponibilite = "non"
-                        End If
+            If etat <> "Neuf" Then
+                If etat = "Endommagé" Then
+                    If MessageBox.Show($"Cet article est endommagé,{Environment.NewLine}Souhaitez-vous quand même le rendre disponible?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                        disponibilite = "oui"
                     Else
                         disponibilite = "non"
                     End If
+                Else
+                    disponibilite = "non"
                 End If
-                'on update l'équipement dans la table
-                ModelEquipment.getInstance.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
-            Catch ex As Exception
-                'message d'erreur lorsque l'un des champs n'est pas rempli
-                MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
-            End Try
+            End If
+            'on update l'équipement dans la table
+            ModelEquipment.getInstance.updateequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+            ModelCategory.getInstance().UpdateCategorieQuantite(nocategorie)
+        Catch ex As Exception
+            'message d'erreur lorsque l'un des champs n'est pas rempli
+            MessageBox.Show("Valeur invalide - Veuillez vérifier tous les champs")
+        End Try
     End Function
 
     Private Sub ButtonModif_Click(sender As Object, e As EventArgs) Handles ButtonModif.Click

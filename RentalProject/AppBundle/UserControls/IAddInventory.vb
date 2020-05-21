@@ -29,12 +29,12 @@ Public Class IAddInventory
     Private Function insert_equipment()
         'Création des variables pour l'ajout
         Dim noEquipement As String
-            Dim nom As String
-            Dim nocategorie As Integer
-            Dim etat As String
-            Dim disponibilite As String
-            Dim isUnique As Boolean = True
-            Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
+        Dim nom As String
+        Dim nocategorie As Integer
+        Dim etat As String
+        Dim disponibilite As String
+        Dim isUnique As Boolean = True
+        Dim data As DataTable = EntityEquipment.getInstance().getEquipmentIDs()
         Try
             For Each it As DataRow In data.Rows
                 If it.Item(0) = ID.Text Then
@@ -66,6 +66,7 @@ Public Class IAddInventory
                 End If
                 'Ajout de l'équipement à la base de données
                 ModelEquipment.getInstance.addequipment(noEquipement, nom, nocategorie, etat, disponibilite)
+                ModelCategory.getInstance().UpdateCategorieQuantite(nocategorie)
             Else
                 MessageBox.Show($"Ce numéro d'équipement est déja utilisé,{Environment.NewLine}Veuillez en entrer un différent.")
             End If
@@ -113,6 +114,7 @@ Public Class IAddInventory
 
     Private Sub NewCategoryButton_Click(sender As Object, e As EventArgs) Handles NewCategoryButton.Click
         Dim categoryName As String = InputBox("Quel est le nom de la catégorie?", "Ajout d'une Catégorie")
+        categoryName = Regex.Replace(categoryName, "'", "''")
         categoryName = Regex.Replace(categoryName, "[^A-Za-z0-9' ]", String.Empty)
         If Not String.IsNullOrEmpty(categoryName) Then
             ModelCategory.getInstance().addCategory(categoryName)

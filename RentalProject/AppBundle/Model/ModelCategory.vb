@@ -32,14 +32,14 @@ Public Class ModelCategory
 
 
             command.CommandText = $"Delete from categorie where noCategorie = {id}"
-                connection.Open()
-                command.ExecuteNonQuery()
-                connection.Close()
-                command.CommandText = $"update equipement set noCategorie=0 where noCategorie = {id}"
-                connection.Open()
-                command.ExecuteNonQuery()
-                connection.Close()
-            Else
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+            command.CommandText = $"update equipement set noCategorie=0 where noCategorie = {id}"
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+        Else
             MessageBox.Show("La catégorie Autre ne peut pas être supprimée")
         End If
     End Sub
@@ -77,30 +77,16 @@ Public Class ModelCategory
         End Try
     End Sub
 
-    Public Sub UpdateCategorieQuantite()
-        Dim command As New MySqlCommand
-        command.CommandText = $"SELECT noCategorie, count(noequipement) from equipement group by noCategorie"
-        command.Connection = connection
-        connection.Open()
-        Dim NoCategorieToUpdate As Integer()
-        Dim QuantityToUpdate As Integer()
-        Dim i As Integer = 0
-        Dim reader As MySqlDataReader
-        reader = command.ExecuteReader
-        While (reader.Read)
-            NoCategorieToUpdate(i) = CInt(reader.GetString(0))
-            QuantityToUpdate(i) = CInt(reader.GetString(1))
-        End While
-        connection.Close()
-
-        Dim ctr As Integer = 0
-        connection.Open()
-        While (ctr < NoCategorieToUpdate.Count())
-            command.CommandText = $"update categorie set quantite={QuantityToUpdate(ctr)} where noCategorie={NoCategorieToUpdate(ctr)}"
+    Public Function UpdateCategorieQuantite(categoryNumber As Integer)
+        Try
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            connection.Open()
+            command.CommandText = $"update categorie set quantite = (select count(noEquipement) from equipement where noCategorie = {categoryNumber}) where noCategorie = {categoryNumber}"
             command.ExecuteNonQuery()
-            ctr += 1
-        End While
-        connection.Close()
-    End Sub
-
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la modification de la quantite de categorie")
+        End Try
+    End Function
 End Class

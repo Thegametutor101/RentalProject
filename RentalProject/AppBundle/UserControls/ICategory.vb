@@ -1,4 +1,6 @@
-﻿Public Class ICategory
+﻿Imports System.Text.RegularExpressions
+
+Public Class ICategory
     Dim inventory As IInventory
 
     Sub New(invt As IInventory)
@@ -10,6 +12,11 @@
     Private Sub Category_Refresh()
         DGVCategory.DataSource = EntityCategory.getInstance.getCategory
         DGVCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        If DGVCategory.Rows.Count = 0 Then
+            ModifyButton.Enabled = False
+        Else
+            ModifyButton.Enabled = True
+        End If
     End Sub
     Private Sub ICategory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Category_Refresh()
@@ -17,8 +24,7 @@
     End Sub
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
-        Dim name = Trim(TBName.Text)
-
+        Dim name = Regex.Replace(TBName.Text, "[^A-Za-z0-9' ]", String.Empty)
         If name.Trim.Length > 0 Then
             ModelCategory.getInstance.addCategory(name)
             Category_Refresh()
@@ -56,10 +62,22 @@
     End Sub
 
     Private Sub ModifyButton_Click(sender As Object, e As EventArgs) Handles ModifyButton.Click
-        Dim modifyMessage = InputBox("Entrez le nouveau nom de la catégorie", "Modifier catégorie")
-
-        ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, modifyMessage)
-        Category_Refresh()
+        Dim categoryName = InputBox("Entrez le nouveau nom de la catégorie", "Modifier catégorie")
+        categoryName = Regex.Replace(categoryName, "'", "''")
+        categoryName = Regex.Replace(categoryName, "[^A-Za-z0-9' ]", String.Empty)
+        If Not String.IsNullOrEmpty(categoryName) Then
+            ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, categoryName)
+            Category_Refresh()
+        Else
+            While MessageBox.Show($"Vous devez entrer un nom de catégorie valide.{Environment.NewLine}Voulez-vous rééssayer?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes
+                categoryName = InputBox("Quel est le nom de la catégorie?", "Ajout d'une Catégorie")
+                categoryName = Regex.Replace(categoryName, "[^A-Za-z0-9' ]", String.Empty)
+                If Not String.IsNullOrEmpty(categoryName) Then
+                    ModelCategory.getInstance.updateCategory(DGVCategory.SelectedRows.Item(0).Cells(0).Value, categoryName)
+                    Category_Refresh()
+                End If
+            End While
+        End If
     End Sub
 
     Private Sub TBName_TextChanged(sender As Object, e As EventArgs) Handles TBName.TextChanged
@@ -78,6 +96,4 @@
             WarningLabel.Show()
         End If
     End Sub
-
-
 End Class

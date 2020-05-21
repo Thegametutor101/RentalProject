@@ -49,7 +49,7 @@ Public Class ModelEquipment
             command.Connection = connection
             command.CommandText = $"Delete from equipement where noequipement = '{noequipement}'"
             connection.Open()
-            Dim reader = command.ExecuteReader()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
             MessageBox.Show("La suppression de l'équipement a échoué:" + ex.Message)
@@ -64,6 +64,7 @@ Public Class ModelEquipment
         connection.Open()
         command.ExecuteNonQuery()
         connection.Close()
+        ModelCategory.getInstance().UpdateCategorieQuantite(nocategorie)
     End Function
 End Class
 
