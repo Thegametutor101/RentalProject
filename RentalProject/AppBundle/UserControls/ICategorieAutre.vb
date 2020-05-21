@@ -37,16 +37,12 @@ Public Class ICategorieAutre
     Public Function refreshCategorie()
         CbCategorie.Items.Clear()
         CbCategorie.Enabled = True
-        Dim ctr1 As Integer
-        ctr1 = 0
-        com.CommandText = $"select nom from categorie where nocategorie<>0"
-        com.Connection = connection
-        connection.Open()
-        reader = com.ExecuteReader
-        While (reader.Read)
-            CbCategorie.Items.Add(reader.GetString(0))
-            ctr1 += 1
-        End While
+        Dim data As DataTable = EntityCategory.getInstance.getCategorieForAutre()
+        For Each it As DataRow In Data.Rows
+            If (Not IsNothing(it)) Then
+                CbCategorie.Items.Add(it.Item(0))
+            End If
+        Next
         connection.Close()
     End Function
 

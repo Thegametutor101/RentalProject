@@ -76,4 +76,26 @@ Public Class EntityCategory
         End While
         connection.Close()
     End Function
+    Public Function getCategorieForRental()
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = "select noCategorie,nom from categorie;"
+        connection.Open()
+        Dim reader = command.ExecuteReader
+        Dim table As New DataTable("categorie")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+    Public Function getCategorieForAutre()
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select nom from categorie where nocategorie<>0"
+        connection.Open()
+        Dim reader = command.ExecuteReader
+        Dim table As New DataTable("categorie")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
 End Class

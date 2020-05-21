@@ -180,4 +180,16 @@ Public Class EntityEquipment
             MessageBox.Show("Le chargement des données de la Base de Données a échoué:" + ex.Message)
         End Try
     End Function
+    Public Function getEquipementForRental(NoCategorie As Integer)
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"select noEquipement,nom,Etat from Equipement where noCategorie={NoCategorie} and disponibilite='oui';"
+        connection.Open()
+        Dim reader = command.ExecuteReader
+        Dim table As New DataTable("Equipement")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
 End Class
