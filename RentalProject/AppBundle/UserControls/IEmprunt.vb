@@ -71,31 +71,7 @@ Public Class IEmprunt
         DateTimePicker1.Value = Date.Now.AddHours(NumericUpDownHeure.Value + (NumericUpDownJour.Value * 24))
     End Sub
 
-    Public Function RefreshEquipement()
-        CbEquipement.Enabled = True
-        Dim noCategorie As String
-        Dim ctrEquipement As Integer
-        CbEquipement.Items.Clear()
-        CbEquipement.Text = "Sélectionnez un equipement"
-        If (CbCategorie.SelectedIndex > -1) Then
-            noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
-            ctrEquipement = 0
-            com.Connection = connection
-            connection.Open()
-            com.CommandText = slEquipement + noCategorie + " and disponibilite='oui';"
-            reader = com.ExecuteReader
-            While (reader.Read)
-                CbEquipement.Items.Add(reader.GetString(0) + "-" + reader.GetString(1) + " " + reader.GetString(2))
-                ListEquipement(ctrEquipement, 0) = reader.GetString(0)
-                ListEquipement(ctrEquipement, 1) = reader.GetString(1)
-                ListEquipement(ctrEquipement, 2) = reader.GetString(2)
-                ctrEquipement += 1
-            End While
-            connection.Close()
-        Else
-            MessageBox.Show("Aucune Categorie sélectionné")
-        End If
-    End Function
+
 
     Public Function insertToRental()
         Dim empruntEntity As New ModelRental
@@ -137,21 +113,42 @@ Public Class IEmprunt
     Public Function refreshCategorie()
         CbCategorie.Items.Clear()
         CbCategorie.Enabled = True
-        Dim ctr1 As Integer
-        ctr1 = 0
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = slCategorie
-        connection.Open()
-        reader = command.ExecuteReader
-        While (reader.Read)
-            CbCategorie.Items.Add(reader.GetString(0) + " - " + reader.GetString(1))
-            ListCategorie(ctr1, 0) = reader.GetString(0)
-            ListCategorie(ctr1, 1) = reader.GetString(1)
-            ctr1 += 1
-        End While
+        Dim data As DataTable = EntityCategory.getInstance.getCategorieForRental()
+        Dim ctr As Integer = 0
+        For Each it As DataRow In data.Rows
+            If (Not IsNothing(it)) Then
+                CbCategorie.Items.Add($"{it.Item(0)}-{it.Item(1)}")
+                ListCategorie(ctr, 0) = it.Item(0)
+                ListCategorie(ctr, 1) = it.Item(1)
+                ctr += 1
+            End If
+        Next
         CbEquipement.Items.Clear()
         connection.Close()
+    End Function
+    Public Function RefreshEquipement()
+        CbEquipement.Enabled = True
+        Dim noCategorie As String
+        Dim ctrEquipement As Integer
+
+        CbEquipement.Items.Clear()
+        CbEquipement.Text = "Sélectionnez un equipement"
+        If (CbCategorie.SelectedIndex > -1) Then
+            noCategorie = ListCategorie(CbCategorie.SelectedIndex, 0)
+            ctrEquipement = 0
+            Dim data As DataTable = EntityEquipment.getInstance.getEquipementForRental(noCategorie)
+            For Each it As DataRow In Data.Rows
+                If (Not IsNothing(it)) Then
+                    CbEquipement.Items.Add($"{it.Item(0)}-{it.Item(1)} {it.Item(2)}")
+                    ListEquipement(ctrEquipement, 0) = it.Item(0)
+                    ListEquipement(ctrEquipement, 1) = it.Item(1)
+                    ListEquipement(ctrEquipement, 2) = it.Item(2)
+                    ctrEquipement += 1
+                End If
+            Next
+        Else
+                    MessageBox.Show("Aucune Categorie sélectionné")
+        End If
     End Function
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click, CancelButton.Click
