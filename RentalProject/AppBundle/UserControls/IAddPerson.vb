@@ -48,30 +48,37 @@ Public Class IAddPerson
         TBDepartement.Text = Regex.Replace(TBDepartement.Text, "[^A-Za-z ]", String.Empty)
         TBService.Text = Regex.Replace(TBService.Text, "[^A-Za-z ]", String.Empty)
         Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9-._@]", String.Empty)
+        TBTelephone.Text = Regex.Replace(TBTelephone.Text, "[^0-9() -]", String.Empty)
+        Dim phone = Regex.Replace(TBTelephone.Text, "[^0-9() -]", String.Empty)
         If Not String.IsNullOrEmpty(TBNom.Text) And
             Not String.IsNullOrEmpty(TBPrenom.Text) And
             Not String.IsNullOrEmpty(CBStatut.Text) And
-            Not String.IsNullOrEmpty(TBTelephone.Text) And TBTelephone.TextLength = 14 Then
-            If IsEmail(Email.Text) Then
-                If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                    If CBStatut.Text <> "Étudiant" Then
-                        If Not String.IsNullOrEmpty(TBDepartement.Text) And
-                            Not String.IsNullOrEmpty(TBService.Text) And
-                            Not String.IsNullOrEmpty(TBBureau.Text) Then
-                            If String.IsNullOrEmpty(TBPoste.Text) Then
-                                TBPoste.Text = 0
+            Not String.IsNullOrEmpty(TBTelephone.Text) Then
+            If Replace(phone, " ", "").Length = 14 Then
+                If IsEmail(Email.Text) Then
+                    If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                        If CBStatut.Text <> "Étudiant" Then
+                            If Not String.IsNullOrEmpty(TBDepartement.Text) And
+                               Not String.IsNullOrEmpty(TBService.Text) And
+                               Not String.IsNullOrEmpty(TBBureau.Text) Then
+                                If String.IsNullOrEmpty(TBPoste.Text) Then
+                                    TBPoste.Text = 0
+                                End If
+                                ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
+                            Else
+                                MessageBox.Show("Veuillez Vérifier les informations")
                             End If
-                            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, TBService.Text, TBBureau.Text, TBTelephone.Text, CInt(TBPoste.Text), Email.Text)
-                        Else MessageBox.Show("Veuillez Vérifier les informations")
+                        Else
+                            ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
                         End If
-                    Else
-                        ModelPerson.getInstance.addPerson(TBNom.Text, TBPrenom.Text, CBStatut.Text, TBDepartement.Text, "", "", TBTelephone.Text, CInt("0"), Email.Text)
+                        createPersonAutoComplete(rent.Person)
+                        Me.SendToBack()
                     End If
-                    createPersonAutoComplete(rent.Person)
-                    Me.SendToBack()
+                Else
+                    MessageBox.Show("Cette adresse courriel est invalide.")
                 End If
             Else
-                MessageBox.Show("Cette adresse courriel est invalide.")
+                MessageBox.Show("Ce numéro de téléphone est invalide.")
             End If
         Else
             MessageBox.Show("Veuillez vérifier les informations")

@@ -86,6 +86,9 @@ Public Class IModifyPerson
         LastName.Text = Regex.Replace(LastName.Text, "[^A-Za-z ]", String.Empty)
         Department.Text = Regex.Replace(Department.Text, "[^A-Za-z ]", String.Empty)
         Service.Text = Regex.Replace(Service.Text, "[^A-Za-z ]", String.Empty)
+        Email.Text = Regex.Replace(Email.Text, "[^A-Za-z0-9-._@]", String.Empty)
+        Phone.Text = Regex.Replace(Phone.Text, "[^0-9() -]", String.Empty)
+        Dim phonecheck = Regex.Replace(Phone.Text, "[^0-9() -]", String.Empty)
         If String.IsNullOrEmpty(Extension.Text) Then
             Extension.Text = 0
         End If
@@ -102,6 +105,8 @@ Public Class IModifyPerson
            (String.IsNullOrEmpty(Service.Text) And Status.Text <> "Étudiant") Or
            String.IsNullOrEmpty(Phone.Text) Then
             MessageBox.Show("Veuillez remplir tous les champs avant de soumettre.")
+        ElseIf Not Replace(phonecheck, " ", "").Length = 14 Then
+            MessageBox.Show("Ce numéro de téléphone est invalide.")
         ElseIf Not IsEmail(Email.Text) Then
             MessageBox.Show("Veuillez entrer une adresse de courriel valide.")
         ElseIf MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
@@ -117,7 +122,7 @@ Public Class IModifyPerson
                 End If
 
             End If
-            End If
+        End If
         person.DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
         person.DGVPerson.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
