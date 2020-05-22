@@ -48,7 +48,7 @@ Public Class EntityPerson
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(prenom) like upper('{name}')"
+        command.CommandText = $"Select * from personne where upper(prenom) like upper('%{name}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
@@ -63,7 +63,7 @@ Public Class EntityPerson
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(nom) like upper('{name}')"
+        command.CommandText = $"Select * from personne where upper(nom) like upper('%{name}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
@@ -78,7 +78,7 @@ Public Class EntityPerson
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(prenom) like upper('{firstName}%') and upper(nom) like upper('{lastName}%')"
+        command.CommandText = $"Select * from personne where upper(prenom) like upper('%{firstName}%') and upper(nom) like upper('%{lastName}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")

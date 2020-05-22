@@ -114,7 +114,7 @@ Public Class IPersonSearch
         Dim firstName = Trim(TBPrenom.Text)
         Dim dept = Trim(Department.Text)
         Dim serv = Trim(Service.Text)
-        If lastName.Length > 0 Or firstName.Length > 0 Then
+        If (lastName.Length > 0 Or firstName.Length > 0) And ByName.Checked Then
             If lastName.Length > 0 And firstName.Length > 0 Then
                 DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByFirstNameAndLastName(firstName, lastName)
             ElseIf lastName.Length > 0 And Not firstName.Length > 0 Then
@@ -122,24 +122,23 @@ Public Class IPersonSearch
             ElseIf Not lastName.Length > 0 And firstName.Length > 0 Then
                 DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByFirstName(firstName)
             End If
-        ElseIf CBStatut.Text.Length > 0 Then
+        ElseIf CBStatut.Text.Length > 0 And ByStatut.Checked Then
             DGVPerson.DataSource = EntityPerson.getInstance.getPersonneByStatut(CBStatut.Text)
-        ElseIf dept.Length > 0 Then
+        ElseIf dept.Length > 0 And ByDepartment.Checked Then
             DGVPerson.DataSource = EntityPerson.getInstance.getPersonByDepartment(dept)
-        ElseIf serv.Length > 0 Then
+        ElseIf serv.Length > 0 And ByService.Checked Then
             DGVPerson.DataSource = EntityPerson.getInstance.getPersonByService(serv)
         ElseIf ByRenting.Checked Then
             Dim data As DataTable = EntityPerson.getInstance.getPersonByRenting()
             DGVPerson.DataSource = data
-            If data.Rows.Count < 1 Then
-                DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
-            End If
         ElseIf ByLate.Checked Then
             Dim data As DataTable = EntityPerson.getInstance.getPersonByLate()
             DGVPerson.DataSource = data
-            If data.Rows.Count < 1 Then
-                DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
-            End If
+        End If
+
+        If DGVPerson.Rows.Count = 0 Then
+            MessageBox.Show("Il n'y a aucun personne de trouvée selon ces paramètres")
+            DGVPerson.DataSource = EntityPerson.getInstance().getPerson()
         End If
     End Function
 
