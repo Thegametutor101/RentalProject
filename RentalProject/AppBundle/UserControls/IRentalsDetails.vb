@@ -32,6 +32,7 @@
             Authorisation.Text = it.Item(5)
             RentalDate.Value = it.Item(6)
             ReturnDate.Value = it.Item(7)
+            Comments.Text = it.Item(8)
         Next
         RentalDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"
         ReturnDate.CustomFormat = "dd-MM-yyyy hh:mm:ss"

@@ -192,7 +192,7 @@ Partial Class IAddInventory
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(781, 62)
-        Me.Label5.TabIndex = 10
+        Me.Label5.TabIndex = 20
         Me.Label5.Text = "Ajout d'Équipement"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '

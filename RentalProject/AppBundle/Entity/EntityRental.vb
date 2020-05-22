@@ -165,7 +165,7 @@ Public Class EntityRental
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
-        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E.autorisation), E.DateEmprunt, E.dateRetour from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id} order by E.ID"
+        command.CommandText = $"Select E.ID, initcap(P.prenom), initcap(P.nom), initcap(P.statut), P.email, initcap(E.autorisation), E.DateEmprunt, E.dateRetour, E.commentaires from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where E.ID = {id} order by E.ID"
         Dim reader = command.ExecuteReader()
         Dim rentalTable As New DataTable("emprunt")
         rentalTable.Load(reader)

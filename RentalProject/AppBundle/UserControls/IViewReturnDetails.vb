@@ -35,12 +35,7 @@
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
         Dim printed As Boolean = False
         If MessageBox.Show($"Êtes-vous sur de vouloir supprimer cet enregistrement?{Environment.NewLine}ATTENTION!!{Environment.NewLine}Si vous confirmez vous ne pourrez plus jamais y avoir accès.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            For Each it As DataGridViewRow In Equipments.Rows
-                If Not IsNothing(it.Cells(0).Value) And Equipments.Rows.Count > 0 Then
-                    ModelReturn.getInstance().deleteReturn(it.Cells(0).Value, printed)
-                    printed = True
-                End If
-            Next
+            ModelReturn.getInstance().deleteReturn(CInt(ID.Text), printed)
             Me.SendToBack()
             viewReturns.loadData()
         End If

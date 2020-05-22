@@ -28,7 +28,7 @@ Public Class ModelReturn
             command.ExecuteNonQuery()
             connection.Close()
             If Not printed Then
-                MessageBox.Show("La suppression s'est effecté avec succès.")
+                MessageBox.Show("Le retour s'est effecté avec succès.")
             End If
         Catch ex As Exception
             MessageBox.Show($"Une erreur c'est produite lors de la sauvegarde du retour. {Environment.NewLine}{ex.Message}")
