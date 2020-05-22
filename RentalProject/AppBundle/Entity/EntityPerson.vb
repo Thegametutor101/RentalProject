@@ -39,7 +39,7 @@ Public Class EntityPerson
     Public Function getPersonneByFirstName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(prenom) like upper('{name}')"
+        command.CommandText = $"Select * from personne where upper(prenom) like upper('%{name}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
@@ -51,7 +51,7 @@ Public Class EntityPerson
     Public Function getPersonneByLastName(name As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(nom) like upper('{name}')"
+        command.CommandText = $"Select * from personne where upper(nom) like upper('%{name}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
@@ -63,7 +63,7 @@ Public Class EntityPerson
     Public Function getPersonneByFirstNameAndLastName(firstName As String, lastName As String) As DataTable
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from personne where upper(prenom) like upper('{firstName}%') and upper(nom) like upper('{lastName}%')"
+        command.CommandText = $"Select * from personne where upper(prenom) like upper('%{firstName}%') and upper(nom) like upper('%{lastName}%')"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("personne")
