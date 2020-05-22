@@ -5,6 +5,7 @@ Public Class IModifyPerson
     Dim mainForm As MainForm
     Dim data As DataTable
     Dim person As IPerson
+    Dim detailPerson As IPersonDetails
 
     Sub New(main As MainForm, items As DataTable, p As IPerson)
         ' This call is required by the designer.
@@ -115,10 +116,18 @@ Public Class IModifyPerson
             ElseIf MessageBox.Show($"Voulez-vous vraiment sauvegarder ces modifications?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 If Status.Text = "Étudiant" Then
                     ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, "", "", Phone.Text, Extension.Text, Email.Text)
-                    Me.SendToBack()
+                    mainForm.InterfacePanel.Controls.Clear()
+                    Dim persons As New IPerson(mainForm)
+                    persons.Dock = DockStyle.Fill
+                    mainForm.InterfacePanel.Controls.Add(persons)
+                    persons.BringToFront()
                 Else
                     ModelPerson.getInstance().modifyPerson(ID.Text, LastName.Text, FirstName.Text, Status.Text, Department.Text, Service.Text, Office.Text, Phone.Text, Extension.Text, Email.Text)
-                    Me.SendToBack()
+                    mainForm.InterfacePanel.Controls.Clear()
+                    Dim persons As New IPerson(mainForm)
+                    persons.Dock = DockStyle.Fill
+                    mainForm.InterfacePanel.Controls.Add(persons)
+                    persons.BringToFront()
                 End If
 
             End If
