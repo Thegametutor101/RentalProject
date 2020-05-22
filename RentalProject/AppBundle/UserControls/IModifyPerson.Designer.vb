@@ -78,7 +78,7 @@ Partial Class IModifyPerson
         Me.SaveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(173, 71)
-        Me.SaveButton.TabIndex = 84
+        Me.SaveButton.TabIndex = 20
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
@@ -96,7 +96,7 @@ Partial Class IModifyPerson
         Me.ResetButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ResetButton.Name = "ResetButton"
         Me.ResetButton.Size = New System.Drawing.Size(173, 71)
-        Me.ResetButton.TabIndex = 83
+        Me.ResetButton.TabIndex = 21
         Me.ResetButton.Text = "Réinitialiser"
         Me.ResetButton.UseVisualStyleBackColor = False
         '
@@ -114,7 +114,7 @@ Partial Class IModifyPerson
         Me.CancelButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(173, 71)
-        Me.CancelButton.TabIndex = 82
+        Me.CancelButton.TabIndex = 22
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '
@@ -216,7 +216,7 @@ Partial Class IModifyPerson
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
         Me.ID.Size = New System.Drawing.Size(100, 22)
-        Me.ID.TabIndex = 90
+        Me.ID.TabIndex = 10
         '
         'LastName
         '
@@ -224,7 +224,7 @@ Partial Class IModifyPerson
         Me.LastName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LastName.Name = "LastName"
         Me.LastName.Size = New System.Drawing.Size(204, 22)
-        Me.LastName.TabIndex = 92
+        Me.LastName.TabIndex = 12
         '
         'Department
         '
@@ -232,7 +232,7 @@ Partial Class IModifyPerson
         Me.Department.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Department.Name = "Department"
         Me.Department.Size = New System.Drawing.Size(204, 22)
-        Me.Department.TabIndex = 93
+        Me.Department.TabIndex = 15
         '
         'Service
         '
@@ -240,7 +240,7 @@ Partial Class IModifyPerson
         Me.Service.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Service.Name = "Service"
         Me.Service.Size = New System.Drawing.Size(204, 22)
-        Me.Service.TabIndex = 94
+        Me.Service.TabIndex = 16
         '
         'Status
         '
@@ -249,10 +249,10 @@ Partial Class IModifyPerson
         Me.Status.FormattingEnabled = True
         Me.Status.Items.AddRange(New Object() {"Étudiant", "Professeur", "Technicien", "Administration"})
         Me.Status.Location = New System.Drawing.Point(176, 203)
-        Me.Status.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Status.Margin = New System.Windows.Forms.Padding(4)
         Me.Status.Name = "Status"
         Me.Status.Size = New System.Drawing.Size(204, 24)
-        Me.Status.TabIndex = 98
+        Me.Status.TabIndex = 13
         '
         'Phone
         '
@@ -261,7 +261,7 @@ Partial Class IModifyPerson
         Me.Phone.Mask = "(000) 000-0000"
         Me.Phone.Name = "Phone"
         Me.Phone.Size = New System.Drawing.Size(204, 22)
-        Me.Phone.TabIndex = 99
+        Me.Phone.TabIndex = 17
         '
         'FirstName
         '
@@ -269,7 +269,7 @@ Partial Class IModifyPerson
         Me.FirstName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FirstName.Name = "FirstName"
         Me.FirstName.Size = New System.Drawing.Size(204, 22)
-        Me.FirstName.TabIndex = 100
+        Me.FirstName.TabIndex = 11
         '
         'Office
         '
@@ -278,7 +278,7 @@ Partial Class IModifyPerson
         Me.Office.Mask = "LL0000"
         Me.Office.Name = "Office"
         Me.Office.Size = New System.Drawing.Size(95, 22)
-        Me.Office.TabIndex = 101
+        Me.Office.TabIndex = 19
         '
         'Extension
         '
@@ -287,7 +287,7 @@ Partial Class IModifyPerson
         Me.Extension.Mask = "999999"
         Me.Extension.Name = "Extension"
         Me.Extension.Size = New System.Drawing.Size(95, 22)
-        Me.Extension.TabIndex = 102
+        Me.Extension.TabIndex = 18
         '
         'Email
         '
@@ -295,7 +295,7 @@ Partial Class IModifyPerson
         Me.Email.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Email.Name = "Email"
         Me.Email.Size = New System.Drawing.Size(204, 22)
-        Me.Email.TabIndex = 104
+        Me.Email.TabIndex = 14
         '
         'Label10
         '

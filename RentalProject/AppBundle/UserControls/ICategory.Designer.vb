@@ -73,7 +73,7 @@ Partial Class ICategory
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(69, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 15
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label5
@@ -114,7 +114,7 @@ Partial Class ICategory
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(180, 76)
-        Me.SearchButton.TabIndex = 18
+        Me.SearchButton.TabIndex = 12
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'ModifyButton
@@ -131,7 +131,7 @@ Partial Class ICategory
         Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(169, 76)
-        Me.ModifyButton.TabIndex = 17
+        Me.ModifyButton.TabIndex = 13
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
         'DeleteButton
@@ -148,7 +148,7 @@ Partial Class ICategory
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(169, 76)
-        Me.DeleteButton.TabIndex = 11
+        Me.DeleteButton.TabIndex = 14
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'Panel3
@@ -197,7 +197,7 @@ Partial Class ICategory
         Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(235, 26)
-        Me.TBName.TabIndex = 19
+        Me.TBName.TabIndex = 10
         '
         'arrow
         '
@@ -265,7 +265,7 @@ Partial Class ICategory
         Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(169, 79)
-        Me.AddButton.TabIndex = 23
+        Me.AddButton.TabIndex = 11
         Me.AddButton.UseVisualStyleBackColor = False
         '
         'Panel4

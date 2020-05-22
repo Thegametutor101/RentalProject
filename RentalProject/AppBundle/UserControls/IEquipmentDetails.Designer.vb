@@ -24,6 +24,7 @@ Partial Class IEquipmentDetails
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.EquipmentID = New System.Windows.Forms.TextBox()
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.RentalDate = New System.Windows.Forms.DateTimePicker()
@@ -47,7 +48,6 @@ Partial Class IEquipmentDetails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Authorisation = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,8 +73,20 @@ Partial Class IEquipmentDetails
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(69, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 21
         Me.BackButton.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(781, 62)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "Détails d'un Équipement"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'EquipmentID
         '
@@ -84,7 +96,7 @@ Partial Class IEquipmentDetails
         Me.EquipmentID.Name = "EquipmentID"
         Me.EquipmentID.ReadOnly = True
         Me.EquipmentID.Size = New System.Drawing.Size(96, 22)
-        Me.EquipmentID.TabIndex = 80
+        Me.EquipmentID.TabIndex = 10
         '
         'ReturnDate
         '
@@ -93,7 +105,7 @@ Partial Class IEquipmentDetails
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(251, 22)
-        Me.ReturnDate.TabIndex = 79
+        Me.ReturnDate.TabIndex = 20
         '
         'RentalDate
         '
@@ -102,7 +114,7 @@ Partial Class IEquipmentDetails
         Me.RentalDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(251, 22)
-        Me.RentalDate.TabIndex = 78
+        Me.RentalDate.TabIndex = 19
         '
         'EquipmentState
         '
@@ -112,7 +124,7 @@ Partial Class IEquipmentDetails
         Me.EquipmentState.Name = "EquipmentState"
         Me.EquipmentState.ReadOnly = True
         Me.EquipmentState.Size = New System.Drawing.Size(232, 22)
-        Me.EquipmentState.TabIndex = 76
+        Me.EquipmentState.TabIndex = 13
         '
         'CategoryName
         '
@@ -122,7 +134,7 @@ Partial Class IEquipmentDetails
         Me.CategoryName.Name = "CategoryName"
         Me.CategoryName.ReadOnly = True
         Me.CategoryName.Size = New System.Drawing.Size(215, 22)
-        Me.CategoryName.TabIndex = 75
+        Me.CategoryName.TabIndex = 12
         '
         'EquipmentName
         '
@@ -132,7 +144,7 @@ Partial Class IEquipmentDetails
         Me.EquipmentName.Name = "EquipmentName"
         Me.EquipmentName.ReadOnly = True
         Me.EquipmentName.Size = New System.Drawing.Size(539, 22)
-        Me.EquipmentName.TabIndex = 74
+        Me.EquipmentName.TabIndex = 11
         '
         'Label12
         '
@@ -202,7 +214,7 @@ Partial Class IEquipmentDetails
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         Me.Email.Size = New System.Drawing.Size(232, 22)
-        Me.Email.TabIndex = 89
+        Me.Email.TabIndex = 17
         '
         'RenterFirstName
         '
@@ -212,7 +224,7 @@ Partial Class IEquipmentDetails
         Me.RenterFirstName.Name = "RenterFirstName"
         Me.RenterFirstName.ReadOnly = True
         Me.RenterFirstName.Size = New System.Drawing.Size(215, 22)
-        Me.RenterFirstName.TabIndex = 88
+        Me.RenterFirstName.TabIndex = 14
         '
         'RenterLastName
         '
@@ -222,7 +234,7 @@ Partial Class IEquipmentDetails
         Me.RenterLastName.Name = "RenterLastName"
         Me.RenterLastName.ReadOnly = True
         Me.RenterLastName.Size = New System.Drawing.Size(232, 22)
-        Me.RenterLastName.TabIndex = 87
+        Me.RenterLastName.TabIndex = 15
         '
         'RenterStatus
         '
@@ -232,7 +244,7 @@ Partial Class IEquipmentDetails
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
         Me.RenterStatus.Size = New System.Drawing.Size(215, 22)
-        Me.RenterStatus.TabIndex = 86
+        Me.RenterStatus.TabIndex = 16
         '
         'Label6
         '
@@ -292,7 +304,7 @@ Partial Class IEquipmentDetails
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
         Me.Authorisation.Size = New System.Drawing.Size(215, 22)
-        Me.Authorisation.TabIndex = 91
+        Me.Authorisation.TabIndex = 18
         '
         'Label10
         '
@@ -303,18 +315,6 @@ Partial Class IEquipmentDetails
         Me.Label10.Size = New System.Drawing.Size(100, 20)
         Me.Label10.TabIndex = 90
         Me.Label10.Text = "Autorisé par"
-        '
-        'Label13
-        '
-        Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label13.Location = New System.Drawing.Point(69, 0)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(712, 62)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "Détails d'un Équipement"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'IEquipmentDetails
         '
@@ -345,7 +345,7 @@ Partial Class IEquipmentDetails
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "IEquipmentDetails"
         Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)

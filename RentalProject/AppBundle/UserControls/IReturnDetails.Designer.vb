@@ -73,7 +73,7 @@ Partial Class IReturnDetails
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(69, 71)
-        Me.BackButton.TabIndex = 110
+        Me.BackButton.TabIndex = 20
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label13
@@ -112,7 +112,7 @@ Partial Class IReturnDetails
         Me.EquipReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.EquipReturnButton.Name = "EquipReturnButton"
         Me.EquipReturnButton.Size = New System.Drawing.Size(222, 71)
-        Me.EquipReturnButton.TabIndex = 114
+        Me.EquipReturnButton.TabIndex = 19
         Me.EquipReturnButton.Text = "Retourner un equipement"
         Me.EquipReturnButton.UseVisualStyleBackColor = False
         '
@@ -130,7 +130,7 @@ Partial Class IReturnDetails
         Me.FullReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FullReturnButton.Name = "FullReturnButton"
         Me.FullReturnButton.Size = New System.Drawing.Size(222, 71)
-        Me.FullReturnButton.TabIndex = 115
+        Me.FullReturnButton.TabIndex = 18
         Me.FullReturnButton.Text = "Retourner au complet"
         Me.FullReturnButton.UseVisualStyleBackColor = False
         '
@@ -172,7 +172,7 @@ Partial Class IReturnDetails
         Me.DGVEquipments.RowHeadersWidth = 51
         Me.DGVEquipments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVEquipments.Size = New System.Drawing.Size(489, 158)
-        Me.DGVEquipments.TabIndex = 108
+        Me.DGVEquipments.TabIndex = 17
         '
         'Label14
         '
@@ -204,7 +204,7 @@ Partial Class IReturnDetails
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         Me.Email.Size = New System.Drawing.Size(266, 24)
-        Me.Email.TabIndex = 106
+        Me.Email.TabIndex = 15
         '
         'RentalID
         '
@@ -216,7 +216,7 @@ Partial Class IReturnDetails
         Me.RentalID.Name = "RentalID"
         Me.RentalID.ReadOnly = True
         Me.RentalID.Size = New System.Drawing.Size(139, 22)
-        Me.RentalID.TabIndex = 57
+        Me.RentalID.TabIndex = 10
         '
         'RentalDate
         '
@@ -225,7 +225,7 @@ Partial Class IReturnDetails
         Me.RentalDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(267, 22)
-        Me.RentalDate.TabIndex = 55
+        Me.RentalDate.TabIndex = 16
         '
         'Authorisation
         '
@@ -237,7 +237,7 @@ Partial Class IReturnDetails
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
         Me.Authorisation.Size = New System.Drawing.Size(139, 22)
-        Me.Authorisation.TabIndex = 54
+        Me.Authorisation.TabIndex = 11
         '
         'RenterFirstName
         '
@@ -249,7 +249,7 @@ Partial Class IReturnDetails
         Me.RenterFirstName.Name = "RenterFirstName"
         Me.RenterFirstName.ReadOnly = True
         Me.RenterFirstName.Size = New System.Drawing.Size(139, 22)
-        Me.RenterFirstName.TabIndex = 49
+        Me.RenterFirstName.TabIndex = 12
         '
         'RenterLastName
         '
@@ -261,7 +261,7 @@ Partial Class IReturnDetails
         Me.RenterLastName.Name = "RenterLastName"
         Me.RenterLastName.ReadOnly = True
         Me.RenterLastName.Size = New System.Drawing.Size(139, 22)
-        Me.RenterLastName.TabIndex = 48
+        Me.RenterLastName.TabIndex = 13
         '
         'RenterStatus
         '
@@ -273,7 +273,7 @@ Partial Class IReturnDetails
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
         Me.RenterStatus.Size = New System.Drawing.Size(139, 22)
-        Me.RenterStatus.TabIndex = 47
+        Me.RenterStatus.TabIndex = 14
         '
         'Label11
         '

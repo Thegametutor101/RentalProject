@@ -98,7 +98,7 @@ Partial Class IPersonDetails
         Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(216, 62)
-        Me.ModifyButton.TabIndex = 2
+        Me.ModifyButton.TabIndex = 21
         Me.ModifyButton.Text = "Modifier cette personne"
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
@@ -114,7 +114,7 @@ Partial Class IPersonDetails
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(93, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 22
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Panel2
@@ -164,7 +164,7 @@ Partial Class IPersonDetails
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         Me.Email.Size = New System.Drawing.Size(163, 22)
-        Me.Email.TabIndex = 135
+        Me.Email.TabIndex = 14
         '
         'Status
         '
@@ -174,7 +174,7 @@ Partial Class IPersonDetails
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
         Me.Status.Size = New System.Drawing.Size(163, 22)
-        Me.Status.TabIndex = 134
+        Me.Status.TabIndex = 13
         '
         'Extension
         '
@@ -184,7 +184,7 @@ Partial Class IPersonDetails
         Me.Extension.Name = "Extension"
         Me.Extension.ReadOnly = True
         Me.Extension.Size = New System.Drawing.Size(100, 22)
-        Me.Extension.TabIndex = 133
+        Me.Extension.TabIndex = 19
         '
         'Phone
         '
@@ -194,7 +194,7 @@ Partial Class IPersonDetails
         Me.Phone.Name = "Phone"
         Me.Phone.ReadOnly = True
         Me.Phone.Size = New System.Drawing.Size(163, 22)
-        Me.Phone.TabIndex = 132
+        Me.Phone.TabIndex = 18
         '
         'Office
         '
@@ -204,7 +204,7 @@ Partial Class IPersonDetails
         Me.Office.Name = "Office"
         Me.Office.ReadOnly = True
         Me.Office.Size = New System.Drawing.Size(100, 22)
-        Me.Office.TabIndex = 131
+        Me.Office.TabIndex = 17
         '
         'Service
         '
@@ -214,7 +214,7 @@ Partial Class IPersonDetails
         Me.Service.Name = "Service"
         Me.Service.ReadOnly = True
         Me.Service.Size = New System.Drawing.Size(163, 22)
-        Me.Service.TabIndex = 130
+        Me.Service.TabIndex = 16
         '
         'Department
         '
@@ -224,7 +224,7 @@ Partial Class IPersonDetails
         Me.Department.Name = "Department"
         Me.Department.ReadOnly = True
         Me.Department.Size = New System.Drawing.Size(163, 22)
-        Me.Department.TabIndex = 129
+        Me.Department.TabIndex = 15
         '
         'LastName
         '
@@ -234,7 +234,7 @@ Partial Class IPersonDetails
         Me.LastName.Name = "LastName"
         Me.LastName.ReadOnly = True
         Me.LastName.Size = New System.Drawing.Size(163, 22)
-        Me.LastName.TabIndex = 128
+        Me.LastName.TabIndex = 12
         '
         'FirstName
         '
@@ -244,7 +244,7 @@ Partial Class IPersonDetails
         Me.FirstName.Name = "FirstName"
         Me.FirstName.ReadOnly = True
         Me.FirstName.Size = New System.Drawing.Size(163, 22)
-        Me.FirstName.TabIndex = 127
+        Me.FirstName.TabIndex = 11
         '
         'ID
         '
@@ -254,7 +254,7 @@ Partial Class IPersonDetails
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
         Me.ID.Size = New System.Drawing.Size(100, 22)
-        Me.ID.TabIndex = 126
+        Me.ID.TabIndex = 10
         '
         'Label9
         '
@@ -379,7 +379,7 @@ Partial Class IPersonDetails
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(216, 427)
-        Me.ListView1.TabIndex = 1
+        Me.ListView1.TabIndex = 20
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '

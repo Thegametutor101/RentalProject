@@ -64,7 +64,7 @@ Partial Class ICategorySearch
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(93, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 15
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label5
@@ -101,7 +101,7 @@ Partial Class ICategorySearch
         Me.TBQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBQuantity.Name = "TBQuantity"
         Me.TBQuantity.Size = New System.Drawing.Size(136, 24)
-        Me.TBQuantity.TabIndex = 18
+        Me.TBQuantity.TabIndex = 13
         '
         'ByQuantity
         '
@@ -111,7 +111,7 @@ Partial Class ICategorySearch
         Me.ByQuantity.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByQuantity.Name = "ByQuantity"
         Me.ByQuantity.Size = New System.Drawing.Size(93, 24)
-        Me.ByQuantity.TabIndex = 17
+        Me.ByQuantity.TabIndex = 12
         Me.ByQuantity.TabStop = True
         Me.ByQuantity.Text = "Quantité"
         Me.ByQuantity.UseVisualStyleBackColor = True
@@ -124,7 +124,7 @@ Partial Class ICategorySearch
         Me.TBNom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TBNom.Name = "TBNom"
         Me.TBNom.Size = New System.Drawing.Size(136, 24)
-        Me.TBNom.TabIndex = 15
+        Me.TBNom.TabIndex = 11
         '
         'Label1
         '
@@ -144,7 +144,7 @@ Partial Class ICategorySearch
         Me.ByName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByName.Name = "ByName"
         Me.ByName.Size = New System.Drawing.Size(65, 24)
-        Me.ByName.TabIndex = 11
+        Me.ByName.TabIndex = 10
         Me.ByName.TabStop = True
         Me.ByName.Text = "Nom"
         Me.ByName.UseVisualStyleBackColor = True
@@ -200,7 +200,7 @@ Partial Class ICategorySearch
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(126, 63)
-        Me.SearchButton.TabIndex = 12
+        Me.SearchButton.TabIndex = 14
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'ICategorySearch

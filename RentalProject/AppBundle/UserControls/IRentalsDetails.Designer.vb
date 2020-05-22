@@ -78,7 +78,7 @@ Partial Class IRentalsDetails
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(93, 62)
-        Me.BackButton.TabIndex = 26
+        Me.BackButton.TabIndex = 22
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label13
@@ -117,7 +117,7 @@ Partial Class IRentalsDetails
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(222, 71)
-        Me.ReturnButton.TabIndex = 117
+        Me.ReturnButton.TabIndex = 21
         Me.ReturnButton.Text = "Retourner cet Emprunt"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
@@ -135,7 +135,7 @@ Partial Class IRentalsDetails
         Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(222, 71)
-        Me.ModifyButton.TabIndex = 116
+        Me.ModifyButton.TabIndex = 20
         Me.ModifyButton.Text = "Modifier la date de retour et commentaires"
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
@@ -179,7 +179,7 @@ Partial Class IRentalsDetails
         Me.Comments.ReadOnly = True
         Me.Comments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.Comments.Size = New System.Drawing.Size(201, 140)
-        Me.Comments.TabIndex = 110
+        Me.Comments.TabIndex = 17
         '
         'Label4
         '
@@ -204,7 +204,7 @@ Partial Class IRentalsDetails
         Me.DGVEquipments.RowHeadersWidth = 51
         Me.DGVEquipments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVEquipments.Size = New System.Drawing.Size(317, 140)
-        Me.DGVEquipments.TabIndex = 108
+        Me.DGVEquipments.TabIndex = 16
         '
         'Label14
         '
@@ -236,7 +236,7 @@ Partial Class IRentalsDetails
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         Me.Email.Size = New System.Drawing.Size(453, 24)
-        Me.Email.TabIndex = 106
+        Me.Email.TabIndex = 15
         '
         'RentalID
         '
@@ -248,7 +248,7 @@ Partial Class IRentalsDetails
         Me.RentalID.Name = "RentalID"
         Me.RentalID.ReadOnly = True
         Me.RentalID.Size = New System.Drawing.Size(152, 22)
-        Me.RentalID.TabIndex = 57
+        Me.RentalID.TabIndex = 10
         '
         'ReturnDate
         '
@@ -257,7 +257,7 @@ Partial Class IRentalsDetails
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(249, 22)
-        Me.ReturnDate.TabIndex = 56
+        Me.ReturnDate.TabIndex = 19
         '
         'RentalDate
         '
@@ -266,7 +266,7 @@ Partial Class IRentalsDetails
         Me.RentalDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(249, 22)
-        Me.RentalDate.TabIndex = 55
+        Me.RentalDate.TabIndex = 18
         '
         'Authorisation
         '
@@ -278,7 +278,7 @@ Partial Class IRentalsDetails
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
         Me.Authorisation.Size = New System.Drawing.Size(153, 22)
-        Me.Authorisation.TabIndex = 54
+        Me.Authorisation.TabIndex = 11
         '
         'RenterFirstName
         '
@@ -290,7 +290,7 @@ Partial Class IRentalsDetails
         Me.RenterFirstName.Name = "RenterFirstName"
         Me.RenterFirstName.ReadOnly = True
         Me.RenterFirstName.Size = New System.Drawing.Size(152, 22)
-        Me.RenterFirstName.TabIndex = 49
+        Me.RenterFirstName.TabIndex = 12
         '
         'RenterLastName
         '
@@ -302,7 +302,7 @@ Partial Class IRentalsDetails
         Me.RenterLastName.Name = "RenterLastName"
         Me.RenterLastName.ReadOnly = True
         Me.RenterLastName.Size = New System.Drawing.Size(153, 22)
-        Me.RenterLastName.TabIndex = 48
+        Me.RenterLastName.TabIndex = 13
         '
         'RenterStatus
         '
@@ -314,7 +314,7 @@ Partial Class IRentalsDetails
         Me.RenterStatus.Name = "RenterStatus"
         Me.RenterStatus.ReadOnly = True
         Me.RenterStatus.Size = New System.Drawing.Size(152, 22)
-        Me.RenterStatus.TabIndex = 47
+        Me.RenterStatus.TabIndex = 14
         '
         'Label12
         '

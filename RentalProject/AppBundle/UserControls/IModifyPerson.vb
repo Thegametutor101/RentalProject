@@ -105,7 +105,7 @@ Public Class IModifyPerson
            (String.IsNullOrEmpty(Service.Text) And Status.Text <> "Étudiant") Or
            String.IsNullOrEmpty(Phone.Text) Then
             MessageBox.Show("Veuillez remplir tous les champs avant de soumettre.")
-        ElseIf Not Replace(phonecheck, " ", "").Length = 14 Then
+        ElseIf Not Replace(phonecheck, " ", "").Length = 13 Then
             MessageBox.Show("Ce numéro de téléphone est invalide.")
         ElseIf Not IsEmail(Email.Text) Then
             MessageBox.Show("Veuillez entrer une adresse de courriel valide.")

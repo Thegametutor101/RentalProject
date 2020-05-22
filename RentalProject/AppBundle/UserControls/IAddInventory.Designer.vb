@@ -80,7 +80,7 @@ Partial Class IAddInventory
         Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(251, 22)
-        Me.TBName.TabIndex = 5
+        Me.TBName.TabIndex = 11
         '
         'CBCat
         '
@@ -91,7 +91,7 @@ Partial Class IAddInventory
         Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
         Me.CBCat.Size = New System.Drawing.Size(199, 24)
-        Me.CBCat.TabIndex = 7
+        Me.CBCat.TabIndex = 12
         '
         'ID
         '
@@ -137,7 +137,7 @@ Partial Class IAddInventory
         Me.SaveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(173, 71)
-        Me.SaveButton.TabIndex = 85
+        Me.SaveButton.TabIndex = 15
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
@@ -155,7 +155,7 @@ Partial Class IAddInventory
         Me.CancelButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(173, 71)
-        Me.CancelButton.TabIndex = 84
+        Me.CancelButton.TabIndex = 16
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '
@@ -181,7 +181,7 @@ Partial Class IAddInventory
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(69, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 17
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label5
@@ -206,7 +206,7 @@ Partial Class IAddInventory
         Me.CBEtat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBEtat.Name = "CBEtat"
         Me.CBEtat.Size = New System.Drawing.Size(251, 24)
-        Me.CBEtat.TabIndex = 86
+        Me.CBEtat.TabIndex = 14
         '
         'NewCategoryButton
         '
@@ -222,7 +222,7 @@ Partial Class IAddInventory
         Me.NewCategoryButton.Margin = New System.Windows.Forms.Padding(4)
         Me.NewCategoryButton.Name = "NewCategoryButton"
         Me.NewCategoryButton.Size = New System.Drawing.Size(44, 26)
-        Me.NewCategoryButton.TabIndex = 103
+        Me.NewCategoryButton.TabIndex = 13
         Me.NewCategoryButton.Text = "+"
         Me.NewCategoryButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.NewCategoryButton.UseVisualStyleBackColor = False

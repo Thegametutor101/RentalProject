@@ -100,7 +100,7 @@ Partial Class IEmprunt
         Me.TbAutorise.MaxLength = 30
         Me.TbAutorise.Name = "TbAutorise"
         Me.TbAutorise.Size = New System.Drawing.Size(265, 22)
-        Me.TbAutorise.TabIndex = 6
+        Me.TbAutorise.TabIndex = 15
         '
         'DateTimePicker1
         '
@@ -109,7 +109,7 @@ Partial Class IEmprunt
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(311, 22)
-        Me.DateTimePicker1.TabIndex = 7
+        Me.DateTimePicker1.TabIndex = 19
         '
         'CbCategorie
         '
@@ -120,7 +120,7 @@ Partial Class IEmprunt
         Me.CbCategorie.Margin = New System.Windows.Forms.Padding(4)
         Me.CbCategorie.Name = "CbCategorie"
         Me.CbCategorie.Size = New System.Drawing.Size(265, 24)
-        Me.CbCategorie.TabIndex = 9
+        Me.CbCategorie.TabIndex = 12
         '
         'CbEquipement
         '
@@ -132,7 +132,7 @@ Partial Class IEmprunt
         Me.CbEquipement.Margin = New System.Windows.Forms.Padding(4)
         Me.CbEquipement.Name = "CbEquipement"
         Me.CbEquipement.Size = New System.Drawing.Size(213, 24)
-        Me.CbEquipement.TabIndex = 10
+        Me.CbEquipement.TabIndex = 13
         '
         'NumericUpDownJour
         '
@@ -141,7 +141,7 @@ Partial Class IEmprunt
         Me.NumericUpDownJour.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
         Me.NumericUpDownJour.Name = "NumericUpDownJour"
         Me.NumericUpDownJour.Size = New System.Drawing.Size(81, 22)
-        Me.NumericUpDownJour.TabIndex = 11
+        Me.NumericUpDownJour.TabIndex = 16
         '
         'Label4
         '
@@ -184,7 +184,7 @@ Partial Class IEmprunt
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(103, 24)
-        Me.CheckBox1.TabIndex = 16
+        Me.CheckBox1.TabIndex = 18
         Me.CheckBox1.Text = "Date Fixe"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -232,7 +232,7 @@ Partial Class IEmprunt
         Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(70, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 24
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label11
@@ -256,7 +256,7 @@ Partial Class IEmprunt
         Me.Comments.Name = "Comments"
         Me.Comments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.Comments.Size = New System.Drawing.Size(327, 106)
-        Me.Comments.TabIndex = 87
+        Me.Comments.TabIndex = 20
         '
         'Label10
         '
@@ -294,7 +294,7 @@ Partial Class IEmprunt
         Me.SaveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(173, 71)
-        Me.SaveButton.TabIndex = 87
+        Me.SaveButton.TabIndex = 21
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
@@ -312,7 +312,7 @@ Partial Class IEmprunt
         Me.ResetButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ResetButton.Name = "ResetButton"
         Me.ResetButton.Size = New System.Drawing.Size(173, 71)
-        Me.ResetButton.TabIndex = 86
+        Me.ResetButton.TabIndex = 22
         Me.ResetButton.Text = "Réinitialiser"
         Me.ResetButton.UseVisualStyleBackColor = False
         '
@@ -330,7 +330,7 @@ Partial Class IEmprunt
         Me.CancelButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(173, 71)
-        Me.CancelButton.TabIndex = 85
+        Me.CancelButton.TabIndex = 23
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '
@@ -392,7 +392,7 @@ Partial Class IEmprunt
         Me.NewPersonButton.Margin = New System.Windows.Forms.Padding(4)
         Me.NewPersonButton.Name = "NewPersonButton"
         Me.NewPersonButton.Size = New System.Drawing.Size(44, 26)
-        Me.NewPersonButton.TabIndex = 102
+        Me.NewPersonButton.TabIndex = 11
         Me.NewPersonButton.Text = "+"
         Me.NewPersonButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.NewPersonButton.UseVisualStyleBackColor = False
@@ -411,7 +411,7 @@ Partial Class IEmprunt
         Me.SelectButton.Margin = New System.Windows.Forms.Padding(4)
         Me.SelectButton.Name = "SelectButton"
         Me.SelectButton.Size = New System.Drawing.Size(44, 26)
-        Me.SelectButton.TabIndex = 101
+        Me.SelectButton.TabIndex = 14
         Me.SelectButton.Text = "->"
         Me.SelectButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.SelectButton.UseVisualStyleBackColor = False
@@ -423,7 +423,7 @@ Partial Class IEmprunt
         Me.Person.MaxLength = 30
         Me.Person.Name = "Person"
         Me.Person.Size = New System.Drawing.Size(213, 22)
-        Me.Person.TabIndex = 103
+        Me.Person.TabIndex = 10
         '
         'Label12
         '

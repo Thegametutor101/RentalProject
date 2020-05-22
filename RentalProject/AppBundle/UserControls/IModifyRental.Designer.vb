@@ -62,7 +62,7 @@ Partial Class IModifyRental
         Me.RentalID.Name = "RentalID"
         Me.RentalID.ReadOnly = True
         Me.RentalID.Size = New System.Drawing.Size(96, 22)
-        Me.RentalID.TabIndex = 69
+        Me.RentalID.TabIndex = 10
         '
         'ReturnDate
         '
@@ -71,7 +71,7 @@ Partial Class IModifyRental
         Me.ReturnDate.Location = New System.Drawing.Point(91, 418)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(286, 22)
-        Me.ReturnDate.TabIndex = 68
+        Me.ReturnDate.TabIndex = 17
         '
         'RentalDate
         '
@@ -80,7 +80,7 @@ Partial Class IModifyRental
         Me.RentalDate.Location = New System.Drawing.Point(91, 278)
         Me.RentalDate.Name = "RentalDate"
         Me.RentalDate.Size = New System.Drawing.Size(286, 22)
-        Me.RentalDate.TabIndex = 67
+        Me.RentalDate.TabIndex = 13
         '
         'Authorisation
         '
@@ -90,7 +90,7 @@ Partial Class IModifyRental
         Me.Authorisation.Name = "Authorisation"
         Me.Authorisation.ReadOnly = True
         Me.Authorisation.Size = New System.Drawing.Size(194, 22)
-        Me.Authorisation.TabIndex = 66
+        Me.Authorisation.TabIndex = 12
         '
         'RenterName
         '
@@ -100,7 +100,7 @@ Partial Class IModifyRental
         Me.RenterName.Name = "RenterName"
         Me.RenterName.ReadOnly = True
         Me.RenterName.Size = New System.Drawing.Size(194, 22)
-        Me.RenterName.TabIndex = 64
+        Me.RenterName.TabIndex = 11
         '
         'Label12
         '
@@ -180,7 +180,7 @@ Partial Class IModifyRental
         Me.Comments.Name = "Comments"
         Me.Comments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.Comments.Size = New System.Drawing.Size(287, 162)
-        Me.Comments.TabIndex = 73
+        Me.Comments.TabIndex = 18
         '
         'Label2
         '
@@ -201,7 +201,7 @@ Partial Class IModifyRental
         Me.NumericHours.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
         Me.NumericHours.Name = "NumericHours"
         Me.NumericHours.Size = New System.Drawing.Size(81, 22)
-        Me.NumericHours.TabIndex = 76
+        Me.NumericHours.TabIndex = 15
         '
         'Label5
         '
@@ -222,7 +222,7 @@ Partial Class IModifyRental
         Me.NumericDays.Maximum = New Decimal(New Integer() {720, 0, 0, 0})
         Me.NumericDays.Name = "NumericDays"
         Me.NumericDays.Size = New System.Drawing.Size(81, 22)
-        Me.NumericDays.TabIndex = 74
+        Me.NumericDays.TabIndex = 14
         '
         'CheckBox1
         '
@@ -232,7 +232,7 @@ Partial Class IModifyRental
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(103, 24)
-        Me.CheckBox1.TabIndex = 78
+        Me.CheckBox1.TabIndex = 16
         Me.CheckBox1.Text = "Date Fixe"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -260,7 +260,7 @@ Partial Class IModifyRental
         Me.SaveButton.Location = New System.Drawing.Point(262, 0)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(173, 71)
-        Me.SaveButton.TabIndex = 84
+        Me.SaveButton.TabIndex = 19
         Me.SaveButton.Text = "Sauvegarder"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
@@ -277,7 +277,7 @@ Partial Class IModifyRental
         Me.ResetButton.Location = New System.Drawing.Point(435, 0)
         Me.ResetButton.Name = "ResetButton"
         Me.ResetButton.Size = New System.Drawing.Size(173, 71)
-        Me.ResetButton.TabIndex = 83
+        Me.ResetButton.TabIndex = 20
         Me.ResetButton.Text = "Réinitialiser"
         Me.ResetButton.UseVisualStyleBackColor = False
         '
@@ -294,7 +294,7 @@ Partial Class IModifyRental
         Me.CancelButton.Location = New System.Drawing.Point(608, 0)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(173, 71)
-        Me.CancelButton.TabIndex = 82
+        Me.CancelButton.TabIndex = 21
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '

@@ -103,7 +103,7 @@ Partial Class IInventory
         Me.CategoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CategoryButton.Name = "CategoryButton"
         Me.CategoryButton.Size = New System.Drawing.Size(125, 71)
-        Me.CategoryButton.TabIndex = 14
+        Me.CategoryButton.TabIndex = 10
         Me.CategoryButton.Text = "Categories"
         Me.CategoryButton.UseVisualStyleBackColor = False
         '
@@ -146,7 +146,7 @@ Partial Class IInventory
         Me.BtAutre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtAutre.Name = "BtAutre"
         Me.BtAutre.Size = New System.Drawing.Size(155, 71)
-        Me.BtAutre.TabIndex = 15
+        Me.BtAutre.TabIndex = 11
         Me.BtAutre.Text = "Équipements sans Catégorie"
         Me.BtAutre.UseVisualStyleBackColor = False
         '
@@ -164,7 +164,7 @@ Partial Class IInventory
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(125, 71)
-        Me.Button1.TabIndex = 14
+        Me.Button1.TabIndex = 12
         Me.Button1.UseVisualStyleBackColor = False
         '
         'DeleteButton
@@ -181,7 +181,7 @@ Partial Class IInventory
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(125, 71)
-        Me.DeleteButton.TabIndex = 12
+        Me.DeleteButton.TabIndex = 13
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'ModifyButton
@@ -198,7 +198,7 @@ Partial Class IInventory
         Me.ModifyButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(125, 71)
-        Me.ModifyButton.TabIndex = 11
+        Me.ModifyButton.TabIndex = 14
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
         'AddInventoryButton
@@ -215,7 +215,7 @@ Partial Class IInventory
         Me.AddInventoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AddInventoryButton.Name = "AddInventoryButton"
         Me.AddInventoryButton.Size = New System.Drawing.Size(125, 71)
-        Me.AddInventoryButton.TabIndex = 10
+        Me.AddInventoryButton.TabIndex = 15
         Me.AddInventoryButton.UseVisualStyleBackColor = False
         '
         'Panel6

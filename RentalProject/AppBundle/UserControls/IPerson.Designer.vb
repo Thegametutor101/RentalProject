@@ -47,7 +47,7 @@ Partial Class IPerson
         Me.DGVPerson.ColumnHeadersHeight = 29
         Me.DGVPerson.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVPerson.Location = New System.Drawing.Point(0, 0)
-        Me.DGVPerson.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVPerson.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVPerson.MultiSelect = False
         Me.DGVPerson.Name = "DGVPerson"
         Me.DGVPerson.ReadOnly = True
@@ -105,7 +105,7 @@ Partial Class IPerson
         Me.DetailsButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.DetailsButton.Name = "DetailsButton"
         Me.DetailsButton.Size = New System.Drawing.Size(139, 71)
-        Me.DetailsButton.TabIndex = 17
+        Me.DetailsButton.TabIndex = 14
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
         '
@@ -120,10 +120,10 @@ Partial Class IPerson
         Me.SearchButton.ForeColor = System.Drawing.Color.White
         Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
         Me.SearchButton.Location = New System.Drawing.Point(281, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(125, 71)
-        Me.SearchButton.TabIndex = 15
+        Me.SearchButton.TabIndex = 13
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'DeleteButton
@@ -137,10 +137,10 @@ Partial Class IPerson
         Me.DeleteButton.ForeColor = System.Drawing.Color.White
         Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
         Me.DeleteButton.Location = New System.Drawing.Point(406, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(125, 71)
-        Me.DeleteButton.TabIndex = 14
+        Me.DeleteButton.TabIndex = 12
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'ModifyButton
@@ -154,10 +154,10 @@ Partial Class IPerson
         Me.ModifyButton.ForeColor = System.Drawing.Color.White
         Me.ModifyButton.Image = Global.RentalProject.My.Resources.Resources.baseline_create_white_18dp
         Me.ModifyButton.Location = New System.Drawing.Point(531, 0)
-        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ModifyButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ModifyButton.Name = "ModifyButton"
         Me.ModifyButton.Size = New System.Drawing.Size(125, 71)
-        Me.ModifyButton.TabIndex = 16
+        Me.ModifyButton.TabIndex = 11
         Me.ModifyButton.UseVisualStyleBackColor = False
         '
         'AddButton
@@ -171,10 +171,10 @@ Partial Class IPerson
         Me.AddButton.ForeColor = System.Drawing.Color.White
         Me.AddButton.Image = Global.RentalProject.My.Resources.Resources.baseline_add_white_18dp
         Me.AddButton.Location = New System.Drawing.Point(656, 0)
-        Me.AddButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.AddButton.Margin = New System.Windows.Forms.Padding(4)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(125, 71)
-        Me.AddButton.TabIndex = 13
+        Me.AddButton.TabIndex = 10
         Me.AddButton.UseVisualStyleBackColor = False
         '
         'Panel6
@@ -197,7 +197,7 @@ Partial Class IPerson
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IPerson"
         Me.Size = New System.Drawing.Size(781, 542)

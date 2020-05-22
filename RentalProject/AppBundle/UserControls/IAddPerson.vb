@@ -54,7 +54,7 @@ Public Class IAddPerson
             Not String.IsNullOrEmpty(TBPrenom.Text) And
             Not String.IsNullOrEmpty(CBStatut.Text) And
             Not String.IsNullOrEmpty(TBTelephone.Text) Then
-            If Replace(phone, " ", "").Length = 14 Then
+            If Replace(phone, " ", "").Length = 13 Then
                 If IsEmail(Email.Text) Then
                     If MessageBox.Show($"Est-ce que cette addresse courriel est valide?{Environment.NewLine}{Email.Text}", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                         If CBStatut.Text <> "Étudiant" Then

@@ -51,9 +51,10 @@ Partial Class ICategorieAutre
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(8, 4, 0, 0)
-        Me.Label1.Size = New System.Drawing.Size(198, 72)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(11, 5, 0, 0)
+        Me.Label1.Size = New System.Drawing.Size(234, 85)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Vous pouvez sélectionner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "un ou plusieurs équipements" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "à ajouter à la catégorie" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
     "choisie plus bas."
@@ -64,9 +65,9 @@ Partial Class ICategorieAutre
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(586, 58)
+        Me.Panel1.Size = New System.Drawing.Size(781, 71)
         Me.Panel1.TabIndex = 5
         '
         'BackButton
@@ -77,9 +78,9 @@ Partial Class ICategorieAutre
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Image = Global.RentalProject.My.Resources.Resources.baseline_backward_black_18dp_4x
         Me.BackButton.Location = New System.Drawing.Point(0, 0)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(70, 58)
+        Me.BackButton.Size = New System.Drawing.Size(93, 71)
         Me.BackButton.TabIndex = 12
         Me.BackButton.UseVisualStyleBackColor = True
         '
@@ -88,8 +89,9 @@ Partial Class ICategorieAutre
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
         Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(586, 58)
+        Me.Label5.Size = New System.Drawing.Size(781, 71)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Équipements sans Catégorie"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -102,10 +104,10 @@ Partial Class ICategorieAutre
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 58)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 71)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(206, 382)
+        Me.Panel2.Size = New System.Drawing.Size(275, 471)
         Me.Panel2.TabIndex = 6
         '
         'ApplyButton
@@ -117,9 +119,10 @@ Partial Class ICategorieAutre
         Me.ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ApplyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApplyButton.ForeColor = System.Drawing.Color.White
-        Me.ApplyButton.Location = New System.Drawing.Point(0, 119)
+        Me.ApplyButton.Location = New System.Drawing.Point(0, 143)
+        Me.ApplyButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ApplyButton.Name = "ApplyButton"
-        Me.ApplyButton.Size = New System.Drawing.Size(206, 58)
+        Me.ApplyButton.Size = New System.Drawing.Size(275, 71)
         Me.ApplyButton.TabIndex = 11
         Me.ApplyButton.Text = "Appliquer"
         Me.ApplyButton.UseVisualStyleBackColor = False
@@ -128,10 +131,9 @@ Partial Class ICategorieAutre
         '
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label4.Location = New System.Drawing.Point(0, 106)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(0, 126)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(109, 13)
+        Me.Label4.Size = New System.Drawing.Size(144, 17)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "                                  "
         '
@@ -139,19 +141,19 @@ Partial Class ICategorieAutre
         '
         Me.CbCategorie.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbCategorie.FormattingEnabled = True
-        Me.CbCategorie.Location = New System.Drawing.Point(0, 85)
+        Me.CbCategorie.Location = New System.Drawing.Point(0, 102)
+        Me.CbCategorie.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CbCategorie.Name = "CbCategorie"
-        Me.CbCategorie.Size = New System.Drawing.Size(206, 21)
-        Me.CbCategorie.TabIndex = 8
+        Me.CbCategorie.Size = New System.Drawing.Size(275, 24)
+        Me.CbCategorie.TabIndex = 10
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label3.Location = New System.Drawing.Point(0, 72)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(0, 85)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 13)
+        Me.Label3.Size = New System.Drawing.Size(144, 17)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "                                  "
         '
@@ -161,10 +163,10 @@ Partial Class ICategorieAutre
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(206, 58)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Location = New System.Drawing.Point(275, 71)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(380, 382)
+        Me.Panel3.Size = New System.Drawing.Size(506, 471)
         Me.Panel3.TabIndex = 7
         '
         'ListView1
@@ -173,9 +175,10 @@ Partial Class ICategorieAutre
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 30)
+        Me.ListView1.Location = New System.Drawing.Point(0, 37)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(380, 352)
+        Me.ListView1.Size = New System.Drawing.Size(506, 434)
         Me.ListView1.TabIndex = 12
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -207,10 +210,9 @@ Partial Class ICategorieAutre
         '
         Me.Label6.AutoSize = True
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label6.Location = New System.Drawing.Point(0, 17)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(0, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 13)
+        Me.Label6.Size = New System.Drawing.Size(144, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "                                  "
         '
@@ -220,14 +222,15 @@ Partial Class ICategorieAutre
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(278, 17)
+        Me.Label2.Size = New System.Drawing.Size(328, 20)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Liste d'équipement dans la catégorie Autre"
         '
         'ICategorieAutre
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -235,9 +238,10 @@ Partial Class ICategorieAutre
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.MinimumSize = New System.Drawing.Size(586, 440)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "ICategorieAutre"
-        Me.Size = New System.Drawing.Size(586, 440)
+        Me.Size = New System.Drawing.Size(781, 542)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

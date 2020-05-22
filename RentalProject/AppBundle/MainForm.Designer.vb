@@ -76,7 +76,7 @@ Partial Class MainForm
         Me.MinimizeButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MinimizeButton.Name = "MinimizeButton"
         Me.MinimizeButton.Size = New System.Drawing.Size(57, 44)
-        Me.MinimizeButton.TabIndex = 15
+        Me.MinimizeButton.TabIndex = 6
         Me.MinimizeButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -91,7 +91,7 @@ Partial Class MainForm
         Me.ExitButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(57, 44)
-        Me.ExitButton.TabIndex = 17
+        Me.ExitButton.TabIndex = 7
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'MenuPanel
@@ -123,7 +123,7 @@ Partial Class MainForm
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(200, 58)
-        Me.CloseButton.TabIndex = 3
+        Me.CloseButton.TabIndex = 5
         Me.CloseButton.Text = "Quitter l'application"
         Me.CloseButton.UseVisualStyleBackColor = False
         '
@@ -141,7 +141,7 @@ Partial Class MainForm
         Me.PersonButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PersonButton.Name = "PersonButton"
         Me.PersonButton.Size = New System.Drawing.Size(200, 58)
-        Me.PersonButton.TabIndex = 2
+        Me.PersonButton.TabIndex = 4
         Me.PersonButton.Text = "Personnes"
         Me.PersonButton.UseVisualStyleBackColor = False
         '
@@ -159,7 +159,7 @@ Partial Class MainForm
         Me.InventoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.InventoryButton.Name = "InventoryButton"
         Me.InventoryButton.Size = New System.Drawing.Size(200, 58)
-        Me.InventoryButton.TabIndex = 1
+        Me.InventoryButton.TabIndex = 3
         Me.InventoryButton.Text = "Inventaire"
         Me.InventoryButton.UseVisualStyleBackColor = False
         '
@@ -177,7 +177,7 @@ Partial Class MainForm
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(200, 58)
-        Me.ReturnButton.TabIndex = 5
+        Me.ReturnButton.TabIndex = 2
         Me.ReturnButton.Text = "Historique"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
@@ -195,7 +195,7 @@ Partial Class MainForm
         Me.RentalsButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RentalsButton.Name = "RentalsButton"
         Me.RentalsButton.Size = New System.Drawing.Size(200, 58)
-        Me.RentalsButton.TabIndex = 0
+        Me.RentalsButton.TabIndex = 1
         Me.RentalsButton.Text = "Emprunts"
         Me.RentalsButton.UseVisualStyleBackColor = False
         '

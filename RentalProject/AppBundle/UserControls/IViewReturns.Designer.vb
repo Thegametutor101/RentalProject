@@ -24,9 +24,12 @@ Partial Class IViewReturns
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DetailsButton = New System.Windows.Forms.Button()
+        Me.SearchButton = New System.Windows.Forms.Button()
+        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.ByDate = New System.Windows.Forms.RadioButton()
         Me.RenterName = New System.Windows.Forms.TextBox()
@@ -36,9 +39,6 @@ Partial Class IViewReturns
         Me.ByReception = New System.Windows.Forms.RadioButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.SearchButton = New System.Windows.Forms.Button()
-        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -71,9 +71,45 @@ Partial Class IViewReturns
         Me.DetailsButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.DetailsButton.Name = "DetailsButton"
         Me.DetailsButton.Size = New System.Drawing.Size(126, 71)
-        Me.DetailsButton.TabIndex = 7
+        Me.DetailsButton.TabIndex = 18
         Me.DetailsButton.Text = "Afficher les Détails"
         Me.DetailsButton.UseVisualStyleBackColor = False
+        '
+        'SearchButton
+        '
+        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Left
+        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchButton.ForeColor = System.Drawing.Color.White
+        Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
+        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(126, 71)
+        Me.SearchButton.TabIndex = 16
+        Me.SearchButton.UseVisualStyleBackColor = False
+        '
+        'DeleteButton
+        '
+        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteButton.ForeColor = System.Drawing.Color.White
+        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
+        Me.DeleteButton.Location = New System.Drawing.Point(655, 0)
+        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.DeleteButton.Name = "DeleteButton"
+        Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
+        Me.DeleteButton.TabIndex = 19
+        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -112,6 +148,23 @@ Partial Class IViewReturns
         Me.Panel2.Size = New System.Drawing.Size(262, 400)
         Me.Panel2.TabIndex = 3
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.RentalProject.My.Resources.Resources.baseline_sync_black_18dp
+        Me.Button1.Location = New System.Drawing.Point(223, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(39, 39)
+        Me.Button1.TabIndex = 17
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'ReturnDate
         '
         Me.ReturnDate.Enabled = False
@@ -119,7 +172,7 @@ Partial Class IViewReturns
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(247, 22)
-        Me.ReturnDate.TabIndex = 57
+        Me.ReturnDate.TabIndex = 15
         '
         'ByDate
         '
@@ -129,7 +182,7 @@ Partial Class IViewReturns
         Me.ByDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByDate.Name = "ByDate"
         Me.ByDate.Size = New System.Drawing.Size(138, 24)
-        Me.ByDate.TabIndex = 29
+        Me.ByDate.TabIndex = 14
         Me.ByDate.TabStop = True
         Me.ByDate.Text = "Date de retour"
         Me.ByDate.UseVisualStyleBackColor = True
@@ -142,7 +195,7 @@ Partial Class IViewReturns
         Me.RenterName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RenterName.Name = "RenterName"
         Me.RenterName.Size = New System.Drawing.Size(215, 24)
-        Me.RenterName.TabIndex = 28
+        Me.RenterName.TabIndex = 13
         '
         'ByEquipment
         '
@@ -152,7 +205,7 @@ Partial Class IViewReturns
         Me.ByEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByEquipment.Name = "ByEquipment"
         Me.ByEquipment.Size = New System.Drawing.Size(131, 24)
-        Me.ByEquipment.TabIndex = 27
+        Me.ByEquipment.TabIndex = 12
         Me.ByEquipment.TabStop = True
         Me.ByEquipment.Text = "Emprunté par"
         Me.ByEquipment.UseVisualStyleBackColor = True
@@ -175,7 +228,7 @@ Partial Class IViewReturns
         Me.Reception.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Reception.Name = "Reception"
         Me.Reception.Size = New System.Drawing.Size(215, 24)
-        Me.Reception.TabIndex = 22
+        Me.Reception.TabIndex = 11
         '
         'ByReception
         '
@@ -185,7 +238,7 @@ Partial Class IViewReturns
         Me.ByReception.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ByReception.Name = "ByReception"
         Me.ByReception.Size = New System.Drawing.Size(105, 24)
-        Me.ByReception.TabIndex = 21
+        Me.ByReception.TabIndex = 10
         Me.ByReception.TabStop = True
         Me.ByReception.Text = "Réception"
         Me.ByReception.UseVisualStyleBackColor = True
@@ -215,59 +268,6 @@ Partial Class IViewReturns
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(519, 400)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = Global.RentalProject.My.Resources.Resources.baseline_sync_black_18dp
-        Me.Button1.Location = New System.Drawing.Point(223, 0)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(39, 39)
-        Me.Button1.TabIndex = 58
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'SearchButton
-        '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SearchButton.Dock = System.Windows.Forms.DockStyle.Left
-        Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Image = Global.RentalProject.My.Resources.Resources.baseline_search_white_18dp
-        Me.SearchButton.Location = New System.Drawing.Point(0, 0)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(126, 71)
-        Me.SearchButton.TabIndex = 6
-        Me.SearchButton.UseVisualStyleBackColor = False
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DeleteButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeleteButton.ForeColor = System.Drawing.Color.White
-        Me.DeleteButton.Image = Global.RentalProject.My.Resources.Resources.baseline_clear_white_18dp
-        Me.DeleteButton.Location = New System.Drawing.Point(655, 0)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
-        Me.DeleteButton.TabIndex = 5
-        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'IViewReturns
         '

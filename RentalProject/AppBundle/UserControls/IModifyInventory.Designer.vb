@@ -24,6 +24,7 @@ Partial Class IModifyInventory
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,7 +38,7 @@ Partial Class IModifyInventory
         Me.CBEtat = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TBDispo = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.NewCategoryButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -65,8 +66,20 @@ Partial Class IModifyInventory
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(93, 62)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 17
         Me.BackButton.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
+        Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(781, 62)
+        Me.Label13.TabIndex = 19
+        Me.Label13.Text = "Modification d'Équipements"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
@@ -129,18 +142,18 @@ Partial Class IModifyInventory
         Me.CBCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBCat.FormattingEnabled = True
         Me.CBCat.Location = New System.Drawing.Point(321, 235)
-        Me.CBCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBCat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBCat.Name = "CBCat"
-        Me.CBCat.Size = New System.Drawing.Size(220, 24)
-        Me.CBCat.TabIndex = 10
+        Me.CBCat.Size = New System.Drawing.Size(168, 24)
+        Me.CBCat.TabIndex = 11
         '
         'TBName
         '
         Me.TBName.Location = New System.Drawing.Point(321, 174)
-        Me.TBName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBName.Margin = New System.Windows.Forms.Padding(4)
         Me.TBName.Name = "TBName"
         Me.TBName.Size = New System.Drawing.Size(220, 22)
-        Me.TBName.TabIndex = 9
+        Me.TBName.TabIndex = 10
         '
         'Panel2
         '
@@ -167,7 +180,7 @@ Partial Class IModifyInventory
         Me.ButtonModif.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonModif.Name = "ButtonModif"
         Me.ButtonModif.Size = New System.Drawing.Size(173, 71)
-        Me.ButtonModif.TabIndex = 85
+        Me.ButtonModif.TabIndex = 15
         Me.ButtonModif.Text = "Sauvegarder"
         Me.ButtonModif.UseVisualStyleBackColor = False
         '
@@ -185,7 +198,7 @@ Partial Class IModifyInventory
         Me.ButtonCancel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(173, 71)
-        Me.ButtonCancel.TabIndex = 84
+        Me.ButtonCancel.TabIndex = 16
         Me.ButtonCancel.Text = "Annuler"
         Me.ButtonCancel.UseVisualStyleBackColor = False
         '
@@ -196,10 +209,10 @@ Partial Class IModifyInventory
         Me.CBEtat.FormattingEnabled = True
         Me.CBEtat.Items.AddRange(New Object() {"Neuf", "Endommagé", "En réparation", "Brisé"})
         Me.CBEtat.Location = New System.Drawing.Point(321, 291)
-        Me.CBEtat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBEtat.Margin = New System.Windows.Forms.Padding(4)
         Me.CBEtat.Name = "CBEtat"
         Me.CBEtat.Size = New System.Drawing.Size(220, 24)
-        Me.CBEtat.TabIndex = 14
+        Me.CBEtat.TabIndex = 13
         '
         'Label5
         '
@@ -216,22 +229,29 @@ Partial Class IModifyInventory
         '
         Me.TBDispo.Enabled = False
         Me.TBDispo.Location = New System.Drawing.Point(319, 355)
-        Me.TBDispo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBDispo.Margin = New System.Windows.Forms.Padding(4)
         Me.TBDispo.Name = "TBDispo"
         Me.TBDispo.Size = New System.Drawing.Size(220, 22)
-        Me.TBDispo.TabIndex = 12
+        Me.TBDispo.TabIndex = 14
         '
-        'Label13
+        'NewCategoryButton
         '
-        Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!)
-        Me.Label13.Location = New System.Drawing.Point(93, 0)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(688, 62)
-        Me.Label13.TabIndex = 19
-        Me.Label13.Text = "Modification d'Équipements"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.NewCategoryButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.NewCategoryButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NewCategoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.NewCategoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.NewCategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NewCategoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NewCategoryButton.ForeColor = System.Drawing.Color.White
+        Me.NewCategoryButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewCategoryButton.Location = New System.Drawing.Point(497, 234)
+        Me.NewCategoryButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.NewCategoryButton.Name = "NewCategoryButton"
+        Me.NewCategoryButton.Size = New System.Drawing.Size(44, 26)
+        Me.NewCategoryButton.TabIndex = 12
+        Me.NewCategoryButton.Text = "+"
+        Me.NewCategoryButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NewCategoryButton.UseVisualStyleBackColor = False
         '
         'IModifyInventory
         '
@@ -240,6 +260,7 @@ Partial Class IModifyInventory
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Controls.Add(Me.NewCategoryButton)
         Me.Controls.Add(Me.CBEtat)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TBDispo)
@@ -252,7 +273,7 @@ Partial Class IModifyInventory
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IModifyInventory"
         Me.Size = New System.Drawing.Size(781, 542)
@@ -279,4 +300,5 @@ Partial Class IModifyInventory
     Friend WithEvents Label5 As Label
     Friend WithEvents TBDispo As TextBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents NewCategoryButton As Button
 End Class

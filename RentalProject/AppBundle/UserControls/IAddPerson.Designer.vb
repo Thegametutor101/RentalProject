@@ -72,7 +72,7 @@ Partial Class IAddPerson
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(93, 71)
-        Me.BackButton.TabIndex = 0
+        Me.BackButton.TabIndex = 21
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label5
@@ -94,18 +94,18 @@ Partial Class IAddPerson
         Me.CBStatut.FormattingEnabled = True
         Me.CBStatut.Items.AddRange(New Object() {"Étudiant", "Professeur", "Technicien", "Administration"})
         Me.CBStatut.Location = New System.Drawing.Point(125, 384)
-        Me.CBStatut.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CBStatut.Margin = New System.Windows.Forms.Padding(4)
         Me.CBStatut.Name = "CBStatut"
         Me.CBStatut.Size = New System.Drawing.Size(231, 24)
-        Me.CBStatut.TabIndex = 15
+        Me.CBStatut.TabIndex = 14
         '
         'TBNom
         '
         Me.TBNom.Location = New System.Drawing.Point(127, 113)
-        Me.TBNom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBNom.Margin = New System.Windows.Forms.Padding(4)
         Me.TBNom.Name = "TBNom"
         Me.TBNom.Size = New System.Drawing.Size(231, 22)
-        Me.TBNom.TabIndex = 13
+        Me.TBNom.TabIndex = 10
         '
         'LAStatut
         '
@@ -132,10 +132,10 @@ Partial Class IAddPerson
         'TBPrenom
         '
         Me.TBPrenom.Location = New System.Drawing.Point(127, 183)
-        Me.TBPrenom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBPrenom.Margin = New System.Windows.Forms.Padding(4)
         Me.TBPrenom.Name = "TBPrenom"
         Me.TBPrenom.Size = New System.Drawing.Size(231, 22)
-        Me.TBPrenom.TabIndex = 19
+        Me.TBPrenom.TabIndex = 11
         '
         'LAPrenom
         '
@@ -172,10 +172,10 @@ Partial Class IAddPerson
         'TBService
         '
         Me.TBService.Location = New System.Drawing.Point(503, 183)
-        Me.TBService.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBService.Margin = New System.Windows.Forms.Padding(4)
         Me.TBService.Name = "TBService"
         Me.TBService.Size = New System.Drawing.Size(231, 22)
-        Me.TBService.TabIndex = 29
+        Me.TBService.TabIndex = 16
         '
         'LAService
         '
@@ -191,10 +191,10 @@ Partial Class IAddPerson
         'TBDepartement
         '
         Me.TBDepartement.Location = New System.Drawing.Point(503, 113)
-        Me.TBDepartement.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBDepartement.Margin = New System.Windows.Forms.Padding(4)
         Me.TBDepartement.Name = "TBDepartement"
         Me.TBDepartement.Size = New System.Drawing.Size(231, 22)
-        Me.TBDepartement.TabIndex = 27
+        Me.TBDepartement.TabIndex = 15
         '
         'LADepartement
         '
@@ -225,7 +225,7 @@ Partial Class IAddPerson
         Me.TBTelephone.Mask = "(000) 000-0000"
         Me.TBTelephone.Name = "TBTelephone"
         Me.TBTelephone.Size = New System.Drawing.Size(231, 22)
-        Me.TBTelephone.TabIndex = 34
+        Me.TBTelephone.TabIndex = 12
         '
         'Panel2
         '
@@ -252,7 +252,7 @@ Partial Class IAddPerson
         Me.AddButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(173, 74)
-        Me.AddButton.TabIndex = 87
+        Me.AddButton.TabIndex = 19
         Me.AddButton.Text = "Sauvegarder"
         Me.AddButton.UseVisualStyleBackColor = False
         '
@@ -270,7 +270,7 @@ Partial Class IAddPerson
         Me.CancelButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(173, 74)
-        Me.CancelButton.TabIndex = 86
+        Me.CancelButton.TabIndex = 20
         Me.CancelButton.Text = "Annuler"
         Me.CancelButton.UseVisualStyleBackColor = False
         '
@@ -288,10 +288,10 @@ Partial Class IAddPerson
         'Email
         '
         Me.Email.Location = New System.Drawing.Point(127, 320)
-        Me.Email.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Email.Margin = New System.Windows.Forms.Padding(4)
         Me.Email.Name = "Email"
         Me.Email.Size = New System.Drawing.Size(231, 22)
-        Me.Email.TabIndex = 36
+        Me.Email.TabIndex = 13
         '
         'TBPoste
         '
@@ -300,16 +300,16 @@ Partial Class IAddPerson
         Me.TBPoste.Mask = "999999"
         Me.TBPoste.Name = "TBPoste"
         Me.TBPoste.Size = New System.Drawing.Size(95, 22)
-        Me.TBPoste.TabIndex = 103
+        Me.TBPoste.TabIndex = 18
         '
         'TBBureau
         '
         Me.TBBureau.Location = New System.Drawing.Point(503, 252)
-        Me.TBBureau.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBBureau.Margin = New System.Windows.Forms.Padding(4)
         Me.TBBureau.Mask = "LL0000"
         Me.TBBureau.Name = "TBBureau"
         Me.TBBureau.Size = New System.Drawing.Size(95, 22)
-        Me.TBBureau.TabIndex = 104
+        Me.TBBureau.TabIndex = 17
         '
         'IAddPerson
         '
@@ -338,7 +338,7 @@ Partial Class IAddPerson
         Me.Controls.Add(Me.LAStatut)
         Me.Controls.Add(Me.LANom)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(781, 542)
         Me.Name = "IAddPerson"
         Me.Size = New System.Drawing.Size(781, 542)

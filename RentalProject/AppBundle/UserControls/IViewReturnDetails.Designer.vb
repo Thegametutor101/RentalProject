@@ -76,7 +76,7 @@ Partial Class IViewReturnDetails
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(126, 71)
-        Me.DeleteButton.TabIndex = 112
+        Me.DeleteButton.TabIndex = 19
         Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'BackButton
@@ -91,7 +91,7 @@ Partial Class IViewReturnDetails
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(69, 71)
-        Me.BackButton.TabIndex = 110
+        Me.BackButton.TabIndex = 20
         Me.BackButton.UseVisualStyleBackColor = True
         '
         'Label13
@@ -144,7 +144,7 @@ Partial Class IViewReturnDetails
         Me.Comments.ReadOnly = True
         Me.Comments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.Comments.Size = New System.Drawing.Size(226, 158)
-        Me.Comments.TabIndex = 110
+        Me.Comments.TabIndex = 18
         '
         'Label4
         '
@@ -169,7 +169,7 @@ Partial Class IViewReturnDetails
         Me.Equipments.RowHeadersWidth = 51
         Me.Equipments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Equipments.Size = New System.Drawing.Size(489, 158)
-        Me.Equipments.TabIndex = 108
+        Me.Equipments.TabIndex = 17
         '
         'Label14
         '
@@ -201,7 +201,7 @@ Partial Class IViewReturnDetails
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         Me.Email.Size = New System.Drawing.Size(267, 24)
-        Me.Email.TabIndex = 106
+        Me.Email.TabIndex = 15
         '
         'ID
         '
@@ -213,7 +213,7 @@ Partial Class IViewReturnDetails
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
         Me.ID.Size = New System.Drawing.Size(159, 22)
-        Me.ID.TabIndex = 57
+        Me.ID.TabIndex = 10
         '
         'ReturnDate
         '
@@ -222,7 +222,7 @@ Partial Class IViewReturnDetails
         Me.ReturnDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReturnDate.Name = "ReturnDate"
         Me.ReturnDate.Size = New System.Drawing.Size(268, 22)
-        Me.ReturnDate.TabIndex = 55
+        Me.ReturnDate.TabIndex = 16
         '
         'Reception
         '
@@ -234,7 +234,7 @@ Partial Class IViewReturnDetails
         Me.Reception.Name = "Reception"
         Me.Reception.ReadOnly = True
         Me.Reception.Size = New System.Drawing.Size(159, 22)
-        Me.Reception.TabIndex = 54
+        Me.Reception.TabIndex = 11
         '
         'FirstName
         '
@@ -246,7 +246,7 @@ Partial Class IViewReturnDetails
         Me.FirstName.Name = "FirstName"
         Me.FirstName.ReadOnly = True
         Me.FirstName.Size = New System.Drawing.Size(159, 22)
-        Me.FirstName.TabIndex = 49
+        Me.FirstName.TabIndex = 12
         '
         'LastName
         '
@@ -258,7 +258,7 @@ Partial Class IViewReturnDetails
         Me.LastName.Name = "LastName"
         Me.LastName.ReadOnly = True
         Me.LastName.Size = New System.Drawing.Size(159, 22)
-        Me.LastName.TabIndex = 48
+        Me.LastName.TabIndex = 13
         '
         'Status
         '
@@ -270,7 +270,7 @@ Partial Class IViewReturnDetails
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
         Me.Status.Size = New System.Drawing.Size(159, 22)
-        Me.Status.TabIndex = 47
+        Me.Status.TabIndex = 14
         '
         'Label11
         '
