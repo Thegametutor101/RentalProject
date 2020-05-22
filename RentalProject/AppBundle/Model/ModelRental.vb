@@ -13,6 +13,9 @@ Public Class ModelRental
     End Function
 
     Public Sub deleteRental(id As Integer, equipment As String)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Delete from emprunt where ID = {id} and upper (noequipement) = upper('{equipment}')"
@@ -23,6 +26,9 @@ Public Class ModelRental
     End Sub
 
     Public Sub deleteEquipmentFromRental(equipment As String)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Delete from emprunt where (noequipement) = upper('{equipment}')"
@@ -37,6 +43,9 @@ Public Class ModelRental
     ''' </summary>
     ''' <param name="id"></param>
     Public Function updateEquipmentAvailable(id As String) As Boolean
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"update equipement set disponibilite='oui' where noEquipement='{id}'"
@@ -52,6 +61,9 @@ Public Class ModelRental
     ''' <param name="id"></param>
     ''' <returns></returns>
     Public Function updateEquipmentNonAvailable(id As String) As Boolean
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"update equipement set disponibilite='non' where noEquipement='{id}'"
@@ -69,6 +81,9 @@ Public Class ModelRental
                               ByVal dateRetour As Date,
                               ByVal commentaires As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
@@ -98,6 +113,9 @@ Public Class ModelRental
                                            ByVal dateRetour As Date,
                                            ByVal commentaires As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()

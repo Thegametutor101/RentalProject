@@ -13,6 +13,9 @@ Public Class ModelPerson
     End Function
 
     Public Function deletePerson(id As Integer)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Delete from personne where noPersonne = {id}"
@@ -31,6 +34,9 @@ Public Class ModelPerson
                          ByVal poste As Integer,
                          ByVal email As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
@@ -56,6 +62,9 @@ Public Class ModelPerson
                                  extension As Integer,
                                  mail As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()

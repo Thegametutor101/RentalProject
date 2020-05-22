@@ -27,6 +27,9 @@ Public Class EntityCategory
     End Function
 
     Public Function getCategoryByID(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from categorie where noCategorie ={id})"
@@ -39,6 +42,9 @@ Public Class EntityCategory
     End Function
 
     Public Function getCategoryByName(name As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from categorie where upper(nom) like upper('{name}')"
@@ -51,6 +57,9 @@ Public Class EntityCategory
     End Function
 
     Public Function getCategoryByQuantity(quantity As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from categorie where quantite='{quantity}'"
@@ -77,6 +86,9 @@ Public Class EntityCategory
         connection.Close()
     End Function
     Public Function getCategorieForRental()
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = "select noCategorie,nom from categorie;"
@@ -88,6 +100,9 @@ Public Class EntityCategory
         Return table
     End Function
     Public Function getCategorieForAutre()
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select nom from categorie where nocategorie<>0"

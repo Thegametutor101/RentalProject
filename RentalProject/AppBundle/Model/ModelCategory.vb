@@ -13,6 +13,9 @@ Public Class ModelCategory
     End Function
 
     Public Sub deleteCategory(id As Integer)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         Dim reader As MySqlDataReader
         Dim qte As Integer
@@ -46,6 +49,9 @@ Public Class ModelCategory
 
     Public Sub addCategory(ByVal nom As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()
@@ -61,6 +67,9 @@ Public Class ModelCategory
 
     Public Sub updateCategory(ByVal noCategorie As Integer, ByVal nom As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             If (noCategorie <> 0) Then
                 Dim command As New MySqlCommand
                 command.Connection = connection
@@ -79,6 +88,9 @@ Public Class ModelCategory
 
     Public Function UpdateCategorieQuantite(categoryNumber As Integer)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             connection.Open()

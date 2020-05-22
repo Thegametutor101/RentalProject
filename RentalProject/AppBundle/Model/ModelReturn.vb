@@ -18,6 +18,9 @@ Public Class ModelReturn
                          comment As String,
                          ByRef printed As Boolean)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"insert into retour values({id}, '{reception}', {personNumber}, '{equipment}', '{Date.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{comment}')"
@@ -34,6 +37,9 @@ Public Class ModelReturn
 
     Public Sub deleteReturn(id As Integer, printed As Boolean)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"delete from retour where noRetour = {id}"

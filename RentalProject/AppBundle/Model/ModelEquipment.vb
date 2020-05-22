@@ -15,6 +15,9 @@ Public Class ModelEquipment
     'on va modifier un équipement en fonction de certaines valeurs
     Public Function updateequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"update equipement set nom='{nom}',nocategorie='{nocategorie}',etat='{etat}',disponibilite='{disponibilite}' where noequipement='{noequipement}'"
@@ -30,6 +33,9 @@ Public Class ModelEquipment
     'on ajoute un équipement à la base de données en fonction de certaines valeurs
     Public Function addequipment(noequipement As String, nom As String, nocategorie As Integer, etat As String, disponibilite As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"insert into equipement values ('{noequipement}','{nom}','{nocategorie}','{etat}','{disponibilite}')"
@@ -45,6 +51,9 @@ Public Class ModelEquipment
     'on supprime un Équipement de la table via son ID
     Public Function delequipement(noequipement As String)
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"Delete from equipement where noequipement = '{noequipement}'"
@@ -58,6 +67,9 @@ Public Class ModelEquipment
     End Function
 
     Public Function updateeEquipementCategorie(noequipement As String, nocategorie As Integer)
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"update equipement set nocategorie={nocategorie} where noequipement='{noequipement}'"

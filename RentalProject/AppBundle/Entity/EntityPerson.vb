@@ -13,6 +13,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPerson() As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne"
@@ -25,6 +28,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonByID(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne where noPersonne = {id}"
@@ -37,6 +43,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonneByFirstName(name As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne where upper(prenom) like upper('{name}')"
@@ -49,6 +58,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonneByLastName(name As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne where upper(nom) like upper('{name}')"
@@ -61,6 +73,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonneByFirstNameAndLastName(firstName As String, lastName As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne where upper(prenom) like upper('{firstName}%') and upper(nom) like upper('{lastName}%')"
@@ -73,6 +88,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonneByStatut(statut As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from personne where upper(statut) like upper('{statut}')"
@@ -85,6 +103,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonRentedItemsByID(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select E.nom from equipement E INNER JOIN emprunt E2 on E.noEquipement = E2.noEquipement where E2.noPersonne = {id}"
@@ -97,6 +118,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonByDepartment(department As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select * from personne where upper(nomDepartement) like upper('%{department}%')"
@@ -109,6 +133,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonByService(service As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select * from personne where upper(nomService) like upper('%{service}%')"
@@ -121,6 +148,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonByRenting() As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne"
@@ -133,6 +163,9 @@ Public Class EntityPerson
     End Function
 
     Public Function getPersonByLate() As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"select * from personne P inner join emprunt E on E.noPersonne = P.noPersonne where dateRetour < current_date"

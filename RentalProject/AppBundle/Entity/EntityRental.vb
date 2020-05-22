@@ -13,6 +13,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentals() As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select distinct E.ID, initcap(concat(P.nom, ', ', P.prenom)) as Emprunté_par, initcap(E.autorisation) as autorisation from emprunt E inner join personne P on E.noPersonne = P.noPersonne order by E.ID"
@@ -25,6 +28,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalEquipments(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E2.nom from emprunt E inner join equipement E2 on E2.noEquipement = E.noEquipement where ID = {id}"
@@ -37,6 +43,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByRenterFirstName(firstName As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(P.prenom) like upper('{firstName}%') order by E.ID"
@@ -49,6 +58,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByRenterLastName(lastName As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(P.nom) like upper('{lastName}%') order by E.ID"
@@ -61,6 +73,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByRenterFirstAndLastName(firstName As String, lastName As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(P.prenom) like upper('{firstName}%') and upper(P.nom) like upper('{lastName}%') order by E.ID"
@@ -73,6 +88,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByEquipment(ID As String) As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID from emprunt E where upper(E.noequipement) = upper('{ID}') order by E.ID"
@@ -83,6 +101,9 @@ Public Class EntityRental
     End Function
 
     Public Function getEquipmentIsRented(ID As String) As Boolean
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select count(E.ID) from emprunt E where upper(E.noequipement) = upper('{ID}') order by E.ID"
@@ -93,6 +114,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByCategoryName(name As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne inner join categorie C2 on E2.noCategorie = C2.noCategorie where upper(C2.nom) like upper('%{name}%')"
@@ -105,6 +129,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalsByRenteeName(name As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select E.ID, initcap(concat(P.nom, ', ', P.prenom)), E2.nom as Nom_Équipement, initcap(E.autorisation) from emprunt E inner join equipement E2 on E.noEquipement = E2.noEquipement inner join personne P on E.noPersonne = P.noPersonne where upper(E.autorisation) like upper('{name}%') order by E.ID"
@@ -117,6 +144,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalByID(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
@@ -129,6 +159,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalDetailed(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
@@ -141,6 +174,9 @@ Public Class EntityRental
     End Function
 
     Public Function getRentalDatesbyID(id As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         command.Connection = connection
         connection.Open()
@@ -153,6 +189,9 @@ Public Class EntityRental
     End Function
 
     Public Function Empruntnextid() As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
         Dim command As New MySqlCommand
         Dim ID As Integer
         command.Connection = connection
@@ -171,6 +210,9 @@ Public Class EntityRental
 
     Public Function verifPersonHasRental(id As Integer) As Boolean
         Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"Select noPersonne from emprunt where noPersonne = {id}"
